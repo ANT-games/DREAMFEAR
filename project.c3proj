@@ -1,0 +1,1354 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 49502,
+	"name": "dreamfear",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "filechooser",
+			"name": "File chooser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "gamepad",
+			"name": "Gamepad",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "LOS",
+			"name": "Line of sight",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Orbit",
+			"name": "Orbit",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pathfinding",
+			"name": "Pathfinding",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "wrap",
+			"name": "Wrap",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "alpharamp",
+			"name": "Alpha ramp",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "blacknwhitemask",
+			"name": "Black & white mask",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "blurhorizontal",
+			"name": "Blur horizontal",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "blurvertical",
+			"name": "Blur vertical",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "brightness",
+			"name": "Brightness",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "contrast",
+			"name": "Contrast",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "gamma",
+			"name": "Gamma",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "glowhorizontal",
+			"name": "Glow horizontal",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "glowvertical",
+			"name": "Glow vertical",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "grayscale",
+			"name": "Grayscale",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "highlightshadow",
+			"name": "Highlight shadow",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "hsladjust",
+			"name": "Adjust HSL",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "noise",
+			"name": "Noise",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "noisemask",
+			"name": "Noise mask",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "pixellate",
+			"name": "Pixellate",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "pulse",
+			"name": "Pulse",
+			"author": "Danguafer/Silexars",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "radialblur",
+			"name": "Radial blur",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "replacecolor",
+			"name": "Replace color",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "sepia",
+			"name": "Sepia",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "setcolor",
+			"name": "Set color",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "sketch",
+			"name": "Sketch",
+			"author": "Brad Larson",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "softlight",
+			"name": "Soft light",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "tint",
+			"name": "Tint",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "toon",
+			"name": "Toon",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "vignette",
+			"name": "Vignette",
+			"author": "Brad Larson",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "water",
+			"name": "Water",
+			"author": "Viktor Korsun",
+			"bundled": false
+		}
+	],
+	"uniqueId": "5utu6ilgj1uh",
+	"objectTypes": {
+		"items": [
+			"test",
+			"level_ui_frame",
+			"coinsUI",
+			"stressBar",
+			"grass_lvl2",
+			"three",
+			"box",
+			"bossZone",
+			"Audio",
+			"Sprite",
+			"artMenu",
+			"menuBG",
+			"maskMenu",
+			"LOGO",
+			"LOGOText",
+			"Particles",
+			"grass_lvl4",
+			"bloodAddParticle",
+			"Browser",
+			"portalNewLevel",
+			"postRunStats",
+			"fadeStart",
+			"bgUiPanel",
+			"characterForChoice",
+			"characterIcon",
+			"priceCharacterText",
+			"LocalStorage",
+			"charactersOpen",
+			"metaUpgradeSlot",
+			"metaUpgradesUnlocked",
+			"upgradePriceText",
+			"checkbox",
+			"Gamepad",
+			"videoCutScene",
+			"shield",
+			"shards",
+			"gunGivingZone",
+			"lightFromGun",
+			"tutorial",
+			"changeGunTutorialBase",
+			"ant_logo"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"btnText",
+					"bulletsText",
+					"pillsText",
+					"bombsText",
+					"hpText",
+					"moneyText",
+					"levelText",
+					"upgradeName",
+					"upgradeDescription",
+					"justText",
+					"characterDescriptionText",
+					"characterNameText",
+					"metaUpgradeDescriptionText",
+					"settingText",
+					"tutorialText",
+					"cutSceneTextIntro"
+				],
+				"subfolders": [],
+				"name": "texts"
+			},
+			{
+				"items": [
+					"back",
+					"wallsLevel1"
+				],
+				"subfolders": [],
+				"name": "walls&bg"
+			},
+			{
+				"items": [
+					"nurse1",
+					"lampMonster",
+					"nurseShadow",
+					"whisperer",
+					"flyingHeart",
+					"maskFlying",
+					"snail",
+					"shadow",
+					"eyeSmall",
+					"flyingMouth",
+					"flyingHeartMetal",
+					"ear",
+					"lungs",
+					"maskFlying2",
+					"cloud1",
+					"star",
+					"maskCry1",
+					"eyeMedium",
+					"sun"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"needle",
+							"enemysLamp",
+							"lightBulletAttackLamp",
+							"cloudWhisperer",
+							"bloodInfected",
+							"snailBullet",
+							"bigEyeBullet",
+							"surgeonKnife",
+							"sawSurgeon",
+							"sheepHeadBullet",
+							"plantBossBullet",
+							"plantBossWave",
+							"earBullet",
+							"air",
+							"maskBullet",
+							"airCloud",
+							"starBullet",
+							"tearBulletEnemy",
+							"mediumEyeBullet",
+							"maskBossBullet"
+						],
+						"subfolders": [],
+						"name": "enemyObj"
+					}
+				],
+				"name": "enemies"
+			},
+			{
+				"items": [
+					"shadowSmall",
+					"shadowMedium",
+					"shadowBig"
+				],
+				"subfolders": [],
+				"name": "shadows"
+			},
+			{
+				"items": [
+					"lightBullet",
+					"lightEnemy",
+					"lightPlayer",
+					"lampLarge",
+					"lampBigLight",
+					"lampost",
+					"lampBigLight2",
+					"lightGun",
+					"lampBigLight3",
+					"lampBigLight4"
+				],
+				"subfolders": [],
+				"name": "lights"
+			},
+			{
+				"items": [
+					"shootingParticle",
+					"bulletHitParticle",
+					"fxBomb"
+				],
+				"subfolders": [],
+				"name": "effects"
+			},
+			{
+				"items": [
+					"camera",
+					"combatEnemyArena",
+					"enemySpawner"
+				],
+				"subfolders": [],
+				"name": "invisible"
+			},
+			{
+				"items": [
+					"AJAX",
+					"FileChooser",
+					"Keyboard",
+					"Mouse"
+				],
+				"subfolders": [],
+				"name": "plugins"
+			},
+			{
+				"items": [
+					"mapArray",
+					"translation",
+					"roomsOpen"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"upgradesAvailableArray",
+							"upgradesChoice",
+							"upgradesUnlockedArray"
+						],
+						"subfolders": [],
+						"name": "upgrade_arrays"
+					}
+				],
+				"name": "arrays"
+			},
+			{
+				"items": [
+					"cursor",
+					"levelBar",
+					"GHOSTHEALTH",
+					"healtthBarInside",
+					"hpSliderFrame",
+					"reloadUI",
+					"energyBarFrame",
+					"mapBG",
+					"mapTileUI",
+					"bulletIcon",
+					"stressBarFrame",
+					"stressBarSlider",
+					"pill_iconUI",
+					"bomb_iconUI",
+					"psychosisBarFrame",
+					"psychosisBarInside"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"upgradesBg",
+							"upgradesIcon",
+							"metaUpgradesIcon"
+						],
+						"subfolders": [],
+						"name": "upgrades"
+					}
+				],
+				"name": "UI"
+			},
+			{
+				"items": [
+					"melleAttack",
+					"player1"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"revolver",
+							"shotgun",
+							"uzi",
+							"riffle1",
+							"laserPistol",
+							"riffle",
+							"granateThrower",
+							"sniperRiffle"
+						],
+						"subfolders": [],
+						"name": "guns"
+					},
+					{
+						"items": [
+							"revolverBullet",
+							"shotGunBullet",
+							"uziBullet",
+							"riffleBullet",
+							"laserPistolBullet",
+							"riffleHardBullet",
+							"granateBullet",
+							"riffleSniperBullet",
+							"shrapnel"
+						],
+						"subfolders": [],
+						"name": "bullets"
+					},
+					{
+						"items": [
+							"maskProtector"
+						],
+						"subfolders": [],
+						"name": "summons"
+					},
+					{
+						"items": [
+							"character2"
+						],
+						"subfolders": [],
+						"name": "player costumes"
+					}
+				],
+				"name": "guns&player"
+			},
+			{
+				"items": [
+					"lampSmall",
+					"sprike"
+				],
+				"subfolders": [],
+				"name": "decorative"
+			},
+			{
+				"items": [
+					"antipsychoticPill",
+					"medkit",
+					"bulletEnergyLoot",
+					"bomb",
+					"gameCurrency"
+				],
+				"subfolders": [],
+				"name": "loot"
+			},
+			{
+				"items": [
+					"bossEye",
+					"bossSurgeon",
+					"bossSheep",
+					"bossPlant",
+					"maskBoss"
+				],
+				"subfolders": [
+					{
+						"items": [],
+						"subfolders": [],
+						"name": "bossParts"
+					}
+				],
+				"name": "bosses"
+			}
+		]
+	},
+	"functionsName": "Functions",
+	"autosaveData": null,
+	"containers": [
+		{
+			"members": [
+				"changeGunTutorialBase",
+				"tutorialText"
+			]
+		}
+	],
+	"families": {
+		"items": [
+			"guns",
+			"bullets",
+			"enemies",
+			"textsConnectedFile",
+			"shadowObjects",
+			"enemyBullets",
+			"walls",
+			"BGs",
+			"enemyParts",
+			"bosses",
+			"shadows",
+			"playableCharacters"
+		],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"testLevel",
+			"mainMenu",
+			"menu play",
+			"options",
+			"prefabs",
+			"level1",
+			"level2",
+			"level3",
+			"level4",
+			"level5",
+			"deathMenu",
+			"metaProgressionMenu",
+			"startCutScene",
+			"demoEnd"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"general",
+			"player&guns",
+			"enemies",
+			"UI",
+			"level generation",
+			"visual",
+			"loot",
+			"psychosis",
+			"bosses",
+			"audio",
+			"upgrades",
+			"characterChoice",
+			"meta progression",
+			"startCutScene",
+			"tutorials",
+			"gamepad"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "hit bullet wall.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 719174985273711,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bullet flesh hit 1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 420359620104064,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bullet flesh hit 2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 957138572424817,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "damage impact.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 552249688732619,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "death impact.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 837812271117481,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "PLAYER_TAKE_DAMAGE.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 425399824549532,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "YotaGrenadeLaunch.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 179002039145934,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "YotaGrenadeExplosion.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 296275151226787,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "coin sound.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 398226531923971,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "ricochet.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 109496810263270,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "med kit.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 827630448958394,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bombPickedUp.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 802855400756820,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "clicky button 1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 442456230476637,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "button assorted 39.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 447810763205643,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "gun change.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 566997719359216,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "running1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 908763785207928,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "running2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 924226183836219,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "running3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 704528545776185,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "running4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 547016997207079,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "roll.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 251465227805347,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "movement"
+				},
+				{
+					"items": [
+						{
+							"name": "revolver pistol.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 298889301377631,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "assault riffle.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 675806464922713,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "uzi.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 645878225570809,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "laser.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 614461449621899,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "shotgun.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 572805868163218,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "riffle.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 734167617841277,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "granate explosion.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 296323242284446,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "granate launcher.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 139266530267673,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "sniper riffle.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 916429038969282,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [
+						{
+							"items": [
+								{
+									"name": "AddictSound.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 290940153114294,
+									"file-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "SingleShoot.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 756300302367110,
+									"file-info": {
+										"purpose": "none"
+									}
+								}
+							],
+							"subfolders": [],
+							"name": "shotgun"
+						},
+						{
+							"items": [
+								{
+									"name": "EndShoot.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 107064553614838,
+									"file-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "reload sound.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 708023783397420,
+									"file-info": {
+										"purpose": "none"
+									}
+								}
+							],
+							"subfolders": [],
+							"name": "reloads"
+						}
+					],
+					"name": "shooting"
+				},
+				{
+					"items": [
+						{
+							"name": "typingDialogSkip.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 968574577666249,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "typingText1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 252229116128231,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "typing"
+				}
+			]
+		},
+		"music": {
+			"items": [
+				{
+					"name": "death.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 177477223427627,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "death is coming.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 767386896617366,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "fear.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 859484515322708,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "shining.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 734176877639793,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "hit it.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 699166563205311,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "fuck it.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 778778107217934,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "untitled.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 947202399322477,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "falling asleep.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 683738584489230,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [
+				{
+					"name": "Silver.ttf",
+					"type": "application/font-sfnt",
+					"sid": 817280780318549,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 219965705202650,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 559093743584363,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-114.png",
+					"type": "image/png",
+					"sid": 707774705606732,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 342673478244590,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 579541081145758,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 621864863856550,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "english.json",
+							"type": "application/json",
+							"sid": 798597747373797,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "translations"
+				}
+			]
+		}
+	},
+	"timelines": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"flowcharts": {
+		"items": [],
+		"subfolders": []
+	},
+	"models3d": {
+		"items": [],
+		"subfolders": []
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"autoIncrementVersion": false,
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "http://",
+		"appId": "com.mycompany.myapp",
+		"pixelRounding": true,
+		"zAxisScale": "regular",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "any",
+		"webgpu": "auto",
+		"multitexturing": "auto",
+		"gpuPreference": "high-performance",
+		"framerateMode": "fixed",
+		"fixedFramerate": 60,
+		"sampling": "nearest",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "progress-logo",
+		"preloadSounds": true,
+		"uidAllocationMode": "increment",
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"exportFileStructure": "folders",
+		"scriptsType": "module"
+	},
+	"viewportWidth": 398,
+	"viewportHeight": 224,
+	"firstLayout": "startCutScene"
+}

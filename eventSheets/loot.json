@@ -1,0 +1,503 @@
+{
+	"name": "loot",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "bombHpProbability",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 417853040170050
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "enemies",
+					"sid": 452436311716641,
+					"parameters": {
+						"animation": "\"death\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "LOOT BOMBS AND HP ENEMIES"
+				}
+			],
+			"sid": 775385102264703,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 815356911223165,
+							"parameters": {
+								"first-value": "random(100)",
+								"comparison": 3,
+								"second-value": "bombHpProbability"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"language": "javascript",
+							"script": [
+								"console.log(\"LOOT PROBABLY\")"
+							]
+						}
+					],
+					"sid": 429488577023861,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 285706125016738,
+									"parameters": {
+										"first-value": "random(100)",
+										"comparison": 3,
+										"second-value": "50"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"language": "javascript",
+									"script": [
+										"console.log(\"MEDKIT\")"
+									]
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "enemies",
+									"sid": 131621233123771,
+									"parameters": {
+										"object": "medkit",
+										"layer": "\"loot\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 858499045685173
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 592781522612257
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"language": "javascript",
+									"script": [
+										"console.log(\"BOMB\")"
+									]
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "enemies",
+									"sid": 859830060515266,
+									"parameters": {
+										"object": "bomb",
+										"layer": "\"loot\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 720662548329934
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 644818474786226,
+					"disabled": true,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "player1",
+					"sid": 484042008079669,
+					"parameters": {
+						"object": "medkit"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 214245182990711,
+					"parameters": {
+						"variable": "hp",
+						"comparison": 2,
+						"value": "maxHp"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 521630358764570,
+					"parameters": {
+						"variable": "hp",
+						"value": "medkit.bonusHP"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "medkit",
+					"sid": 658955261044770
+				},
+				{
+					"callFunction": "healing sound",
+					"sid": 797211877109761
+				}
+			],
+			"sid": 862963231668822
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 475425121001878,
+					"parameters": {
+						"variable": "hp",
+						"comparison": 4,
+						"value": "maxHp"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 552008825062075,
+					"parameters": {
+						"variable": "hp",
+						"value": "maxHp"
+					}
+				}
+			],
+			"sid": 906598244871191
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 518067186534522,
+					"disabled": true,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "player1",
+					"sid": 254657769052294,
+					"parameters": {
+						"object": "bulletEnergyLoot"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 347148448217647,
+					"parameters": {
+						"variable": "bulletEnergy",
+						"comparison": 2,
+						"value": "maxBulletEnergy"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 724333239759605,
+					"parameters": {
+						"variable": "bulletEnergy",
+						"value": "bulletEnergyLoot.bonusEnergy"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "bulletEnergyLoot",
+					"sid": 798859487551840
+				}
+			],
+			"sid": 986315032759720,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 457544879046337,
+					"disabled": true,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "player1",
+					"sid": 333063912911192,
+					"parameters": {
+						"object": "bomb"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "bomb",
+					"sid": 456987276206052,
+					"parameters": {
+						"instance-variable": "active"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 744329274045369,
+					"parameters": {
+						"variable": "bombs",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "bomb",
+					"sid": 875134159987407
+				},
+				{
+					"callFunction": "bombPickUpSound",
+					"sid": 733687779072125
+				}
+			],
+			"sid": 694410611171565
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 778327813244479,
+					"disabled": true,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "player1",
+					"sid": 812998128732867,
+					"parameters": {
+						"object": "antipsychoticPill"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 595444085295197,
+					"parameters": {
+						"variable": "antipsychoticPills",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "antipsychoticPill",
+					"sid": 465907841891568
+				}
+			],
+			"sid": 356141448552886,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 641931078492034,
+					"parameters": {
+						"variable": "bulletEnergy",
+						"comparison": 4,
+						"value": "maxBulletEnergy"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 239425857443965,
+					"parameters": {
+						"variable": "bulletEnergy",
+						"value": "maxBulletEnergy"
+					}
+				}
+			],
+			"sid": 796936860489745
+		},
+		{
+			"eventType": "variable",
+			"name": "antipsychoticPills",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 592456978399990
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "gameCurrency",
+					"sid": 733602753626990,
+					"parameters": {
+						"instance-variable": "moveToPlayer"
+					}
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 543046515627836,
+					"parameters": {
+						"object": "gameCurrency"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "move-at-angle",
+					"objectClass": "gameCurrency",
+					"sid": 664829968788240,
+					"parameters": {
+						"angle": "angle(Self.X, Self.Y, player1.X, player1.Y)",
+						"distance": "4"
+					}
+				}
+			],
+			"sid": 438293471331650,
+			"disabled": true
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "levelGuns",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 282881598161760
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "gameCurrency",
+					"sid": 123409027905840
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 381832571509195,
+					"parameters": {
+						"seconds": "4",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "flash",
+					"objectClass": "gameCurrency",
+					"sid": 974476007877906,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.2",
+						"off-time": "0.2",
+						"duration": "2"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 100708713001616,
+					"parameters": {
+						"seconds": "2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "flash",
+					"objectClass": "gameCurrency",
+					"sid": 331364122863778,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.1",
+						"off-time": "0.1",
+						"duration": "2"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 843153319035161,
+					"parameters": {
+						"seconds": "2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "gameCurrency",
+					"sid": 835781968885429
+				}
+			],
+			"sid": 663173075481852
+		}
+	],
+	"sid": 215186239608708
+}

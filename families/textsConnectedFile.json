@@ -1,0 +1,21 @@
+{
+	"name": "textsConnectedFile",
+	"plugin-id": "Text",
+	"sid": 145288283607712,
+	"instanceVariables": [
+		{
+			"name": "textKey",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 397062391987483
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"btnText",
+		"justText",
+		"tutorialText"
+	]
+}

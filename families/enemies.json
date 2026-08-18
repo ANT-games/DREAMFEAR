@@ -1,0 +1,161 @@
+{
+	"name": "enemies",
+	"plugin-id": "Sprite",
+	"sid": 337036420922856,
+	"instanceVariables": [
+		{
+			"name": "hp",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 133069386268595
+		},
+		{
+			"name": "damageTouch",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 644443122996950
+		},
+		{
+			"name": "sawPlayer",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 136664422621084
+		},
+		{
+			"name": "maxSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 118978973072816
+		},
+		{
+			"name": "canBeCured",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 639835243345669
+		},
+		{
+			"name": "startHP",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 344576055381678
+		},
+		{
+			"name": "speed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 680240244704798
+		},
+		{
+			"name": "coinsDrop",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 778397327328754
+		},
+		{
+			"name": "damagable",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 869446309033020
+		},
+		{
+			"name": "killed",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 428413776800911
+		},
+		{
+			"name": "destroyAfterDeath",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 234593882635243
+		},
+		{
+			"name": "shadowChangeDeath",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 815973594474035
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 495062367057540
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 533977797806301
+		},
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 679680886038835
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 212227351704349
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 346593703306833
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "blacknwhitemask",
+			"name": "damage"
+		},
+		{
+			"effectId": "softlight",
+			"name": "SoftLight"
+		},
+		{
+			"effectId": "hsladjust",
+			"name": "dead"
+		},
+		{
+			"effectId": "brightness",
+			"name": "Brightness"
+		},
+		{
+			"effectId": "noisemask",
+			"name": "NoiseMask"
+		}
+	],
+	"members": [
+		"lampMonster",
+		"nurse1",
+		"nurseShadow",
+		"whisperer",
+		"flyingHeart",
+		"maskFlying",
+		"snail",
+		"shadow",
+		"eyeSmall",
+		"flyingMouth",
+		"flyingHeartMetal",
+		"ear",
+		"lungs",
+		"maskFlying2",
+		"cloud1",
+		"star",
+		"maskCry1",
+		"eyeMedium",
+		"sun"
+	]
+}

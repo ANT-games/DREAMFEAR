@@ -1,0 +1,5266 @@
+{
+	"name": "player&guns",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "CHARACTER CONTROL",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ANIMATIONS",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player1",
+									"sid": 990102586143811,
+									"parameters": {
+										"animation": "\"hurt\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player1",
+									"sid": 135401769142039,
+									"parameters": {
+										"animation": "\"death\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player1",
+									"sid": 341703974254342,
+									"parameters": {
+										"animation": "\"roll\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 299036437879310,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-moving",
+											"objectClass": "player1",
+											"sid": 479142094767809,
+											"behaviorType": "8Direction",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player1",
+											"sid": 157632048483214,
+											"parameters": {
+												"animation": "\"idle\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 501953128079717
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-moving",
+											"objectClass": "player1",
+											"sid": 991813302214812,
+											"behaviorType": "8Direction"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player1",
+											"sid": 911981660075839,
+											"parameters": {
+												"animation": "\"run\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 497847459542076
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 689856391375177,
+											"parameters": {
+												"variable": "hasGun"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 747350973304607,
+									"disabled": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-moving",
+													"objectClass": "player1",
+													"sid": 999195301089800,
+													"behaviorType": "8Direction",
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "player1",
+													"sid": 871308691811337,
+													"parameters": {
+														"animation": "\"idlePistol\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 582089330398667,
+											"disabled": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-moving",
+													"objectClass": "player1",
+													"sid": 950096007915718,
+													"behaviorType": "8Direction"
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "player1",
+													"sid": 772798733748200,
+													"parameters": {
+														"animation": "\"runPistol\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 987495142195313,
+											"disabled": true
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 276904084434037,
+											"disabled": true
+										}
+									],
+									"actions": [],
+									"sid": 898104430739012
+								}
+							]
+						}
+					],
+					"sid": 443536459461526
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 698535413126015,
+							"parameters": {
+								"first-value": "timescale",
+								"comparison": 1,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 841751049611330,
+							"parameters": {
+								"animation": "\"hurt\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 537211036451524,
+							"parameters": {
+								"animation": "\"death\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 644900706682963,
+							"parameters": {
+								"animation": "\"roll\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 727753069176781,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 765885007202958,
+									"parameters": {
+										"key": 68
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 270113866802077,
+									"parameters": {
+										"gamepad": "0",
+										"axis": "left-analog-x-axis",
+										"comparison": 4,
+										"value": "20"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player1",
+									"sid": 657489103974328,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "right"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "player1",
+									"sid": 216695531316198,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 835993977267929,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 798552355930781,
+									"parameters": {
+										"key": 65
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 839837168579640,
+									"parameters": {
+										"gamepad": "0",
+										"axis": "left-analog-x-axis",
+										"comparison": 2,
+										"value": "-20"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player1",
+									"sid": 972576364065149,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "left"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "player1",
+									"sid": 739298756422445,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 514408219218972,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 300789518390719,
+									"parameters": {
+										"key": 83
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 419478200955707,
+									"parameters": {
+										"gamepad": "0",
+										"axis": "left-analog-y-axis",
+										"comparison": 4,
+										"value": "20"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player1",
+									"sid": 370548078930684,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "down"
+									}
+								}
+							],
+							"sid": 196834141527492,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 311048007509895,
+									"parameters": {
+										"key": 87
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 977599313733329,
+									"parameters": {
+										"gamepad": "0",
+										"axis": "left-analog-y-axis",
+										"comparison": 2,
+										"value": "-20"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player1",
+									"sid": 299074543691960,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "up"
+									}
+								}
+							],
+							"sid": 964091617337793,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 807662564988352,
+							"parameters": {
+								"key": 16
+							}
+						},
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 310979473287575,
+							"parameters": {
+								"gamepad": "0",
+								"button": "left-shoulder-trigger"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 216867924855771,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 307003643053561,
+									"parameters": {
+										"first-value": "timescale",
+										"comparison": 1,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "is-moving",
+									"objectClass": "player1",
+									"sid": 936105713332820,
+									"behaviorType": "8Direction"
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player1",
+									"sid": 957922161283385,
+									"parameters": {
+										"animation": "\"run\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player1",
+									"sid": 109421515583001,
+									"parameters": {
+										"animation": "\"roll\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "player1",
+									"sid": 909217768530131,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"max-speed": "Self.8Direction.MaxSpeed * 4"
+									}
+								}
+							],
+							"sid": 197744433297290,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 260581876897689,
+											"parameters": {
+												"key": 68
+											}
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 607776014949450,
+											"parameters": {
+												"gamepad": "0",
+												"axis": "left-analog-x-axis",
+												"comparison": 4,
+												"value": "20"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-vector-x",
+											"objectClass": "player1",
+											"sid": 690674158557488,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"vector-x": "Self.8Direction.MaxSpeed"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "player1",
+											"sid": 460834020296760,
+											"parameters": {
+												"state": "not-mirrored"
+											}
+										}
+									],
+									"sid": 639739686351318,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 676694191613799,
+											"parameters": {
+												"key": 65
+											}
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 132472734145855,
+											"parameters": {
+												"gamepad": "0",
+												"axis": "left-analog-x-axis",
+												"comparison": 2,
+												"value": "-20"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-vector-x",
+											"objectClass": "player1",
+											"sid": 403710617611788,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"vector-x": "-Self.8Direction.MaxSpeed"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "player1",
+											"sid": 815756163430299,
+											"parameters": {
+												"state": "mirrored"
+											}
+										}
+									],
+									"sid": 321099697545563,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 353799752938820,
+											"parameters": {
+												"key": 83
+											}
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 669723131845604,
+											"parameters": {
+												"gamepad": "0",
+												"axis": "left-analog-y-axis",
+												"comparison": 4,
+												"value": "20"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-vector-y",
+											"objectClass": "player1",
+											"sid": 368010015786042,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"vector-y": "Self.8Direction.MaxSpeed"
+											}
+										}
+									],
+									"sid": 434467931424077,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 319403550922154,
+											"parameters": {
+												"key": 87
+											}
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 724919995692449,
+											"parameters": {
+												"gamepad": "0",
+												"axis": "left-analog-y-axis",
+												"comparison": 2,
+												"value": "-20"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-vector-y",
+											"objectClass": "player1",
+											"sid": 897594062379007,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"vector-y": "-Self.8Direction.MaxSpeed"
+											}
+										}
+									],
+									"sid": 132780453538643,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "guns",
+											"sid": 498571670926308,
+											"parameters": {
+												"instance-variable": "isUsed"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "guns",
+											"sid": 353062857257209,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 249599668713738
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "player1",
+							"sid": 688707346926398,
+							"parameters": {
+								"animation": "\"roll\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "player1",
+							"sid": 180097689649223,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 613937305039461,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "guns",
+									"sid": 963922913331728,
+									"parameters": {
+										"instance-variable": "isUsed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "guns",
+									"sid": 531369304443768,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 133716561066052
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 242289537122690,
+							"parameters": {
+								"animation": "\"roll\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 268804492361725,
+							"parameters": {
+								"first-value": "player1.8Direction.MaxSpeed",
+								"comparison": 1,
+								"second-value": "maxSpeedPlayer"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "player1",
+							"sid": 594516926392140,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"max-speed": "maxSpeedPlayer"
+							}
+						}
+					],
+					"sid": 163047811084932
+				}
+			],
+			"sid": 313272428093313
+		},
+		{
+			"eventType": "variable",
+			"name": "bulletEnergy",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 941228720890950
+		},
+		{
+			"eventType": "variable",
+			"name": "maxBulletEnergy",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 503575978240070
+		},
+		{
+			"eventType": "variable",
+			"name": "hasGun",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 851455656628308
+		},
+		{
+			"eventType": "variable",
+			"name": "playerMelleAttackDamage",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 724845156379346
+		},
+		{
+			"eventType": "variable",
+			"name": "flashlight",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 747565494158872
+		},
+		{
+			"eventType": "variable",
+			"name": "maxSpeedPlayer",
+			"type": "number",
+			"initialValue": "90",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 505011717707532
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "guns",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "gun light",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "guns",
+									"sid": 186369936308193,
+									"parameters": {
+										"instance-variable": "isUsed"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "guns",
+									"sid": 835261103163943,
+									"parameters": {
+										"object": "lightFromGun"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "guns",
+									"sid": 753840493315349,
+									"parameters": {
+										"object": "lightFromGun",
+										"layer": "\"darkness\"",
+										"image-point": "\"muzzle\"",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "lightFromGun",
+									"sid": 580326697527543,
+									"parameters": {
+										"angle": "guns.Angle"
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "guns",
+									"sid": 475714704451992,
+									"parameters": {
+										"child": "lightFromGun",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-z-elevation": true,
+										"transform-w": true,
+										"transform-h": true,
+										"transform-d": true,
+										"transform-a": true,
+										"transform-o": false,
+										"transform-visibility": false,
+										"destroy-with-parent": false
+									}
+								}
+							],
+							"sid": 588639206441963
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "guns",
+									"sid": 516067029836583,
+									"parameters": {
+										"instance-variable": "isUsed"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "guns",
+									"sid": 167157307259848,
+									"parameters": {
+										"child": "lightFromGun",
+										"which": "own"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 659097467261044,
+									"disabled": true
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "lightFromGun",
+									"sid": 708657310337776
+								}
+							],
+							"sid": 392295548292935
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 186288672285963,
+									"parameters": {
+										"key": 70
+									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 458416307933278,
+									"parameters": {
+										"gamepad": "0",
+										"button": "button-y"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 445483558128723,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 481240961936099,
+											"parameters": {
+												"variable": "isPause"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "player1",
+											"sid": 716216094974089,
+											"parameters": {
+												"animation": "\"death\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "toggle-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 183876829743992,
+											"parameters": {
+												"variable": "flashlight"
+											}
+										}
+									],
+									"sid": 316028563653255
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 177461689532167,
+									"parameters": {
+										"variable": "flashlight"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lightFromGun",
+									"sid": 210472997147763,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 444210044170168
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 781858237121478
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lightFromGun",
+									"sid": 547705988943543,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 712553102730391
+						}
+					],
+					"sid": 512111343693361
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "bullets management",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 678308192667553,
+									"parameters": {
+										"key": 82
+									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 188108335627273,
+									"parameters": {
+										"gamepad": "0",
+										"button": "left-shoulder-button"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "guns",
+									"sid": 399180665897380,
+									"parameters": {
+										"instance-variable": "bulletsInTheGun",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 624294622307838,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 827974549817896,
+											"parameters": {
+												"first-value": "timescale",
+												"comparison": 1,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "guns",
+											"sid": 305585775957101,
+											"parameters": {
+												"instance-variable": "bulletsInTheGun",
+												"comparison": 2,
+												"value": "Self.bulletsMax"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 861958969830091,
+											"disabled": true,
+											"parameters": {
+												"variable": "bulletEnergy",
+												"comparison": 4,
+												"value": "guns.energyNeededBullet"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "guns",
+											"sid": 840816568258877,
+											"parameters": {
+												"instance-variable": "isUsed"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "reloadUI",
+											"sid": 778987875485524,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "reloadUI",
+											"sid": 337542674233905,
+											"parameters": {
+												"animation": "\"Animation 1\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 934330577509724
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-animation-finished",
+									"objectClass": "reloadUI",
+									"sid": 825067939054469
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "reloadUI",
+									"sid": 615485307241623
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "reloadUI",
+									"sid": 132888597830368,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 423556197683574,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "guns",
+											"sid": 951186056444038,
+											"parameters": {
+												"instance-variable": "isUsed"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "guns",
+											"sid": 679958560433686,
+											"parameters": {
+												"instance-variable": "bulletsInTheGun",
+												"value": "Self.bulletsMax"
+											}
+										}
+									],
+									"sid": 254159460273994,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 441510877653627,
+													"parameters": {
+														"variable": "bulletEnergy",
+														"comparison": 5,
+														"value": "guns.bulletsMax * guns.energyNeededBullet"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 325841966705593,
+											"disabled": true,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "guns",
+															"sid": 163089176246421,
+															"parameters": {
+																"instance-variable": "bulletsInTheGun",
+																"comparison": 0,
+																"value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "guns",
+															"sid": 301151194959279,
+															"parameters": {
+																"instance-variable": "bulletsInTheGun",
+																"value": "Self.bulletsMax"
+															}
+														},
+														{
+															"id": "subtract-from-eventvar",
+															"objectClass": "System",
+															"sid": 948451953081023,
+															"parameters": {
+																"variable": "bulletEnergy",
+																"value": "guns.bulletsMax* guns.energyNeededBullet"
+															}
+														}
+													],
+													"sid": 567953337341844,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 644991155164087
+														}
+													],
+													"actions": [
+														{
+															"id": "subtract-from-eventvar",
+															"objectClass": "System",
+															"sid": 479443179725463,
+															"parameters": {
+																"variable": "bulletEnergy",
+																"value": "(guns.bulletsMax - guns.bulletsInTheGun) * guns.energyNeededBullet"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "guns",
+															"sid": 252194932237474,
+															"parameters": {
+																"instance-variable": "bulletsInTheGun",
+																"value": "Self.bulletsMax"
+															}
+														}
+													],
+													"sid": 742960901497952,
+													"disabled": true
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 698955602540980
+												}
+											],
+											"actions": [],
+											"sid": 905238640501884,
+											"disabled": true,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "guns",
+															"sid": 891780729082234,
+															"parameters": {
+																"instance-variable": "bulletsInTheGun",
+																"comparison": 0,
+																"value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "guns",
+															"sid": 166319595411831,
+															"parameters": {
+																"instance-variable": "bulletsInTheGun",
+																"value": "bulletEnergy / guns.energyNeededBullet"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 897545832872272,
+															"parameters": {
+																"variable": "bulletEnergy",
+																"value": "0"
+															}
+														}
+													],
+													"sid": 987734090412051,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 728625341957400
+														}
+													],
+													"actions": [],
+													"sid": 138221416829960,
+													"disabled": true,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "guns",
+																	"sid": 324873002550115,
+																	"parameters": {
+																		"instance-variable": "bulletsMax",
+																		"comparison": 5,
+																		"value": "(bulletEnergy / guns.energyNeededBullet) + guns.bulletsInTheGun"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "guns",
+																	"sid": 258722917817908,
+																	"parameters": {
+																		"instance-variable": "bulletsInTheGun",
+																		"value": "(bulletEnergy / guns.energyNeededBullet) + guns.bulletsInTheGun"
+																	}
+																},
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 184621648881768,
+																	"parameters": {
+																		"variable": "bulletEnergy",
+																		"value": "0"
+																	}
+																}
+															],
+															"sid": 110575878377059,
+															"disabled": true
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 543769959359044
+																}
+															],
+															"actions": [
+																{
+																	"id": "subtract-from-eventvar",
+																	"objectClass": "System",
+																	"sid": 243484799614907,
+																	"parameters": {
+																		"variable": "bulletEnergy",
+																		"value": "guns.energyNeededBullet * (guns.bulletsMax - guns.bulletsInTheGun)"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "guns",
+																	"sid": 467815775071662,
+																	"parameters": {
+																		"instance-variable": "bulletsInTheGun",
+																		"value": "guns.bulletsMax"
+																	}
+																}
+															],
+															"sid": 136996445977110,
+															"disabled": true
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 845960264618241
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "bullets",
+							"sid": 508402253074318,
+							"parameters": {
+								"object": "walls"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "bullets",
+							"sid": 564620855128829,
+							"parameters": {
+								"object": "enemies"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "bullets",
+							"sid": 390448348523119,
+							"parameters": {
+								"object": "enemyParts"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "bullets",
+							"sid": 129783372818163,
+							"parameters": {
+								"object": "bosses"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 427087675355011,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "bullets",
+									"sid": 260945080387621,
+									"parameters": {
+										"animation": "\"granate\""
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 162956799912545
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "granateBullet",
+									"sid": 880574777233279,
+									"parameters": {
+										"object": "fxBomb",
+										"layer": "\"obj1\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "fxBomb",
+									"sid": 422552865792030,
+									"parameters": {
+										"animation": "\"granate\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "shake",
+									"objectClass": "camera",
+									"sid": 566567935761529,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"magnitude": "8 * (screenShake/100)",
+										"duration": "0.6",
+										"mode": "reducing-magnitude"
+									}
+								}
+							],
+							"sid": 143586828354157
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "bullets",
+									"sid": 546073841119416,
+									"parameters": {
+										"object": "enemies"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 617244776418094,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "enemies",
+											"sid": 378667315299737,
+											"parameters": {
+												"animation": "\"hide\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 396614949603771
+										}
+									],
+									"actions": [
+										{
+											"id": "shake",
+											"objectClass": "camera",
+											"sid": 720547968429378,
+											"behaviorType": "ScrollTo",
+											"parameters": {
+												"magnitude": "4 * (screenShake/100)",
+												"duration": "0.1",
+												"mode": "reducing-magnitude"
+											}
+										}
+									],
+									"sid": 384447979186388
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "bullets",
+									"sid": 814268809665907,
+									"parameters": {
+										"object": "bosses"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 449137870805131
+								}
+							],
+							"actions": [
+								{
+									"id": "shake",
+									"objectClass": "camera",
+									"sid": 196109811019046,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"magnitude": "4 * (screenShake/100)",
+										"duration": "0.1",
+										"mode": "reducing-magnitude"
+									}
+								}
+							],
+							"sid": 643703873474543
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "bullets",
+									"sid": 196188394696121,
+									"parameters": {
+										"object": "walls"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 553080494525707
+								}
+							],
+							"actions": [],
+							"sid": 261753618803698,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 921605306265364,
+									"disabled": true
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 819034009904759,
+									"parameters": {
+										"seconds": "0.01",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "spawnBulletDestroyParticle",
+									"sid": 419421714440395
+								},
+								{
+									"id": "destroy",
+									"objectClass": "bullets",
+									"sid": 759159220059081
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "bullets",
+									"sid": 889193809923522,
+									"disabled": true,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "0"
+									}
+								}
+							],
+							"sid": 338741754303842
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 139039814279204,
+							"disabled": true,
+							"parameters": {
+								"object": "bullets"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 958082841436254
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-speed",
+							"objectClass": "bullets",
+							"sid": 274427146177417,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"comparison": 2,
+								"speed": "50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "bullets",
+							"sid": 701592926636900
+						}
+					],
+					"sid": 543538550589053,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "bullets",
+							"sid": 965625865119528
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "guns",
+							"sid": 486057886307466,
+							"parameters": {
+								"instance-variable": "isUsed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "rotate-clockwise",
+							"objectClass": "bullets",
+							"sid": 876569359205458,
+							"parameters": {
+								"degrees": "random(-guns.spread, guns.spread)"
+							}
+						}
+					],
+					"sid": 691926057756937
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "guns",
+							"sid": 282917911334065,
+							"parameters": {
+								"instance-variable": "isUsed"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 243610557310715,
+							"parameters": {
+								"animation": "\"roll\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 200739925231644,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-angles",
+									"objectClass": "guns",
+									"sid": 831826535597158,
+									"parameters": {
+										"first-angle": "-90",
+										"second-angle": "90"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-flipped",
+									"objectClass": "guns",
+									"sid": 367496867362778,
+									"parameters": {
+										"state": "not-flipped"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "player1",
+									"sid": 764600517127959,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 177101321909578
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-angles",
+									"objectClass": "guns",
+									"sid": 370442865129338,
+									"parameters": {
+										"first-angle": "90",
+										"second-angle": "-90"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-flipped",
+									"objectClass": "guns",
+									"sid": 472241819514395,
+									"parameters": {
+										"state": "flipped"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "player1",
+									"sid": 601297995323507,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 122404407445298
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 298355758712149
+								}
+							],
+							"actions": [],
+							"sid": 439226434402328,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 516729775811010,
+											"parameters": {
+												"variable": "gamepadMode"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "rotate-toward-position",
+											"objectClass": "guns",
+											"sid": 407505092937147,
+											"parameters": {
+												"degrees": "1000* dt",
+												"x": "Mouse.X",
+												"y": "Mouse.Y"
+											}
+										}
+									],
+									"sid": 639033428726129
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 120048806107319,
+											"parameters": {
+												"variable": "gamepadMode"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "rotate-toward-position",
+											"objectClass": "guns",
+											"sid": 600337965502534,
+											"parameters": {
+												"degrees": "1000* dt",
+												"x": "cursor.X",
+												"y": "cursor.Y"
+											}
+										}
+									],
+									"sid": 932148559379124
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "mouse-button-is-down",
+							"objectClass": "Mouse",
+							"sid": 765347259812637,
+							"parameters": {
+								"mouse-button": "left"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 883187100438289,
+							"parameters": {
+								"gamepad": "0",
+								"button": "right-shoulder-trigger"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 146605130227326,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player1",
+									"sid": 781371017799498,
+									"parameters": {
+										"animation": "\"death\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player1",
+									"sid": 950087077042977,
+									"parameters": {
+										"animation": "\"roll\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "reloadUI",
+									"sid": 234696693769470,
+									"isInverted": true
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 313921006328089,
+									"parameters": {
+										"first-value": "timescale",
+										"comparison": 1,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 559980589590290,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 519605339197054,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "revolver",
+													"sid": 648993197521169,
+													"parameters": {
+														"instance-variable": "isUsed"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 615004869995288,
+													"parameters": {
+														"interval-seconds": "revolver.fireRate"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "revolver",
+													"sid": 190499086348901,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "revolver",
+													"sid": 407680565106112,
+													"parameters": {
+														"object": "revolverBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "shake",
+													"objectClass": "camera",
+													"sid": 316595468560481,
+													"behaviorType": "ScrollTo",
+													"parameters": {
+														"magnitude": "5 * (screenShake/100)",
+														"duration": "0.1",
+														"mode": "reducing-magnitude"
+													}
+												},
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "revolver",
+													"sid": 116196144507965,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"value": "1"
+													}
+												},
+												{
+													"callFunction": "substractStress",
+													"sid": 280997632125856
+												}
+											],
+											"sid": 730671896070358
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "laserPistol",
+													"sid": 992223995525028,
+													"parameters": {
+														"instance-variable": "isUsed"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 824838774062815,
+													"parameters": {
+														"interval-seconds": "laserPistol.fireRate"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "laserPistol",
+													"sid": 819792413304216,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "laserPistol",
+													"sid": 161628777653824,
+													"parameters": {
+														"object": "laserPistolBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "shake",
+													"objectClass": "camera",
+													"sid": 106878217235323,
+													"behaviorType": "ScrollTo",
+													"parameters": {
+														"magnitude": "5 * (screenShake/100)",
+														"duration": "0.25",
+														"mode": "reducing-magnitude"
+													}
+												},
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "laserPistol",
+													"sid": 459228732275634,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"value": "1"
+													}
+												},
+												{
+													"callFunction": "substractStress",
+													"sid": 218143450847651
+												}
+											],
+											"sid": 177783483031412
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "uzi",
+													"sid": 125190420681059,
+													"parameters": {
+														"instance-variable": "isUsed"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 268858933896961,
+													"parameters": {
+														"interval-seconds": "uzi.fireRate"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "uzi",
+													"sid": 355012215804577,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "uzi",
+													"sid": 271065345712369,
+													"parameters": {
+														"object": "uziBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "shake",
+													"objectClass": "camera",
+													"sid": 412920435007379,
+													"behaviorType": "ScrollTo",
+													"parameters": {
+														"magnitude": "3* (screenShake/100)",
+														"duration": "0.1",
+														"mode": "reducing-magnitude"
+													}
+												},
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "uzi",
+													"sid": 316410875672279,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"value": "1"
+													}
+												},
+												{
+													"callFunction": "substractStress",
+													"sid": 805022449774486
+												}
+											],
+											"sid": 480732624537438
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "riffle1",
+													"sid": 578071266733764,
+													"parameters": {
+														"instance-variable": "isUsed"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 921416633463662,
+													"parameters": {
+														"interval-seconds": "riffle1.fireRate"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "riffle1",
+													"sid": 270368502510460,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "riffle1",
+													"sid": 591147133765003,
+													"parameters": {
+														"object": "riffleBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "shake",
+													"objectClass": "camera",
+													"sid": 874338832966102,
+													"behaviorType": "ScrollTo",
+													"parameters": {
+														"magnitude": "4* (screenShake/100)",
+														"duration": "0.1",
+														"mode": "reducing-magnitude"
+													}
+												},
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "riffle1",
+													"sid": 846700630008452,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"value": "1"
+													}
+												},
+												{
+													"callFunction": "substractStress",
+													"sid": 403527789608641
+												}
+											],
+											"sid": 124396520470241
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "riffle",
+													"sid": 688192497173538,
+													"parameters": {
+														"instance-variable": "isUsed"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 223891089619905,
+													"parameters": {
+														"interval-seconds": "riffle.fireRate"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "riffle",
+													"sid": 107004259879894,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "riffle",
+													"sid": 630456978997781,
+													"parameters": {
+														"object": "riffleHardBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "shake",
+													"objectClass": "camera",
+													"sid": 909126342652170,
+													"behaviorType": "ScrollTo",
+													"parameters": {
+														"magnitude": "7* (screenShake/100)",
+														"duration": "0.3",
+														"mode": "reducing-magnitude"
+													}
+												},
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "riffle",
+													"sid": 564013381312763,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"value": "1"
+													}
+												},
+												{
+													"callFunction": "substractStress",
+													"sid": 644853659372268
+												}
+											],
+											"sid": 840442365085890
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "sniperRiffle",
+													"sid": 352336188998492,
+													"parameters": {
+														"instance-variable": "isUsed"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 274523681467158,
+													"parameters": {
+														"interval-seconds": "sniperRiffle.fireRate"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sniperRiffle",
+													"sid": 426004482821445,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "sniperRiffle",
+													"sid": 344059221385655,
+													"parameters": {
+														"object": "riffleSniperBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "shake",
+													"objectClass": "camera",
+													"sid": 218089384303321,
+													"behaviorType": "ScrollTo",
+													"parameters": {
+														"magnitude": "8.5 * (screenShake/100)",
+														"duration": "0.3",
+														"mode": "reducing-magnitude"
+													}
+												},
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "sniperRiffle",
+													"sid": 597512655426759,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"value": "1"
+													}
+												},
+												{
+													"callFunction": "substractStress",
+													"sid": 529635054937299
+												}
+											],
+											"sid": 940832545181325
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "granateThrower",
+													"sid": 356566733442200,
+													"parameters": {
+														"instance-variable": "isUsed"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 490423427207626,
+													"parameters": {
+														"interval-seconds": "granateThrower.fireRate"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "granateThrower",
+													"sid": 772986289397131,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "granateThrower",
+													"sid": 901476324224596,
+													"parameters": {
+														"object": "granateBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "shake",
+													"objectClass": "camera",
+													"sid": 246226348645761,
+													"behaviorType": "ScrollTo",
+													"parameters": {
+														"magnitude": "3 * (screenShake/100)",
+														"duration": "0.1",
+														"mode": "reducing-magnitude"
+													}
+												},
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "granateThrower",
+													"sid": 633808456362415,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"value": "1"
+													}
+												},
+												{
+													"callFunction": "substractStress",
+													"sid": 868443589324506
+												}
+											],
+											"sid": 659347636146099
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "shotgun",
+													"sid": 337454772522068,
+													"parameters": {
+														"instance-variable": "isUsed"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 658900617753474,
+													"parameters": {
+														"interval-seconds": "shotgun.fireRate"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "shotgun",
+													"sid": 862240700529477,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "shotgun",
+													"sid": 364872347430905,
+													"parameters": {
+														"object": "shotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "shotgun",
+													"sid": 647135940119873,
+													"parameters": {
+														"object": "shotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "shotgun",
+													"sid": 598821146742814,
+													"parameters": {
+														"object": "shotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "shotgun",
+													"sid": 265612764994049,
+													"parameters": {
+														"object": "shotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "shotgun",
+													"sid": 777718621304128,
+													"parameters": {
+														"object": "shotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "shotgun",
+													"sid": 507248563984815,
+													"parameters": {
+														"object": "shotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "shotgun",
+													"sid": 765285511845191,
+													"parameters": {
+														"object": "shotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "shotgun",
+													"sid": 144254661588927,
+													"parameters": {
+														"object": "shotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "shotgun",
+													"sid": 487813070882684,
+													"parameters": {
+														"object": "shotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "shotgun",
+													"sid": 936934514854925,
+													"parameters": {
+														"object": "shotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "shotgun",
+													"sid": 476964840907644,
+													"parameters": {
+														"object": "shotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "shotgun",
+													"sid": 700221916671590,
+													"parameters": {
+														"object": "shotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "shake",
+													"objectClass": "camera",
+													"sid": 900917706310926,
+													"behaviorType": "ScrollTo",
+													"parameters": {
+														"magnitude": "7 * (screenShake/100)",
+														"duration": "0.3",
+														"mode": "reducing-magnitude"
+													}
+												},
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "shotgun",
+													"sid": 873106143496183,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"value": "1"
+													}
+												},
+												{
+													"callFunction": "substractStress",
+													"sid": 709157435293418
+												}
+											],
+											"sid": 455836013742505
+										}
+									]
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 550344517593153,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 708998324456779,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-x"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 678773515990127,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "player1",
+									"sid": 517515258902474,
+									"parameters": {
+										"object": "guns"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 310979910416132,
+									"parameters": {
+										"first-value": "guns.PickedCount",
+										"comparison": 4,
+										"second-value": "1"
+									}
+								},
+								{
+									"id": "is-pinned",
+									"objectClass": "guns",
+									"sid": 169445024189670,
+									"disabled": true,
+									"behaviorType": "Pin",
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 609048621941055,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "guns",
+											"sid": 605240617055366,
+											"parameters": {
+												"instance-variable": "gunName",
+												"comparison": 0,
+												"value": "currentGun"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "unpin",
+											"objectClass": "guns",
+											"sid": 267203939156909,
+											"behaviorType": "Pin"
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "guns",
+											"sid": 225731357096657,
+											"parameters": {
+												"instance-variable": "isUsed",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "guns",
+											"sid": 530177643788013,
+											"parameters": {
+												"animation": "\"no hands\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "guns",
+											"sid": 495583477177862,
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-flipped",
+											"objectClass": "guns",
+											"sid": 800768742302604,
+											"parameters": {
+												"state": "not-flipped"
+											}
+										}
+									],
+									"sid": 213574526275004
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "guns",
+											"sid": 782728664943882,
+											"parameters": {
+												"instance-variable": "gunName",
+												"comparison": 1,
+												"value": "currentGun"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position-to-another-object",
+											"objectClass": "guns",
+											"sid": 546843088472310,
+											"parameters": {
+												"object": "player1",
+												"image-point-optional": "\"gun_hand\""
+											}
+										},
+										{
+											"id": "pin-to-object-properties",
+											"objectClass": "guns",
+											"sid": 829223201021445,
+											"behaviorType": "Pin",
+											"parameters": {
+												"pin-to": "player1",
+												"x": true,
+												"y": true,
+												"angle": false,
+												"width-type": "no",
+												"height-type": "no",
+												"z": false
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 705007531839149,
+											"parameters": {
+												"variable": "currentGun",
+												"value": "guns.gunName"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "guns",
+											"sid": 374282659482407,
+											"parameters": {
+												"instance-variable": "isUsed",
+												"value": "true"
+											}
+										},
+										{
+											"id": "move-to-layer",
+											"objectClass": "guns",
+											"sid": 318840832637530,
+											"parameters": {
+												"layer": "\"guns\""
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "guns",
+											"sid": 765820503614095,
+											"parameters": {
+												"animation": "\"hands\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 989413595139655,
+											"parameters": {
+												"variable": "hasGun",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "gun change sound",
+											"sid": 168434407873791
+										}
+									],
+									"sid": 974257755483762
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 260008408161785
+						}
+					],
+					"actions": [],
+					"sid": 251943306235318,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 372022550163174,
+									"parameters": {
+										"variable": "currentGun",
+										"comparison": 0,
+										"value": "\"\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "player1",
+									"sid": 904415854158597,
+									"disabled": true,
+									"parameters": {
+										"object": "revolver",
+										"layer": "\"guns\"",
+										"image-point": "\"gun_hand\"",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "revolver",
+									"sid": 304041293929548,
+									"parameters": {
+										"object": "player1",
+										"image-point-optional": "\"gun_hand\""
+									}
+								},
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "revolver",
+									"sid": 516904102645854,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "player1",
+										"x": true,
+										"y": true,
+										"angle": false,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 809925849621626,
+									"parameters": {
+										"variable": "currentGun",
+										"value": "revolver.gunName"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "revolver",
+									"sid": 736291529116785,
+									"parameters": {
+										"instance-variable": "isUsed",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "revolver",
+									"sid": 361071946235677,
+									"parameters": {
+										"animation": "\"hands\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 925261776810905,
+									"parameters": {
+										"variable": "hasGun",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 130963283891049
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 887532681189844,
+									"parameters": {
+										"variable": "currentGun",
+										"comparison": 1,
+										"value": "\"\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "guns",
+									"sid": 774877421801072,
+									"parameters": {
+										"instance-variable": "gunName",
+										"comparison": 0,
+										"value": "currentGun"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "guns",
+									"sid": 106601967808690,
+									"parameters": {
+										"object": "player1",
+										"image-point-optional": "\"gun_hand\""
+									}
+								},
+								{
+									"id": "move-to-layer",
+									"objectClass": "guns",
+									"sid": 677178631713268,
+									"parameters": {
+										"layer": "\"guns\""
+									}
+								},
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "guns",
+									"sid": 226912920510169,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "player1",
+										"x": true,
+										"y": true,
+										"angle": false,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 932115722891765,
+									"parameters": {
+										"variable": "currentGun",
+										"value": "guns.gunName"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "guns",
+									"sid": 200931290134652,
+									"parameters": {
+										"instance-variable": "isUsed",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "guns",
+									"sid": 365301583953125,
+									"parameters": {
+										"animation": "\"hands\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 220647757215005,
+									"parameters": {
+										"variable": "hasGun",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 912809509108864
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "guns",
+							"sid": 479615613881088,
+							"parameters": {
+								"instance-variable": "isUsed"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "guns",
+							"sid": 174457907019931,
+							"parameters": {
+								"object": "gunGivingZone"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "guns",
+							"sid": 799573208647065,
+							"parameters": {
+								"object": "gunGivingZone",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 757784081344497
+				}
+			],
+			"sid": 898305588345848
+		},
+		{
+			"eventType": "variable",
+			"name": "currentGun",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 364965837248776
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "melle (elisabeth)",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 375682252141377,
+							"parameters": {
+								"variable": "currentCharacter",
+								"comparison": 0,
+								"value": "\"elisabeth\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 487902922929879,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 464920999976217,
+									"parameters": {
+										"mouse-button": "right",
+										"click-type": "clicked"
+									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 513885513892324,
+									"parameters": {
+										"gamepad": "0",
+										"button": "right-shoulder-button"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 384882167701985,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 448205590235344,
+											"parameters": {
+												"first-value": "timescale",
+												"comparison": 1,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "player1",
+											"sid": 625802348404499,
+											"parameters": {
+												"animation": "\"roll\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "player1",
+											"sid": 287901100932678,
+											"parameters": {
+												"animation": "\"death\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "player1",
+											"sid": 924345345301146,
+											"parameters": {
+												"object": "melleAttack"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "player1",
+											"sid": 434115286581054,
+											"parameters": {
+												"object": "melleAttack",
+												"layer": "\"obj2\"",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "player1",
+											"sid": 267755159161986,
+											"parameters": {
+												"child": "melleAttack",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-z-elevation": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-d": true,
+												"transform-a": false,
+												"transform-o": false,
+												"transform-visibility": false,
+												"destroy-with-parent": false
+											}
+										}
+									],
+									"sid": 434868007607773,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 915608363110834,
+													"parameters": {
+														"variable": "gamepadMode"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-toward-position",
+													"objectClass": "melleAttack",
+													"sid": 201193047049582,
+													"parameters": {
+														"x": "Mouse.X",
+														"y": "Mouse.Y"
+													}
+												}
+											],
+											"sid": 928974239785360
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 485818738250673,
+													"parameters": {
+														"variable": "gamepadMode"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-toward-position",
+													"objectClass": "melleAttack",
+													"sid": 708037113217414,
+													"parameters": {
+														"x": "cursor.X",
+														"y": "cursor.Y"
+													}
+												}
+											],
+											"sid": 455588107731819
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "guns",
+													"sid": 976487227247909,
+													"parameters": {
+														"instance-variable": "isUsed"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "guns",
+													"sid": 590869380771221,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 933166442783805
+										}
+									]
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-animation-finished",
+									"objectClass": "melleAttack",
+									"sid": 887406324041802
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "melleAttack",
+									"sid": 729029597175508
+								}
+							],
+							"sid": 336375884195085,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "guns",
+											"sid": 356065705685919,
+											"disabled": true,
+											"parameters": {
+												"instance-variable": "isUsed"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "guns",
+											"sid": 316298607617517,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 515668085691213
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-angles",
+									"objectClass": "System",
+									"sid": 335130267064733,
+									"parameters": {
+										"angle": "melleAttack.Angle",
+										"first-angle": "-90",
+										"second-angle": "90"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-flipped",
+									"objectClass": "melleAttack",
+									"sid": 234077451952812,
+									"parameters": {
+										"state": "flipped"
+									}
+								}
+							],
+							"sid": 941102590728390
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "enemyBullets",
+							"sid": 523074166427279,
+							"parameters": {
+								"object": "melleAttack"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 873998147937171,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "enemyBullets",
+									"sid": 614242563424162,
+									"parameters": {
+										"instance-variable": "canBeHitBack"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "enemyBullets",
+									"sid": 910914396136939,
+									"behaviorType": "Bullet2",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "enemyBullets",
+									"sid": 229817517299230,
+									"behaviorType": "Bullet2",
+									"parameters": {
+										"angle": "melleAttack.angle"
+									}
+								},
+								{
+									"id": "shake",
+									"objectClass": "camera",
+									"sid": 536819775171426,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"magnitude": "6 * (screenShake/100)",
+										"duration": "0.15",
+										"mode": "reducing-magnitude"
+									}
+								},
+								{
+									"callFunction": "bulletHitBackSound",
+									"sid": 437731683607263
+								}
+							],
+							"sid": 603382424090837
+						}
+					]
+				}
+			],
+			"sid": 611250061506227
+		},
+		{
+			"eventType": "variable",
+			"name": "hp",
+			"type": "number",
+			"initialValue": "50",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 306638194436813
+		},
+		{
+			"eventType": "variable",
+			"name": "maxHp",
+			"type": "number",
+			"initialValue": "50",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 638878360904045
+		},
+		{
+			"eventType": "variable",
+			"name": "cameraSpeed",
+			"type": "number",
+			"initialValue": "0.3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 220323068385748
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 663176471031776
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "player1",
+					"sid": 221338266148507,
+					"parameters": {
+						"object": "lightPlayer",
+						"layer": "\"darkness\"",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "lightPlayer",
+					"sid": 658938927422331,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "player1",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				},
+				{
+					"id": "set-cursor-style2",
+					"objectClass": "Mouse",
+					"sid": 493875689357984,
+					"disabled": true,
+					"parameters": {
+						"cursor-style": "none"
+					}
+				}
+			],
+			"sid": 292065815800649
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 125415145740698
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 534271414522906,
+					"parameters": {
+						"seconds": "0.1",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "camera",
+					"sid": 420874422587356,
+					"parameters": {
+						"x": "player1.X",
+						"y": "player1.Y"
+					}
+				}
+			],
+			"sid": 859416565865200
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 583736699987978
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "camera",
+					"sid": 354400547470055,
+					"disabled": true,
+					"parameters": {
+						"x": "lerp(Self.X, player1.X, 0.1)",
+						"y": "lerp(Self.Y, player1.Y, 0.1)"
+					}
+				}
+			],
+			"sid": 283325459298855,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player1",
+							"sid": 188279985342573,
+							"parameters": {
+								"object": "back"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "camera",
+							"sid": 615517393765225,
+							"parameters": {
+								"instance-variable": "followMode",
+								"comparison": 0,
+								"value": "\"player\""
+							}
+						},
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "wallsLevel1",
+							"sid": 444448461323525,
+							"disabled": true,
+							"parameters": {
+								"which": "nearest",
+								"x": "player1.X",
+								"y": "player1.Y",
+								"z": "0",
+								"pick-all-tied": false
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "camera",
+							"sid": 563611524711106,
+							"parameters": {
+								"x": "lerp(Self.X, back.X + back.Width / 2, 0.07) - (((back.X+back.Width/2) - player1.X)/50)",
+								"y": "lerp(Self.Y, back.Y + back.Height / 2, 0.07) - (((back.Y+back.Height/2) - player1.Y)/50)"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "camera",
+							"sid": 295335929388039,
+							"disabled": true,
+							"parameters": {
+								"x": "lerp(Self.X, back.X + back.Width / 2, 1) ",
+								"y": "lerp(Self.Y, back.Y + back.Height / 2, 1) "
+							}
+						}
+					],
+					"sid": 651176739352891
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "camera",
+							"sid": 476623271325997,
+							"parameters": {
+								"instance-variable": "followMode",
+								"comparison": 0,
+								"value": "\"portal\""
+							}
+						},
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "wallsLevel1",
+							"sid": 651698040121762,
+							"disabled": true,
+							"parameters": {
+								"which": "nearest",
+								"x": "player1.X",
+								"y": "player1.Y",
+								"z": "0",
+								"pick-all-tied": false
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "camera",
+							"sid": 976664379642105,
+							"parameters": {
+								"x": "lerp(Self.X, portalNewLevel.X, 1) ",
+								"y": "lerp(Self.Y, portalNewLevel.Y, 1) "
+							}
+						}
+					],
+					"sid": 577984391171705
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "player1",
+					"sid": 156779083642770
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "camera",
+					"sid": 452832503526206,
+					"disabled": true,
+					"parameters": {
+						"object": "player1",
+						"image-point-optional": "0"
+					}
+				},
+				{
+					"id": "pin-to-object",
+					"objectClass": "camera",
+					"sid": 555508265228936,
+					"disabled": true,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "player1",
+						"mode": "bar-style"
+					}
+				}
+			],
+			"sid": 413973080264488
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "hurt",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player1",
+							"sid": 284921265727342,
+							"parameters": {
+								"object": "enemies"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 438824463582326,
+							"parameters": {
+								"animation": "\"death\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 407047301863897,
+							"parameters": {
+								"animation": "\"roll\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 531441092241450,
+							"disabled": true,
+							"parameters": {
+								"animation": "\"hurt\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "enemies",
+							"sid": 938390344964734,
+							"parameters": {
+								"animation": "\"death\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-effect-enabled",
+							"objectClass": "enemies",
+							"sid": 545083143257325,
+							"parameters": {
+								"effect": "\"NoiseMask\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "enemies",
+							"sid": 787960406066282,
+							"disabled": true,
+							"parameters": {
+								"animation": "\"hurt\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-flashing",
+							"objectClass": "player1",
+							"sid": 409836933202795,
+							"behaviorType": "Flash",
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 982113730930167,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 847452292690204
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 921839730378021,
+									"parameters": {
+										"interval-seconds": "0.5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player1",
+									"sid": 308399289660156,
+									"parameters": {
+										"animation": "\"hurt\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 777126019761825,
+									"parameters": {
+										"variable": "hp",
+										"value": "enemies.damageTouch"
+									}
+								},
+								{
+									"id": "shake",
+									"objectClass": "camera",
+									"sid": 663357578631463,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"magnitude": "10 * (screenShake/100)",
+										"duration": "0.2",
+										"mode": "reducing-magnitude"
+									}
+								}
+							],
+							"sid": 854422768604869,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player1",
+							"sid": 326692173480665,
+							"parameters": {
+								"object": "bosses"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 618489503200340,
+							"parameters": {
+								"animation": "\"death\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 595288746030064,
+							"parameters": {
+								"animation": "\"roll\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 620563016377480,
+							"disabled": true,
+							"parameters": {
+								"animation": "\"hurt\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "bosses",
+							"sid": 248893454654798,
+							"parameters": {
+								"animation": "\"death\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "enemies",
+							"sid": 816304901471250,
+							"disabled": true,
+							"parameters": {
+								"animation": "\"hurt\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-flashing",
+							"objectClass": "player1",
+							"sid": 458812431089329,
+							"behaviorType": "Flash",
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 765557858147193,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 749773410007122
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 466640452702519,
+									"parameters": {
+										"interval-seconds": "0.5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player1",
+									"sid": 625304288019068,
+									"parameters": {
+										"animation": "\"hurt\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 324002941829062,
+									"parameters": {
+										"variable": "hp",
+										"value": "bosses.damageTouch"
+									}
+								},
+								{
+									"id": "shake",
+									"objectClass": "camera",
+									"sid": 336378291048194,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"magnitude": "10 * (screenShake/100)",
+										"duration": "0.2",
+										"mode": "reducing-magnitude"
+									}
+								}
+							],
+							"sid": 351309951946527,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player1",
+							"sid": 262182612896713,
+							"parameters": {
+								"object": "enemyBullets"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "enemyBullets",
+							"sid": 359783822310674,
+							"disabled": true,
+							"parameters": {
+								"animation": "\"appear\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "enemyBullets",
+							"sid": 995005852567352,
+							"parameters": {
+								"animation": "\"appear\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 152894404363963,
+							"parameters": {
+								"animation": "\"death\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 552825508881311,
+							"parameters": {
+								"animation": "\"roll\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 238517578961799,
+							"parameters": {
+								"animation": "\"hurt\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-flashing",
+							"objectClass": "player1",
+							"sid": 273781537422358,
+							"behaviorType": "Flash",
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 736524018884085,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "enemyBullets",
+									"sid": 739748390835471,
+									"parameters": {
+										"instance-variable": "specialFrames"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 777112467372661,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 934896897777682
+										},
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 187222024691312,
+											"parameters": {
+												"interval-seconds": "0.5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player1",
+											"sid": 564862003309615,
+											"parameters": {
+												"animation": "\"hurt\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 206006895585897,
+											"parameters": {
+												"variable": "hp",
+												"value": "enemyBullets.damage"
+											}
+										},
+										{
+											"id": "shake",
+											"objectClass": "camera",
+											"sid": 145564577105861,
+											"behaviorType": "ScrollTo",
+											"parameters": {
+												"magnitude": "10 * (screenShake/100)",
+												"duration": "0.1",
+												"mode": "reducing-magnitude"
+											}
+										}
+									],
+									"sid": 482528929399444,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 445770725928016
+								}
+							],
+							"actions": [],
+							"sid": 480388660873584,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "player1",
+											"sid": 227885671861628,
+											"parameters": {
+												"object": "plantBossWave"
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "plantBossWave",
+											"sid": 498518768167713,
+											"parameters": {
+												"comparison": 4,
+												"number": "3"
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "plantBossWave",
+											"sid": 433200672790318,
+											"parameters": {
+												"comparison": 2,
+												"number": "11"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 564893302827470,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 777405381870665
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 352573735684008,
+													"parameters": {
+														"interval-seconds": "0.5"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "player1",
+													"sid": 464302770544421,
+													"parameters": {
+														"animation": "\"hurt\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 434293534863630,
+													"parameters": {
+														"variable": "hp",
+														"value": "enemyBullets.damage"
+													}
+												},
+												{
+													"id": "shake",
+													"objectClass": "camera",
+													"sid": 827878255499814,
+													"behaviorType": "ScrollTo",
+													"parameters": {
+														"magnitude": "10 * (screenShake/100)",
+														"duration": "0.1",
+														"mode": "reducing-magnitude"
+													}
+												}
+											],
+											"sid": 141844079851216,
+											"isOrBlock": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player1",
+							"sid": 115352599794499,
+							"parameters": {
+								"object": "bloodInfected"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "bloodInfected",
+							"sid": 833958555338670,
+							"parameters": {
+								"instance-variable": "canDamage"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 827884125098475,
+							"parameters": {
+								"animation": "\"death\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 352195786088232,
+							"parameters": {
+								"animation": "\"roll\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 409816340658849,
+							"parameters": {
+								"animation": "\"hurt\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "player1",
+							"sid": 455432462405954,
+							"disabled": true,
+							"parameters": {
+								"instance-variable": "floorHurtBlood"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-flashing",
+							"objectClass": "player1",
+							"sid": 548388927908380,
+							"behaviorType": "Flash",
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 602127641510501,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 631550885487813,
+									"disabled": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "bloodInfected",
+									"sid": 656604986093151,
+									"disabled": true,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "player1",
+									"sid": 478949373391363,
+									"parameters": {
+										"animation": "\"hurt\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 804680133582698,
+									"parameters": {
+										"variable": "hp",
+										"value": "bloodInfected.damage"
+									}
+								},
+								{
+									"id": "shake",
+									"objectClass": "camera",
+									"sid": 405179735181594,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"magnitude": "10 * (screenShake/100)",
+										"duration": "0.1",
+										"mode": "reducing-magnitude"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "player1",
+									"sid": 568788448561644,
+									"disabled": true,
+									"parameters": {
+										"instance-variable": "floorHurtBlood",
+										"value": "true"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 153932168794075,
+									"disabled": true,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "player1",
+									"sid": 203945718712226,
+									"disabled": true,
+									"parameters": {
+										"instance-variable": "floorHurtBlood",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 144886771111536,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player1",
+							"sid": 615756865504582,
+							"parameters": {
+								"object": "fxBomb"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 208022032423370,
+							"parameters": {
+								"animation": "\"death\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 674245160330265,
+							"disabled": true,
+							"parameters": {
+								"animation": "\"roll\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 176654759905926,
+							"disabled": true,
+							"parameters": {
+								"animation": "\"hurt\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "player1",
+							"sid": 557188085279764,
+							"disabled": true,
+							"parameters": {
+								"instance-variable": "floorHurtBlood"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-flashing",
+							"objectClass": "player1",
+							"sid": 307287260396886,
+							"disabled": true,
+							"behaviorType": "Flash",
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 736128503083422,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 834645021005954
+								}
+							],
+							"actions": [
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "bloodInfected",
+									"sid": 926566963237904,
+									"disabled": true,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "player1",
+									"sid": 306667502498421,
+									"parameters": {
+										"animation": "\"hurt\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 482000907275000,
+									"parameters": {
+										"variable": "hp",
+										"value": "40"
+									}
+								},
+								{
+									"id": "shake",
+									"objectClass": "camera",
+									"sid": 413368042864842,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"magnitude": "10 * (screenShake/100)",
+										"duration": "0.1",
+										"mode": "reducing-magnitude"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "player1",
+									"sid": 546507809858657,
+									"disabled": true,
+									"parameters": {
+										"instance-variable": "floorHurtBlood",
+										"value": "true"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 807298197045401,
+									"disabled": true,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "player1",
+									"sid": 482958710904847,
+									"disabled": true,
+									"parameters": {
+										"instance-variable": "floorHurtBlood",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 221311076005005,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player1",
+							"sid": 189523124194930,
+							"parameters": {
+								"object": "sprike"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "sprike",
+							"sid": 795592532342849,
+							"parameters": {
+								"instance-variable": "canDamage"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "player1",
+							"sid": 364270316218666,
+							"parameters": {
+								"animation": "\"hurt\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 922589227774110,
+							"parameters": {
+								"variable": "hp",
+								"value": "10"
+							}
+						}
+					],
+					"sid": 775765517001448,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "player1",
+									"sid": 671962185366557,
+									"parameters": {
+										"object": "sprike",
+										"offset-x": "0",
+										"offset-y": "2"
+									}
+								},
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "player1",
+									"sid": 244489330115908,
+									"parameters": {
+										"object": "sprike",
+										"offset-x": "0",
+										"offset-y": "-2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-vector-y",
+									"objectClass": "player1",
+									"sid": 888895946860781,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"vector-y": "sign(player1.Y - sprike.Y) * player1.8Direction.MaxSpeed"
+									}
+								}
+							],
+							"sid": 797212255259698,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 734285004987505
+								}
+							],
+							"actions": [],
+							"sid": 514976752750438,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "player1",
+											"sid": 606522271519341,
+											"parameters": {
+												"object": "sprike",
+												"offset-x": "2",
+												"offset-y": "0"
+											}
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "player1",
+											"sid": 999544957376607,
+											"parameters": {
+												"object": "sprike",
+												"offset-x": "-2",
+												"offset-y": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-vector-x",
+											"objectClass": "player1",
+											"sid": 662893551819377,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"vector-x": "sign(player1.X - sprike.X) * player1.8Direction.MaxSpeed"
+											}
+										}
+									],
+									"sid": 594819484403204,
+									"isOrBlock": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "player1",
+							"sid": 618375971964706,
+							"parameters": {
+								"animation": "\"hurt\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "player1",
+							"sid": 116110750439093,
+							"parameters": {
+								"animation": "\"run\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "player1",
+							"sid": 596211996179172,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.5"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "playableCharacters",
+							"sid": 535214046880022,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "0.5"
+							}
+						}
+					],
+					"sid": 270793927243840
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 180331488650421,
+							"parameters": {
+								"variable": "hp",
+								"comparison": 3,
+								"value": "0"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 267627013094544,
+							"parameters": {
+								"animation": "\"death\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "shake",
+							"objectClass": "camera",
+							"sid": 831799620605255,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "5 * (screenShake/100)",
+								"duration": "0.3",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "camera",
+							"sid": 319479180336061,
+							"parameters": {
+								"instance-variable": "followMode",
+								"value": "\"none\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "camera",
+							"sid": 772980089900382,
+							"parameters": {
+								"x": "player1.X",
+								"y": "player1.Y"
+							}
+						},
+						{
+							"id": "set-layout-scale",
+							"objectClass": "System",
+							"sid": 387550029646640,
+							"parameters": {
+								"scale": "2"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "player1",
+							"sid": 428074136768257,
+							"parameters": {
+								"animation": "\"death\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "player1",
+							"sid": 704646150777659,
+							"parameters": {
+								"layer": "\"death_darkness\""
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "playableCharacters",
+							"sid": 598963302709093,
+							"parameters": {
+								"layer": "\"death_darkness\""
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 631672801694051,
+							"parameters": {
+								"layer": "\"death_darkness\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 438023260183986,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "guns",
+									"sid": 230317486187883,
+									"parameters": {
+										"instance-variable": "isUsed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "guns",
+									"sid": 446720447016555
+								}
+							],
+							"sid": 522093377344694
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "player1",
+							"sid": 655313595939897,
+							"parameters": {
+								"animation": "\"death\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 996479808211316,
+							"disabled": true,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-layout-scale",
+							"objectClass": "System",
+							"sid": 162624349735578,
+							"parameters": {
+								"scale": "1"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 649057061151135,
+							"parameters": {
+								"layout": "deathMenu"
+							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 220354966002359,
+							"disabled": true,
+							"parameters": {
+								"reset-static": false
+							}
+						},
+						{
+							"id": "clear",
+							"objectClass": "mapArray",
+							"sid": 591959589186531,
+							"parameters": {
+								"value": "0"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "mapTileUI",
+							"sid": 257934953803806
+						},
+						{
+							"id": "clear",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 944168664524552,
+							"parameters": {
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 978532799848040,
+							"parameters": {
+								"width": "0",
+								"height": "1",
+								"depth": "1"
+							}
+						},
+						{
+							"id": "clear",
+							"objectClass": "upgradesUnlockedArray",
+							"sid": 342994058463864,
+							"parameters": {
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "upgradesUnlockedArray",
+							"sid": 554347138528551,
+							"parameters": {
+								"width": "0",
+								"height": "1",
+								"depth": "1"
+							}
+						}
+					],
+					"sid": 647776227399773
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "sprike",
+							"sid": 852999233931987
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 133923736976602,
+							"parameters": {
+								"seconds": "0.5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "sprike",
+							"sid": 540536566539296,
+							"parameters": {
+								"instance-variable": "canDamage",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 879438669810660
+				}
+			],
+			"sid": 165311437123840
+		},
+		{
+			"eventType": "variable",
+			"name": "bombs",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 555763179971585
+		},
+		{
+			"eventType": "variable",
+			"name": "bombRecently",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 382625368378394
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "bombs",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 213214071874273,
+							"parameters": {
+								"key": 17
+							}
+						},
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 616384878887532,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-b"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 390750294887727,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 918751448891211,
+									"parameters": {
+										"first-value": "timescale",
+										"comparison": 1,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 252286919002470,
+									"parameters": {
+										"variable": "bombs",
+										"comparison": 4,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 439647394792056,
+									"parameters": {
+										"variable": "bombRecently"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 281771335566316,
+									"parameters": {
+										"variable": "bombs",
+										"value": "1"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "player1",
+									"sid": 850745778346555,
+									"parameters": {
+										"object": "bomb",
+										"layer": "\"obj1\"",
+										"image-point": "\"bomb\"",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 431385052178198,
+									"parameters": {
+										"variable": "bombRecently",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "bomb",
+									"sid": 677366264173153,
+									"parameters": {
+										"instance-variable": "active",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 828984823088877
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "bomb",
+							"sid": 898377958989894,
+							"parameters": {
+								"instance-variable": "active"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 648579295940500
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "bomb",
+							"sid": 301327631160913,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 701871664576597,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "camera",
+							"sid": 617226864553059,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "10 * (screenShake/100)",
+								"duration": "0.6",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "bomb",
+							"sid": 322167542934032,
+							"parameters": {
+								"object": "fxBomb",
+								"layer": "\"obj3\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "bomb",
+							"sid": 341084972174172
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 145543071843785,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 544117810971923,
+							"parameters": {
+								"variable": "bombRecently",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 677365582494658
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-animation-finished",
+							"objectClass": "fxBomb",
+							"sid": 991297579361622
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "fxBomb",
+							"sid": 629258419381240
+						}
+					],
+					"sid": 864810761684905
+				}
+			],
+			"sid": 882493009632606
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "bullets special",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "shotGunBullet",
+							"sid": 546898558123856
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "shotGunBullet",
+							"sid": 643748167652196,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "Self.Bullet.Speed * random(0.85, 1.15)"
+							}
+						}
+					],
+					"sid": 209171098271869
+				}
+			],
+			"sid": 377291507601915
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 514775390714674
+				}
+			],
+			"actions": [],
+			"sid": 800647474657292
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "guns",
+					"sid": 766474984719199,
+					"parameters": {
+						"instance-variable": "isUsed"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 303664633026995
+		}
+	],
+	"sid": 369787313833684
+}

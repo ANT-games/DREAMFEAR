@@ -1,0 +1,11 @@
+{
+	"name": "enemyParts",
+	"plugin-id": "Sprite",
+	"sid": 941240649535264,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"enemysLamp"
+	]
+}

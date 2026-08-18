@@ -1,0 +1,53 @@
+{
+	"name": "bullets",
+	"plugin-id": "Sprite",
+	"sid": 654187315837186,
+	"instanceVariables": [
+		{
+			"name": "damage",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 604582475084575
+		},
+		{
+			"name": "size",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 921646131989679
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 152046708652541
+		},
+		{
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 639079573761378
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "glowhorizontal",
+			"name": "GlowHorizontal"
+		},
+		{
+			"effectId": "glowvertical",
+			"name": "GlowVertical"
+		}
+	],
+	"members": [
+		"revolverBullet",
+		"shotGunBullet",
+		"uziBullet",
+		"riffleBullet",
+		"laserPistolBullet",
+		"riffleHardBullet",
+		"granateBullet",
+		"riffleSniperBullet"
+	]
+}

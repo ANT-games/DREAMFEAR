@@ -1,0 +1,10 @@
+{
+	"name": "hpText",
+	"plugin-id": "Text",
+	"sid": 298057182958297,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

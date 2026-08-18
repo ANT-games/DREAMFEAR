@@ -1,0 +1,89 @@
+{
+	"name": "sniperRiffle",
+	"plugin-id": "Sprite",
+	"sid": 136058781499545,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 25,
+						"height": 9,
+						"originX": 0.28,
+						"originY": 0.5555555555555556,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3290703,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 1,
+								"y": 0.3333333333333333
+							},
+							{
+								"name": "shotEffect",
+								"x": 0.96,
+								"y": 0.3333333333333333
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 259988345751917,
+				"name": "hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 25,
+						"height": 9,
+						"originX": 0.28,
+						"originY": 0.5555555555555556,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7365536,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 1,
+								"y": 0.3333333333333333
+							},
+							{
+								"name": "shotEffect",
+								"x": 1,
+								"y": 0.3333333333333333
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 230305043627158,
+				"name": "no hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

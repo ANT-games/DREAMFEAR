@@ -1,0 +1,25 @@
+{
+	"name": "playableCharacters",
+	"plugin-id": "Sprite",
+	"sid": 436745446721865,
+	"instanceVariables": [
+		{
+			"name": "name",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 245086477727343
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 248745720373531
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"character2"
+	]
+}

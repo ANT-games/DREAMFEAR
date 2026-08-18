@@ -1,0 +1,56 @@
+{
+	"name": "hpSliderFrame",
+	"plugin-id": "Sprite",
+	"sid": 841522006555588,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 50,
+						"height": 21,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1159379,
+						"collisionPoly": {
+							"points": [
+								0.02,
+								0,
+								1,
+								0,
+								1,
+								0.6190476190476191,
+								1,
+								0.6190476190476191,
+								1,
+								0.6190476190476191,
+								0.02,
+								0.6190476190476191
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 637673323337547,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

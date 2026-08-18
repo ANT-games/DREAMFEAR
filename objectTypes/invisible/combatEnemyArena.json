@@ -1,0 +1,59 @@
+{
+	"name": "combatEnemyArena",
+	"plugin-id": "TiledBg",
+	"sid": 779809378326609,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "enemiesNumberStart",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 320877902582877
+		},
+		{
+			"name": "enemiesKilled",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 350589533727046
+		},
+		{
+			"name": "enemySpawned",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 192100896745236
+		},
+		{
+			"name": "isFight",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 922899308836002
+		},
+		{
+			"name": "wavesRemained",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 742922784009614
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 100,
+		"height": 100,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 7863205,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

@@ -1,0 +1,77 @@
+{
+	"name": "enemyBullets",
+	"plugin-id": "Sprite",
+	"sid": 738688001649884,
+	"instanceVariables": [
+		{
+			"name": "damage",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 139314529665254
+		},
+		{
+			"name": "lifetime",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 436217384034411
+		},
+		{
+			"name": "pattern",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 915944149307473
+		},
+		{
+			"name": "primeAngle",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 486195294507658
+		},
+		{
+			"name": "specialFrames",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 573894192911843
+		},
+		{
+			"name": "canBeHitBack",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 650510981806906
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet2",
+			"sid": 224198225005156
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"needle",
+		"lightBulletAttackLamp",
+		"cloudWhisperer",
+		"snailBullet",
+		"bigEyeBullet",
+		"surgeonKnife",
+		"sawSurgeon",
+		"sheepHeadBullet",
+		"plantBossBullet",
+		"plantBossWave",
+		"earBullet",
+		"air",
+		"maskBullet",
+		"airCloud",
+		"starBullet",
+		"tearBulletEnemy",
+		"mediumEyeBullet",
+		"maskBossBullet"
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"name": "walls",
+	"plugin-id": "Tilemap",
+	"sid": 210822285529898,
+	"instanceVariables": [
+		{
+			"name": "index",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 741837430353055
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"wallsLevel1"
+	]
+}

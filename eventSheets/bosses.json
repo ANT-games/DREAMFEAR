@@ -1,0 +1,6399 @@
+{
+	"name": "bosses",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 417778324519853,
+					"parameters": {
+						"interval-seconds": "0.1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "enemyBullets",
+					"sid": 906926414614736,
+					"parameters": {
+						"instance-variable": "lifetime",
+						"value": "0.1"
+					}
+				}
+			],
+			"sid": 612594373567873
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "enemyBullets",
+					"sid": 533023667631501
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 863511574411221,
+					"parameters": {
+						"seconds": "0.1",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "enemyBullets",
+					"sid": 425816260421961,
+					"parameters": {
+						"instance-variable": "primeAngle",
+						"value": "Self.Angle"
+					}
+				}
+			],
+			"sid": 767534929399748
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "wallsLevel1",
+					"sid": 794026523296528,
+					"parameters": {
+						"instance-variable": "type",
+						"comparison": 0,
+						"value": "\"boss\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 981144129147876
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 128332946258590,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 578644468374498,
+					"parameters": {
+						"object-to-create": "bossZone",
+						"layer": "\"invisible\"",
+						"x": "wallsLevel1.X + wallsLevel1.Width/2",
+						"y": "wallsLevel1.Y + wallsLevel1.Height/2 ",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 999165487690444,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 360879962552014,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"level1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 918890509371610,
+							"parameters": {
+								"object-to-create": "bossEye",
+								"layer": "\"characters\"",
+								"x": "bossZone.X",
+								"y": "bossZone.Y - 50",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 565625076751679
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 687475767843270,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"level2\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 579267537819777,
+							"parameters": {
+								"object-to-create": "bossSurgeon",
+								"layer": "\"characters\"",
+								"x": "bossZone.X",
+								"y": "bossZone.Y - 10",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 341049143322332
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 524834557629764,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"level3\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 160491901352552,
+							"parameters": {
+								"object-to-create": "bossSheep",
+								"layer": "\"characters\"",
+								"x": "bossZone.X",
+								"y": "bossZone.Y +5",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 767139633930029
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 488284648542127,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"level4\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 226593554678674,
+							"parameters": {
+								"object-to-create": "bossPlant",
+								"layer": "\"characters\"",
+								"x": "bossZone.X",
+								"y": "bossZone.Y + 20",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 131256626973842
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 370887544741718,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"level5\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 160865082211439,
+							"parameters": {
+								"object-to-create": "maskBoss",
+								"layer": "\"characters\"",
+								"x": "bossZone.X",
+								"y": "bossZone.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 510563212824357
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "player1",
+					"sid": 651965465807462,
+					"parameters": {
+						"object": "bossZone"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "bosses",
+					"sid": 827133874660024,
+					"parameters": {
+						"instance-variable": "hp",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "bosses",
+					"sid": 465832706355663,
+					"parameters": {
+						"instance-variable": "active",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 936959118514649
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "bosses",
+					"sid": 317739621535033,
+					"parameters": {
+						"instance-variable": "hp",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "bosses",
+					"sid": 336451566823193,
+					"parameters": {
+						"instance-variable": "active",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 211971055828922,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 356146848416586
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "bosses",
+							"sid": 496208858985957,
+							"parameters": {
+								"animation": "\"death\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 970670758518441
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "bosses",
+					"sid": 595400733446780,
+					"parameters": {
+						"animation": "\"death\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "bosses",
+					"sid": 257700874025275
+				},
+				{
+					"id": "destroy",
+					"objectClass": "enemyBullets",
+					"sid": 279265536679728
+				}
+			],
+			"sid": 307314762923290
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "bosses",
+					"sid": 594331852472016,
+					"parameters": {
+						"instance-variable": "active"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 675587669274069,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 555506664054719
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "sprikes spawn"
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 117727361198992,
+							"parameters": {
+								"object-to-create": "sprike",
+								"layer": "\"obj1\"",
+								"x": "bossZone.X ",
+								"y": "bossZone.BBoxBottom + 8",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "bossZone",
+							"sid": 462795361065602,
+							"parameters": {
+								"child": "sprike",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-d": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "sprike",
+							"sid": 126911527435976,
+							"parameters": {
+								"animation": "\"doorTop\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 587887686018508
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "bosses",
+							"sid": 214293501262130,
+							"parameters": {
+								"object": "bullets"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "bosses",
+							"sid": 156543225518349,
+							"parameters": {
+								"instance-variable": "hp",
+								"value": "bullets.damage"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bosses",
+							"sid": 387206522558222,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"hurt\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 331022742025615,
+							"parameters": {
+								"seconds": "0.05",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bosses",
+							"sid": 594018819947406,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"hurt\""
+							}
+						}
+					],
+					"sid": 909730289767018
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "bosses",
+							"sid": 632381787454656,
+							"parameters": {
+								"object": "fxBomb"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "bosses",
+							"sid": 226701957969652,
+							"parameters": {
+								"instance-variable": "hp",
+								"value": "100"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bosses",
+							"sid": 610163314057273,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"hurt\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 875865039287008,
+							"parameters": {
+								"seconds": "0.05",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bosses",
+							"sid": 175101626945613,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"hurt\""
+							}
+						}
+					],
+					"sid": 432232332885601
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "boss types",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "paranoia boss (flying eye)",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 206336338477644,
+									"parameters": {
+										"interval-seconds": "0.15"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 954611370681653,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "bigEyeBullet",
+											"sid": 612587514511811,
+											"parameters": {
+												"object": "walls"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "bigEyeBullet",
+											"sid": 422899293840145,
+											"parameters": {
+												"object": "sprike"
+											}
+										},
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "bigEyeBullet",
+											"sid": 821050166219386,
+											"disabled": true,
+											"parameters": {
+												"object": "player1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "bigEyeBullet",
+											"sid": 374573671542478
+										}
+									],
+									"sid": 269010636351763,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "bossEye",
+									"sid": 642209611839956,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 901823772710566,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 645879921790895
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bossEye",
+											"sid": 719433680414855,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 755811529208116
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bossEye",
+											"sid": 526084927817044,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 627602830253680
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 604470261761658,
+											"parameters": {
+												"seconds": "15",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bossEye",
+											"sid": 446062392382923,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 222732973130222
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bossEye",
+											"sid": 989456595550698,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "2"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 307647411778668
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 271567259918098,
+											"parameters": {
+												"seconds": "7",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bossEye",
+											"sid": 550284385088735,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "3"
+											}
+										}
+									],
+									"sid": 831278497907838
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bossEye",
+											"sid": 721032747441118,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "3"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 691203624021803
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 812044618350066,
+											"parameters": {
+												"seconds": "15",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bossEye",
+											"sid": 974665434204052,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 656439954684084
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bossEye",
+											"sid": 833028525999363,
+											"disabled": true,
+											"parameters": {
+												"instance-variable": "hp",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 528357137034887,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "bossEye",
+													"sid": 361846162337142,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 379778662725851,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 110818953779736
+														}
+													],
+													"actions": [
+														{
+															"id": "set-enabled",
+															"objectClass": "bossEye",
+															"sid": 535070085923372,
+															"behaviorType": "MoveTo",
+															"parameters": {
+																"enabled": true
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "bossEye",
+															"sid": 806238740543698,
+															"parameters": {
+																"instance-variable": "shootingCurrently",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 349998829430769
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "move-to-position",
+															"objectClass": "bossEye",
+															"sid": 939768200493203,
+															"behaviorType": "MoveTo",
+															"parameters": {
+																"x": "player1.X + sign(bossZone.X - player1.X) * 120",
+																"y": "player1.Y + sign(bossZone.Y - player1.Y) * 100",
+																"mode": "direct"
+															}
+														}
+													],
+													"sid": 323015381043601
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "bossEye",
+															"sid": 409575518530135,
+															"parameters": {
+																"instance-variable": "shootingCurrently"
+															}
+														},
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 903217098944773,
+															"parameters": {
+																"interval-seconds": "0.1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "bossEye",
+															"sid": 489574633189303,
+															"parameters": {
+																"instance-variable": "curFrame",
+																"value": "Self.AnimationFrame"
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "bossEye",
+															"sid": 981833281225351,
+															"parameters": {
+																"animation": "\"attack\"",
+																"from": "beginning"
+															}
+														},
+														{
+															"id": "set-animation-frame",
+															"objectClass": "bossEye",
+															"sid": 188818466972517,
+															"parameters": {
+																"frame-number": "Self.curFrame"
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "bossEye",
+															"sid": 879014370476093,
+															"parameters": {
+																"object": "bigEyeBullet",
+																"layer": "\"obj2\"",
+																"image-point": "0",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-angle-toward-position",
+															"objectClass": "bigEyeBullet",
+															"sid": 981567802975685,
+															"parameters": {
+																"x": "player1.X",
+																"y": "player1.Y"
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "bigEyeBullet",
+															"sid": 794690041041503,
+															"parameters": {
+																"angle": "Self.Angle + random(-20,20)"
+															}
+														}
+													],
+													"sid": 344937722404661
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 504910522462784,
+															"parameters": {
+																"interval-seconds": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "toggle-boolean-instvar",
+															"objectClass": "bossEye",
+															"sid": 779783355216889,
+															"parameters": {
+																"instance-variable": "shootingCurrently"
+															}
+														}
+													],
+													"sid": 762590680782635
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "bossEye",
+															"sid": 284416910547161,
+															"parameters": {
+																"instance-variable": "shootingCurrently"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "bossEye",
+															"sid": 911798915077354,
+															"parameters": {
+																"instance-variable": "curFrame",
+																"value": "Self.AnimationFrame"
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "bossEye",
+															"sid": 514924996600561,
+															"parameters": {
+																"animation": "\"idle\"",
+																"from": "beginning"
+															}
+														},
+														{
+															"id": "set-animation-frame",
+															"objectClass": "bossEye",
+															"sid": 662551031917934,
+															"parameters": {
+																"frame-number": "Self.curFrame"
+															}
+														}
+													],
+													"sid": 305290973333254
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "bossEye",
+													"sid": 647373450124673,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 944768676567402,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 928027246333798
+														}
+													],
+													"actions": [
+														{
+															"id": "set-enabled",
+															"objectClass": "bossEye",
+															"sid": 225536961094611,
+															"behaviorType": "MoveTo",
+															"parameters": {
+																"enabled": true
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "bossEye",
+															"sid": 752444388734244,
+															"disabled": true,
+															"parameters": {
+																"instance-variable": "shootingCurrently",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "bossEye",
+															"sid": 320754176579494,
+															"parameters": {
+																"instance-variable": "curFrame",
+																"value": "Self.AnimationFrame"
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "bossEye",
+															"sid": 906674219388552,
+															"parameters": {
+																"animation": "\"attack\"",
+																"from": "beginning"
+															}
+														},
+														{
+															"id": "set-animation-frame",
+															"objectClass": "bossEye",
+															"sid": 432294804165393,
+															"parameters": {
+																"frame-number": "Self.curFrame"
+															}
+														}
+													],
+													"sid": 394995476391770
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "move-to-position",
+															"objectClass": "bossEye",
+															"sid": 647264478401352,
+															"behaviorType": "MoveTo",
+															"parameters": {
+																"x": "bossZone.X",
+																"y": "bossZone.Y",
+																"mode": "direct"
+															}
+														}
+													],
+													"sid": 721398140394248
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 530315753335658,
+															"parameters": {
+																"interval-seconds": "0.1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "bossEye",
+															"sid": 885066597418334,
+															"parameters": {
+																"object": "bigEyeBullet",
+																"layer": "\"obj1\"",
+																"image-point": "0",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "bigEyeBullet",
+															"sid": 702482009917511,
+															"parameters": {
+																"angle": "bossEye.bulletDirection"
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "bossEye",
+															"sid": 509522852422049,
+															"parameters": {
+																"object": "bigEyeBullet",
+																"layer": "\"obj1\"",
+																"image-point": "0",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "bigEyeBullet",
+															"sid": 767453541610669,
+															"parameters": {
+																"angle": "bossEye.bulletDirection + 120"
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "bossEye",
+															"sid": 367749498894656,
+															"parameters": {
+																"object": "bigEyeBullet",
+																"layer": "\"obj1\"",
+																"image-point": "0",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "bigEyeBullet",
+															"sid": 777080694138010,
+															"parameters": {
+																"angle": "bossEye.bulletDirection + 240"
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "bossEye",
+															"sid": 764329013551560,
+															"disabled": true,
+															"parameters": {
+																"object": "bigEyeBullet",
+																"layer": "\"obj1\"",
+																"image-point": "0",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "bigEyeBullet",
+															"sid": 627954265983785,
+															"disabled": true,
+															"parameters": {
+																"angle": "bossEye.bulletDirection + 270"
+															}
+														},
+														{
+															"id": "add-to-instvar",
+															"objectClass": "bossEye",
+															"sid": 725812423722977,
+															"parameters": {
+																"instance-variable": "bulletDirection",
+																"value": "10"
+															}
+														}
+													],
+													"sid": 557978375563863
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "bossEye",
+															"sid": 159610771893050,
+															"parameters": {
+																"instance-variable": "shootingCurrently"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "bossEye",
+															"sid": 826957817699081,
+															"parameters": {
+																"instance-variable": "curFrame",
+																"value": "Self.AnimationFrame"
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "bossEye",
+															"sid": 859102670698446,
+															"parameters": {
+																"animation": "\"idle\"",
+																"from": "beginning"
+															}
+														},
+														{
+															"id": "set-animation-frame",
+															"objectClass": "bossEye",
+															"sid": 630979154202600,
+															"parameters": {
+																"frame-number": "Self.curFrame"
+															}
+														}
+													],
+													"sid": 150625608334921,
+													"disabled": true
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "bossEye",
+													"sid": 232616165021922,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "3"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 484264305518890,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 202388901607075
+														}
+													],
+													"actions": [
+														{
+															"id": "set-enabled",
+															"objectClass": "bossEye",
+															"sid": 404739039349630,
+															"behaviorType": "MoveTo",
+															"parameters": {
+																"enabled": true
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "bossEye",
+															"sid": 424717575074944,
+															"disabled": true,
+															"parameters": {
+																"instance-variable": "shootingCurrently",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 707102211003041
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "move-to-position",
+															"objectClass": "bossEye",
+															"sid": 861626292881139,
+															"behaviorType": "MoveTo",
+															"parameters": {
+																"x": "bossZone.X",
+																"y": "bossZone.Y",
+																"mode": "direct"
+															}
+														}
+													],
+													"sid": 746079624459607
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 850342679310061,
+															"parameters": {
+																"interval-seconds": "4"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "bossEye",
+															"sid": 823629695262384,
+															"disabled": true,
+															"parameters": {
+																"object": "bigEyeBullet",
+																"layer": "\"obj2\"",
+																"image-point": "0",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "bigEyeBullet",
+															"sid": 256659602163103,
+															"disabled": true,
+															"parameters": {
+																"angle": "bossEye.bulletDirection"
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "bossEye",
+															"sid": 384376462139738,
+															"disabled": true,
+															"parameters": {
+																"object": "bigEyeBullet",
+																"layer": "\"obj2\"",
+																"image-point": "0",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "bigEyeBullet",
+															"sid": 620893915916292,
+															"disabled": true,
+															"parameters": {
+																"angle": "bossEye.bulletDirection + 180"
+															}
+														},
+														{
+															"id": "add-to-instvar",
+															"objectClass": "bossEye",
+															"sid": 688440825473599,
+															"disabled": true,
+															"parameters": {
+																"instance-variable": "bulletDirection",
+																"value": "10"
+															}
+														}
+													],
+													"sid": 394241822866920,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "repeat",
+																	"objectClass": "System",
+																	"sid": 648230467609111,
+																	"parameters": {
+																		"count": "36"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 282541410440037,
+																	"parameters": {
+																		"seconds": "0.03",
+																		"use-timescale": true
+																	}
+																},
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "bossEye",
+																	"sid": 512909993681962,
+																	"parameters": {
+																		"object": "bigEyeBullet",
+																		"layer": "\"characters\"",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-angle-of-motion",
+																	"objectClass": "bigEyeBullet",
+																	"sid": 273122502944178,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"angle": "random(360)"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "bossEye",
+																	"sid": 323367668579214,
+																	"parameters": {
+																		"instance-variable": "curFrame",
+																		"value": "Self.AnimationFrame"
+																	}
+																},
+																{
+																	"id": "set-animation",
+																	"objectClass": "bossEye",
+																	"sid": 855490378016654,
+																	"parameters": {
+																		"animation": "\"attack\"",
+																		"from": "beginning"
+																	}
+																},
+																{
+																	"id": "set-animation-frame",
+																	"objectClass": "bossEye",
+																	"sid": 769628780149972,
+																	"parameters": {
+																		"frame-number": "Self.curFrame"
+																	}
+																},
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 961790656106863,
+																	"parameters": {
+																		"seconds": "0.3",
+																		"use-timescale": true
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "bossEye",
+																	"sid": 626289726315325,
+																	"parameters": {
+																		"instance-variable": "curFrame",
+																		"value": "Self.AnimationFrame"
+																	}
+																},
+																{
+																	"id": "set-animation",
+																	"objectClass": "bossEye",
+																	"sid": 434901748083176,
+																	"parameters": {
+																		"animation": "\"idle\"",
+																		"from": "beginning"
+																	}
+																},
+																{
+																	"id": "set-animation-frame",
+																	"objectClass": "bossEye",
+																	"sid": 958192699338128,
+																	"parameters": {
+																		"frame-number": "Self.curFrame"
+																	}
+																}
+															],
+															"sid": 790937772676954
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "repeat",
+																	"objectClass": "System",
+																	"sid": 789091373464422,
+																	"parameters": {
+																		"count": "5"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "bossEye",
+																	"sid": 944111781036094,
+																	"parameters": {
+																		"object": "eyeSmall",
+																		"layer": "\"characters\"",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-enabled",
+																	"objectClass": "eyeSmall",
+																	"sid": 464394018696596,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"state": "enabled"
+																	}
+																},
+																{
+																	"id": "set-angle-of-motion",
+																	"objectClass": "eyeSmall",
+																	"sid": 560692947000818,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"angle": "random(360)"
+																	}
+																}
+															],
+															"sid": 796962493865440
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "bossEye",
+															"sid": 544203011034862,
+															"parameters": {
+																"instance-variable": "shootingCurrently"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "bossEye",
+															"sid": 845737650096003,
+															"parameters": {
+																"instance-variable": "curFrame",
+																"value": "Self.AnimationFrame"
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "bossEye",
+															"sid": 719766183665174,
+															"parameters": {
+																"animation": "\"idle\"",
+																"from": "beginning"
+															}
+														},
+														{
+															"id": "set-animation-frame",
+															"objectClass": "bossEye",
+															"sid": 992731020275112,
+															"parameters": {
+																"frame-number": "Self.curFrame"
+															}
+														}
+													],
+													"sid": 993456801820613,
+													"disabled": true
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 903534649167853
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "surgeon boss",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "bossSurgeon",
+									"sid": 362231565420929,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 139292511570725,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 621679447938684
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bossSurgeon",
+											"sid": 620619411550074,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 256141876924233
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bossSurgeon",
+											"sid": 700878943698836,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 667203802207880
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 694182042478525,
+											"parameters": {
+												"seconds": "15",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bossSurgeon",
+											"sid": 404404627264392,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 587142021797743
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bossSurgeon",
+											"sid": 113046931924531,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "2"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 361349791580687
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 506334568984803,
+											"parameters": {
+												"seconds": "10",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bossSurgeon",
+											"sid": 496705489879112,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 236672093723922
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 702727297482842,
+											"parameters": {
+												"interval-seconds": "0.01"
+											}
+										},
+										{
+											"id": "compare-speed",
+											"objectClass": "surgeonKnife",
+											"sid": 193587387442618,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"comparison": 4,
+												"speed": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "surgeonKnife",
+											"sid": 772703880955533,
+											"disabled": true,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "lerp(Self.Bullet.AngleOfMotion, angle(Self.X,Self.Y, player1.X, player1.Y), 0.1)"
+											}
+										},
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "surgeonKnife",
+											"sid": 724132384451084,
+											"disabled": true,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "Self.Bullet.AngleOfMotion + sign(Self.Width)*random(-3,3)"
+											}
+										}
+									],
+									"sid": 975048909532071,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 379936526886425,
+											"parameters": {
+												"interval-seconds": "0.01"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "surgeonKnife",
+											"sid": 816152931417232,
+											"disabled": true,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "lerp(Self.Bullet.AngleOfMotion, angle(Self.X,Self.Y, player1.X, player1.Y), 0.1)"
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "sawSurgeon",
+											"sid": 465883271848299,
+											"behaviorType": "Orbit",
+											"parameters": {
+												"speed": "Self.Orbit.Speed - 1"
+											}
+										}
+									],
+									"sid": 272365176238592
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "sawSurgeon",
+											"sid": 343900211163008
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 701434903651860,
+											"parameters": {
+												"seconds": "1",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "sawSurgeon",
+											"sid": 991659630094569,
+											"behaviorType": "Orbit",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "sawSurgeon",
+											"sid": 103327644430378,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "enabled"
+											}
+										},
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "sawSurgeon",
+											"sid": 758079095702030,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "angle(Self.X, Self.Y, player1.X, player1.Y)"
+											}
+										}
+									],
+									"sid": 796098391524851
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "surgeonKnife",
+											"sid": 972795143289362,
+											"parameters": {
+												"object": "walls"
+											}
+										},
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "surgeonKnife",
+											"sid": 726137103187768,
+											"parameters": {
+												"object": "sprike"
+											}
+										},
+										{
+											"id": "compare-speed",
+											"objectClass": "surgeonKnife",
+											"sid": 187228368254891,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"comparison": 2,
+												"speed": "10"
+											}
+										},
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "bigEyeBullet",
+											"sid": 550165924027821,
+											"disabled": true,
+											"parameters": {
+												"object": "player1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "surgeonKnife",
+											"sid": 174375780872429
+										}
+									],
+									"sid": 688007225575979,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "bossSurgeon",
+											"sid": 433147215789029,
+											"parameters": {
+												"animation": "\"jumpAttack\""
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "bossSurgeon",
+											"sid": 736488859728219,
+											"parameters": {
+												"comparison": 0,
+												"number": "16"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 978596972229051
+										}
+									],
+									"actions": [
+										{
+											"id": "shake",
+											"objectClass": "camera",
+											"sid": 893547588874361,
+											"behaviorType": "ScrollTo",
+											"parameters": {
+												"magnitude": "10",
+												"duration": "0.5",
+												"mode": "reducing-magnitude"
+											}
+										}
+									],
+									"sid": 108634659761551
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "bossSurgeon",
+											"sid": 467105233786159,
+											"parameters": {
+												"animation": "\"jumpAttack\""
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "bossSurgeon",
+											"sid": 351348338224280,
+											"parameters": {
+												"comparison": 4,
+												"number": "7"
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "bossSurgeon",
+											"sid": 538532307858400,
+											"parameters": {
+												"comparison": 2,
+												"number": "15"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-collisions-enabled",
+											"objectClass": "bossSurgeon",
+											"sid": 685023110427274,
+											"parameters": {
+												"collisions": "disabled"
+											}
+										}
+									],
+									"sid": 809919051415459
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 730856128569896
+										}
+									],
+									"actions": [
+										{
+											"id": "set-collisions-enabled",
+											"objectClass": "bossSurgeon",
+											"sid": 450118596555297,
+											"parameters": {
+												"collisions": "enabled"
+											}
+										}
+									],
+									"sid": 679649739791008
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-screen",
+											"objectClass": "sawSurgeon",
+											"sid": 297030862316348,
+											"isInverted": true
+										},
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "sawSurgeon",
+											"sid": 907638339726530,
+											"disabled": true,
+											"parameters": {
+												"object": "walls"
+											}
+										},
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "sawSurgeon",
+											"sid": 377102892628274,
+											"disabled": true,
+											"parameters": {
+												"object": "sprike"
+											}
+										},
+										{
+											"id": "compare-speed",
+											"objectClass": "surgeonKnife",
+											"sid": 969110042746170,
+											"disabled": true,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"comparison": 2,
+												"speed": "10"
+											}
+										},
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "bigEyeBullet",
+											"sid": 402314421901709,
+											"disabled": true,
+											"parameters": {
+												"object": "player1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "sawSurgeon",
+											"sid": 606738481744785,
+											"disabled": true
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "sawSurgeon",
+											"sid": 958041826186541,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "stop-animation",
+											"objectClass": "sawSurgeon",
+											"sid": 876144008388269
+										}
+									],
+									"sid": 999048028819453,
+									"disabled": true,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bossEye",
+											"sid": 972356241488279,
+											"disabled": true,
+											"parameters": {
+												"instance-variable": "hp",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 667466649045779,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "bossSurgeon",
+													"sid": 653998067017380,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 436159991141076,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 787018422432791
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation",
+															"objectClass": "bossSurgeon",
+															"sid": 277923114214976,
+															"parameters": {
+																"animation": "\"jumpAttack\"",
+																"from": "beginning"
+															}
+														}
+													],
+													"sid": 939187595463151
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-animation-playing",
+															"objectClass": "bossSurgeon",
+															"sid": 905212648794041,
+															"parameters": {
+																"animation": "\"jumpAttack\""
+															}
+														},
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "bossSurgeon",
+															"sid": 467896162187997,
+															"parameters": {
+																"comparison": 0,
+																"number": "11"
+															}
+														},
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 151582308101338
+														}
+													],
+													"actions": [
+														{
+															"id": "set-position",
+															"objectClass": "bossSurgeon",
+															"sid": 841665262756776,
+															"parameters": {
+																"x": "bossZone.X",
+																"y": "bossZone.Y - 10"
+															}
+														}
+													],
+													"sid": 345603193062997
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-animation-playing",
+															"objectClass": "bossSurgeon",
+															"sid": 390915116810860,
+															"parameters": {
+																"animation": "\"jumpAttack\""
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [],
+													"sid": 896309405201454,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 823990729618924,
+																	"parameters": {
+																		"interval-seconds": "1.5"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-animation",
+																	"objectClass": "bossSurgeon",
+																	"sid": 939292007518843,
+																	"parameters": {
+																		"animation": "\"attack1\"",
+																		"from": "beginning"
+																	}
+																}
+															],
+															"sid": 478551541625938
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "every-x-seconds",
+																	"objectClass": "System",
+																	"sid": 663654842158446,
+																	"parameters": {
+																		"interval-seconds": "2"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 278668293452646,
+																	"parameters": {
+																		"object-to-create": "sawSurgeon",
+																		"layer": "\"obj1\"",
+																		"x": "bossSurgeon.X",
+																		"y": "bossSurgeon.Y + sawSurgeon.Orbit.SecondaryRadius",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 329906119036428,
+																	"parameters": {
+																		"object-to-create": "sawSurgeon",
+																		"layer": "\"obj1\"",
+																		"x": "bossSurgeon.X",
+																		"y": "bossSurgeon.Y - sawSurgeon.Orbit.SecondaryRadius",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																}
+															],
+															"sid": 688784596340879
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "on-animation-finished",
+																	"objectClass": "bossSurgeon",
+																	"sid": 306423510025785,
+																	"parameters": {
+																		"animation": "\"attack1\""
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-animation",
+																	"objectClass": "bossSurgeon",
+																	"sid": 645791120087386,
+																	"parameters": {
+																		"animation": "\"idle\"",
+																		"from": "beginning"
+																	}
+																}
+															],
+															"sid": 193529676200323
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-x",
+																	"objectClass": "bossSurgeon",
+																	"sid": 193840153059696,
+																	"parameters": {
+																		"comparison": 1,
+																		"x-co-ordinate": "bossZone.X"
+																	}
+																},
+																{
+																	"id": "compare-y",
+																	"objectClass": "bossSurgeon",
+																	"sid": 303504272596302,
+																	"parameters": {
+																		"comparison": 1,
+																		"y-co-ordinate": "bossZone.Y - 50"
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 858664491561445,
+															"isOrBlock": true
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-animation-frame",
+																	"objectClass": "bossSurgeon",
+																	"sid": 959915119416508,
+																	"parameters": {
+																		"comparison": 0,
+																		"number": "6"
+																	}
+																},
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "bossSurgeon",
+																	"sid": 947382824123544,
+																	"parameters": {
+																		"animation": "\"attack1\""
+																	}
+																},
+																{
+																	"id": "trigger-once-while-true",
+																	"objectClass": "System",
+																	"sid": 472036981749764
+																}
+															],
+															"actions": [],
+															"sid": 477876053133290,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "for",
+																			"objectClass": "System",
+																			"sid": 949164678014825,
+																			"parameters": {
+																				"name": "\"knives\"",
+																				"start-index": "1",
+																				"end-index": "20"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "wait",
+																			"objectClass": "System",
+																			"sid": 123012598598040,
+																			"disabled": true,
+																			"parameters": {
+																				"seconds": "0.15",
+																				"use-timescale": true
+																			}
+																		},
+																		{
+																			"id": "spawn-another-object",
+																			"objectClass": "bossSurgeon",
+																			"sid": 320482246823882,
+																			"parameters": {
+																				"object": "surgeonKnife",
+																				"layer": "\"obj1\"",
+																				"image-point": "\"knife1\"",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "set-angle-of-motion",
+																			"objectClass": "surgeonKnife",
+																			"sid": 937460444690846,
+																			"behaviorType": "Bullet",
+																			"parameters": {
+																				"angle": "loopindex(\"knives\") * 18"
+																			}
+																		},
+																		{
+																			"id": "set-mirrored",
+																			"objectClass": "surgeonKnife",
+																			"sid": 615360005375916,
+																			"disabled": true,
+																			"parameters": {
+																				"state": "mirrored"
+																			}
+																		}
+																	],
+																	"sid": 388390518307502
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-animation-finished",
+													"objectClass": "bossSurgeon",
+													"sid": 686842133036819,
+													"parameters": {
+														"animation": "\"jumpAttack\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "bossSurgeon",
+													"sid": 914854750148553,
+													"parameters": {
+														"animation": "\"idle\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 487839004004825
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "bossSurgeon",
+													"sid": 747997080075227,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 122986318399860,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 477226659231727,
+															"parameters": {
+																"interval-seconds": "5"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation",
+															"objectClass": "bossSurgeon",
+															"sid": 894925189894860,
+															"parameters": {
+																"animation": "\"jumpAttack\"",
+																"from": "beginning"
+															}
+														}
+													],
+													"sid": 349918137124953
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-animation-playing",
+															"objectClass": "bossSurgeon",
+															"sid": 660975553871544,
+															"parameters": {
+																"animation": "\"jumpAttack\""
+															}
+														},
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "bossSurgeon",
+															"sid": 808808603278595,
+															"parameters": {
+																"comparison": 0,
+																"number": "11"
+															}
+														},
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 691887287296267
+														}
+													],
+													"actions": [
+														{
+															"id": "set-position",
+															"objectClass": "bossSurgeon",
+															"sid": 908102277415302,
+															"parameters": {
+																"x": "player1.X",
+																"y": "player1.Y"
+															}
+														}
+													],
+													"sid": 491273276346497
+												}
+											],
+											"isOrBlock": true
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 387751428464844
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "sheep head",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "bullet pattern sheep",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "PRIME ANGLE DIDNT WORK SO I CHANGED THE BULET LOGICS A LIL BIT"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "sheepHeadBullet",
+											"sid": 963481301920411,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "0"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 112353357596357
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "sheepHeadBullet",
+											"sid": 823980377645823,
+											"parameters": {
+												"instance-variable": "primeAngle",
+												"value": "Self.Bullet.AngleOfMotion"
+											}
+										},
+										{
+											"type": "comment",
+											"text": "just direct bullet"
+										}
+									],
+									"sid": 262110866819172
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "sheepHeadBullet",
+											"sid": 169062704764864,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 513759810514614,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 168938106373453,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "0.1"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 428794760134895
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "sheepHeadBullet",
+													"sid": 424537262264220,
+													"parameters": {
+														"instance-variable": "primeAngle",
+														"value": "Self.Bullet.AngleOfMotion"
+													}
+												}
+											],
+											"sid": 536105848781943
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 821277846060210,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "0.5"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 917818398167361,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 2,
+														"value": "2.5"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 702236141361061,
+													"parameters": {
+														"interval-seconds": "0.4"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 785581732414461,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion + 45"
+													}
+												}
+											],
+											"sid": 355816415469865
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 719656123085913,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "2.5"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 926128910339845,
+													"parameters": {
+														"interval-seconds": "0.2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 586355869010609,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion + 22.5"
+													}
+												}
+											],
+											"sid": 667951633469739
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 661349443467183,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "5"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 984174919570136
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 447464172811351,
+													"disabled": true,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.primeAngle"
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 343832696400265,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion - 40"
+													}
+												}
+											],
+											"sid": 905795754875242
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "sheepHeadBullet",
+											"sid": 456008348993826,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "similar to 1 but goes further"
+										}
+									],
+									"sid": 631813836164453,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 561326853188775,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "0.1"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 322393799412307
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "sheepHeadBullet",
+													"sid": 504561442175581,
+													"parameters": {
+														"instance-variable": "primeAngle",
+														"value": "Self.Bullet.AngleOfMotion"
+													}
+												}
+											],
+											"sid": 125479573573144
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 555336867680621,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "1.5"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 492600331253345,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 2,
+														"value": "2.5"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 514956465896898,
+													"parameters": {
+														"interval-seconds": "0.4"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 649354741046833,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion + 45"
+													}
+												}
+											],
+											"sid": 855695363032563
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 987770940597744,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "2.5"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 746897139866202,
+													"parameters": {
+														"interval-seconds": "0.2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 448193559805470,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion + 22.5"
+													}
+												}
+											],
+											"sid": 157232620284842
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 539401867355528,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "3"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 542195165594640
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 455171530621279,
+													"disabled": true,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.primeAngle"
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 262826317046555,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion + 60"
+													}
+												}
+											],
+											"sid": 103552699552712
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 406324858932094,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "3.5"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 938179492246007
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 612395815634070,
+													"disabled": true,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.primeAngle"
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 655789472239013,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion + 60"
+													}
+												}
+											],
+											"sid": 943005444613131
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 225865608921676,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "4"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 380431562157321
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 275269034220918,
+													"disabled": true,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.primeAngle"
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 983898904330633,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion + 60"
+													}
+												}
+											],
+											"sid": 843409157351914
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "sheepHeadBullet",
+											"sid": 805093501258579,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "rotating"
+										}
+									],
+									"sid": 810966400589773,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 765629443126426,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "0.1"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 706069069983312
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "sheepHeadBullet",
+													"sid": 753663486464466,
+													"parameters": {
+														"instance-variable": "primeAngle",
+														"value": "Self.Bullet.AngleOfMotion"
+													}
+												}
+											],
+											"sid": 576752421916841
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 480562133419273,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "1"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 179315850973651,
+													"parameters": {
+														"interval-seconds": "0.1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 954120014016231,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion + 3"
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "sheepHeadBullet",
+													"sid": 309037615183325,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"speed": "100"
+													}
+												}
+											],
+											"sid": 937423269557374
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 484166119727981,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "2"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 594464484055085
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 434563381989507,
+													"disabled": true,
+													"parameters": {
+														"interval-seconds": "0.1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 360262090929742,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(Self.X, Self.Y, player1.X, player1.Y) + random(-20, 20)"
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "sheepHeadBullet",
+													"sid": 771120681932563,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"speed": "80"
+													}
+												}
+											],
+											"sid": 654723378388633
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "sheepHeadBullet",
+											"sid": 107127994945566,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "4"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "rotating"
+										}
+									],
+									"sid": 661453173981784,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 109570925264568,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "0.1"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 362102288073361
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "sheepHeadBullet",
+													"sid": 250212310922907,
+													"parameters": {
+														"instance-variable": "primeAngle",
+														"value": "Self.Bullet.AngleOfMotion"
+													}
+												}
+											],
+											"sid": 332955925019459
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "sheepHeadBullet",
+													"sid": 884204355072442,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "1"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 439484477695500,
+													"disabled": true,
+													"parameters": {
+														"interval-seconds": "0.1"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 339102164817597
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "sheepHeadBullet",
+													"sid": 750605922232785,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(Self.X, Self.Y, player1.X, player1.Y) + random(-20, 20)"
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "sheepHeadBullet",
+													"sid": 542698601852454,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"speed": "80"
+													}
+												}
+											],
+											"sid": 232086960043445
+										}
+									]
+								}
+							],
+							"sid": 672009221598697
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "sheepHeadBullet",
+									"sid": 716046970440135,
+									"parameters": {
+										"object": "walls"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "sheepHeadBullet",
+									"sid": 228855713974582,
+									"parameters": {
+										"object": "sprike"
+									}
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "sheepHeadBullet",
+									"sid": 366854952893563,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"comparison": 3,
+										"speed": "0"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "bigEyeBullet",
+									"sid": 664671549188162,
+									"disabled": true,
+									"parameters": {
+										"object": "player1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "sheepHeadBullet",
+									"sid": 679228297466233
+								}
+							],
+							"sid": 814084034844399,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "bossSheep",
+									"sid": 622829301417663,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 866609313882363,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 590347132858452
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 203130245877656,
+											"parameters": {
+												"seconds": "1",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bossSheep",
+											"sid": 811024375707534,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 875492444225618
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bossSheep",
+											"sid": 708828878181426,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 625918877872267
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 422449354716797,
+											"parameters": {
+												"seconds": "15",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bossSheep",
+											"sid": 444828814483096,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 745625583081770
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bossSheep",
+											"sid": 415686480124636,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "2"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 952896584216255
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 286405028448769,
+											"parameters": {
+												"seconds": "7",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bossSheep",
+											"sid": 883802236965031,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 556087083092183
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bossSheep",
+											"sid": 771525209415066,
+											"parameters": {
+												"instance-variable": "hp",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 681400766540376,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "bossSheep",
+													"sid": 914986098524233,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 458202072555660,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 313662908796477,
+															"parameters": {
+																"interval-seconds": "5"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 987196905807919,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for",
+																	"objectClass": "System",
+																	"sid": 542847711143277,
+																	"parameters": {
+																		"name": "\"bulletSpawnSheep\"",
+																		"start-index": "0",
+																		"end-index": "18"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "bossSheep",
+																	"sid": 775120267925404,
+																	"parameters": {
+																		"object": "sheepHeadBullet",
+																		"layer": "\"bullets\"",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-angle-of-motion",
+																	"objectClass": "sheepHeadBullet",
+																	"sid": 183463180674383,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"angle": "loopindex(\"bulletSpawnSheep\") * 20 + 10"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "sheepHeadBullet",
+																	"sid": 840049331358049,
+																	"parameters": {
+																		"instance-variable": "pattern",
+																		"value": "0"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "sheepHeadBullet",
+																	"sid": 890038681933463,
+																	"parameters": {
+																		"instance-variable": "primeAngle",
+																		"value": "Self.Bullet.AngleOfMotion"
+																	}
+																}
+															],
+															"sid": 469997888200043
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for",
+																	"objectClass": "System",
+																	"sid": 761433108250051,
+																	"parameters": {
+																		"name": "\"bulletSpawnSheep\"",
+																		"start-index": "0",
+																		"end-index": "18"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "bossSheep",
+																	"sid": 180816029188202,
+																	"parameters": {
+																		"object": "sheepHeadBullet",
+																		"layer": "\"bullets\"",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-angle-of-motion",
+																	"objectClass": "sheepHeadBullet",
+																	"sid": 769280869044781,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"angle": "loopindex(\"bulletSpawnSheep\") * 20"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "sheepHeadBullet",
+																	"sid": 428659964590982,
+																	"parameters": {
+																		"instance-variable": "primeAngle",
+																		"value": "Self.Bullet.AngleOfMotion"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "sheepHeadBullet",
+																	"sid": 177344825092891,
+																	"parameters": {
+																		"instance-variable": "pattern",
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 507775838882695
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 828551748025967,
+																	"parameters": {
+																		"seconds": "1",
+																		"use-timescale": true
+																	}
+																}
+															],
+															"sid": 476030206141835,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "for",
+																			"objectClass": "System",
+																			"sid": 647783806925089,
+																			"parameters": {
+																				"name": "\"bulletSpawnSheep\"",
+																				"start-index": "0",
+																				"end-index": "18"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "spawn-another-object",
+																			"objectClass": "bossSheep",
+																			"sid": 450035648194211,
+																			"parameters": {
+																				"object": "sheepHeadBullet",
+																				"layer": "\"bullets\"",
+																				"image-point": "0",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "set-angle-of-motion",
+																			"objectClass": "sheepHeadBullet",
+																			"sid": 839604547196480,
+																			"behaviorType": "Bullet",
+																			"parameters": {
+																				"angle": "loopindex(\"bulletSpawnSheep\") * 20 "
+																			}
+																		},
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "sheepHeadBullet",
+																			"sid": 333580982573190,
+																			"parameters": {
+																				"instance-variable": "primeAngle",
+																				"value": "Self.Bullet.AngleOfMotion"
+																			}
+																		},
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "sheepHeadBullet",
+																			"sid": 369237303229258,
+																			"parameters": {
+																				"instance-variable": "pattern",
+																				"value": "0"
+																			}
+																		}
+																	],
+																	"sid": 354463705580943
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 976893794308367,
+																	"parameters": {
+																		"seconds": "1",
+																		"use-timescale": true
+																	}
+																}
+															],
+															"sid": 229408207458109,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "for",
+																			"objectClass": "System",
+																			"sid": 919819171822058,
+																			"parameters": {
+																				"name": "\"bulletSpawnSheep\"",
+																				"start-index": "0",
+																				"end-index": "18"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "spawn-another-object",
+																			"objectClass": "bossSheep",
+																			"sid": 676713862024193,
+																			"parameters": {
+																				"object": "sheepHeadBullet",
+																				"layer": "\"bullets\"",
+																				"image-point": "0",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "set-angle-of-motion",
+																			"objectClass": "sheepHeadBullet",
+																			"sid": 370862156837968,
+																			"behaviorType": "Bullet",
+																			"parameters": {
+																				"angle": "loopindex(\"bulletSpawnSheep\") * 20 + 10"
+																			}
+																		},
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "sheepHeadBullet",
+																			"sid": 173778294928326,
+																			"parameters": {
+																				"instance-variable": "primeAngle",
+																				"value": "Self.Bullet.AngleOfMotion"
+																			}
+																		},
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "sheepHeadBullet",
+																			"sid": 162696630121579,
+																			"parameters": {
+																				"instance-variable": "pattern",
+																				"value": "2"
+																			}
+																		}
+																	],
+																	"sid": 252086896136947
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "bossSheep",
+													"sid": 884228606527056,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 482664155649849,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 467127940001904,
+															"parameters": {
+																"interval-seconds": "5"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 373204558764722,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for",
+																	"objectClass": "System",
+																	"sid": 272213970426906,
+																	"parameters": {
+																		"name": "\"bulletSpawnSheep\"",
+																		"start-index": "0",
+																		"end-index": "18"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "bossSheep",
+																	"sid": 516841810399041,
+																	"parameters": {
+																		"object": "sheepHeadBullet",
+																		"layer": "\"bullets\"",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-angle-of-motion",
+																	"objectClass": "sheepHeadBullet",
+																	"sid": 141238821971561,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"angle": "loopindex(\"bulletSpawnSheep\") * 20 + 10"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "sheepHeadBullet",
+																	"sid": 861543180638148,
+																	"parameters": {
+																		"instance-variable": "pattern",
+																		"value": "3"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "sheepHeadBullet",
+																	"sid": 938398430912090,
+																	"parameters": {
+																		"instance-variable": "primeAngle",
+																		"value": "Self.Bullet.AngleOfMotion"
+																	}
+																}
+															],
+															"sid": 463321264662802
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 621634099723286,
+																	"parameters": {
+																		"seconds": "2.5",
+																		"use-timescale": true
+																	}
+																}
+															],
+															"sid": 331944553673436,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "for",
+																			"objectClass": "System",
+																			"sid": 264100074950959,
+																			"parameters": {
+																				"name": "\"bulletSpawnSheep\"",
+																				"start-index": "0",
+																				"end-index": "18"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "spawn-another-object",
+																			"objectClass": "bossSheep",
+																			"sid": 945090520672506,
+																			"parameters": {
+																				"object": "sheepHeadBullet",
+																				"layer": "\"bullets\"",
+																				"image-point": "0",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "set-angle-of-motion",
+																			"objectClass": "sheepHeadBullet",
+																			"sid": 323107875824646,
+																			"behaviorType": "Bullet",
+																			"parameters": {
+																				"angle": "loopindex(\"bulletSpawnSheep\") * 20"
+																			}
+																		},
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "sheepHeadBullet",
+																			"sid": 958501338451370,
+																			"parameters": {
+																				"instance-variable": "pattern",
+																				"value": "4"
+																			}
+																		},
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "sheepHeadBullet",
+																			"sid": 718823246293166,
+																			"parameters": {
+																				"instance-variable": "primeAngle",
+																				"value": "Self.Bullet.AngleOfMotion"
+																			}
+																		}
+																	],
+																	"sid": 921370536075219
+																}
+															]
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 599998042728363
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "plant boss",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "smile",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "player1",
+											"sid": 729902415652456,
+											"parameters": {
+												"animation": "\"hurt\""
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 815081343125271
+										}
+									],
+									"actions": [
+										{
+											"id": "wait-for-signal",
+											"objectClass": "System",
+											"sid": 487601993754766,
+											"parameters": {
+												"tag": "\"toSmile\""
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "bossPlant",
+											"sid": 135269071922694,
+											"parameters": {
+												"animation": "\"smile\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 854240738101939
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "bossPlant",
+											"sid": 995082492342309,
+											"parameters": {
+												"animation": "\"idle\""
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "bossPlant",
+											"sid": 667704489050156,
+											"parameters": {
+												"comparison": 0,
+												"number": "0"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 187425268871313
+										}
+									],
+									"actions": [
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 248585409735844,
+											"parameters": {
+												"tag": "\"toSmile\""
+											}
+										}
+									],
+									"sid": 969869629147061
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-animation-finished",
+											"objectClass": "bossPlant",
+											"sid": 797701825507223,
+											"parameters": {
+												"animation": "\"smile\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bossPlant",
+											"sid": 179399436351472,
+											"parameters": {
+												"animation": "\"idle\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 139783985350611
+								}
+							],
+							"sid": 849578759342536
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "plantBossBullet",
+									"sid": 762552145499809,
+									"parameters": {
+										"object": "walls"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "plantBossBullet",
+									"sid": 834097476921945,
+									"parameters": {
+										"object": "sprike"
+									}
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "plantBossBullet",
+									"sid": 393184110051216,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"comparison": 3,
+										"speed": "0"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "plantBossBullet",
+									"sid": 213735775321500,
+									"parameters": {
+										"object": "back"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "plantBossBullet",
+									"sid": 723462934556844
+								}
+							],
+							"sid": 894838779874003,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "plantBossWave",
+									"sid": 943983603991322,
+									"parameters": {
+										"instance-variable": "lifetime",
+										"comparison": 4,
+										"value": "0.15 * Self.index"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "plantBossWave",
+									"sid": 307290623740547,
+									"parameters": {
+										"animation": "\"main\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 585859805971150
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "plantBossWave",
+									"sid": 402772009613154,
+									"parameters": {
+										"animation": "\"main\""
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "plantBossWave",
+									"sid": 816456352958432,
+									"parameters": {
+										"object": "wallsLevel1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "plantBossWave",
+									"sid": 734297632498859
+								}
+							],
+							"sid": 641764984220878,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "bullet pattern plant boss",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "plantBossBullet",
+											"sid": 550184350989364,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "just direct bullet"
+										}
+									],
+									"sid": 302537323117406
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "plantBossBullet",
+											"sid": 171627540573644,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 928173288612045,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 206931765894239,
+													"parameters": {
+														"interval-seconds": "0.01"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "plantBossBullet",
+													"sid": 560514710283686,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 2,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "plantBossBullet",
+													"sid": 293737930071788,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion + 2"
+													}
+												}
+											],
+											"sid": 275036399758534
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "plantBossBullet",
+											"sid": 189293499965178,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 844765621646691,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 455018178983980,
+													"parameters": {
+														"interval-seconds": "0.01"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "plantBossBullet",
+													"sid": 801279575113168,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 2,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "plantBossBullet",
+													"sid": 380182040042079,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion - 2"
+													}
+												}
+											],
+											"sid": 335947975694848
+										}
+									]
+								}
+							],
+							"sid": 930453255695655
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "bossPlant",
+									"sid": 982364780994595,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 162968259871659,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 550430062735851
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 979494738930446,
+											"parameters": {
+												"seconds": "1",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bossPlant",
+											"sid": 156201242970281,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 614926014455634
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bossPlant",
+											"sid": 160070348732216,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 575199071553136
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 436584828107288,
+											"parameters": {
+												"seconds": "15",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bossPlant",
+											"sid": 139486927706728,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 645412310956293
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bossPlant",
+											"sid": 989225104259601,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "2"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 453875600365586
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 716935917212160,
+											"parameters": {
+												"seconds": "15",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bossPlant",
+											"sid": 266555579021407,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 594197460313947
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-animation-finished",
+											"objectClass": "bossPlant",
+											"sid": 467631393169572,
+											"parameters": {
+												"animation": "\"attack\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bossPlant",
+											"sid": 795279802877513,
+											"parameters": {
+												"animation": "\"idle\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 317651573917999
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 427434556909906,
+											"parameters": {
+												"name": "\"bulletSpawnSheep\"",
+												"start-index": "0",
+												"end-index": "18"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "bossSheep",
+											"sid": 693167102808054,
+											"parameters": {
+												"object": "sheepHeadBullet",
+												"layer": "\"bullets\"",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "sheepHeadBullet",
+											"sid": 619028125777051,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "loopindex(\"bulletSpawnSheep\") * 20 + 10"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "sheepHeadBullet",
+											"sid": 691108763210039,
+											"parameters": {
+												"instance-variable": "pattern",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 209732272822258,
+									"disabled": true
+								},
+								{
+									"eventType": "variable",
+									"name": "targetAngle",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 105495464601331
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bossPlant",
+											"sid": 426730427912632,
+											"parameters": {
+												"instance-variable": "hp",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 206725393753829,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "bossPlant",
+													"sid": 984182403320154,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 432830946888282,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 545404331996586,
+															"parameters": {
+																"interval-seconds": "5"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation",
+															"objectClass": "bossPlant",
+															"sid": 833000245872453,
+															"parameters": {
+																"animation": "\"attack\"",
+																"from": "beginning"
+															}
+														}
+													],
+													"sid": 280800075685938
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-animation-playing",
+															"objectClass": "bossPlant",
+															"sid": 955097111422371,
+															"parameters": {
+																"animation": "\"attack\""
+															}
+														},
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "bossPlant",
+															"sid": 555597800253384,
+															"parameters": {
+																"comparison": 0,
+																"number": "10"
+															}
+														},
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 994113516464569
+														}
+													],
+													"actions": [],
+													"sid": 774624623789831,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for",
+																	"objectClass": "System",
+																	"sid": 861653171368076,
+																	"parameters": {
+																		"name": "\"bulletSpawnSheep\"",
+																		"start-index": "0",
+																		"end-index": "24"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "bossPlant",
+																	"sid": 998291865654993,
+																	"parameters": {
+																		"object": "plantBossBullet",
+																		"layer": "\"bullets\"",
+																		"image-point": "1",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-angle-of-motion",
+																	"objectClass": "plantBossBullet",
+																	"sid": 165723571457823,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"angle": "loopindex(\"bulletSpawnSheep\") * 15"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "plantBossBullet",
+																	"sid": 540923375274821,
+																	"parameters": {
+																		"instance-variable": "pattern",
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 958664244531345
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 491806162814715,
+																	"parameters": {
+																		"seconds": "1",
+																		"use-timescale": true
+																	}
+																}
+															],
+															"sid": 609861233121780,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "for",
+																			"objectClass": "System",
+																			"sid": 923211414126751,
+																			"parameters": {
+																				"name": "\"bulletSpawnSheep\"",
+																				"start-index": "0",
+																				"end-index": "24"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "spawn-another-object",
+																			"objectClass": "bossPlant",
+																			"sid": 634412414040994,
+																			"parameters": {
+																				"object": "plantBossBullet",
+																				"layer": "\"bullets\"",
+																				"image-point": "1",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "set-angle-of-motion",
+																			"objectClass": "plantBossBullet",
+																			"sid": 566710853159815,
+																			"behaviorType": "Bullet",
+																			"parameters": {
+																				"angle": "loopindex(\"bulletSpawnSheep\") * 15+ 5"
+																			}
+																		},
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "plantBossBullet",
+																			"sid": 315854035997803,
+																			"parameters": {
+																				"instance-variable": "pattern",
+																				"value": "2"
+																			}
+																		}
+																	],
+																	"sid": 277312098909941
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "for",
+																			"objectClass": "System",
+																			"sid": 102360267905196,
+																			"parameters": {
+																				"name": "\"bulletSpawnSheep\"",
+																				"start-index": "0",
+																				"end-index": "18"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "spawn-another-object",
+																			"objectClass": "bossPlant",
+																			"sid": 462980412065066,
+																			"parameters": {
+																				"object": "plantBossBullet",
+																				"layer": "\"bullets\"",
+																				"image-point": "1",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "set-angle-of-motion",
+																			"objectClass": "plantBossBullet",
+																			"sid": 484070822746366,
+																			"behaviorType": "Bullet",
+																			"parameters": {
+																				"angle": "loopindex(\"bulletSpawnSheep\") * 20"
+																			}
+																		},
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "plantBossBullet",
+																			"sid": 236506507747628,
+																			"parameters": {
+																				"instance-variable": "pattern",
+																				"value": "0"
+																			}
+																		}
+																	],
+																	"sid": 598536209057311
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "wait",
+																			"objectClass": "System",
+																			"sid": 793334182964401,
+																			"parameters": {
+																				"seconds": "1",
+																				"use-timescale": true
+																			}
+																		}
+																	],
+																	"sid": 900622478425012,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "for",
+																					"objectClass": "System",
+																					"sid": 955901074060743,
+																					"parameters": {
+																						"name": "\"bulletSpawnSheep\"",
+																						"start-index": "0",
+																						"end-index": "24"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "spawn-another-object",
+																					"objectClass": "bossPlant",
+																					"sid": 460838278957978,
+																					"parameters": {
+																						"object": "plantBossBullet",
+																						"layer": "\"bullets\"",
+																						"image-point": "1",
+																						"create-hierarchy": false,
+																						"template-name": "\"\""
+																					}
+																				},
+																				{
+																					"id": "set-angle-of-motion",
+																					"objectClass": "plantBossBullet",
+																					"sid": 136120745163303,
+																					"behaviorType": "Bullet",
+																					"parameters": {
+																						"angle": "loopindex(\"bulletSpawnSheep\") * 15"
+																					}
+																				},
+																				{
+																					"id": "set-instvar-value",
+																					"objectClass": "plantBossBullet",
+																					"sid": 118447953503460,
+																					"parameters": {
+																						"instance-variable": "pattern",
+																						"value": "1"
+																					}
+																				}
+																			],
+																			"sid": 796414675796818
+																		}
+																	]
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "bossPlant",
+													"sid": 317481378672829,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 273534938317767,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 189983447573250,
+															"parameters": {
+																"interval-seconds": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 765127511642507,
+															"parameters": {
+																"variable": "targetAngle",
+																"value": "angle(bossPlant.X, bossPlant.Y, player1.X, player1.Y) + random(-10, 10)"
+															}
+														},
+														{
+															"id": "shake",
+															"objectClass": "camera",
+															"sid": 257513176197444,
+															"behaviorType": "ScrollTo",
+															"parameters": {
+																"magnitude": "6",
+																"duration": "0.25",
+																"mode": "reducing-magnitude"
+															}
+														}
+													],
+													"sid": 813088953186006,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for",
+																	"objectClass": "System",
+																	"sid": 967034155070707,
+																	"parameters": {
+																		"name": "\"rootsWave\"",
+																		"start-index": "1",
+																		"end-index": "15"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 424534784218765,
+																	"parameters": {
+																		"object-to-create": "plantBossWave",
+																		"layer": "\"obj0\"",
+																		"x": "bossPlant.X + cos(targetAngle) * (loopindex(\"rootsWave\") * 15) + random(-5, 5)",
+																		"y": "bossPlant.Y + sin(targetAngle) * (loopindex(\"rootsWave\") * 15) + random(-5, 5)",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "plantBossWave",
+																	"sid": 388200675693841,
+																	"parameters": {
+																		"instance-variable": "index",
+																		"value": "loopindex(\"rootsWave\")"
+																	}
+																},
+																{
+																	"type": "script",
+																	"language": "javascript",
+																	"script": [
+																		"console.log(\"root created\")"
+																	],
+																	"disabled": true
+																}
+															],
+															"sid": 998997884825270
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 283234221285588
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "mask boss",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "mask boss patterns",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "maskBossBullet",
+											"sid": 571514642993527,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "just direct bullet"
+										}
+									],
+									"sid": 343939083901960
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "maskBossBullet",
+											"sid": 182438652543959,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 804384891140459,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "maskBossBullet",
+													"sid": 714068277837432,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "1"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "maskBossBullet",
+													"sid": 410693677445379,
+													"parameters": {
+														"instance-variable": "pattern",
+														"comparison": 2,
+														"value": "1.5"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 574846823773420
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 817065514509530,
+													"disabled": true,
+													"parameters": {
+														"interval-seconds": "0.2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "maskBossBullet",
+													"sid": 153176817864099,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion - 35"
+													}
+												}
+											],
+											"sid": 838077949042209
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "maskBossBullet",
+													"sid": 971292742908895,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "1.5"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 786736278400617
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 495503976598964,
+													"disabled": true,
+													"parameters": {
+														"interval-seconds": "0.2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "maskBossBullet",
+													"sid": 441937445158503,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion -35"
+													}
+												}
+											],
+											"sid": 141866462407972
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "maskBossBullet",
+													"sid": 217851209253544,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "2"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 448833443337663
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "maskBossBullet",
+													"sid": 103598708190910,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion - 35"
+													}
+												}
+											],
+											"sid": 985609967308952
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "maskBossBullet",
+											"sid": 849038887663239,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 409564913078999,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "maskBossBullet",
+													"sid": 279692884304778,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "1"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "maskBossBullet",
+													"sid": 243698712387471,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 2,
+														"value": "1.5"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 647728380813207
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 916283244131524,
+													"disabled": true,
+													"parameters": {
+														"interval-seconds": "0.2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "maskBossBullet",
+													"sid": 317156134374765,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion + 35"
+													}
+												}
+											],
+											"sid": 335835517347172
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "maskBossBullet",
+													"sid": 687791351953687,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "1.5"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 955891593851480
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 605718858190935,
+													"disabled": true,
+													"parameters": {
+														"interval-seconds": "0.2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "maskBossBullet",
+													"sid": 211818568254780,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion + 35"
+													}
+												}
+											],
+											"sid": 944898800442662
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "maskBossBullet",
+													"sid": 649569471998018,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "2"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 845560008983289
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "maskBossBullet",
+													"sid": 172738022660869,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion + 35"
+													}
+												}
+											],
+											"sid": 881518187816194
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "maskBossBullet",
+											"sid": 806097295891696,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 131887670374187,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "maskBossBullet",
+													"sid": 973421750315913,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "0.7"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "maskBossBullet",
+													"sid": 946366314234486,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 2,
+														"value": "1.3"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 368184122638355
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 869717233691176,
+													"disabled": true,
+													"parameters": {
+														"interval-seconds": "0.2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "maskBossBullet",
+													"sid": 838906948152488,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(Self.X, Self.Y, player1.X, player1.Y)"
+													}
+												}
+											],
+											"sid": 566424273684467
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "maskBossBullet",
+													"sid": 569467269440576,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "1.3"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 992378731490031
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 274316759958400,
+													"disabled": true,
+													"parameters": {
+														"interval-seconds": "0.2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "maskBossBullet",
+													"sid": 472241944085497,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion"
+													}
+												}
+											],
+											"sid": 557858010648568,
+											"disabled": true
+										}
+									]
+								}
+							],
+							"sid": 790312308140813
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "maskBossBullet",
+									"sid": 520261783229521,
+									"parameters": {
+										"object": "walls"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "maskBossBullet",
+									"sid": 742817945992987,
+									"parameters": {
+										"object": "sprike"
+									}
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "maskBossBullet",
+									"sid": 813232721237341,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"comparison": 3,
+										"speed": "0"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "bigEyeBullet",
+									"sid": 299687585053447,
+									"disabled": true,
+									"parameters": {
+										"object": "player1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "maskBossBullet",
+									"sid": 792705641445958
+								}
+							],
+							"sid": 350210947063821,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "maskBoss",
+									"sid": 785589220267711,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 634970627051933,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 842352298567201
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 808734228472235,
+											"parameters": {
+												"seconds": "1",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "maskBoss",
+											"sid": 437106452570382,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 444829501894840
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "maskBoss",
+											"sid": 345732585106739,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 908133074355477
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 923154501892788,
+											"parameters": {
+												"seconds": "15",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "maskBoss",
+											"sid": 994171151026912,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 836779216058090
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "maskBoss",
+											"sid": 651891948833950,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "2"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 504453583554614
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 178375966674413,
+											"parameters": {
+												"seconds": "15",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "maskBoss",
+											"sid": 512693238604653,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "3"
+											}
+										}
+									],
+									"sid": 519127644233005
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "maskBoss",
+											"sid": 886524988927019,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "3"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 509675578390261
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 428622514597912,
+											"parameters": {
+												"seconds": "12",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "maskBoss",
+											"sid": 546601930688242,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 806373979711165
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "maskBoss",
+											"sid": 410884629075035,
+											"parameters": {
+												"instance-variable": "hp",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 267288804827948,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "maskBoss",
+													"sid": 753994418378853,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-active",
+													"objectClass": "maskBoss",
+													"sid": 313988740778125,
+													"behaviorType": "Sine",
+													"parameters": {
+														"state": "inactive"
+													}
+												}
+											],
+											"sid": 972880787424757,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 639220133969554,
+															"parameters": {
+																"interval-seconds": "2"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 437871389040476,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for",
+																	"objectClass": "System",
+																	"sid": 242592867283742,
+																	"parameters": {
+																		"name": "\"bulletSpawnMaskBoss\"",
+																		"start-index": "0",
+																		"end-index": "36"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "maskBoss",
+																	"sid": 967157138526371,
+																	"parameters": {
+																		"object": "maskBossBullet",
+																		"layer": "\"bullets\"",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-angle-of-motion",
+																	"objectClass": "maskBossBullet",
+																	"sid": 700451972687039,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"angle": "loopindex(\"bulletSpawnMaskBoss\") * 10 "
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "maskBossBullet",
+																	"sid": 448059155509634,
+																	"parameters": {
+																		"instance-variable": "pattern",
+																		"value": "1"
+																	}
+																}
+															],
+															"sid": 655546057514095
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 312957512163348,
+																	"parameters": {
+																		"seconds": "1",
+																		"use-timescale": true
+																	}
+																}
+															],
+															"sid": 584010562851395,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "for",
+																			"objectClass": "System",
+																			"sid": 962628685046616,
+																			"parameters": {
+																				"name": "\"bulletSpawnMaskBoss\"",
+																				"start-index": "0",
+																				"end-index": "36"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "spawn-another-object",
+																			"objectClass": "maskBoss",
+																			"sid": 229945590231948,
+																			"parameters": {
+																				"object": "maskBossBullet",
+																				"layer": "\"bullets\"",
+																				"image-point": "0",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "set-angle-of-motion",
+																			"objectClass": "maskBossBullet",
+																			"sid": 903652907943136,
+																			"behaviorType": "Bullet",
+																			"parameters": {
+																				"angle": "loopindex(\"bulletSpawnMaskBoss\") * 10 "
+																			}
+																		},
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "maskBossBullet",
+																			"sid": 313849313084563,
+																			"parameters": {
+																				"instance-variable": "pattern",
+																				"value": "2"
+																			}
+																		}
+																	],
+																	"sid": 786425015364385
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "maskBoss",
+													"sid": 519503046004581,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 117067859511706,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 309590105469770
+														}
+													],
+													"actions": [
+														{
+															"id": "set-active",
+															"objectClass": "maskBoss",
+															"sid": 255457704826663,
+															"behaviorType": "Sine",
+															"parameters": {
+																"state": "active"
+															}
+														}
+													],
+													"sid": 719473769679487
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 228098569411558,
+															"parameters": {
+																"interval-seconds": "0.15"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "maskBoss",
+															"sid": 563885129185873,
+															"parameters": {
+																"object": "maskBossBullet",
+																"layer": "\"bullets\"",
+																"image-point": "0",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "maskBossBullet",
+															"sid": 640677147126059,
+															"parameters": {
+																"instance-variable": "pattern",
+																"value": "0"
+															}
+														},
+														{
+															"id": "set-angle-of-motion",
+															"objectClass": "maskBossBullet",
+															"sid": 889403096135170,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"angle": "angle(Self.X, Self.Y, player1.X, player1.Y) + random(-20, 20)"
+															}
+														}
+													],
+													"sid": 460010222656038
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "maskBoss",
+													"sid": 815726202980769,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "3"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 897732056543018,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 903194344655532
+														}
+													],
+													"actions": [
+														{
+															"id": "set-active",
+															"objectClass": "maskBoss",
+															"sid": 685987098030863,
+															"behaviorType": "Sine",
+															"parameters": {
+																"state": "inactive"
+															}
+														}
+													],
+													"sid": 660776519159029
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 573936045996070,
+															"parameters": {
+																"interval-seconds": "2"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 699247112042123,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for",
+																	"objectClass": "System",
+																	"sid": 623141401705359,
+																	"parameters": {
+																		"name": "\"bulletSpawnMaskBoss\"",
+																		"start-index": "0",
+																		"end-index": "18"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "maskBoss",
+																	"sid": 861811993708322,
+																	"parameters": {
+																		"object": "maskBossBullet",
+																		"layer": "\"bullets\"",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-angle-of-motion",
+																	"objectClass": "maskBossBullet",
+																	"sid": 160312884434397,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"angle": "loopindex(\"bulletSpawnMaskBoss\") * 20"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "maskBossBullet",
+																	"sid": 100904977586632,
+																	"parameters": {
+																		"instance-variable": "pattern",
+																		"value": "3"
+																	}
+																}
+															],
+															"sid": 645839418291356
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 703461810896538
+				}
+			],
+			"sid": 279913473038590
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "portal boss",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "bosses",
+							"sid": 443108346307697
+						}
+					],
+					"actions": [],
+					"sid": 260894709676810,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "sprike",
+									"sid": 167208317918419,
+									"parameters": {
+										"animation": "\"doorSide\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "sprike",
+									"sid": 839349071767669,
+									"parameters": {
+										"animation": "\"doorTop\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "sprike",
+									"sid": 202392446998748
+								}
+							],
+							"sid": 196301838921849,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 268371855496191,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 108624904044265,
+									"parameters": {
+										"object-to-create": "portalNewLevel",
+										"layer": "\"obj1\"",
+										"x": "bossZone.X",
+										"y": "bossZone.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "portalNewLevel",
+									"sid": 454863591575988,
+									"parameters": {
+										"object": "lightPlayer",
+										"layer": "\"darkness\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "add-child",
+									"objectClass": "portalNewLevel",
+									"sid": 616166804726098,
+									"parameters": {
+										"child": "lightPlayer",
+										"transform-x": false,
+										"transform-y": false,
+										"transform-z-elevation": false,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-d": true,
+										"transform-a": false,
+										"transform-o": false,
+										"transform-visibility": false,
+										"destroy-with-parent": true
+									}
+								}
+							],
+							"sid": 106457793742407
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "portalNewLevel",
+							"sid": 606003992521898,
+							"parameters": {
+								"animation": "\"main\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 157552295930040,
+							"parameters": {
+								"first-value": "distance(player1.X, player1.Y, portalNewLevel.X, portalNewLevel.Y)",
+								"comparison": 2,
+								"second-value": "60"
+							}
+						},
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 190907140586865,
+							"parameters": {
+								"interval-seconds": "0.01"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-vector-x",
+							"objectClass": "player1",
+							"sid": 874652322204057,
+							"disabled": true,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"vector-x": "sign(portalNewLevel.X - player1.X) * 500+ portalNewLevel.moveToPortalSpeed"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "player1",
+							"sid": 742234607578869,
+							"disabled": true,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"vector-y": "sign(portalNewLevel.Y - player1.Y) * 500+ portalNewLevel.moveToPortalSpeed"
+							}
+						},
+						{
+							"id": "move-at-angle",
+							"objectClass": "player1",
+							"sid": 978706798969604,
+							"parameters": {
+								"angle": "angle(Self.X, Self.Y, portalNewLevel.X, portalNewLevel.Y)",
+								"distance": "portalNewLevel.moveToPortalSpeed"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "portalNewLevel",
+							"sid": 625662780745693,
+							"parameters": {
+								"instance-variable": "moveToPortalSpeed",
+								"value": "0.1"
+							}
+						},
+						{
+							"id": "rotate-clockwise",
+							"objectClass": "player1",
+							"sid": 118228662915293,
+							"parameters": {
+								"degrees": "sign(player1.Width) * portalNewLevel.moveToPortalSpeed * 10"
+							}
+						}
+					],
+					"sid": 876060504340245
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player1",
+							"sid": 726237135711148,
+							"parameters": {
+								"object": "portalNewLevel"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "portalNewLevel",
+							"sid": 791230376318747,
+							"parameters": {
+								"animation": "\"close\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 836125050523608,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "player1",
+							"sid": 212195681588153
+						}
+					],
+					"sid": 403804872620324,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-pinned",
+									"objectClass": "guns",
+									"sid": 177470638243402,
+									"behaviorType": "Pin"
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "guns",
+									"sid": 199923286306818
+								}
+							],
+							"sid": 227369335437320
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "portalNewLevel",
+							"sid": 248876934288037,
+							"parameters": {
+								"animation": "\"close\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "portalNewLevel",
+							"sid": 984221381939481
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "camera",
+							"sid": 688307096126168,
+							"parameters": {
+								"instance-variable": "followMode",
+								"value": "\"none\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 768500614978041,
+							"disabled": true,
+							"parameters": {
+								"seconds": "2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "go-to-layout-by-name",
+							"objectClass": "System",
+							"sid": 876898069936434,
+							"disabled": true,
+							"parameters": {
+								"layout": "left(LayoutName, 5) & ((int(right(LayoutName, 1)) + 1))"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "DEMO CHANGES"
+						}
+					],
+					"sid": 810918686608701,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 878968157534463,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"level1\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 641669073919873,
+									"parameters": {
+										"layout": "level3"
+									}
+								}
+							],
+							"sid": 384483709436925
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 220029983385209,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"level3\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 401045250175575,
+									"parameters": {
+										"layout": "demoEnd"
+									}
+								},
+								{
+									"id": "clear",
+									"objectClass": "mapArray",
+									"sid": 787455936836211,
+									"parameters": {
+										"value": "0"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "mapTileUI",
+									"sid": 500417045538020
+								},
+								{
+									"id": "clear",
+									"objectClass": "upgradesAvailableArray",
+									"sid": 792260196777456,
+									"parameters": {
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "upgradesAvailableArray",
+									"sid": 896562752305565,
+									"parameters": {
+										"width": "0",
+										"height": "1",
+										"depth": "1"
+									}
+								},
+								{
+									"id": "clear",
+									"objectClass": "upgradesUnlockedArray",
+									"sid": 439883929007253,
+									"parameters": {
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "upgradesUnlockedArray",
+									"sid": 875909929483032,
+									"parameters": {
+										"width": "0",
+										"height": "1",
+										"depth": "1"
+									}
+								}
+							],
+							"sid": 834963636576781
+						}
+					]
+				}
+			],
+			"sid": 911128345163198
+		}
+	],
+	"sid": 450292712993070
+}

@@ -1,0 +1,16 @@
+{
+	"name": "justText",
+	"plugin-id": "Text",
+	"sid": 934193167066375,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 306145809023391
+		}
+	],
+	"effectTypes": []
+}

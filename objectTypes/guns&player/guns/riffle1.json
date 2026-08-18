@@ -1,0 +1,107 @@
+{
+	"name": "riffle1",
+	"plugin-id": "Sprite",
+	"sid": 973533832962075,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 17,
+						"height": 9,
+						"originX": 0.29411764705882354,
+						"originY": 0.4444444444444444,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 142327,
+						"collisionPoly": {
+							"points": [
+								0,
+								1,
+								0,
+								0.8055555555555556,
+								0,
+								0.3333333333333333,
+								0.5430739185520361,
+								0.6875,
+								0.8088235294117647,
+								1,
+								0.3843549683257918,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 1,
+								"y": 0.2222222222222222
+							},
+							{
+								"name": "shotEffect",
+								"x": 0.9411764705882353,
+								"y": 0.2222222222222222
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 997379495768526,
+				"name": "hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 17,
+						"height": 9,
+						"originX": 0.29411764705882354,
+						"originY": 0.4444444444444444,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2504987,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 1,
+								"y": 0.2222222222222222
+							},
+							{
+								"name": "shotEffect",
+								"x": 0.9411764705882353,
+								"y": 0.2222222222222222
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 820676142668747,
+				"name": "no hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

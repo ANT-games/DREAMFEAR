@@ -1,0 +1,10 @@
+{
+	"name": "metaUpgradeDescriptionText",
+	"plugin-id": "Text",
+	"sid": 630056092651133,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

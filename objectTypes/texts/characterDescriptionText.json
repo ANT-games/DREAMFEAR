@@ -1,0 +1,10 @@
+{
+	"name": "characterDescriptionText",
+	"plugin-id": "Text",
+	"sid": 942793563841102,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

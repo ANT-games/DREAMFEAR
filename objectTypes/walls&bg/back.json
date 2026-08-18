@@ -1,0 +1,29 @@
+{
+	"name": "back",
+	"plugin-id": "Tilemap",
+	"sid": 166742597194099,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "hsladjust",
+			"name": "AdjustHSL"
+		}
+	],
+	"image": {
+		"width": 200,
+		"height": 270,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\Administrator\\Desktop\\RoboJump Graphics\\Tilemaps\\LAB_BACK.png",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 9281637,
+		"useCollisionPoly": true,
+		"tag": ""
+	},
+	"tile-collision-polys": {}
+}

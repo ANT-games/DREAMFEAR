@@ -1,0 +1,10 @@
+{
+	"name": "pillsText",
+	"plugin-id": "Text",
+	"sid": 918541395974910,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

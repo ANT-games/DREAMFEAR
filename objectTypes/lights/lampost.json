@@ -1,0 +1,84 @@
+{
+	"name": "lampost",
+	"plugin-id": "Sprite",
+	"sid": 287099828673927,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "radialblur",
+			"name": "RadialBlur"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 6,
+						"height": 34,
+						"originX": 0.5,
+						"originY": 0.9117647058823529,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 446133,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "light",
+								"x": 0.5,
+								"y": 0.17647058823529413
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 861331036519687,
+				"name": "main",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			},
+			{
+				"frames": [
+					{
+						"width": 6,
+						"height": 34,
+						"originX": 0.5,
+						"originY": 0.9117647058823529,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6747211,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "light",
+								"x": 0.5,
+								"y": 0.17647058823529413
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 725916716602826,
+				"name": "notWorking",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 25
+			}
+		],
+		"subfolders": []
+	}
+}

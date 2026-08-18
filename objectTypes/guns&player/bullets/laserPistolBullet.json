@@ -1,0 +1,94 @@
+{
+	"name": "laserPistolBullet",
+	"plugin-id": "Sprite",
+	"sid": 697327924876041,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 30,
+						"height": 5,
+						"originX": 0.5666666666666667,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Bullets\\BulletA\\BulletA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7455018,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 30,
+						"height": 5,
+						"originX": 0.5666666666666667,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Bullets\\BulletA\\BulletA2.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4735839,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 30,
+						"height": 5,
+						"originX": 0.5666666666666667,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Bullets\\BulletA\\BulletA3.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8253253,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 30,
+						"height": 5,
+						"originX": 0.5666666666666667,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Bullets\\BulletA\\BulletA4.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7013380,
+						"collisionPoly": {
+							"points": [
+								0.03333333333333333,
+								0.4000000000000001,
+								0.9666666666666667,
+								0.4000000000000001,
+								0.9666666666666667,
+								0.6000000000000001,
+								0.03333333333333333,
+								0.6000000000000001
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 701070247735861,
+				"name": "Default",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,101 @@
+{
+	"name": "shotgun",
+	"plugin-id": "Sprite",
+	"sid": 157243684632385,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 26,
+						"height": 8,
+						"originX": 0.2692307692307692,
+						"originY": 0.375,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8071515,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.6923076923076923,
+								0,
+								0.6923076923076923,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 0.6923076923076923,
+								"y": 0.25
+							},
+							{
+								"name": "shotEffect",
+								"x": 0.6538461538461539,
+								"y": 0.3125
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 134776437809585,
+				"name": "hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 18,
+						"height": 8,
+						"originX": 0.3888888888888889,
+						"originY": 0.375,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8655719,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 1,
+								"y": 0.25
+							},
+							{
+								"name": "shotEffect",
+								"x": 0.9444444444444444,
+								"y": 0.3125
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 422360735961838,
+				"name": "no hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

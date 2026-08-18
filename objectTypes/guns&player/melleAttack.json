@@ -1,0 +1,209 @@
+{
+	"name": "melleAttack",
+	"plugin-id": "Sprite",
+	"sid": 758025743386326,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "hit",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 217800093855435
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 96,
+						"height": 128,
+						"originX": 0.453125,
+						"originY": 0.5625,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6281382,
+						"collisionPoly": {
+							"points": [
+								0.40625,
+								0.5390625,
+								0.6875,
+								0.53857421875,
+								0.640625,
+								0.59375,
+								0.40625,
+								0.59375
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "blood",
+								"x": 0.890625,
+								"y": 0.53125
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 96,
+						"height": 128,
+						"originX": 0.421875,
+						"originY": 0.5625,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1796427,
+						"collisionPoly": {
+							"points": [
+								0.375,
+								0.5625,
+								0.6328125,
+								0.53125,
+								0.8033854166666665,
+								0.515625,
+								0.890625,
+								0.53125,
+								0.6875,
+								0.59375,
+								0.375,
+								0.59375
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "blood",
+								"x": 0.890625,
+								"y": 0.53125
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 96,
+						"height": 128,
+						"originX": 0.375,
+						"originY": 0.5625,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1169873,
+						"collisionPoly": {
+							"points": [
+								0.375,
+								0.5625,
+								0.6640624999999999,
+								0.5234375,
+								0.9010416666666666,
+								0.5234375,
+								0.8541666666666664,
+								0.55859375,
+								0.703125,
+								0.59375,
+								0.375,
+								0.59375
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "blood",
+								"x": 0.890625,
+								"y": 0.53125
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 96,
+						"height": 128,
+						"originX": 0.390625,
+						"originY": 0.5625,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8610949,
+						"collisionPoly": {
+							"points": [
+								0.375,
+								0.53125,
+								0.7838541666666661,
+								0.515625,
+								0.859375,
+								0.53125,
+								0.640625,
+								0.59375,
+								0.375,
+								0.59375
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "blood",
+								"x": 0.890625,
+								"y": 0.53125
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 96,
+						"height": 128,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3304575,
+						"collisionPoly": {
+							"points": [
+								0.515625,
+								0.484375,
+								0.515625,
+								0.484375,
+								0.515625,
+								0.53125,
+								0.46875,
+								0.53125
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "blood",
+								"x": 0.890625,
+								"y": 0.53125
+							}
+						],
+						"duration": 5,
+						"tag": ""
+					}
+				],
+				"sid": 279694558576985,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 18
+			}
+		],
+		"subfolders": []
+	}
+}

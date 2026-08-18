@@ -1,0 +1,2146 @@
+{
+	"name": "audio",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "sfx_volume",
+			"type": "number",
+			"initialValue": "70",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 418457483949791
+		},
+		{
+			"eventType": "variable",
+			"name": "music_volume",
+			"type": "number",
+			"initialValue": "70",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 780546825872964
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "sounds",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "bullets",
+							"sid": 630547488587623
+						}
+					],
+					"actions": [],
+					"sid": 141932614125827,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "guns",
+									"sid": 770042736030179,
+									"parameters": {
+										"instance-variable": "isUsed"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 597462731494994,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "guns",
+											"sid": 100046102811927,
+											"parameters": {
+												"instance-variable": "gunName",
+												"comparison": 0,
+												"value": "\"revolver\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 447142351463923,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/revolver pistol"
+												},
+												"loop": "not-looping",
+												"volume": "-10 + (sfx_volume - 100) + random(-2,2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										}
+									],
+									"sid": 695921405542540
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "guns",
+											"sid": 494032566589340,
+											"parameters": {
+												"instance-variable": "gunName",
+												"comparison": 0,
+												"value": "\"assaultRiffle\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 323154816930580,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/assault riffle"
+												},
+												"loop": "not-looping",
+												"volume": "-10 + (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										}
+									],
+									"sid": 732682100366124
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "guns",
+											"sid": 968492037776299,
+											"parameters": {
+												"instance-variable": "gunName",
+												"comparison": 0,
+												"value": "\"shotgun\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 164527666667639,
+											"disabled": true,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/shotgun"
+												},
+												"loop": "not-looping",
+												"volume": "-25+ (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 729162591706107,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/shotgun/SingleShoot"
+												},
+												"loop": "not-looping",
+												"volume": "-25+ (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 658241839508923,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/shotgun/AddictSound"
+												},
+												"loop": "not-looping",
+												"volume": "-25+ (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 506282334664797,
+											"disabled": true,
+											"parameters": {
+												"seconds": "0.3",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 856704779251921,
+											"disabled": true,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/reloads/EndShoot"
+												},
+												"loop": "not-looping",
+												"volume": "-25+ (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										}
+									],
+									"sid": 453719070368655
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "guns",
+											"sid": 949582253231343,
+											"parameters": {
+												"instance-variable": "gunName",
+												"comparison": 0,
+												"value": "\"laserPistol\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 416986265374761,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/laser"
+												},
+												"loop": "not-looping",
+												"volume": "-3+ (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										}
+									],
+									"sid": 476545103212833
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "guns",
+											"sid": 192492785513793,
+											"parameters": {
+												"instance-variable": "gunName",
+												"comparison": 0,
+												"value": "\"riffle\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 527615605267082,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/riffle"
+												},
+												"loop": "not-looping",
+												"volume": "-5+ (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										}
+									],
+									"sid": 459898788598981
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "guns",
+											"sid": 520081787075881,
+											"parameters": {
+												"instance-variable": "gunName",
+												"comparison": 0,
+												"value": "\"sniperRiffle\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 717843401021735,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/sniper riffle"
+												},
+												"loop": "not-looping",
+												"volume": "1 + (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										}
+									],
+									"sid": 939977556956641
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "guns",
+											"sid": 352190057624286,
+											"parameters": {
+												"instance-variable": "gunName",
+												"comparison": 0,
+												"value": "\"uzi\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 425793432029721,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/revolver pistol"
+												},
+												"loop": "not-looping",
+												"volume": "-10 + (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										}
+									],
+									"sid": 688301567606862
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "guns",
+											"sid": 307873152303465,
+											"parameters": {
+												"instance-variable": "gunName",
+												"comparison": 0,
+												"value": "\"granateLauncher\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 219454077365064,
+											"parameters": {
+												"audio-file": {
+													"path": "YotaGrenadeLaunch"
+												},
+												"loop": "not-looping",
+												"volume": "-10 + (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										}
+									],
+									"sid": 540872378760806
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 461973039595545,
+							"parameters": {
+								"animation": "\"run\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 934648349706545,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "footstepsVolume",
+							"type": "number",
+							"initialValue": "-15",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 485199996072812
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 279611550730637,
+									"parameters": {
+										"interval-seconds": "0.3"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 778842045577336,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 734836962085541,
+											"parameters": {
+												"first-value": "random(-5,5)",
+												"comparison": 4,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 669039033533561,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 968466077529221,
+													"parameters": {
+														"first-value": "random(-5,5)",
+														"comparison": 4,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 900524664897472,
+													"parameters": {
+														"audio-file": {
+															"path": "movement/running1"
+														},
+														"loop": "not-looping",
+														"volume": "footstepsVolume+ (sfx_volume - 100) + random(-2, 2)",
+														"stereo-pan": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 330629295251304
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 910597818953570
+												}
+											],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 436870286809482,
+													"parameters": {
+														"audio-file": {
+															"path": "movement/running2"
+														},
+														"loop": "not-looping",
+														"volume": "footstepsVolume+ (sfx_volume - 100) + random(-2, 2)",
+														"stereo-pan": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 122171974917593
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 922443556091315
+										}
+									],
+									"actions": [],
+									"sid": 118632436190081,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 605801541037725,
+													"parameters": {
+														"first-value": "random(-5,5)",
+														"comparison": 4,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 483354299764800,
+													"parameters": {
+														"audio-file": {
+															"path": "movement/running3"
+														},
+														"loop": "not-looping",
+														"volume": "footstepsVolume+ (sfx_volume - 100) + random(-2, 2)",
+														"stereo-pan": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 636684828884356
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 887736953529235
+												}
+											],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 115358831264095,
+													"parameters": {
+														"audio-file": {
+															"path": "movement/running4"
+														},
+														"loop": "not-looping",
+														"volume": "footstepsVolume+ (sfx_volume - 100) + random(-2, 2)",
+														"stereo-pan": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 501840388528820
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 708916316918440,
+							"parameters": {
+								"animation": "\"roll\""
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 512331373502295
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 621216355037221,
+							"parameters": {
+								"audio-file": {
+									"path": "movement/roll"
+								},
+								"loop": "not-looping",
+								"volume": "-2+ (sfx_volume - 100) + random(-2, 2)",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 859219984955581
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "bullets",
+							"sid": 416650185751434,
+							"parameters": {
+								"object": "enemies"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 854479751645264
+						}
+					],
+					"actions": [],
+					"sid": 871506521857246,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "enemies",
+									"sid": 981219144790508,
+									"parameters": {
+										"animation": "\"hide\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 459632366371748,
+									"parameters": {
+										"audio-file": {
+											"path": "damage impact"
+										},
+										"loop": "not-looping",
+										"volume": "-10+ (sfx_volume - 100) + random(-4, 4)",
+										"stereo-pan": "0",
+										"tag-optional": "\"damageImpactEnemy\""
+									}
+								},
+								{
+									"id": "add-distortion-effect",
+									"objectClass": "Audio",
+									"sid": 387944506665770,
+									"disabled": true,
+									"parameters": {
+										"tag": "\"damageImpactEnemy\"",
+										"threshold": "-27",
+										"headroom": "21",
+										"drive": "5",
+										"make-up-gain": "3",
+										"mix": "100"
+									}
+								}
+							],
+							"sid": 600006202940799
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 455518001807177
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 361892853830332
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 584598811354616,
+									"parameters": {
+										"audio-file": {
+											"path": "hit bullet wall"
+										},
+										"loop": "not-looping",
+										"volume": "((sfx_volume - 100)/2) + random(-4, 4) - (distance(player1.X, player1.Y, bullets.X, bullets.Y))/15",
+										"stereo-pan": "(bullets.X - walls.BBoxMidX)",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 853860267105148
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "enemies",
+							"sid": 865795258192320,
+							"parameters": {
+								"object": "enemyBullets"
+							}
+						},
+						{
+							"id": "is-enabled",
+							"objectClass": "enemyBullets",
+							"sid": 518832641452861,
+							"behaviorType": "Bullet2"
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 737849386859050
+						}
+					],
+					"actions": [],
+					"sid": 990474186688058,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "enemies",
+									"sid": 409968935853306,
+									"parameters": {
+										"animation": "\"hide\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 957279717967279,
+									"parameters": {
+										"audio-file": {
+											"path": "damage impact"
+										},
+										"loop": "not-looping",
+										"volume": "-10+ (sfx_volume - 100) + random(-4, 4)",
+										"stereo-pan": "0",
+										"tag-optional": "\"damageImpactEnemy\""
+									}
+								},
+								{
+									"id": "add-distortion-effect",
+									"objectClass": "Audio",
+									"sid": 790094839602304,
+									"disabled": true,
+									"parameters": {
+										"tag": "\"damageImpactEnemy\"",
+										"threshold": "-27",
+										"headroom": "21",
+										"drive": "5",
+										"make-up-gain": "3",
+										"mix": "100"
+									}
+								}
+							],
+							"sid": 713714285723698
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 494791626404447
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 260558686986910
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 662058845139719,
+									"parameters": {
+										"audio-file": {
+											"path": "hit bullet wall"
+										},
+										"loop": "not-looping",
+										"volume": "((sfx_volume - 100)/2) + random(-4, 4) - (distance(player1.X, player1.Y, bullets.X, bullets.Y))/15",
+										"stereo-pan": "(bullets.X - walls.BBoxMidX)",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 880832134519049
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "maskProtector",
+							"sid": 494133821763842,
+							"parameters": {
+								"object": "enemies"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "enemies",
+							"sid": 172753985093714,
+							"parameters": {
+								"animation": "\"hide\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 651616220716261
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 489398659204456,
+							"parameters": {
+								"audio-file": {
+									"path": "damage impact"
+								},
+								"loop": "not-looping",
+								"volume": "-10+ (sfx_volume - 100) + random(-4, 4)",
+								"stereo-pan": "0",
+								"tag-optional": "\"damageImpactEnemy\""
+							}
+						}
+					],
+					"sid": 659943027904590
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "bullets",
+							"sid": 888876098095671,
+							"parameters": {
+								"object": "bosses"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 655202354660039
+						}
+					],
+					"actions": [],
+					"sid": 908114115180413,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 210935148175239
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 719023148315660,
+									"parameters": {
+										"audio-file": {
+											"path": "damage impact"
+										},
+										"loop": "not-looping",
+										"volume": "-6+ (sfx_volume - 100) + random(-4, 4)",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 227972495024554
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "bullets",
+							"sid": 785030612841803,
+							"parameters": {
+								"object": "walls"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 587156788690918
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 354828922683096,
+							"parameters": {
+								"audio-file": {
+									"path": "hit bullet wall"
+								},
+								"loop": "not-looping",
+								"volume": "((sfx_volume - 100)/2) + random(-4, 4) - (distance(player1.X, player1.Y, bullets.X, bullets.Y))/15",
+								"stereo-pan": "(bullets.X - walls.BBoxMidX)",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 307796733723864
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 805482889937566,
+							"parameters": {
+								"animation": "\"hurt\""
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 991067489774540
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 823075233087724,
+							"parameters": {
+								"audio-file": {
+									"path": "PLAYER_TAKE_DAMAGE"
+								},
+								"loop": "not-looping",
+								"volume": "-2 + ((sfx_volume - 100)/2)",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 812040315352204,
+							"parameters": {
+								"audio-file": {
+									"path": "damage impact"
+								},
+								"loop": "not-looping",
+								"volume": "-3+ (sfx_volume - 100) + random(-4, 4)",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 651557852790142
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "enemies",
+							"sid": 862033421631177,
+							"parameters": {
+								"animation": "\"death\""
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 609686639067840
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 987941835518553,
+							"parameters": {
+								"audio-file": {
+									"path": "death impact"
+								},
+								"loop": "not-looping",
+								"volume": "-2 + ((sfx_volume - 100)/2)",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 286958015104752
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "reloadUI",
+							"sid": 539814537238208,
+							"parameters": {
+								"animation": "\"Animation 1\""
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "reloadUI",
+							"sid": 868003258695650,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 918353470515517
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 237928069742267,
+							"parameters": {
+								"audio-file": {
+									"path": "shooting/reloads/reload sound"
+								},
+								"loop": "not-looping",
+								"volume": "-10 + ((sfx_volume - 100)/2)",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 753325456868397
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "fxBomb",
+							"sid": 540775134695415,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 587801859652760
+						}
+					],
+					"actions": [],
+					"sid": 791830436349992,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "fxBomb",
+									"sid": 893175600052715,
+									"parameters": {
+										"animation": "\"granate\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 203438887825304,
+									"parameters": {
+										"audio-file": {
+											"path": "YotaGrenadeExplosion"
+										},
+										"loop": "not-looping",
+										"volume": "((sfx_volume - 100)/2)",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 555447195159078
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "fxBomb",
+									"sid": 706779337960248,
+									"parameters": {
+										"animation": "\"bomb\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 255716917792021,
+									"parameters": {
+										"audio-file": {
+											"path": "shooting/granate explosion"
+										},
+										"loop": "not-looping",
+										"volume": "-2 + ((sfx_volume - 100)/2)",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 325354733640961
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "gameCurrency",
+							"sid": 774416791163819
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 924407793117011,
+							"parameters": {
+								"audio-file": {
+									"path": "coin sound"
+								},
+								"loop": "not-looping",
+								"volume": "-12+ (sfx_volume - 100) + random(-4, 4)",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 358808045194452
+				},
+				{
+					"functionName": "healing sound",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 987086707044427,
+							"parameters": {
+								"audio-file": {
+									"path": "med kit"
+								},
+								"loop": "not-looping",
+								"volume": "-0 + (sfx_volume - 100) ",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 837699586458394
+				},
+				{
+					"functionName": "bombPickUpSound",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 449522368088295,
+							"parameters": {
+								"audio-file": {
+									"path": "bombPickedUp"
+								},
+								"loop": "not-looping",
+								"volume": "(sfx_volume - 100) ",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 391439569934561
+				},
+				{
+					"functionName": "bulletHitBackSound",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 871184343232606,
+							"parameters": {
+								"audio-file": {
+									"path": "ricochet"
+								},
+								"loop": "not-looping",
+								"volume": "-10 + (sfx_volume - 100) ",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 784956479444337
+				},
+				{
+					"functionName": "bulletHitShield",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 213244722787344,
+							"parameters": {
+								"audio-file": {
+									"path": "hit bullet wall"
+								},
+								"loop": "not-looping",
+								"volume": "-10 + (sfx_volume - 100) ",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 146015984523063
+				},
+				{
+					"functionName": "cursorOverObjectSound",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 130565277688640,
+							"parameters": {
+								"audio-file": {
+									"path": "button assorted 39"
+								},
+								"loop": "not-looping",
+								"volume": "1+ (sfx_volume - 100) ",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 252049585589386
+				},
+				{
+					"functionName": "clickSound",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 792937522626403,
+							"parameters": {
+								"audio-file": {
+									"path": "clicky button 1"
+								},
+								"loop": "not-looping",
+								"volume": "1 + (sfx_volume - 100) ",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 410867495193945
+				},
+				{
+					"functionName": "gun change sound",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 518899723230319,
+							"parameters": {
+								"audio-file": {
+									"path": "gun change"
+								},
+								"loop": "not-looping",
+								"volume": "4 + (sfx_volume - 100) ",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 682107868197982
+				}
+			],
+			"sid": 386551851170673
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "music",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 995163456932190
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 735507866263962,
+							"parameters": {
+								"tag": "\"ambient\""
+							}
+						}
+					],
+					"sid": 165548353136322
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 314416313955021,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"mainMenu\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 152046457813998,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"menu play\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 737525605999008,
+							"parameters": {
+								"tag": "\"ambient\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 614909575497759,
+							"parameters": {
+								"tag": "\"boss\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 982801250676343,
+							"parameters": {
+								"tag": "\"death\""
+							}
+						}
+					],
+					"sid": 361205298657840,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 990855610322391,
+									"parameters": {
+										"tag": "\"menu\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 407317030603952,
+									"parameters": {
+										"audio-file": {
+											"path": "fuck it"
+										},
+										"loop": "not-looping",
+										"volume": "-120 + music_volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"menu\""
+									}
+								}
+							],
+							"sid": 489390671887255
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 212828318481786,
+							"parameters": {
+								"animation": "\"death\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 752149061490946,
+							"parameters": {
+								"tag": "\"ambient\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 141639855398450,
+							"parameters": {
+								"tag": "\"boss\""
+							}
+						}
+					],
+					"sid": 737894477392134,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 703935067779416
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 788321813244854,
+									"parameters": {
+										"audio-file": {
+											"path": "death"
+										},
+										"loop": "not-looping",
+										"volume": "(music_volume-100) - 15",
+										"stereo-pan": "0",
+										"tag-optional": "\"death\""
+									}
+								}
+							],
+							"sid": 489278443064104
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 736949785219572,
+							"parameters": {
+								"animation": "\"death\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 223734681511871,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 1,
+								"second-value": "\"deathMenu\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 199500494695517,
+							"parameters": {
+								"tag": "\"death\""
+							}
+						}
+					],
+					"sid": 801683794926646
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "bosses",
+							"sid": 555371633970728,
+							"parameters": {
+								"instance-variable": "active"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 695316008677192,
+							"parameters": {
+								"tag": "\"death\" "
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 892572398261651,
+							"disabled": true,
+							"parameters": {
+								"variable": "isPause"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 363783321551586,
+							"parameters": {
+								"tag": "\"menu\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 215308011158807,
+							"parameters": {
+								"tag": "\"boss\""
+							}
+						}
+					],
+					"sid": 492571472770278,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 428994168821186,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"level1\""
+									}
+								},
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 931802391175634,
+									"parameters": {
+										"tag": "\"ambient\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 313947630477260
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 150598586369162,
+									"parameters": {
+										"audio-file": {
+											"path": "fear"
+										},
+										"loop": "not-looping",
+										"volume": "-120 + music_volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"ambient\""
+									}
+								}
+							],
+							"sid": 905250605556977
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 928310289866722,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"level2\""
+									}
+								},
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 962230101548207,
+									"parameters": {
+										"tag": "\"ambient\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 955018377518257
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 382539990564070,
+									"parameters": {
+										"audio-file": {
+											"path": "shining"
+										},
+										"loop": "not-looping",
+										"volume": "-120 + music_volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"ambient\""
+									}
+								}
+							],
+							"sid": 974726902224099
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 434711674971937,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"level3\""
+									}
+								},
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 527095349763414,
+									"parameters": {
+										"tag": "\"ambient\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 511784823987909
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 583257622509148,
+									"parameters": {
+										"audio-file": {
+											"path": "hit it"
+										},
+										"loop": "not-looping",
+										"volume": "-120 + music_volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"ambient\""
+									}
+								}
+							],
+							"sid": 622524807904600
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "bosses",
+							"sid": 211098601862594,
+							"parameters": {
+								"instance-variable": "active"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 231934659325208,
+							"parameters": {
+								"tag": "\"ambient\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 908245956164408,
+							"parameters": {
+								"tag": "\"menu\""
+							}
+						}
+					],
+					"sid": 216068604068421,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 531301643710335,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"level1\""
+									}
+								},
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 941181222173669,
+									"parameters": {
+										"tag": "\"boss\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 655591289712291
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 986269875157447,
+									"parameters": {
+										"audio-file": {
+											"path": "untitled"
+										},
+										"loop": "not-looping",
+										"volume": "-120 + music_volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"boss\""
+									}
+								}
+							],
+							"sid": 710465052019822
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 692290802577731,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"level3\""
+									}
+								},
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 995091261512133,
+									"parameters": {
+										"tag": "\"boss\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 828141589478118
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 929489659408102,
+									"parameters": {
+										"audio-file": {
+											"path": "death is coming"
+										},
+										"loop": "not-looping",
+										"volume": "-120 + music_volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"boss\""
+									}
+								}
+							],
+							"sid": 273558074066800
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 616654549486107
+						}
+					],
+					"actions": [
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 371626730370854,
+							"parameters": {
+								"tag": "\"menu\"",
+								"db": "-110 + music_volume"
+							}
+						}
+					],
+					"sid": 118327497772552,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 482048199273459,
+									"parameters": {
+										"variable": "isPause"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-playback-rate",
+									"objectClass": "Audio",
+									"sid": 940254702460617,
+									"parameters": {
+										"tag": "\"ambient\"",
+										"playback-rate": "0"
+									}
+								},
+								{
+									"id": "set-playback-rate",
+									"objectClass": "Audio",
+									"sid": 699243849304482,
+									"parameters": {
+										"tag": "\"boss\"",
+										"playback-rate": "0"
+									}
+								},
+								{
+									"id": "set-volume",
+									"objectClass": "Audio",
+									"sid": 462977125330445,
+									"parameters": {
+										"tag": "\"boss\"",
+										"db": "-110 + music_volume"
+									}
+								}
+							],
+							"sid": 490894830672974,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 119252288878712,
+											"parameters": {
+												"variable": "playerIsInFight"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-volume",
+											"objectClass": "Audio",
+											"sid": 255370190384825,
+											"parameters": {
+												"tag": "\"ambient\"",
+												"db": "-110 + music_volume"
+											}
+										}
+									],
+									"sid": 212817765173256
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 725312362425712,
+											"parameters": {
+												"variable": "playerIsInFight"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-volume",
+											"objectClass": "Audio",
+											"sid": 539670246584526,
+											"parameters": {
+												"tag": "\"ambient\"",
+												"db": "-120 + music_volume"
+											}
+										}
+									],
+									"sid": 812455624910778
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 899805708451790
+								}
+							],
+							"actions": [
+								{
+									"id": "set-playback-rate",
+									"objectClass": "Audio",
+									"sid": 107162669991809,
+									"parameters": {
+										"tag": "\"ambient\"",
+										"playback-rate": "1"
+									}
+								},
+								{
+									"id": "set-playback-rate",
+									"objectClass": "Audio",
+									"sid": 189057309440796,
+									"parameters": {
+										"tag": "\"boss\"",
+										"playback-rate": "1"
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 114876900961693,
+									"parameters": {
+										"tag": "\"boss\"",
+										"db": "-110 + music_volume",
+										"duration": "2",
+										"ending": "keep-playing"
+									}
+								}
+							],
+							"sid": 955403323844680,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 876218164484539,
+											"parameters": {
+												"variable": "playerIsInFight"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "fade-volume",
+											"objectClass": "Audio",
+											"sid": 263644502313195,
+											"parameters": {
+												"tag": "\"ambient\"",
+												"db": "-110 + music_volume",
+												"duration": "2",
+												"ending": "keep-playing"
+											}
+										}
+									],
+									"sid": 523808281043853
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 450503959178481,
+											"parameters": {
+												"variable": "playerIsInFight"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "fade-volume",
+											"objectClass": "Audio",
+											"sid": 726361497690117,
+											"parameters": {
+												"tag": "\"ambient\"",
+												"db": "-120 + music_volume",
+												"duration": "2",
+												"ending": "keep-playing"
+											}
+										}
+									],
+									"sid": 268687914197310
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 112025032250335
+						}
+					],
+					"actions": [
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 216012663623988,
+							"parameters": {
+								"tag": "\"ambient\"",
+								"db": "music_volume"
+							}
+						}
+					],
+					"sid": 256270992550745,
+					"disabled": true
+				}
+			],
+			"sid": 265381593128030
+		}
+	],
+	"sid": 254973628533099
+}

@@ -1,0 +1,10 @@
+{
+	"name": "bombsText",
+	"plugin-id": "Text",
+	"sid": 989524887783550,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

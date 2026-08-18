@@ -1,0 +1,113 @@
+{
+	"name": "riffle",
+	"plugin-id": "Sprite",
+	"sid": 889109916687379,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 26,
+						"height": 8,
+						"originX": 0.2692307692307692,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7235364,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.6982248520710059,
+								0,
+								0.6982248520710059,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 0.8461538461538461,
+								"y": 0.25
+							},
+							{
+								"name": "shotEffect",
+								"x": 0.8076923076923077,
+								"y": 0.25
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 189883429370224,
+				"name": "hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 26,
+						"height": 8,
+						"originX": 0.2692307692307692,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 791633,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.8461538461538461,
+								0,
+								0.8461538461538461,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 0.8461538461538461,
+								"y": 0.25
+							},
+							{
+								"name": "shotEffect",
+								"x": 0.8076923076923077,
+								"y": 0.25
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 295779186714118,
+				"name": "no hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

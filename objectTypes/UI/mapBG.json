@@ -1,0 +1,38 @@
+{
+	"name": "mapBG",
+	"plugin-id": "TiledBg",
+	"sid": 931925650718099,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "minusX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 579671773512560
+		},
+		{
+			"name": "minusY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 584020836445027
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 50,
+		"height": 50,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 4277643,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

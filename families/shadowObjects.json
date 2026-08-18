@@ -1,0 +1,44 @@
+{
+	"name": "shadowObjects",
+	"plugin-id": "Sprite",
+	"sid": 600108391993245,
+	"instanceVariables": [
+		{
+			"name": "shadowType",
+			"type": "number",
+			"desc": "the smallest is 0",
+			"show": true,
+			"sid": 807308398887614
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"player1",
+		"nurse1",
+		"lampMonster",
+		"nurseShadow",
+		"whisperer",
+		"flyingHeart",
+		"maskFlying",
+		"snail",
+		"three",
+		"shadow",
+		"eyeSmall",
+		"flyingMouth",
+		"bossEye",
+		"bossSurgeon",
+		"bossSheep",
+		"bossPlant",
+		"flyingHeartMetal",
+		"ear",
+		"lungs",
+		"maskFlying2",
+		"cloud1",
+		"star",
+		"maskCry1",
+		"eyeMedium",
+		"sun",
+		"maskBoss"
+	]
+}

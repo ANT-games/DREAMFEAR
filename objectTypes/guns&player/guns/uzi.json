@@ -1,0 +1,107 @@
+{
+	"name": "uzi",
+	"plugin-id": "Sprite",
+	"sid": 176658808442900,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 13,
+						"height": 9,
+						"originX": 0.38461538461538464,
+						"originY": 0.3333333333333333,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1961503,
+						"collisionPoly": {
+							"points": [
+								0.038461538461538464,
+								0.8888888888888888,
+								0.038461538461538464,
+								0.6944444444444444,
+								0.25329912426035506,
+								0.2222222222222222,
+								0.8067823905325444,
+								0.5763888888888888,
+								1,
+								0.8888888888888888,
+								0.668412023668639,
+								0.8888888888888888,
+								0.25329912426035506,
+								0.8888888888888888
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 1,
+								"y": 0.2222222222222222
+							},
+							{
+								"name": "shotEffect",
+								"x": 0.9230769230769231,
+								"y": 0.2222222222222222
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 421672645304068,
+				"name": "hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 10,
+						"height": 9,
+						"originX": 0.38461538461538464,
+						"originY": 0.3333333333333333,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6390127,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 1,
+								"y": 0.2222222222222222
+							},
+							{
+								"name": "shotEffect",
+								"x": 0.9230769230769231,
+								"y": 0.2222222222222222
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 616848322035699,
+				"name": "no hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

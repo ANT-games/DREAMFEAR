@@ -1,0 +1,29 @@
+{
+	"name": "fadeStart",
+	"plugin-id": "TiledBg",
+	"sid": 631890834360095,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 834777354981419
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 250,
+		"height": 250,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 4284153,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

@@ -1,0 +1,100 @@
+{
+	"name": "bosses",
+	"plugin-id": "Sprite",
+	"sid": 147989738441564,
+	"instanceVariables": [
+		{
+			"name": "hp",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 999942405032538
+		},
+		{
+			"name": "hpMax",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 974506609435336
+		},
+		{
+			"name": "active",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 773350753994308
+		},
+		{
+			"name": "phase",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 279808666041541
+		},
+		{
+			"name": "movementDestinationX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 801408895668079
+		},
+		{
+			"name": "movementDestinationY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 453428595022181
+		},
+		{
+			"name": "shootingCurrently",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 841210796320030
+		},
+		{
+			"name": "bulletDirection",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 397714815395125
+		},
+		{
+			"name": "damageTouch",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 471986271762254
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 402974984348688
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 416184717477423
+		},
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 402241567600434
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "replacecolor",
+			"name": "hurt"
+		}
+	],
+	"members": [
+		"bossEye",
+		"bossSurgeon",
+		"bossSheep",
+		"bossPlant",
+		"maskBoss"
+	]
+}

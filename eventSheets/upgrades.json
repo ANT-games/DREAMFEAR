@@ -1,0 +1,2018 @@
+{
+	"name": "upgrades",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "level",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 878378840280883
+		},
+		{
+			"eventType": "variable",
+			"name": "levelCoins",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 776049778723769
+		},
+		{
+			"eventType": "variable",
+			"name": "goalForNextLevel",
+			"type": "number",
+			"initialValue": "120",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 922003320852448
+		},
+		{
+			"eventType": "variable",
+			"name": "coins",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 991549321045077
+		},
+		{
+			"eventType": "variable",
+			"name": "coinsGlobal",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 606654260408284
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "enemies drop coins",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 181969339630059,
+							"parameters": {
+								"object": "gameCurrency"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 336551623094815,
+							"parameters": {
+								"first-value": "distance(player1.X, player1.Y, gameCurrency.X, gameCurrency.Y)",
+								"comparison": 2,
+								"second-value": "gameCurrency.radius"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-acceleration",
+							"objectClass": "gameCurrency",
+							"sid": 870616706753493,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"acceleration": "1000"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "gameCurrency",
+							"sid": 568993313279989,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "200"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "gameCurrency",
+							"sid": 262376323050644,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "angle(Self.X, Self.Y, player1.X, player1.Y)"
+							}
+						}
+					],
+					"sid": 442108436242568
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "enemies",
+							"sid": 386711161000765,
+							"parameters": {
+								"animation": "\"death\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 995907788483973,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 928105481177530,
+									"parameters": {
+										"count": "enemies.coinsDrop"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "enemies",
+									"sid": 497048147132033,
+									"parameters": {
+										"object": "gameCurrency",
+										"layer": "\"obj1\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "gameCurrency",
+									"sid": 409594969106006,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "random(360)"
+									}
+								}
+							],
+							"sid": 295025944771299
+						}
+					]
+				}
+			],
+			"sid": 567691278811020
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "player1",
+					"sid": 143185763608790,
+					"parameters": {
+						"object": "gameCurrency"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "gameCurrency",
+					"sid": 994847815789799
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 958107870860444,
+					"parameters": {
+						"variable": "coins",
+						"value": "1"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 978029148224819,
+					"parameters": {
+						"variable": "levelCoins",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 420733426753240
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 457065680522734,
+					"parameters": {
+						"variable": "levelCoins",
+						"comparison": 5,
+						"value": "goalForNextLevel"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 247336810239585,
+					"disabled": true,
+					"parameters": {
+						"variable": "playerIsInFight"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 758036763853661
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 394997812203311,
+					"parameters": {
+						"variable": "levelCoins",
+						"value": "0"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 136106534164502,
+					"parameters": {
+						"variable": "level",
+						"value": "1"
+					}
+				},
+				{
+					"id": "wait-for-signal",
+					"objectClass": "System",
+					"sid": 571282216465720,
+					"parameters": {
+						"tag": "\"upgradeTime\""
+					}
+				},
+				{
+					"callFunction": "upgradeChoice",
+					"sid": 791705325909120
+				}
+			],
+			"sid": 517312334080962
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 630552244724417,
+					"parameters": {
+						"variable": "playerIsInFight"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 195067054182841,
+					"disabled": true
+				}
+			],
+			"actions": [
+				{
+					"id": "signal",
+					"objectClass": "System",
+					"sid": 318421240868868,
+					"parameters": {
+						"tag": "\"upgradeTime\""
+					}
+				}
+			],
+			"sid": 344093837321458
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "start add all the possible upgrades to the array",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "player1",
+							"sid": 714109928233451
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 537574294596728,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"level1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "clear",
+							"objectClass": "upgradesUnlockedArray",
+							"sid": 500511124149870,
+							"disabled": true,
+							"parameters": {
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 851257792990354,
+							"disabled": true,
+							"parameters": {
+								"width": "0",
+								"height": "0",
+								"depth": "0"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 521237976213326,
+							"parameters": {
+								"where": "back",
+								"value": "\"lastChanceDamage\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 704030239134307,
+							"parameters": {
+								"where": "back",
+								"value": "\"currencyRadius\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 135400162709281,
+							"parameters": {
+								"where": "back",
+								"value": "\"shotSpeedHurt\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 912389286423972,
+							"parameters": {
+								"where": "back",
+								"value": "\"splitOnHit\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 848834383970766,
+							"parameters": {
+								"where": "back",
+								"value": "\"goodLootMoreOften\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 154095619378424,
+							"parameters": {
+								"where": "back",
+								"value": "\"shield\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 896035587020246,
+							"parameters": {
+								"where": "back",
+								"value": "\"maskProtector\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 572149657541839,
+							"disabled": true,
+							"parameters": {
+								"where": "back",
+								"value": "\"slowEnemies\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 697180544509245,
+							"parameters": {
+								"where": "back",
+								"value": "\"damageTouchEnemies\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 957706988682563,
+							"parameters": {
+								"where": "back",
+								"value": "\"maxHpUp\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 164433477946693,
+							"parameters": {
+								"where": "back",
+								"value": "\"medkitImprove\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 934110011773244,
+							"parameters": {
+								"where": "back",
+								"value": "\"enemiesReturnHp\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 289992641633134,
+							"parameters": {
+								"where": "back",
+								"value": "\"biggerBombExplosion\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 540918741427469,
+							"parameters": {
+								"where": "back",
+								"value": "\"fasterReload\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 901266023960283,
+							"parameters": {
+								"where": "back",
+								"value": "\"higherBulletSpeed\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 267809705033285,
+							"parameters": {
+								"where": "back",
+								"value": "\"maxSpeed\"",
+								"axis": "x"
+							}
+						},
+						{
+							"type": "script",
+							"language": "javascript",
+							"script": [
+								"console.log(\"UPGRADES ADDED\")"
+							]
+						}
+					],
+					"sid": 363177665889714,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-element",
+									"objectClass": "upgradesAvailableArray",
+									"sid": 197931323278523,
+									"parameters": {
+										"axes": "x"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 802236795267168,
+									"parameters": {
+										"group-name": "upgradesAvailableArray.CurValue",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 442106923590323
+						}
+					]
+				}
+			],
+			"sid": 954081403682560
+		},
+		{
+			"eventType": "variable",
+			"name": "indexUpgradeRandom",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 803172580643725
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "upgrade choise",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "upgradeChoice",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "shuffle",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 943381774546251,
+							"parameters": {
+								"axis": "x"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "upgradesChoice",
+							"sid": 506897881670365,
+							"parameters": {
+								"width": "0",
+								"height": "1",
+								"depth": "1"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 358103884013345,
+							"parameters": {
+								"time-scale": "0"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 914276983318934,
+							"parameters": {
+								"layer": "\"upgrades\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 718642565502333,
+							"parameters": {
+								"layer": "\"upgrades_bg\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 664180625551810,
+							"parameters": {
+								"layer": "\"upgrades_darkness\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 476825574037624,
+							"parameters": {
+								"layer": "\"upgrades_icons_texts\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesChoice",
+							"sid": 228789393471250,
+							"parameters": {
+								"where": "front",
+								"value": "upgradesAvailableArray.At(0,0,0)",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesChoice",
+							"sid": 720466334308558,
+							"parameters": {
+								"where": "front",
+								"value": "upgradesAvailableArray.At(1,0,0)",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesChoice",
+							"sid": 546933328788555,
+							"parameters": {
+								"where": "front",
+								"value": "upgradesAvailableArray.At(2,0,0)",
+								"axis": "x"
+							}
+						}
+					],
+					"sid": 172836375168933,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 774775315358388,
+									"disabled": true,
+									"parameters": {
+										"count": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 881777501224086,
+									"disabled": true,
+									"parameters": {
+										"variable": "indexUpgradeRandom",
+										"value": "round(random(upgradesAvailableArray.Width))"
+									}
+								}
+							],
+							"sid": 859384282982254
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 357786295638063,
+									"parameters": {
+										"object": "upgradesBg"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "upgradesBg",
+									"sid": 527095469998874,
+									"parameters": {
+										"instance-variable": "upgradeName",
+										"value": "upgradesChoice.At(upgradesBg.index)"
+									}
+								}
+							],
+							"sid": 320280805280222
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 415897426616137
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 735998207244585,
+							"parameters": {
+								"layer": "\"upgrades\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 496530043765596,
+							"parameters": {
+								"layer": "\"upgrades_darkness\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 359999082603597,
+							"parameters": {
+								"layer": "\"upgrades_bg\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 984521157649909,
+							"parameters": {
+								"layer": "\"upgrades_icons_texts\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 784784297110089
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "upgradesIcon",
+							"sid": 200198333433705,
+							"parameters": {
+								"object": "upgradesBg"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "upgradesIcon",
+							"sid": 241765158349321,
+							"parameters": {
+								"animation": "upgradesBg.upgradeName",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 345440704471229
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 107716400185261,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "upgradesBg"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 876906029338357,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 124858331783892,
+									"parameters": {
+										"layer": "\"upgrades\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "push",
+									"objectClass": "upgradesUnlockedArray",
+									"sid": 965316458758870,
+									"parameters": {
+										"where": "back",
+										"value": "upgradesBg.upgradeName",
+										"axis": "x"
+									}
+								},
+								{
+									"id": "delete",
+									"objectClass": "upgradesAvailableArray",
+									"sid": 125779287872617,
+									"parameters": {
+										"index": "upgradesAvailableArray.IndexOf(upgradesBg.upgradeName)",
+										"axis": "x"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 277306345914140,
+									"parameters": {
+										"group-name": "upgradesBg.upgradeName",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 752433515847998,
+									"parameters": {
+										"time-scale": "1"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 969005768053492,
+									"parameters": {
+										"layer": "\"upgrades\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 576775820033849,
+									"parameters": {
+										"layer": "\"upgrades_darkness\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 990013502075275,
+									"parameters": {
+										"layer": "\"upgrades_bg\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 435764805258687,
+									"parameters": {
+										"layer": "\"upgrades_icons_texts\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "upgradesChoice",
+									"sid": 881658833399063,
+									"disabled": true,
+									"parameters": {
+										"width": "0",
+										"height": "0",
+										"depth": "0"
+									}
+								}
+							],
+							"sid": 611008710188624
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 368819499842294,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "upgradesBg",
+							"sid": 592926719537400,
+							"parameters": {
+								"animation": "\"picked\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 528989127658069,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 565531334695793,
+									"parameters": {
+										"layer": "\"upgrades\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "push",
+									"objectClass": "upgradesUnlockedArray",
+									"sid": 891597858869174,
+									"parameters": {
+										"where": "back",
+										"value": "upgradesBg.upgradeName",
+										"axis": "x"
+									}
+								},
+								{
+									"id": "delete",
+									"objectClass": "upgradesAvailableArray",
+									"sid": 346783942855989,
+									"parameters": {
+										"index": "upgradesAvailableArray.IndexOf(upgradesBg.upgradeName)",
+										"axis": "x"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 676288616309131,
+									"parameters": {
+										"group-name": "upgradesBg.upgradeName",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 315594930805322,
+									"parameters": {
+										"time-scale": "1"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 907947669640234,
+									"parameters": {
+										"layer": "\"upgrades\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 802572430825702,
+									"parameters": {
+										"layer": "\"upgrades_darkness\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 611134924624051,
+									"parameters": {
+										"layer": "\"upgrades_bg\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 954225786562443,
+									"parameters": {
+										"layer": "\"upgrades_icons_texts\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "upgradesChoice",
+									"sid": 689696533718338,
+									"disabled": true,
+									"parameters": {
+										"width": "0",
+										"height": "0",
+										"depth": "0"
+									}
+								}
+							],
+							"sid": 434629233445303
+						}
+					]
+				}
+			],
+			"sid": 673262825530516
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 807942987986784,
+					"parameters": {
+						"object": "upgradesBg"
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "cursor",
+					"sid": 752803148753851,
+					"parameters": {
+						"object": "upgradesBg"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "upgradesBg",
+					"sid": 363228418202401,
+					"parameters": {
+						"animation": "\"picked\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 820413057848838,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 856797635042753
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "upgradesBg",
+					"sid": 303888658809453,
+					"parameters": {
+						"animation": "\"base\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 208140314572036
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "combatEnemyArena",
+					"sid": 966030694593574,
+					"parameters": {
+						"instance-variable": "isFight"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 868889930671017,
+					"parameters": {
+						"variable": "playerIsInFight",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 617143850878667
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 521075443231943
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 460302013818479,
+					"parameters": {
+						"variable": "playerIsInFight",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 968499546886191
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-animation-playing",
+					"objectClass": "upgradesBg",
+					"sid": 332381527695136,
+					"parameters": {
+						"animation": "\"picked\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "upgradeName",
+					"sid": 306630144234560,
+					"parameters": {
+						"text": "translation.Get(upgradesBg.upgradeName & \"Name\")"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "upgradeDescription",
+					"sid": 671834173659719,
+					"parameters": {
+						"text": "translation.Get(upgradesBg.upgradeName & \"Desc\")"
+					}
+				}
+			],
+			"sid": 266737433287548
+		},
+		{
+			"eventType": "variable",
+			"name": "killTillShield",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 902451235810205
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 670533495960136,
+					"parameters": {
+						"first-value": "left(LayoutName, 3)",
+						"comparison": 0,
+						"second-value": "\"lev\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 282590173747528,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "upgrade code",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "slowEnemies",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [],
+							"sid": 571768021255714
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "damageTouchEnemies",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "enemies",
+											"sid": 965343024261844,
+											"parameters": {
+												"object": "player1"
+											}
+										},
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 828219923218491,
+											"parameters": {
+												"interval-seconds": "0.5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "enemies",
+											"sid": 839995083066535,
+											"parameters": {
+												"instance-variable": "hp",
+												"value": "20"
+											}
+										}
+									],
+									"sid": 841240749182513
+								}
+							],
+							"sid": 953516396352244
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "maxHpUp",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 540350416614806
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 843620530437682,
+											"parameters": {
+												"variable": "maxHp",
+												"value": "30"
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 608432198365004,
+											"parameters": {
+												"variable": "hp",
+												"value": "30"
+											}
+										}
+									],
+									"sid": 916805578660681
+								}
+							],
+							"sid": 480537440479430
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "medkitImprove",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "medkit",
+											"sid": 549344617642157
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-instvar",
+											"objectClass": "medkit",
+											"sid": 163305203756294,
+											"parameters": {
+												"instance-variable": "bonusHP",
+												"value": "10"
+											}
+										}
+									],
+									"sid": 542600757837210
+								}
+							],
+							"sid": 281647769593260
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "enemiesReturnHp",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "enemies",
+											"sid": 744041167747958,
+											"parameters": {
+												"animation": "\"death\""
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 249274335872463
+										}
+									],
+									"actions": [],
+									"sid": 432850172925613,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 287666889993064,
+													"parameters": {
+														"first-value": "random(100)",
+														"comparison": 2,
+														"second-value": "10"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 330982029521249,
+													"parameters": {
+														"variable": "hp",
+														"value": "10"
+													}
+												}
+											],
+											"sid": 275742438083809
+										}
+									]
+								}
+							],
+							"sid": 977162725389540
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "biggerBombExplosion",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "fxBomb",
+											"sid": 210311611966356
+										}
+									],
+									"actions": [
+										{
+											"id": "set-scale",
+											"objectClass": "fxBomb",
+											"sid": 249402606058077,
+											"parameters": {
+												"scale": "1.25"
+											}
+										}
+									],
+									"sid": 261017433247391
+								}
+							],
+							"sid": 994553078016519
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "fasterReload",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-visible",
+											"objectClass": "reloadUI",
+											"sid": 180341928538045
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-speed",
+											"objectClass": "reloadUI",
+											"sid": 258850675788950,
+											"parameters": {
+												"speed": "12"
+											}
+										}
+									],
+									"sid": 697163090661798
+								}
+							],
+							"sid": 989902333038260
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "maskProtector",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "hasMasks",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 363725305209300
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 924940257682554,
+											"parameters": {
+												"variable": "hasMasks"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 675392922571112
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "player1",
+											"sid": 905510655437724,
+											"parameters": {
+												"object": "maskProtector",
+												"layer": "\"characters\"",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "pin",
+											"objectClass": "maskProtector",
+											"sid": 411423928282972,
+											"behaviorType": "Orbit",
+											"parameters": {
+												"target": "player1"
+											}
+										},
+										{
+											"id": "set-offset-angle",
+											"objectClass": "maskProtector",
+											"sid": 169149675837571,
+											"behaviorType": "Orbit",
+											"parameters": {
+												"angle": "180"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "player1",
+											"sid": 358800914965437,
+											"parameters": {
+												"object": "maskProtector",
+												"layer": "\"characters\"",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "pin",
+											"objectClass": "maskProtector",
+											"sid": 293246807942546,
+											"behaviorType": "Orbit",
+											"parameters": {
+												"target": "player1"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 128128960273310,
+											"parameters": {
+												"variable": "hasMasks",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 740473329089223
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 305907693313763,
+											"parameters": {
+												"interval-seconds": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "script",
+											"language": "javascript",
+											"script": [
+												"console.log(\"MASK PROTECTOR\")"
+											]
+										}
+									],
+									"sid": 338811789356422,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-start-of-layout",
+											"objectClass": "System",
+											"sid": 821776277961258
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 413648569791248,
+											"parameters": {
+												"variable": "hasMasks",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 478779937965634
+								}
+							],
+							"sid": 269043851440116
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "shield",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "hasShield",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 600916229453027
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 784809404996340
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 374320233337345,
+											"parameters": {
+												"variable": "killTillShield",
+												"comparison": 3,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "player1",
+											"sid": 105624028404387,
+											"parameters": {
+												"object": "shield",
+												"layer": "\"obj2\"",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "player1",
+											"sid": 833367711605300,
+											"parameters": {
+												"child": "shield",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-z-elevation": true,
+												"transform-w": false,
+												"transform-h": false,
+												"transform-d": false,
+												"transform-a": true,
+												"transform-o": false,
+												"transform-visibility": false,
+												"destroy-with-parent": false
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 470067256070444,
+											"parameters": {
+												"variable": "hasShield",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 670145058324737,
+											"parameters": {
+												"variable": "killTillShield",
+												"value": "10"
+											}
+										}
+									],
+									"sid": 305932953085045,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-destroyed",
+											"objectClass": "shield",
+											"sid": 608521123148601
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 634897558349015,
+											"parameters": {
+												"variable": "hasShield",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 196099866532157
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "shield",
+											"sid": 515366859470059,
+											"parameters": {
+												"object": "enemyBullets"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "shield",
+											"sid": 212228887759605,
+											"parameters": {
+												"animation": "\"destroy\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 509595740305431
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-animation-finished",
+											"objectClass": "shield",
+											"sid": 372025083534233,
+											"parameters": {
+												"animation": "\"destroy\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "shield",
+											"sid": 701804380424058
+										},
+										{
+											"callFunction": "bulletHitShield",
+											"sid": 295648571237725
+										}
+									],
+									"sid": 157651049568095
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "enemies",
+											"sid": 979749178895672,
+											"parameters": {
+												"animation": "\"death\""
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "enemies",
+											"sid": 122303789136340,
+											"parameters": {
+												"comparison": 0,
+												"number": "0"
+											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 576924603016141,
+											"parameters": {
+												"variable": "hasShield"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 698705139097489
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 163334903856825,
+											"parameters": {
+												"variable": "killTillShield",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 857270975752369
+								}
+							],
+							"sid": 578538547583962
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "higherBulletSpeed",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "bullets",
+											"sid": 993896596085161
+										}
+									],
+									"actions": [
+										{
+											"id": "set-speed",
+											"objectClass": "bullets",
+											"sid": 896425060189518,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "Self.Bullet.Speed * 1.8"
+											}
+										}
+									],
+									"sid": 973862849909687
+								}
+							],
+							"sid": 589437188675167
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "maxSpeed",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 117954097924015
+										},
+										{
+											"id": "on-start-of-layout",
+											"objectClass": "System",
+											"sid": 535488880732638
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 166810857110505,
+											"parameters": {
+												"variable": "maxSpeedPlayer",
+												"value": "maxSpeedPlayer * 1.2"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "player1",
+											"sid": 121970812132708,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"max-speed": "maxSpeedPlayer"
+											}
+										}
+									],
+									"sid": 693428715529211,
+									"isOrBlock": true
+								}
+							],
+							"sid": 847572587514177
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "goodLootMoreOften",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 705536606260621
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 280110846978843,
+											"parameters": {
+												"variable": "bombHpProbability",
+												"value": "20"
+											}
+										}
+									],
+									"sid": 379233447117572
+								}
+							],
+							"sid": 116183433762477
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "splitOnHit",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-destroyed",
+											"objectClass": "bullets",
+											"sid": 640851371433394
+										}
+									],
+									"actions": [],
+									"sid": 655205359837694,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "repeat",
+													"objectClass": "System",
+													"sid": 975802607073404,
+													"parameters": {
+														"count": "bullets.damage/5"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "bullets",
+													"sid": 675364713049428,
+													"parameters": {
+														"object": "shards",
+														"layer": "\"bullets\"",
+														"image-point": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												}
+											],
+											"sid": 897539696572869
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "shards",
+											"sid": 505340189387205
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 432379431566231,
+											"parameters": {
+												"seconds": "0.1",
+												"use-timescale": true
+											}
+										}
+									],
+									"sid": 655205359837695
+								}
+							],
+							"sid": 655205359837696
+						}
+					],
+					"sid": 655205359837697
+				}
+			],
+			"sid": 655205359837698
+		}
+	],
+	"sid": 881122334455667
+}

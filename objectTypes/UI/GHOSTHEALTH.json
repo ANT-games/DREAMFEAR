@@ -1,0 +1,369 @@
+{
+	"name": "GHOSTHEALTH",
+	"plugin-id": "Sprite",
+	"sid": 452632857451225,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 435975588376486
+		},
+		{
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 848504897334208
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 71,
+						"height": 14,
+						"originX": 0.507042,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Interface\\HP8C\\HP8A_0.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4183147,
+						"collisionPoly": {
+							"points": [
+								0.125,
+								0.125,
+								0.5,
+								0.1875,
+								0.875,
+								0.125,
+								0.9375,
+								0.5,
+								0.9375,
+								0.9375,
+								0.5,
+								0.9375,
+								0.1875,
+								0.8125,
+								0.25,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 71,
+						"height": 14,
+						"originX": 0.507042,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Interface\\HP8C\\HP8A_1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 917977,
+						"collisionPoly": {
+							"points": [
+								0.0140845,
+								0.0714286,
+								0.492958,
+								0.285714,
+								0.957747,
+								0.214286,
+								1,
+								0.5,
+								0.957747,
+								0.785714,
+								0.492958,
+								0.714286,
+								0.0140845,
+								0.928571,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 71,
+						"height": 14,
+						"originX": 0.507042,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Interface\\HP8C\\HP8A_2.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4023563,
+						"collisionPoly": {
+							"points": [
+								0.0140845,
+								0.0714286,
+								0.492958,
+								0.285714,
+								0.957747,
+								0.214286,
+								1,
+								0.5,
+								0.957747,
+								0.785714,
+								0.492958,
+								0.714286,
+								0.0140845,
+								0.928571,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 71,
+						"height": 14,
+						"originX": 0.507042,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Interface\\HP8C\\HP8A_3.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3898622,
+						"collisionPoly": {
+							"points": [
+								0.0140845,
+								0.0714286,
+								0.492958,
+								0.0714286,
+								0.957747,
+								0.214286,
+								1,
+								0.5,
+								0.957747,
+								0.785714,
+								0.492958,
+								0.928571,
+								0.0140845,
+								0.928571,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 71,
+						"height": 14,
+						"originX": 0.507042,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Interface\\HP8C\\HP8A_4.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6002187,
+						"collisionPoly": {
+							"points": [
+								0.0140845,
+								0.0714286,
+								0.492958,
+								0.0714286,
+								0.957747,
+								0.214286,
+								1,
+								0.5,
+								0.957747,
+								0.785714,
+								0.492958,
+								0.928571,
+								0.0140845,
+								0.928571,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 71,
+						"height": 14,
+						"originX": 0.507042,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Interface\\HP8C\\HP8A_5.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9783372,
+						"collisionPoly": {
+							"points": [
+								0.0140845,
+								0.0714286,
+								0.492958,
+								0.0714286,
+								0.957747,
+								0.214286,
+								1,
+								0.5,
+								0.957747,
+								0.785714,
+								0.492958,
+								0.928571,
+								0.0140845,
+								0.928571,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 71,
+						"height": 14,
+						"originX": 0.507042,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Interface\\HP8C\\HP8A_5.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7166666,
+						"collisionPoly": {
+							"points": [
+								0.0140845,
+								0.0714286,
+								0.492958,
+								0.0714286,
+								0.957747,
+								0.214286,
+								1,
+								0.5,
+								0.957747,
+								0.785714,
+								0.492958,
+								0.928571,
+								0.0140845,
+								0.928571,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 71,
+						"height": 14,
+						"originX": 0.507042,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Interface\\HP8C\\HP8A_6.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6679996,
+						"collisionPoly": {
+							"points": [
+								0.0140845,
+								0.0714286,
+								0.492958,
+								0.0714286,
+								0.957747,
+								0.214286,
+								1,
+								0.5,
+								0.957747,
+								0.785714,
+								0.492958,
+								0.928571,
+								0.0140845,
+								0.928571,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 71,
+						"height": 14,
+						"originX": 0.507042,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Interface\\HP8C\\HP8A_7.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5732421,
+						"collisionPoly": {
+							"points": [
+								0.0140845,
+								0.0714286,
+								0.985915,
+								0.0714286,
+								1,
+								0.5,
+								0.985915,
+								0.928571,
+								0.0140845,
+								0.928571,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 71,
+						"height": 14,
+						"originX": 0.507042,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Interface\\HP8C\\HP8A_8.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7950573,
+						"collisionPoly": {
+							"points": [
+								0.0140845,
+								0.0714286,
+								0.985915,
+								0.0714286,
+								1,
+								0.5,
+								0.985915,
+								0.928571,
+								0.0140845,
+								0.928571,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 270591802374090,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

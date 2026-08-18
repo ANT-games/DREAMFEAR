@@ -1,0 +1,102 @@
+{
+	"name": "guns",
+	"plugin-id": "Sprite",
+	"sid": 696232961054284,
+	"instanceVariables": [
+		{
+			"name": "isUsed",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 146989268159297
+		},
+		{
+			"name": "bulletsMax",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 649304912751261
+		},
+		{
+			"name": "spread",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 602441019498978
+		},
+		{
+			"name": "fireRate",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 377098997193963
+		},
+		{
+			"name": "bulletsInTheGun",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 815527080110612
+		},
+		{
+			"name": "energyNeededBullet",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 834133934060157
+		},
+		{
+			"name": "typeFX",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 536454627744015
+		},
+		{
+			"name": "stress",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 616965426589078
+		},
+		{
+			"name": "gunName",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 857889779325497
+		},
+		{
+			"name": "index",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 340993925561255
+		},
+		{
+			"name": "aimDistance",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 342889879943434
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 141389115208279
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"revolver",
+		"shotgun",
+		"uzi",
+		"riffle1",
+		"laserPistol",
+		"riffle",
+		"granateThrower",
+		"sniperRiffle"
+	]
+}

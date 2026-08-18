@@ -1,0 +1,2876 @@
+{
+	"name": "visual",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "shadowObjects",
+					"sid": 957241905849535
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "shadows under charachters"
+				}
+			],
+			"sid": 362991758441191,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "shadowObjects",
+							"sid": 871582790401615,
+							"parameters": {
+								"instance-variable": "shadowType",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "shadowObjects",
+							"sid": 854089571472644,
+							"parameters": {
+								"object": "shadowSmall",
+								"layer": "\"shadowsCharacters\"",
+								"image-point": "\"shadow\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "shadowObjects",
+							"sid": 537333662480082,
+							"parameters": {
+								"child": "shadowSmall",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": false,
+								"transform-w": true,
+								"transform-h": false,
+								"transform-d": true,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 490479940966088
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "shadowObjects",
+							"sid": 989856610438451,
+							"parameters": {
+								"instance-variable": "shadowType",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "shadowObjects",
+							"sid": 385866321049597,
+							"parameters": {
+								"object": "shadowMedium",
+								"layer": "\"shadowsCharacters\"",
+								"image-point": "\"shadow\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "shadowObjects",
+							"sid": 153040077615758,
+							"parameters": {
+								"child": "shadowMedium",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": false,
+								"transform-w": true,
+								"transform-h": false,
+								"transform-d": true,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 354149365642825
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "shadowObjects",
+							"sid": 598703847555445,
+							"parameters": {
+								"instance-variable": "shadowType",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "shadowObjects",
+							"sid": 938799318925457,
+							"parameters": {
+								"object": "shadowBig",
+								"layer": "\"shadowsCharacters\"",
+								"image-point": "\"shadow\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "shadowObjects",
+							"sid": 691423054846417,
+							"parameters": {
+								"child": "shadowBig",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": false,
+								"transform-w": true,
+								"transform-h": false,
+								"transform-d": true,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 665888304124623
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "light level2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 797285222425609,
+							"parameters": {
+								"interval-seconds": "random(0.3,0.6)"
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "lampBigLight3",
+							"sid": 156232942473478
+						},
+						{
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 202152624489786,
+							"parameters": {
+								"object": "lampBigLight3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lampBigLight3",
+							"sid": 973364477110343,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 292909250602256,
+							"parameters": {
+								"seconds": "1/25",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lampBigLight3",
+							"sid": 759164701197628,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 350157322867024
+				}
+			],
+			"sid": 305423664271117
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "light level3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "lampost",
+							"sid": 410828592198748
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "lampost",
+							"sid": 975619197085043,
+							"parameters": {
+								"object": "lampBigLight2",
+								"layer": "\"darkness\"",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "lampost",
+							"sid": 669580594086924,
+							"parameters": {
+								"child": "lampBigLight2",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-d": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 487716755274581
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 661156142840085,
+							"parameters": {
+								"interval-seconds": "random(0.3,0.6)"
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "lampost",
+							"sid": 942376683269597
+						},
+						{
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 604205466512714,
+							"parameters": {
+								"object": "lampost"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "lampost",
+							"sid": 850836092602795,
+							"parameters": {
+								"animation": "\"notWorking\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 442523999672457
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "lampost",
+							"sid": 555480168348544,
+							"parameters": {
+								"animation": "\"notWorking\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "lampost",
+							"sid": 505874922988412,
+							"parameters": {
+								"animation": "\"main\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 875352962440760
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "lampost",
+							"sid": 817986475349463,
+							"parameters": {
+								"animation": "\"main\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 515950308976624,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "lampost",
+									"sid": 450650767108056,
+									"parameters": {
+										"child": "lampBigLight2",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lampBigLight2",
+									"sid": 594626292897913,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 323255249713571
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "lampost",
+							"sid": 820738370924854,
+							"parameters": {
+								"animation": "\"notWorking\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 862381360436500,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "lampost",
+									"sid": 271637351212559,
+									"parameters": {
+										"child": "lampBigLight2",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lampBigLight2",
+									"sid": 374688826458623,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 944282200856179
+						}
+					]
+				}
+			],
+			"sid": 265171955765223
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "light level1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 791650230578740,
+							"parameters": {
+								"interval-seconds": "random(0.3,0.6)"
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "lampLarge",
+							"sid": 743724253737060
+						},
+						{
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 609378260057418,
+							"parameters": {
+								"object": "lampLarge"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "lampLarge",
+							"sid": 752191342670764,
+							"parameters": {
+								"animation": "\"notWorking\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 559279729575081
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "lampLarge",
+							"sid": 101976133841632,
+							"parameters": {
+								"animation": "\"notWorking\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "lampLarge",
+							"sid": 108112836070219,
+							"parameters": {
+								"animation": "\"main\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 753249800865796
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "lampLarge",
+							"sid": 456533813795108
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "lampLarge",
+							"sid": 614127166291099,
+							"parameters": {
+								"object": "lampBigLight",
+								"layer": "\"darkness\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "lampLarge",
+							"sid": 177566740655668,
+							"parameters": {
+								"child": "lampBigLight",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-d": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": false
+							}
+						}
+					],
+					"sid": 322722456947602
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "lampLarge",
+							"sid": 823232479461799,
+							"parameters": {
+								"animation": "\"main\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 957597492083506,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "lampLarge",
+									"sid": 553620468114296,
+									"parameters": {
+										"child": "lampBigLight",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lampBigLight",
+									"sid": 168444591544660,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 770449393262224
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "lampLarge",
+							"sid": 527553209062867,
+							"parameters": {
+								"animation": "\"notWorking\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 533196935169808,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-children",
+									"objectClass": "lampLarge",
+									"sid": 986448743193652,
+									"parameters": {
+										"child": "lampBigLight",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lampBigLight",
+									"sid": 990226930917911,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 918667029827902
+						}
+					]
+				}
+			],
+			"sid": 220551205844251
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "bullet light & particles",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "melleAttack",
+							"sid": 662071690574238,
+							"parameters": {
+								"object": "enemies"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "melleAttack",
+							"sid": 759581998342862,
+							"parameters": {
+								"object": "bosses"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 186847633557269,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 490522835770465
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "melleAttack",
+									"sid": 701739837402984,
+									"parameters": {
+										"object": "bulletHitParticle",
+										"layer": "\"obj2\"",
+										"image-point": "1",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "bulletHitParticle",
+									"sid": 770040951997034,
+									"parameters": {
+										"angle": "melleAttack.Angle"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "bulletHitParticle",
+									"sid": 347963649652998,
+									"parameters": {
+										"animation": "\"blood2\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 381209738806988
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"functionName": "spawnBulletDestroyParticle",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "script",
+							"language": "javascript",
+							"script": [
+								"console.log(\"PARTICLE BLOOD\")"
+							],
+							"disabled": true
+						}
+					],
+					"sid": 639992092691206,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "bullets",
+									"sid": 523132328394652,
+									"parameters": {
+										"object": "enemies"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "bullets",
+									"sid": 811312256205851,
+									"disabled": true,
+									"parameters": {
+										"object": "bosses"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "bullets",
+									"sid": 177376195378442,
+									"parameters": {
+										"object": "bloodAddParticle",
+										"layer": "\"obj2\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "bloodAddParticle",
+									"sid": 542321955455976,
+									"parameters": {
+										"angle": "Self.Angle - 180"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "bullets",
+									"sid": 809050451599400,
+									"parameters": {
+										"object": "bulletHitParticle",
+										"layer": "\"obj2\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "bulletHitParticle",
+									"sid": 223224643063332,
+									"parameters": {
+										"angle": "bullets.Angle"
+									}
+								}
+							],
+							"sid": 150756596410267,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bullets",
+											"sid": 266557162803882,
+											"parameters": {
+												"instance-variable": "size",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bulletHitParticle",
+											"sid": 196918674391299,
+											"parameters": {
+												"animation": "\"blood\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 285501413550238
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bullets",
+											"sid": 634164799445237,
+											"parameters": {
+												"instance-variable": "size",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bulletHitParticle",
+											"sid": 310744015016918,
+											"parameters": {
+												"animation": "\"blood2\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 801284947738729
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bullets",
+											"sid": 981460339909167,
+											"parameters": {
+												"instance-variable": "size",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bulletHitParticle",
+											"sid": 287630879884203,
+											"parameters": {
+												"animation": "\"blood2\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 842834904618297
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "bullets",
+									"sid": 297411624802919,
+									"disabled": true,
+									"parameters": {
+										"object": "enemies"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "bullets",
+									"sid": 498596785315640,
+									"parameters": {
+										"object": "bosses"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "bullets",
+									"sid": 645711834458971,
+									"parameters": {
+										"object": "bulletHitParticle",
+										"layer": "\"obj2\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "bulletHitParticle",
+									"sid": 125562694708173,
+									"parameters": {
+										"angle": "bullets.Angle"
+									}
+								}
+							],
+							"sid": 206356550628359,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bullets",
+											"sid": 604915575020836,
+											"parameters": {
+												"instance-variable": "size",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bulletHitParticle",
+											"sid": 751613669927535,
+											"parameters": {
+												"animation": "\"blood\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 244328011916079
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bullets",
+											"sid": 593462437796632,
+											"parameters": {
+												"instance-variable": "size",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bulletHitParticle",
+											"sid": 146928594775033,
+											"parameters": {
+												"animation": "\"blood2\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 899503638796863
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bullets",
+											"sid": 465974709725256,
+											"parameters": {
+												"instance-variable": "size",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bulletHitParticle",
+											"sid": 346315354264828,
+											"parameters": {
+												"animation": "\"blood2\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 517824510526989
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "bullets",
+									"sid": 911354561592792,
+									"parameters": {
+										"object": "walls"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "bullets",
+									"sid": 269111049543499,
+									"parameters": {
+										"object": "sprike"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "bullets",
+									"sid": 148412871164722,
+									"parameters": {
+										"object": "bulletHitParticle",
+										"layer": "\"obj2\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "bulletHitParticle",
+									"sid": 731305001707916,
+									"parameters": {
+										"angle": "bullets.Angle"
+									}
+								}
+							],
+							"sid": 946921196832366,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bullets",
+											"sid": 949597383357297,
+											"parameters": {
+												"instance-variable": "size",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bulletHitParticle",
+											"sid": 663049497886033,
+											"parameters": {
+												"animation": "\"wallSmall\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 387417384914027
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bullets",
+											"sid": 663352859700023,
+											"parameters": {
+												"instance-variable": "size",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bulletHitParticle",
+											"sid": 579933093997831,
+											"parameters": {
+												"animation": "\"wallBig\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 268201227613943
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bullets",
+											"sid": 285490265626034,
+											"parameters": {
+												"instance-variable": "size",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bulletHitParticle",
+											"sid": 400742154957479,
+											"parameters": {
+												"animation": "\"wallBig\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-effect-enabled",
+											"objectClass": "bulletHitParticle",
+											"sid": 847971313929248,
+											"parameters": {
+												"mode": "enable",
+												"effect": "\"laserBlue\""
+											}
+										}
+									],
+									"sid": 396412437032150
+								}
+							],
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"functionName": "shardDestroyParticle",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 670504629836368,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "shards",
+									"sid": 389221727421099,
+									"parameters": {
+										"object": "enemies"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "bullets",
+									"sid": 888054121381526,
+									"disabled": true,
+									"parameters": {
+										"object": "bosses"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "shards",
+									"sid": 166168520599063,
+									"parameters": {
+										"object": "bloodAddParticle",
+										"layer": "\"obj2\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "bloodAddParticle",
+									"sid": 429035626202314,
+									"parameters": {
+										"angle": "Self.Angle - 180"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "shards",
+									"sid": 354765245444550,
+									"parameters": {
+										"object": "bulletHitParticle",
+										"layer": "\"obj2\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "bulletHitParticle",
+									"sid": 774202465192101,
+									"parameters": {
+										"angle": "shards.Angle"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "bulletHitParticle",
+									"sid": 997919991536490,
+									"parameters": {
+										"animation": "\"blood\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 924473253706518,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "bullets",
+									"sid": 415796112227513,
+									"disabled": true,
+									"parameters": {
+										"object": "enemies"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "shards",
+									"sid": 885466637581138,
+									"parameters": {
+										"object": "bosses"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "shards",
+									"sid": 713868685291362,
+									"parameters": {
+										"object": "bulletHitParticle",
+										"layer": "\"obj2\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "bulletHitParticle",
+									"sid": 584827759929384,
+									"parameters": {
+										"angle": "shards.Angle"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "bulletHitParticle",
+									"sid": 386678988599814,
+									"parameters": {
+										"animation": "\"blood\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 232967083420052,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "shards",
+									"sid": 633547284211883,
+									"parameters": {
+										"object": "walls"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "shards",
+									"sid": 926913620401984,
+									"parameters": {
+										"object": "sprike"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "shards",
+									"sid": 674453685773156,
+									"parameters": {
+										"object": "bulletHitParticle",
+										"layer": "\"obj2\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "bulletHitParticle",
+									"sid": 703281395966426,
+									"parameters": {
+										"angle": "shards.Angle"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "bulletHitParticle",
+									"sid": 703584452080962,
+									"parameters": {
+										"animation": "\"wallSmall\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 911234556125046,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "bullets",
+							"sid": 803859978029675
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "bullets",
+							"sid": 670456428064689,
+							"parameters": {
+								"object": "lightBullet",
+								"layer": "\"darkness\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "lightBullet",
+							"sid": 784558711625366,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "bullets",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 988720198713427
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "enemyBullets",
+							"sid": 910862345534104
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "enemyBullets",
+							"sid": 568865761648496,
+							"parameters": {
+								"object": "lightBullet",
+								"layer": "\"darkness\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "lightBullet",
+							"sid": 553787399413784,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "enemyBullets",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 430662091227586
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "bullets",
+							"sid": 238097780831505
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "guns",
+							"sid": 386960104693941,
+							"parameters": {
+								"instance-variable": "isUsed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "guns",
+							"sid": 991062265379926,
+							"parameters": {
+								"object": "shootingParticle",
+								"layer": "\"obj3\"",
+								"image-point": "\"shotEffect\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "shootingParticle",
+							"sid": 124144142548685,
+							"parameters": {
+								"animation": "guns.typeFX",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "guns",
+							"sid": 430764178263255,
+							"parameters": {
+								"child": "shootingParticle",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-d": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": false
+							}
+						},
+						{
+							"id": "set-height",
+							"objectClass": "shootingParticle",
+							"sid": 254431525545594,
+							"parameters": {
+								"height": "abs(Self.Height) * sign(random(-10, 10))"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "shootingParticle",
+							"sid": 585571844688880,
+							"parameters": {
+								"object": "lightBullet",
+								"layer": "\"darkness\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "shootingParticle",
+							"sid": 933902978212882,
+							"parameters": {
+								"child": "lightBullet",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-d": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 175058018438173,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "guns",
+									"sid": 755266413036823,
+									"parameters": {
+										"instance-variable": "typeFX",
+										"comparison": 0,
+										"value": "\"laserPistol\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "shootingParticle",
+									"sid": 107835803899246,
+									"parameters": {
+										"mode": "enable",
+										"effect": "\"laser\""
+									}
+								}
+							],
+							"sid": 387789894377704
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "lightBulletAttackLamp",
+							"sid": 978098916510350
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "lightBulletAttackLamp",
+							"sid": 332129696830079,
+							"parameters": {
+								"object": "bulletHitParticle",
+								"layer": "\"obj2\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "bulletHitParticle",
+							"sid": 475690154325913,
+							"parameters": {
+								"animation": "\"lamp\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "bulletHitParticle",
+							"sid": 638424029547198,
+							"parameters": {
+								"angle": "lightBulletAttackLamp.Angle"
+							}
+						}
+					],
+					"sid": 374108074373871,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "air",
+							"sid": 701344995249993
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "air",
+							"sid": 253310605196373,
+							"parameters": {
+								"object": "bulletHitParticle",
+								"layer": "\"obj2\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "bulletHitParticle",
+							"sid": 219492222044449,
+							"parameters": {
+								"animation": "\"wallBig\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "bulletHitParticle",
+							"sid": 376543877663459,
+							"parameters": {
+								"angle": "lightBulletAttackLamp.Angle"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bulletHitParticle",
+							"sid": 717061105749538,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"white\""
+							}
+						}
+					],
+					"sid": 260758215856603,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "snailBullet",
+							"sid": 967787341982926
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "snailBullet",
+							"sid": 400668619638975,
+							"parameters": {
+								"object": "bulletHitParticle",
+								"layer": "\"obj2\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "bulletHitParticle",
+							"sid": 467553113208147,
+							"parameters": {
+								"animation": "\"wallBig\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "bulletHitParticle",
+							"sid": 834165401181635,
+							"parameters": {
+								"angle": "snailBullet.Angle"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bulletHitParticle",
+							"sid": 729843557858058,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"laserRed\""
+							}
+						}
+					],
+					"sid": 676660138685471,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "tearBulletEnemy",
+							"sid": 866451763201437
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "tearBulletEnemy",
+							"sid": 835981530101515,
+							"parameters": {
+								"object": "bulletHitParticle",
+								"layer": "\"obj2\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "bulletHitParticle",
+							"sid": 909594509865452,
+							"parameters": {
+								"animation": "\"wallBig\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "bulletHitParticle",
+							"sid": 490826384068768,
+							"parameters": {
+								"angle": "tearBulletEnemy.Angle"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bulletHitParticle",
+							"sid": 754190077486410,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"laserBlue\""
+							}
+						}
+					],
+					"sid": 100240078291453,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "maskBullet",
+							"sid": 347399940298544
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "maskBullet",
+							"sid": 635495371863214,
+							"parameters": {
+								"object": "bulletHitParticle",
+								"layer": "\"obj2\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "bulletHitParticle",
+							"sid": 462030498333427,
+							"parameters": {
+								"animation": "\"wallBig\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "bulletHitParticle",
+							"sid": 923175986000980,
+							"parameters": {
+								"angle": "maskBullet.Angle"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bulletHitParticle",
+							"sid": 682352617891429,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"laserRed\""
+							}
+						}
+					],
+					"sid": 335284816796735,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "starBullet",
+							"sid": 405619304856133
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "starBullet",
+							"sid": 783021321541685,
+							"parameters": {
+								"object": "bulletHitParticle",
+								"layer": "\"obj2\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "bulletHitParticle",
+							"sid": 513803067452019,
+							"parameters": {
+								"animation": "\"wallBig\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "bulletHitParticle",
+							"sid": 715956997914753,
+							"parameters": {
+								"angle": "starBullet.Bullet.AngleOfMotion"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bulletHitParticle",
+							"sid": 235151574495964,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"laserRed\""
+							}
+						}
+					],
+					"sid": 891379508424836,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "maskBossBullet",
+							"sid": 797886903608032
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "maskBossBullet",
+							"sid": 461831869232049,
+							"parameters": {
+								"object": "bulletHitParticle",
+								"layer": "\"obj2\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "bulletHitParticle",
+							"sid": 558155745045022,
+							"parameters": {
+								"animation": "\"wallBig\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "bulletHitParticle",
+							"sid": 892860505578271,
+							"parameters": {
+								"angle": "maskBossBullet.Bullet.AngleOfMotion"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bulletHitParticle",
+							"sid": 432031731405998,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"laserRed\""
+							}
+						}
+					],
+					"sid": 951897159832945,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "bigEyeBullet",
+							"sid": 147275982997100
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "bigEyeBullet",
+							"sid": 501741376493969,
+							"parameters": {
+								"object": "bulletHitParticle",
+								"layer": "\"obj2\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "bulletHitParticle",
+							"sid": 325972513629770,
+							"parameters": {
+								"animation": "\"wallBig\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "bulletHitParticle",
+							"sid": 429208062336048,
+							"parameters": {
+								"angle": "bigEyeBullet.Angle"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bulletHitParticle",
+							"sid": 145701395957726,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"laserRed\""
+							}
+						}
+					],
+					"sid": 121220993169082,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "mediumEyeBullet",
+							"sid": 342288032207433
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "mediumEyeBullet",
+							"sid": 372761313405745,
+							"parameters": {
+								"object": "bulletHitParticle",
+								"layer": "\"obj2\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "bulletHitParticle",
+							"sid": 591041560435957,
+							"parameters": {
+								"animation": "\"wallBig\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "bulletHitParticle",
+							"sid": 306674148969051,
+							"parameters": {
+								"angle": "mediumEyeBullet.Angle"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bulletHitParticle",
+							"sid": 310617382715153,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"laserRed\""
+							}
+						}
+					],
+					"sid": 947571112605353,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "sheepHeadBullet",
+							"sid": 333159376251849
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "sheepHeadBullet",
+							"sid": 226693996076363,
+							"parameters": {
+								"object": "bulletHitParticle",
+								"layer": "\"obj2\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "bulletHitParticle",
+							"sid": 543135994539661,
+							"parameters": {
+								"animation": "\"wallBig\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "bulletHitParticle",
+							"sid": 109475088653396,
+							"parameters": {
+								"angle": "sheepHeadBullet.Angle"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bulletHitParticle",
+							"sid": 655936848872683,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"laserRed\""
+							}
+						}
+					],
+					"sid": 919927349374741,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "earBullet",
+							"sid": 168000236308778
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "earBullet",
+							"sid": 589309970659043,
+							"parameters": {
+								"object": "bulletHitParticle",
+								"layer": "\"obj2\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "earBullet",
+							"sid": 415408601432344,
+							"parameters": {
+								"animation": "\"wallBig\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "earBullet",
+							"sid": 550134103115091,
+							"parameters": {
+								"angle": "sheepHeadBullet.Angle"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bulletHitParticle",
+							"sid": 860522446254340,
+							"disabled": true,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"laserRed\""
+							}
+						}
+					],
+					"sid": 812629264274343,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "plantBossBullet",
+							"sid": 324631388215467
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "plantBossBullet",
+							"sid": 142012819746136,
+							"parameters": {
+								"object": "bulletHitParticle",
+								"layer": "\"obj2\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "bulletHitParticle",
+							"sid": 723841851421810,
+							"parameters": {
+								"animation": "\"wallBig\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "bulletHitParticle",
+							"sid": 382239442073472,
+							"parameters": {
+								"angle": "plantBossBullet.Angle"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bulletHitParticle",
+							"sid": 718114641493420,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"laserRed\""
+							}
+						}
+					],
+					"sid": 727315310763194,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "surgeonKnife",
+							"sid": 923244688809277
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "surgeonKnife",
+							"sid": 211167210500593,
+							"parameters": {
+								"object": "bulletHitParticle",
+								"layer": "\"obj2\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "bulletHitParticle",
+							"sid": 128634969530555,
+							"parameters": {
+								"animation": "\"wallBig\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "bulletHitParticle",
+							"sid": 120338665873933,
+							"parameters": {
+								"angle": "surgeonKnife.Angle"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bulletHitParticle",
+							"sid": 347008376166012,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"white\""
+							}
+						}
+					],
+					"sid": 358516429717427,
+					"isOrBlock": true
+				}
+			],
+			"sid": 770319261388136
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "enemies",
+					"sid": 566672875555766,
+					"parameters": {
+						"animation": "\"death\""
+					}
+				},
+				{
+					"id": "pick-children",
+					"objectClass": "enemies",
+					"sid": 447633254403480,
+					"parameters": {
+						"child": "lightEnemy",
+						"which": "own"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "lightEnemy",
+					"sid": 237983241933352,
+					"disabled": true
+				},
+				{
+					"id": "start-fade",
+					"objectClass": "lightEnemy",
+					"sid": 905791044409680,
+					"behaviorType": "Fade"
+				}
+			],
+			"sid": 822316730712006
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "enemies",
+					"sid": 632174375800756
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "enemies",
+					"sid": 808753618431398,
+					"parameters": {
+						"object": "lightEnemy",
+						"layer": "\"darkness\"",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "enemies",
+					"sid": 263335233814814,
+					"parameters": {
+						"child": "lightEnemy",
+						"transform-x": true,
+						"transform-y": true,
+						"transform-z-elevation": false,
+						"transform-w": false,
+						"transform-h": false,
+						"transform-d": true,
+						"transform-a": false,
+						"transform-o": false,
+						"transform-visibility": false,
+						"destroy-with-parent": true
+					}
+				},
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "lightEnemy",
+					"sid": 396284494798080,
+					"disabled": true,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "enemies",
+						"x": true,
+						"y": true,
+						"angle": false,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				}
+			],
+			"sid": 632899388412182
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-animation-finished",
+					"objectClass": "shootingParticle",
+					"sid": 922329479357185
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "shootingParticle",
+					"sid": 419076661389803
+				}
+			],
+			"sid": 347258927122711
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-animation-finished",
+					"objectClass": "bulletHitParticle",
+					"sid": 648875579635109
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "bulletHitParticle",
+					"sid": 782653984814727
+				}
+			],
+			"sid": 815486935797808
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "bulletHitParticle",
+					"sid": 634690612238225
+				}
+			],
+			"actions": [
+				{
+					"id": "set-height",
+					"objectClass": "bulletHitParticle",
+					"sid": 138109919376177,
+					"parameters": {
+						"height": "sign(random(-5, 5)) * abs(Self.Height)"
+					}
+				}
+			],
+			"sid": 389629909909728
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "fxBomb",
+					"sid": 317698693480011
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "fxBomb",
+					"sid": 622347216065008,
+					"parameters": {
+						"object": "lightPlayer",
+						"layer": "\"darkness\"",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "add-child",
+					"objectClass": "fxBomb",
+					"sid": 909856475362727,
+					"parameters": {
+						"child": "lightPlayer",
+						"transform-x": true,
+						"transform-y": true,
+						"transform-z-elevation": true,
+						"transform-w": true,
+						"transform-h": true,
+						"transform-d": true,
+						"transform-a": true,
+						"transform-o": false,
+						"transform-visibility": false,
+						"destroy-with-parent": true
+					}
+				}
+			],
+			"sid": 653193260870778
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "loot light",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "guns",
+							"sid": 632680151994073,
+							"parameters": {
+								"instance-variable": "isUsed"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 810410120837868
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "guns",
+							"sid": 332240000600073,
+							"parameters": {
+								"object": "lightGun",
+								"layer": "\"darkness\"",
+								"image-point": "0",
+								"create-hierarchy": true,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 158519328536045,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "guns",
+							"sid": 411400100014150,
+							"parameters": {
+								"instance-variable": "isUsed"
+							}
+						},
+						{
+							"id": "pick-children",
+							"objectClass": "guns",
+							"sid": 747100227280387,
+							"parameters": {
+								"child": "lightGun",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "lightGun",
+							"sid": 579288975859987
+						}
+					],
+					"sid": 115895098292496,
+					"disabled": true
+				}
+			],
+			"sid": 338773331741383
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-animation-playing",
+					"objectClass": "player1",
+					"sid": 143643267106167,
+					"parameters": {
+						"animation": "\"hurt\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 335059321530129
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-effect-enabled",
+					"objectClass": "System",
+					"sid": 304476368338338,
+					"parameters": {
+						"mode": "enable",
+						"effect": "\"Tint\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 139039754290458,
+					"parameters": {
+						"seconds": "0.1",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-layout-effect-enabled",
+					"objectClass": "System",
+					"sid": 534358168105120,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"Tint\""
+					}
+				}
+			],
+			"sid": 361907199362428
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-animation-playing",
+					"objectClass": "sprike",
+					"sid": 504684431822582,
+					"parameters": {
+						"animation": "\"doorSide\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 176821771697359,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 315455880312541
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "sprike",
+							"sid": 224255281262027,
+							"parameters": {
+								"object": "lightEnemy",
+								"layer": "\"darkness\"",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "sprike",
+							"sid": 386925089736315,
+							"parameters": {
+								"child": "lightEnemy",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-d": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "sprike",
+							"sid": 782752369319923,
+							"parameters": {
+								"object": "lightEnemy",
+								"layer": "\"darkness\"",
+								"image-point": "2",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "sprike",
+							"sid": 229608858681178,
+							"parameters": {
+								"child": "lightEnemy",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-d": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "sprike",
+							"sid": 244905664903446,
+							"parameters": {
+								"object": "lightEnemy",
+								"layer": "\"darkness\"",
+								"image-point": "3",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "sprike",
+							"sid": 173360985988281,
+							"parameters": {
+								"child": "lightEnemy",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-d": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "sprike",
+							"sid": 226279527726864,
+							"parameters": {
+								"object": "lightEnemy",
+								"layer": "\"darkness\"",
+								"image-point": "4",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "sprike",
+							"sid": 791157396068166,
+							"parameters": {
+								"child": "lightEnemy",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-d": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 513887518384990
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-animation-playing",
+					"objectClass": "sprike",
+					"sid": 457812268009897,
+					"parameters": {
+						"animation": "\"doorTop\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 160267127670231,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 174546328531272
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "sprike",
+							"sid": 997100645561958,
+							"parameters": {
+								"object": "lightEnemy",
+								"layer": "\"darkness\"",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "sprike",
+							"sid": 333547564093729,
+							"parameters": {
+								"child": "lightEnemy",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-d": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "sprike",
+							"sid": 628796107128260,
+							"parameters": {
+								"object": "lightEnemy",
+								"layer": "\"darkness\"",
+								"image-point": "2",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "sprike",
+							"sid": 985583085252725,
+							"parameters": {
+								"child": "lightEnemy",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-d": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "sprike",
+							"sid": 276775140683848,
+							"parameters": {
+								"object": "lightEnemy",
+								"layer": "\"darkness\"",
+								"image-point": "3",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "sprike",
+							"sid": 855169283355951,
+							"parameters": {
+								"child": "lightEnemy",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-d": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "sprike",
+							"sid": 108689069259267,
+							"parameters": {
+								"object": "lightEnemy",
+								"layer": "\"darkness\"",
+								"image-point": "4",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "sprike",
+							"sid": 646442837664876,
+							"parameters": {
+								"child": "lightEnemy",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-d": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "sprike",
+							"sid": 264834422677900,
+							"parameters": {
+								"object": "lightEnemy",
+								"layer": "\"darkness\"",
+								"image-point": "5",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "sprike",
+							"sid": 706016893360681,
+							"parameters": {
+								"child": "lightEnemy",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-d": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 122017740100640
+				}
+			],
+			"isOrBlock": true
+		}
+	],
+	"sid": 979342030640390
+}

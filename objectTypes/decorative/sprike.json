@@ -1,0 +1,443 @@
+{
+	"name": "sprike",
+	"plugin-id": "Sprite",
+	"sid": 977518220562219,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "canDamage",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 541386642761024
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 886699500044964
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 18,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.4444444444444444,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Objects\\SpikeBlock\\spikeA.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4048136,
+						"collisionPoly": {
+							"points": [
+								0.05555555555555555,
+								0.05555555555555555,
+								0.9444444444444444,
+								0.05555555555555555,
+								0.9444444444444444,
+								0.9444444444444444,
+								0.05555555555555555,
+								0.9444444444444444
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 18,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.4444444444444444,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Objects\\SpikeBlock\\spikeA0.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 602823,
+						"collisionPoly": {
+							"points": [
+								0.05555555555555555,
+								0.05555555555555555,
+								0.9444444444444444,
+								0.05555555555555555,
+								0.9444444444444444,
+								0.9444444444444444,
+								0.05555555555555555,
+								0.9444444444444444
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 18,
+						"height": 18,
+						"originX": 0.5,
+						"originY": 0.4444444444444444,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Objects\\SpikeBlock\\spikeA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1894919,
+						"collisionPoly": {
+							"points": [
+								0.05555555555555555,
+								0.05555555555555555,
+								0.9444444444444444,
+								0.05555555555555555,
+								0.9444444444444444,
+								0.9444444444444444,
+								0.05555555555555555,
+								0.9444444444444444
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 690089985162025,
+				"name": "Default",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 80,
+						"height": 16,
+						"originX": 0.4875,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Objects\\SpikeBlock\\spikeA.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6836838,
+						"collisionPoly": {
+							"points": [
+								0.09999999999999999,
+								0,
+								0.8875000000000004,
+								0,
+								0.8875000000000004,
+								1,
+								0.09999999999999999,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.175,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 2",
+								"x": 0.3875,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 3",
+								"x": 0.6,
+								"y": 0.5
+							},
+							{
+								"name": "Image Point 4",
+								"x": 0.8125,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 80,
+						"height": 16,
+						"originX": 0.4875,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Objects\\SpikeBlock\\spikeA0.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7525141,
+						"collisionPoly": {
+							"points": [
+								0.09999999999999999,
+								0,
+								0.8875000000000004,
+								0,
+								0.8875000000000004,
+								1,
+								0.09999999999999999,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.175,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 3",
+								"x": 0.6,
+								"y": 0.5
+							},
+							{
+								"name": "Image Point 2",
+								"x": 0.3875,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 4",
+								"x": 0.8125,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 80,
+						"height": 16,
+						"originX": 0.4875,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Objects\\SpikeBlock\\spikeA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4995554,
+						"collisionPoly": {
+							"points": [
+								0.09999999999999999,
+								0,
+								0.8875000000000004,
+								0,
+								0.8875000000000004,
+								1,
+								0.09999999999999999,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.175,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 3",
+								"x": 0.6,
+								"y": 0.5
+							},
+							{
+								"name": "Image Point 2",
+								"x": 0.3875,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 4",
+								"x": 0.8125,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 898673376687772,
+				"name": "doorSide",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 80,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Objects\\SpikeBlock\\spikeA.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4904316,
+						"collisionPoly": {
+							"points": [
+								0.05,
+								0,
+								0.9500000000000002,
+								0,
+								0.9500000000000002,
+								1,
+								0.05,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.1,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 2",
+								"x": 0.3,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 3",
+								"x": 0.5,
+								"y": 0.5
+							},
+							{
+								"name": "Image Point 4",
+								"x": 0.7,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 5",
+								"x": 0.9,
+								"y": 0.4375
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 80,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Objects\\SpikeBlock\\spikeA0.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8469943,
+						"collisionPoly": {
+							"points": [
+								0.05,
+								0,
+								0.9500000000000002,
+								0,
+								0.9500000000000002,
+								1,
+								0.05,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.1,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 2",
+								"x": 0.3,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 3",
+								"x": 0.5,
+								"y": 0.5
+							},
+							{
+								"name": "Image Point 4",
+								"x": 0.7,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 5",
+								"x": 0.9,
+								"y": 0.4375
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 80,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Objects\\SpikeBlock\\spikeA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7798136,
+						"collisionPoly": {
+							"points": [
+								0.05,
+								0,
+								0.9500000000000002,
+								0,
+								0.9500000000000002,
+								1,
+								0.05,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.1,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 2",
+								"x": 0.3,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 3",
+								"x": 0.5,
+								"y": 0.5
+							},
+							{
+								"name": "Image Point 4",
+								"x": 0.7,
+								"y": 0.4375
+							},
+							{
+								"name": "Image Point 5",
+								"x": 0.9,
+								"y": 0.4375
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 791610329962146,
+				"name": "doorTop",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

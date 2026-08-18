@@ -1,0 +1,25 @@
+{
+	"name": "cutSceneTextIntro",
+	"plugin-id": "Text",
+	"sid": 687288800740882,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "currentSentense",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 207658896027404
+		},
+		{
+			"name": "typingSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 278815738898126
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

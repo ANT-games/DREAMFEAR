@@ -1,0 +1,4288 @@
+{
+	"name": "UI",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "runDuration",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 968444018929664
+		},
+		{
+			"eventType": "variable",
+			"name": "moneyGeneral",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 990126466169034
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 250924417404229
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 178330442376897,
+					"parameters": {
+						"layer": "\"death_darkness\"",
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 839764224550026
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 922685524036827,
+					"parameters": {
+						"interval-seconds": "1"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 842393303324693,
+					"parameters": {
+						"first-value": "left(LayoutName, 5)",
+						"comparison": 0,
+						"second-value": "\"level\""
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "player1",
+					"sid": 160249183731409,
+					"parameters": {
+						"animation": "\"death\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 819607783705923,
+					"parameters": {
+						"variable": "runDuration",
+						"value": "1/60"
+					}
+				}
+			],
+			"sid": 662366643211465
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 662290677003837,
+					"parameters": {
+						"interval-seconds": "0.01"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-width",
+					"objectClass": "healtthBarInside",
+					"sid": 118049470927743,
+					"parameters": {
+						"width": "lerp(Self.Width, healtthBarInside.ImageWidth * hp / maxHp, 0.7)"
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "psychosisBarInside",
+					"sid": 380717282155754,
+					"parameters": {
+						"width": "lerp(Self.Width, Self.ImageWidth * mentalState/ 100, 0.7)"
+					}
+				},
+				{
+					"id": "set-height",
+					"objectClass": "levelBar",
+					"sid": 826236428891700,
+					"parameters": {
+						"height": "Self.ImageHeight * (levelCoins / goalForNextLevel)"
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "stressBarSlider",
+					"sid": 648168804961289,
+					"disabled": true,
+					"parameters": {
+						"width": "lerp(Self.Width, Self.ImageWidth * stress/ 100, 0.7)"
+					}
+				},
+				{
+					"id": "set-height",
+					"objectClass": "levelBar",
+					"sid": 900634397114175,
+					"disabled": true,
+					"parameters": {
+						"height": "lerp(Self.Height, levelBar.ImageHeight* bulletEnergy / 100, 0.7)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "pillsText",
+					"sid": 546707052223096,
+					"parameters": {
+						"text": "antipsychoticPills"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "bombsText",
+					"sid": 669754665325444,
+					"parameters": {
+						"text": "bombs"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "hpText",
+					"sid": 847975209165410,
+					"parameters": {
+						"text": "hp/10 & \"/\" & maxHp /10"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "moneyText",
+					"sid": 607995227147517,
+					"parameters": {
+						"text": "moneyGeneral"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "levelText",
+					"sid": 194798149106493,
+					"parameters": {
+						"text": "level"
+					}
+				}
+			],
+			"sid": 209088444262223,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 850786089369065,
+							"parameters": {
+								"variable": "gamepadMode"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "reloadUI",
+							"sid": 612101003960816,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 147467613631590
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 405511092329729,
+							"parameters": {
+								"variable": "gamepadMode"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "reloadUI",
+							"sid": 217263626845056,
+							"parameters": {
+								"x": "cursor.X",
+								"y": "cursor.Y"
+							}
+						}
+					],
+					"sid": 788380988969287
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "guns",
+							"sid": 143493877343887,
+							"parameters": {
+								"instance-variable": "isUsed"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 425203909325475,
+							"parameters": {
+								"variable": "hasGun"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "bulletsText",
+							"sid": 669338714394492,
+							"disabled": true,
+							"parameters": {
+								"text": "guns.bulletsInTheGun & \"/\" & ceil(bulletEnergy/guns.energyNeededBullet)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "bulletsText",
+							"sid": 940669047102619,
+							"parameters": {
+								"text": "guns.bulletsInTheGun & \"/∞\" "
+							}
+						}
+					],
+					"sid": 143422059392897
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "textsConnectedFile",
+							"sid": 464437147549017,
+							"parameters": {
+								"text": "translation.Get(Self.textKey)"
+							}
+						}
+					],
+					"sid": 407670694495046
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "guns",
+					"sid": 486949198731687,
+					"parameters": {
+						"instance-variable": "isUsed"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 339622818828427,
+					"parameters": {
+						"variable": "hasGun"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 581648049981155,
+					"disabled": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "bulletsText",
+					"sid": 111072726438101,
+					"parameters": {
+						"text": "\"NO GUN\""
+					}
+				}
+			],
+			"sid": 776329736319651
+		},
+		{
+			"eventType": "variable",
+			"name": "language",
+			"type": "string",
+			"initialValue": "en",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 925599498427745
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "AJAX and localization files",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 684096817735013
+						}
+					],
+					"actions": [],
+					"sid": 379701195597439,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 314021121756550,
+									"parameters": {
+										"variable": "language",
+										"comparison": 0,
+										"value": "\"en\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "request-project-file",
+									"objectClass": "AJAX",
+									"sid": 324081968681901,
+									"parameters": {
+										"tag": "\"localization file\"",
+										"file": {
+											"path": "translations/english.json"
+										}
+									}
+								}
+							],
+							"sid": 893080359306967
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 800389994494506,
+							"parameters": {
+								"tag": "\"localization file\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "translation",
+							"sid": 654373209066934,
+							"parameters": {
+								"json": "AJAX.LastData"
+							}
+						}
+					],
+					"sid": 496981047666160
+				}
+			],
+			"sid": 500434605538933
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "buttons",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 418391351312178,
+							"parameters": {
+								"object": "btnText"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "cursor",
+							"sid": 465207039568928,
+							"parameters": {
+								"object": "btnText"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "btnText",
+							"sid": 230295438151457,
+							"parameters": {
+								"color": "rgbEx(169, 66, 97)"
+							}
+						},
+						{
+							"callFunction": "cursorOverObjectSound",
+							"sid": 716576291507497,
+							"disabled": true
+						}
+					],
+					"sid": 730025339065700,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 936800640237552,
+									"parameters": {
+										"first-value": "left(LayoutName, 3)",
+										"comparison": 0,
+										"second-value": "\"lev\""
+									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 266357106923324,
+									"parameters": {
+										"layer": "\"pause\""
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 562248788897999
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "cursorOverObjectSound",
+									"sid": 341112614595999
+								}
+							],
+							"sid": 104489150167633
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 544573313388962,
+									"parameters": {
+										"first-value": "left(LayoutName, 3)",
+										"comparison": 0,
+										"second-value": "\"lev\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 451787919077297
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "cursorOverObjectSound",
+									"sid": 542784167411710
+								}
+							],
+							"sid": 515242654332357
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 314069618226822,
+							"parameters": {
+								"object": "btnText"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "cursor",
+							"sid": 962756830260032,
+							"parameters": {
+								"object": "btnText"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 928060501072494,
+							"disabled": true,
+							"parameters": {
+								"object": "btnText"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "btnText",
+							"sid": 659542710781414,
+							"parameters": {
+								"color": "rgbEx(227, 221, 209)"
+							}
+						}
+					],
+					"sid": 685054138744892
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 142245870311056,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "btnText"
+							}
+						},
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 423575357957981,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 713129514452091,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 558104647283172,
+									"parameters": {
+										"object": "btnText"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 754787367718950,
+									"parameters": {
+										"object": "btnText"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 484642275226523,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "btnText",
+											"sid": 266069075301360,
+											"parameters": {
+												"instance-variable": "active"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 955428132602678,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "btnText",
+													"sid": 763753759872901,
+													"parameters": {
+														"instance-variable": "textKey",
+														"comparison": 0,
+														"value": "\"continue\""
+													}
+												},
+												{
+													"id": "layer-is-visible",
+													"objectClass": "System",
+													"sid": 694141874477481,
+													"parameters": {
+														"layer": "\"pause\""
+													}
+												},
+												{
+													"id": "layer-is-visible",
+													"objectClass": "System",
+													"sid": 225564215211739,
+													"parameters": {
+														"layer": "\"options\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "clickSound",
+													"sid": 458900292258509
+												},
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 718969341106704,
+													"parameters": {
+														"variable": "isPause",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 526091486507084
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "btnText",
+													"sid": 371806933934569,
+													"parameters": {
+														"instance-variable": "textKey",
+														"comparison": 0,
+														"value": "\"play\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 234922317394195,
+													"disabled": true,
+													"parameters": {
+														"variable": "isPause",
+														"value": "false"
+													}
+												},
+												{
+													"callFunction": "clickSound",
+													"sid": 154015828181407
+												},
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 394637348212715,
+													"parameters": {
+														"layout": "menu play"
+													}
+												}
+											],
+											"sid": 475140880942004
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "btnText",
+													"sid": 185845766172645,
+													"parameters": {
+														"instance-variable": "textKey",
+														"comparison": 0,
+														"value": "\"upgrades\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 225766535910062,
+													"disabled": true,
+													"parameters": {
+														"variable": "isPause",
+														"value": "false"
+													}
+												},
+												{
+													"callFunction": "clickSound",
+													"sid": 192898265077356
+												},
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 780783770043638,
+													"parameters": {
+														"layout": "metaProgressionMenu"
+													}
+												}
+											],
+											"sid": 127090670132308
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "btnText",
+													"sid": 522063369716414,
+													"parameters": {
+														"instance-variable": "textKey",
+														"comparison": 0,
+														"value": "\"options\""
+													}
+												},
+												{
+													"id": "layer-is-visible",
+													"objectClass": "System",
+													"sid": 677858995461740,
+													"parameters": {
+														"layer": "\"options\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 189897482169387,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 943858666062202,
+															"parameters": {
+																"first-value": "LayoutName",
+																"comparison": 0,
+																"second-value": "\"mainMenu\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "clickSound",
+															"sid": 201130088417653
+														},
+														{
+															"id": "go-to-layout",
+															"objectClass": "System",
+															"sid": 410657268049509,
+															"parameters": {
+																"layout": "options"
+															}
+														}
+													],
+													"sid": 923307892239257
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 274162874594222
+														}
+													],
+													"actions": [
+														{
+															"id": "set-layer-visible",
+															"objectClass": "System",
+															"sid": 520093179281146,
+															"parameters": {
+																"layer": "\"options\"",
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "set-layer-visible",
+															"objectClass": "System",
+															"sid": 216280916393873,
+															"parameters": {
+																"layer": "\"pause_text\"",
+																"visibility": "invisible"
+															}
+														},
+														{
+															"callFunction": "clickSound",
+															"sid": 293702485652660
+														}
+													],
+													"sid": 747347688757693
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "btnText",
+													"sid": 673337264155782,
+													"parameters": {
+														"instance-variable": "textKey",
+														"comparison": 0,
+														"value": "\"back\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 430970070305141,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 845012094079441,
+															"parameters": {
+																"first-value": "LayoutName",
+																"comparison": 0,
+																"second-value": "\"metaProgressionMenu\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "clickSound",
+															"sid": 455846555120820
+														},
+														{
+															"id": "go-to-layout",
+															"objectClass": "System",
+															"sid": 542185653760868,
+															"parameters": {
+																"layout": "menu play"
+															}
+														}
+													],
+													"sid": 247489700565124
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 808083871004568,
+															"parameters": {
+																"first-value": "LayoutName",
+																"comparison": 0,
+																"second-value": "\"menu play\""
+															}
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 750656029346619,
+															"parameters": {
+																"first-value": "LayoutName",
+																"comparison": 0,
+																"second-value": "\"options\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "clickSound",
+															"sid": 366154744822966
+														},
+														{
+															"id": "go-to-layout",
+															"objectClass": "System",
+															"sid": 621639933236497,
+															"parameters": {
+																"layout": "mainMenu"
+															}
+														}
+													],
+													"sid": 698159414413737,
+													"isOrBlock": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "layer-is-visible",
+															"objectClass": "System",
+															"sid": 711906844818583,
+															"parameters": {
+																"layer": "\"options\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "clickSound",
+															"sid": 391531636175089
+														},
+														{
+															"id": "set-layer-visible",
+															"objectClass": "System",
+															"sid": 237970596163117,
+															"parameters": {
+																"layer": "\"options\"",
+																"visibility": "invisible"
+															}
+														},
+														{
+															"id": "set-layer-visible",
+															"objectClass": "System",
+															"sid": 863706311577414,
+															"parameters": {
+																"layer": "\"pause_text\"",
+																"visibility": "visible"
+															}
+														}
+													],
+													"sid": 751089918511845
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "btnText",
+													"sid": 782097166142180,
+													"parameters": {
+														"instance-variable": "textKey",
+														"comparison": 0,
+														"value": "\"menu\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "clickSound",
+													"sid": 226379514545905
+												},
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 497883960126943,
+													"parameters": {
+														"layout": "mainMenu"
+													}
+												}
+											],
+											"sid": 148608032117872
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "btnText",
+													"sid": 456813762202634,
+													"parameters": {
+														"instance-variable": "textKey",
+														"comparison": 0,
+														"value": "\"giveUp\""
+													}
+												},
+												{
+													"id": "layer-is-visible",
+													"objectClass": "System",
+													"sid": 121422941927427,
+													"parameters": {
+														"layer": "\"pause\""
+													}
+												},
+												{
+													"id": "layer-is-visible",
+													"objectClass": "System",
+													"sid": 228388094023662,
+													"parameters": {
+														"layer": "\"options\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "clickSound",
+													"sid": 714630637921971
+												},
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 502419817494799,
+													"parameters": {
+														"variable": "isPause",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 358052994159507,
+													"parameters": {
+														"variable": "hp",
+														"value": "0"
+													}
+												}
+											],
+											"sid": 923780658785358
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "btnText",
+													"sid": 382678448815083,
+													"parameters": {
+														"instance-variable": "textKey",
+														"comparison": 0,
+														"value": "\"quit\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "clickSound",
+													"sid": 183026842632304
+												},
+												{
+													"id": "close",
+													"objectClass": "Browser",
+													"sid": 271586806417981
+												}
+											],
+											"sid": 240850040276021
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "btnText",
+													"sid": 628784491874407,
+													"parameters": {
+														"instance-variable": "textKey",
+														"comparison": 0,
+														"value": "\"again\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "clickSound",
+													"sid": 179783974792114
+												},
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 111837900614054,
+													"parameters": {
+														"layout": "level1"
+													}
+												},
+												{
+													"id": "get-item",
+													"objectClass": "LocalStorage",
+													"sid": 639596210685833,
+													"parameters": {
+														"key": "\"character\""
+													}
+												}
+											],
+											"sid": 644057635784488
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "btnText",
+													"sid": 367408541200644,
+													"parameters": {
+														"instance-variable": "textKey",
+														"comparison": 0,
+														"value": "\"startGame\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "clickSound",
+													"sid": 823460430658649
+												},
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 152629766783498,
+													"parameters": {
+														"layout": "level1"
+													}
+												}
+											],
+											"sid": 578938538940282
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "btnText",
+													"sid": 799497063139976,
+													"parameters": {
+														"instance-variable": "textKey",
+														"comparison": 0,
+														"value": "\"unlock\""
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "characterForChoice",
+													"sid": 741770497580474,
+													"parameters": {
+														"instance-variable": "locked"
+													}
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "characterForChoice",
+													"sid": 901001463262756,
+													"parameters": {
+														"animation": "\"choosen\""
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "characterForChoice",
+													"sid": 804942082955985,
+													"parameters": {
+														"instance-variable": "price",
+														"comparison": 3,
+														"value": "moneyGeneral"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "clickSound",
+													"sid": 315466223644784
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "characterForChoice",
+													"sid": 693461973993954,
+													"parameters": {
+														"instance-variable": "locked",
+														"value": "false"
+													}
+												},
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 854863658276008,
+													"parameters": {
+														"variable": "moneyGeneral",
+														"value": "characterForChoice.price"
+													}
+												},
+												{
+													"id": "set-item",
+													"objectClass": "LocalStorage",
+													"sid": 610945975479583,
+													"parameters": {
+														"key": "\"money\"",
+														"value": "moneyGeneral"
+													}
+												},
+												{
+													"id": "push",
+													"objectClass": "charactersOpen",
+													"sid": 473582786148954,
+													"parameters": {
+														"where": "back",
+														"value": "characterForChoice.character",
+														"axis": "x"
+													}
+												},
+												{
+													"id": "set-item",
+													"objectClass": "LocalStorage",
+													"sid": 481830366426695,
+													"parameters": {
+														"key": "\"charactersArray\"",
+														"value": "charactersOpen.AsJSON"
+													}
+												}
+											],
+											"sid": 559395652115807
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "btnText",
+													"sid": 648204763265000,
+													"parameters": {
+														"instance-variable": "textKey",
+														"comparison": 0,
+														"value": "\"unlockUpgrade\""
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "metaUpgradeSlot",
+													"sid": 614473221475957,
+													"parameters": {
+														"instance-variable": "locked"
+													}
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "metaUpgradeSlot",
+													"sid": 770379095648047,
+													"parameters": {
+														"animation": "\"choosen\""
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "metaUpgradeSlot",
+													"sid": 381907239594900,
+													"parameters": {
+														"instance-variable": "price",
+														"comparison": 3,
+														"value": "moneyGeneral"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "clickSound",
+													"sid": 697157305041205
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "metaUpgradeSlot",
+													"sid": 329013727539535,
+													"parameters": {
+														"instance-variable": "locked",
+														"value": "false"
+													}
+												},
+												{
+													"id": "subtract-from-eventvar",
+													"objectClass": "System",
+													"sid": 367859908167927,
+													"parameters": {
+														"variable": "moneyGeneral",
+														"value": "metaUpgradeSlot.price"
+													}
+												},
+												{
+													"id": "set-item",
+													"objectClass": "LocalStorage",
+													"sid": 398977765880245,
+													"parameters": {
+														"key": "\"money\"",
+														"value": "moneyGeneral"
+													}
+												},
+												{
+													"id": "push",
+													"objectClass": "metaUpgradesUnlocked",
+													"sid": 679120680848133,
+													"parameters": {
+														"where": "back",
+														"value": "metaUpgradeSlot.upgrade",
+														"axis": "x"
+													}
+												},
+												{
+													"id": "set-item",
+													"objectClass": "LocalStorage",
+													"sid": 803595665772341,
+													"parameters": {
+														"key": "\"progressionArray\"",
+														"value": "metaUpgradesUnlocked.AsJSON"
+													}
+												}
+											],
+											"sid": 378007576379033
+										}
+									]
+								}
+							],
+							"isOrBlock": true
+						}
+					],
+					"isOrBlock": true
+				}
+			],
+			"sid": 394269425344826
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "utility panel",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 801567442061674
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "map",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 703674212903666,
+							"parameters": {
+								"object": "mapTileUI"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 202818702880189,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "contains-value",
+									"objectClass": "roomsOpen",
+									"sid": 464578615315445,
+									"parameters": {
+										"value": "mapTileUI.value"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "mapTileUI",
+									"sid": 891159810013614,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 961764578221051
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "contains-value",
+									"objectClass": "roomsOpen",
+									"sid": 710471349746737,
+									"parameters": {
+										"value": "mapTileUI.value"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "mapTileUI",
+									"sid": 880750157156335,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 323183760889813
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 701978837850325,
+							"parameters": {
+								"object": "walls"
+							}
+						},
+						{
+							"id": "contains-value",
+							"objectClass": "roomsOpen",
+							"sid": 360206391507592,
+							"parameters": {
+								"value": "walls.index"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 447447771573927,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "player1",
+									"sid": 777463463293499,
+									"parameters": {
+										"comparison": 4,
+										"x-co-ordinate": "walls.X"
+									}
+								},
+								{
+									"id": "compare-x",
+									"objectClass": "player1",
+									"sid": 880806958216386,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "walls.BBoxRight"
+									}
+								},
+								{
+									"id": "compare-y",
+									"objectClass": "player1",
+									"sid": 484265870801706,
+									"parameters": {
+										"comparison": 4,
+										"y-co-ordinate": "walls.Y"
+									}
+								},
+								{
+									"id": "compare-y",
+									"objectClass": "player1",
+									"sid": 358670783794405,
+									"parameters": {
+										"comparison": 2,
+										"y-co-ordinate": "walls.BBoxBottom"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 908558291759999,
+									"disabled": true
+								}
+							],
+							"actions": [
+								{
+									"id": "push",
+									"objectClass": "roomsOpen",
+									"sid": 288115221797686,
+									"parameters": {
+										"where": "front",
+										"value": "walls.index",
+										"axis": "x"
+									}
+								}
+							],
+							"sid": 478373283651881
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "mapTileUI",
+							"sid": 657128669756312,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "walls.index"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 416913713142532,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "player1",
+									"sid": 796101740110401,
+									"parameters": {
+										"comparison": 4,
+										"x-co-ordinate": "walls.X"
+									}
+								},
+								{
+									"id": "compare-x",
+									"objectClass": "player1",
+									"sid": 357695604238371,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "walls.BBoxRight"
+									}
+								},
+								{
+									"id": "compare-y",
+									"objectClass": "player1",
+									"sid": 153159168403322,
+									"parameters": {
+										"comparison": 4,
+										"y-co-ordinate": "walls.Y"
+									}
+								},
+								{
+									"id": "compare-y",
+									"objectClass": "player1",
+									"sid": 334146868261953,
+									"parameters": {
+										"comparison": 2,
+										"y-co-ordinate": "walls.BBoxBottom"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "mapTileUI",
+									"sid": 130455207737896,
+									"parameters": {
+										"mode": "enable",
+										"effect": "\"Tint\""
+									}
+								}
+							],
+							"sid": 988752129786497
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 504754265292225
+								}
+							],
+							"actions": [
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "mapTileUI",
+									"sid": 559109404531570,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"Tint\""
+									}
+								}
+							],
+							"sid": 876203215220694
+						}
+					]
+				}
+			],
+			"sid": 681147502934856
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "menu",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "maskMenu",
+							"sid": 725429643897311
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "maskMenu",
+							"sid": 902854744939123,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "random(360)"
+							}
+						}
+					],
+					"sid": 490353702157656
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 355373088064222,
+							"parameters": {
+								"interval-seconds": "random(1, 2)"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 516171978230503,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 977079789219625,
+									"parameters": {
+										"first-value": "random(100)",
+										"comparison": 4,
+										"second-value": "50"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "LOGOText",
+									"sid": 456300875720100,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 868443377089611,
+									"parameters": {
+										"seconds": "random(0.05,0.1)",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "LOGOText",
+									"sid": 617393646235857,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 864533334341123
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 880305543300848
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "LOGOText",
+									"sid": 171829318091858,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 621777655106236,
+									"parameters": {
+										"seconds": "random(0.02,0.05)",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "LOGOText",
+									"sid": 273519902969415,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 783528235552277,
+									"parameters": {
+										"seconds": "random(0.02,0.05)",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "LOGOText",
+									"sid": 674888224855739,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 708469535685675,
+									"parameters": {
+										"seconds": "random(0.02,0.05)",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "LOGOText",
+									"sid": 167690933875239,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 436793676835909
+						}
+					]
+				}
+			],
+			"sid": 129097430998442
+		},
+		{
+			"eventType": "variable",
+			"name": "isPause",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 799690245697928
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "pause",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 887202658715085,
+							"parameters": {
+								"key": 27
+							}
+						},
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 598418546357339,
+							"parameters": {
+								"gamepad": "0",
+								"button": "start-menu"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 159555456405973,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 594722300905973,
+									"parameters": {
+										"first-value": "left(LayoutName, 5)",
+										"comparison": 0,
+										"second-value": "\"level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player1",
+									"sid": 886431800408250,
+									"parameters": {
+										"animation": "\"death\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 509809366677283,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 799518883482288,
+											"disabled": true,
+											"parameters": {
+												"layer": "\"options\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "toggle-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 386907847129827,
+											"parameters": {
+												"variable": "isPause"
+											}
+										}
+									],
+									"sid": 708584942794121
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 668639891103278
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 377829311401555,
+											"parameters": {
+												"layer": "\"options\"",
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 666810330932134,
+									"disabled": true
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 560440781162716,
+							"parameters": {
+								"variable": "isPause"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 314635402951183
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 226248929634586,
+							"parameters": {
+								"time-scale": "0"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 937415660791912,
+							"parameters": {
+								"layer": "\"pause\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 476838601072060,
+							"parameters": {
+								"layer": "\"pause_bg\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 576561951632917,
+							"parameters": {
+								"layer": "\"pause_darkness\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 453214763954430,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 137582891157937
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 637918426801721,
+									"parameters": {
+										"layer": "\"options\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 180818077643184,
+									"parameters": {
+										"layer": "\"pause_text\"",
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 583316994540084
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 101532886428351,
+							"parameters": {
+								"variable": "isPause"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 374643100510171
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 293056652118854,
+							"parameters": {
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 105562632727442,
+							"parameters": {
+								"layer": "\"pause\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 489094251954830,
+							"parameters": {
+								"layer": "\"pause_text\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 909397860437313,
+							"parameters": {
+								"layer": "\"pause_bg\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 712802693444204,
+							"parameters": {
+								"layer": "\"pause_darkness\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 810287915739455,
+							"parameters": {
+								"layer": "\"options\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 885368099642891
+				}
+			],
+			"sid": 800435000330876
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "death menu",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 465194342457910,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"deathMenu\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 375050485721790,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"demoEnd\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 115006840081799,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 868208681432727
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 354812975055435,
+									"parameters": {
+										"variable": "moneyGeneral",
+										"value": "coins"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "LocalStorage",
+									"sid": 694928684092350,
+									"parameters": {
+										"key": "\"money\"",
+										"value": "moneyGeneral"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "LocalStorage",
+									"sid": 749749002655818,
+									"parameters": {
+										"key": "\"character\"",
+										"value": "currentCharacter"
+									}
+								}
+							],
+							"sid": 901178083807549,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "postRunStats",
+											"sid": 583028807559349,
+											"parameters": {
+												"instance-variable": "statType",
+												"comparison": 0,
+												"value": "\"earned\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "postRunStats",
+											"sid": 185327424659978,
+											"parameters": {
+												"text": "coins"
+											}
+										}
+									],
+									"sid": 701368638187855
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "postRunStats",
+											"sid": 108968377910350,
+											"parameters": {
+												"instance-variable": "statType",
+												"comparison": 0,
+												"value": "\"duration\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "postRunStats",
+											"sid": 615521486394051,
+											"parameters": {
+												"text": "left(str(runDuration), 4) & \" \" & translation.Get(\"minutes\")"
+											}
+										}
+									],
+									"sid": 635065720569810
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "postRunStats",
+											"sid": 512608382887088,
+											"parameters": {
+												"instance-variable": "statType",
+												"comparison": 0,
+												"value": "\"killed\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "postRunStats",
+											"sid": 932908076912974,
+											"parameters": {
+												"text": "enemiesKilled"
+											}
+										}
+									],
+									"sid": 358821187589014
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "reset-global-variables",
+											"objectClass": "System",
+											"sid": 981522484102104,
+											"parameters": {
+												"reset-static": false
+											}
+										}
+									],
+									"sid": 876812910464164
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				}
+			],
+			"sid": 275994430906931
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "local storage",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 355687764979301
+						}
+					],
+					"actions": [
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 267550842864385,
+							"parameters": {
+								"key": "\"money\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 242465873558666,
+							"parameters": {
+								"key": "\"charactersArray\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 752662450218476,
+							"parameters": {
+								"key": "\"progressionArray\""
+							}
+						}
+					],
+					"sid": 537021227647527
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 981460849961390,
+							"parameters": {
+								"key": "\"money\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 821766145509566,
+							"parameters": {
+								"key": "\"money\""
+							}
+						}
+					],
+					"sid": 472449671980528
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 852564325967938,
+							"parameters": {
+								"key": "\"money\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 816919395384983,
+							"parameters": {
+								"variable": "moneyGeneral",
+								"value": "LocalStorage.ItemValue"
+							}
+						}
+					],
+					"sid": 479988516976827
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 271878998208490,
+							"parameters": {
+								"key": "\"charactersArray\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 789117711914098,
+							"parameters": {
+								"key": "\"charactersArray\""
+							}
+						}
+					],
+					"sid": 628447784623152
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 720707532603829,
+							"parameters": {
+								"key": "\"charactersArray\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "charactersOpen",
+							"sid": 848564566644535,
+							"parameters": {
+								"json": "LocalStorage.ItemValue"
+							}
+						}
+					],
+					"sid": 767914742222196
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 419536317133846,
+							"parameters": {
+								"key": "\"progressionArray\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 109108159286710,
+							"parameters": {
+								"key": "\"progressionArray\""
+							}
+						}
+					],
+					"sid": 162936320276219
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 692169078353865,
+							"parameters": {
+								"key": "\"progressionArray\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "metaUpgradesUnlocked",
+							"sid": 475934515097147,
+							"parameters": {
+								"json": "LocalStorage.ItemValue"
+							}
+						}
+					],
+					"sid": 443244999034501
+				}
+			],
+			"sid": 394586616687634
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "options",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "load options",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 715286731478832
+								}
+							],
+							"actions": [
+								{
+									"id": "check-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 545368237583974,
+									"parameters": {
+										"key": "\"musicVL\""
+									}
+								},
+								{
+									"id": "check-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 191173703665450,
+									"parameters": {
+										"key": "\"sfxVL\""
+									}
+								},
+								{
+									"id": "check-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 666708214212161,
+									"parameters": {
+										"key": "\"screenShake\""
+									}
+								},
+								{
+									"id": "check-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 123324333970214,
+									"parameters": {
+										"key": "\"fullscreen\""
+									}
+								},
+								{
+									"id": "check-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 150151306512715,
+									"parameters": {
+										"key": "\"controllerVibration\""
+									}
+								}
+							],
+							"sid": 188182876276580
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 114670784387025,
+									"parameters": {
+										"key": "\"musicVL\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "get-item",
+									"objectClass": "LocalStorage",
+									"sid": 163916833777374,
+									"parameters": {
+										"key": "\"musicVL\""
+									}
+								}
+							],
+							"sid": 612795482666214
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 345241549165500,
+									"parameters": {
+										"key": "\"sfxVL\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "get-item",
+									"objectClass": "LocalStorage",
+									"sid": 451497872731455,
+									"parameters": {
+										"key": "\"sfxVL\""
+									}
+								}
+							],
+							"sid": 489044587413332
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 771962793472807,
+									"parameters": {
+										"key": "\"screenShake\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "get-item",
+									"objectClass": "LocalStorage",
+									"sid": 667986230453692,
+									"parameters": {
+										"key": "\"screenShake\""
+									}
+								}
+							],
+							"sid": 327751628545801
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 998281229139973,
+									"parameters": {
+										"key": "\"fullscreen\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "get-item",
+									"objectClass": "LocalStorage",
+									"sid": 985002027640773,
+									"parameters": {
+										"key": "\"fullscreen\""
+									}
+								}
+							],
+							"sid": 353828500083847
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 709230298798862,
+									"parameters": {
+										"key": "\"controllerVibration\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "get-item",
+									"objectClass": "LocalStorage",
+									"sid": 702887357803201,
+									"parameters": {
+										"key": "\"controllerVibration\""
+									}
+								}
+							],
+							"sid": 768060065592021
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-get",
+									"objectClass": "LocalStorage",
+									"sid": 779444513549554,
+									"parameters": {
+										"key": "\"musicVL\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 758939104416710,
+									"parameters": {
+										"variable": "music_volume",
+										"value": "LocalStorage.ItemValue"
+									}
+								}
+							],
+							"sid": 703278099444043,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "settingText",
+											"sid": 220260059664903,
+											"parameters": {
+												"instance-variable": "type",
+												"comparison": 0,
+												"value": "\"music\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "settingText",
+											"sid": 318747360802518,
+											"parameters": {
+												"instance-variable": "value",
+												"value": "music_volume"
+											}
+										}
+									],
+									"sid": 132979520055699
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-get",
+									"objectClass": "LocalStorage",
+									"sid": 197535418386662,
+									"parameters": {
+										"key": "\"sfxVL\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 836405994335049,
+									"parameters": {
+										"variable": "sfx_volume",
+										"value": "LocalStorage.ItemValue"
+									}
+								}
+							],
+							"sid": 945157687759169,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "settingText",
+											"sid": 220126763177487,
+											"parameters": {
+												"instance-variable": "type",
+												"comparison": 0,
+												"value": "\"sound\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "settingText",
+											"sid": 967988358949633,
+											"parameters": {
+												"instance-variable": "value",
+												"value": "sfx_volume"
+											}
+										}
+									],
+									"sid": 746557204536645
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-get",
+									"objectClass": "LocalStorage",
+									"sid": 670368721889724,
+									"parameters": {
+										"key": "\"screenShake\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 835156041929538,
+									"parameters": {
+										"variable": "screenShake",
+										"value": "LocalStorage.ItemValue"
+									}
+								}
+							],
+							"sid": 522286308913621,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "settingText",
+											"sid": 887062980177730,
+											"parameters": {
+												"instance-variable": "type",
+												"comparison": 0,
+												"value": "\"screenShake\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "settingText",
+											"sid": 508481623297676,
+											"parameters": {
+												"instance-variable": "value",
+												"value": "screenShake"
+											}
+										}
+									],
+									"sid": 514226167799816
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-get",
+									"objectClass": "LocalStorage",
+									"sid": 416761617155220,
+									"parameters": {
+										"key": "\"fullscreen\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 565665003147913,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "LocalStorage",
+											"sid": 595947067348608,
+											"parameters": {
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 828510392697833,
+											"parameters": {
+												"variable": "fullScreen",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 217082813800556,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "checkbox",
+													"sid": 744245832054603,
+													"parameters": {
+														"instance-variable": "type",
+														"comparison": 0,
+														"value": "\"fullscreen\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "checkbox",
+													"sid": 997260403345260,
+													"parameters": {
+														"instance-variable": "value",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 483280324661977
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "LocalStorage",
+											"sid": 743052328151542,
+											"parameters": {
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 232905179222311,
+											"parameters": {
+												"variable": "fullScreen",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 539956079340808,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "checkbox",
+													"sid": 717929863331979,
+													"parameters": {
+														"instance-variable": "type",
+														"comparison": 0,
+														"value": "\"fullscreen\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "checkbox",
+													"sid": 787988663631001,
+													"parameters": {
+														"instance-variable": "value",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 532630725949772
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-get",
+									"objectClass": "LocalStorage",
+									"sid": 102062985110469,
+									"parameters": {
+										"key": "\"controllerVibration\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 363694632683345,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "LocalStorage",
+											"sid": 675731282502736,
+											"parameters": {
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 790659704826268,
+											"parameters": {
+												"variable": "controllerVibration",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 673696944747648,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "checkbox",
+													"sid": 568825532094437,
+													"parameters": {
+														"instance-variable": "type",
+														"comparison": 0,
+														"value": "\"controllerShake\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "checkbox",
+													"sid": 979124727414600,
+													"parameters": {
+														"instance-variable": "value",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 279101024128454
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "LocalStorage",
+											"sid": 764414207356723,
+											"parameters": {
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 525679906656145,
+											"parameters": {
+												"variable": "controllerVibration",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 173134205169756,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "checkbox",
+													"sid": 196877064044415,
+													"parameters": {
+														"instance-variable": "type",
+														"comparison": 0,
+														"value": "\"controllerShake\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "checkbox",
+													"sid": 722886139409825,
+													"parameters": {
+														"instance-variable": "value",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 903700699919913
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 693520360444478
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "set values",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "setOptionValue",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 561182882160852,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "settingText",
+											"sid": 868560254323161,
+											"parameters": {
+												"instance-variable": "type",
+												"comparison": 0,
+												"value": "\"music\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 197310114029212,
+											"parameters": {
+												"variable": "music_volume",
+												"value": "settingText.value"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "LocalStorage",
+											"sid": 781351517697525,
+											"parameters": {
+												"key": "\"musicVL\"",
+												"value": "music_volume"
+											}
+										}
+									],
+									"sid": 649282010720800
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "settingText",
+											"sid": 283419051368742,
+											"parameters": {
+												"instance-variable": "type",
+												"comparison": 0,
+												"value": "\"sound\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 451119266000139,
+											"parameters": {
+												"variable": "sfx_volume",
+												"value": "settingText.value"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "LocalStorage",
+											"sid": 851561722128714,
+											"parameters": {
+												"key": "\"sfxVL\"",
+												"value": "sfx_volume"
+											}
+										}
+									],
+									"sid": 327409651928356
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "settingText",
+											"sid": 895948434292561,
+											"parameters": {
+												"instance-variable": "type",
+												"comparison": 0,
+												"value": "\"screenShake\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 528450518769442,
+											"parameters": {
+												"variable": "screenShake",
+												"value": "settingText.value"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "LocalStorage",
+											"sid": 554152880288363,
+											"parameters": {
+												"key": "\"screenShake\"",
+												"value": "screenShake"
+											}
+										}
+									],
+									"sid": 239133777870840
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "checkbox",
+											"sid": 424423083455775,
+											"parameters": {
+												"instance-variable": "type",
+												"comparison": 0,
+												"value": "\"fullscreen\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 430583083509400,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "checkbox",
+													"sid": 900384727623992,
+													"parameters": {
+														"instance-variable": "value"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 760129985742473,
+													"parameters": {
+														"variable": "fullScreen",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-item",
+													"objectClass": "LocalStorage",
+													"sid": 137113380877147,
+													"parameters": {
+														"key": "\"fullscreen\"",
+														"value": "fullScreen"
+													}
+												}
+											],
+											"sid": 357804762665592
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 452479110225607
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 714457531466649,
+													"parameters": {
+														"variable": "fullScreen",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-item",
+													"objectClass": "LocalStorage",
+													"sid": 867692708852328,
+													"parameters": {
+														"key": "\"fullscreen\"",
+														"value": "fullScreen"
+													}
+												}
+											],
+											"sid": 213634860382065
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "checkbox",
+											"sid": 479990085799916,
+											"parameters": {
+												"instance-variable": "type",
+												"comparison": 0,
+												"value": "\"controllerShake\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 547642662836806,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "checkbox",
+													"sid": 456666703175766,
+													"parameters": {
+														"instance-variable": "value"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 185158047731929,
+													"parameters": {
+														"variable": "controllerVibration",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-item",
+													"objectClass": "LocalStorage",
+													"sid": 137312811180674,
+													"parameters": {
+														"key": "\"controllerVibration\"",
+														"value": "controllerVibration"
+													}
+												}
+											],
+											"sid": 875040208653235
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 494491189408148
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 551406678118156,
+													"parameters": {
+														"variable": "controllerVibration",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-item",
+													"objectClass": "LocalStorage",
+													"sid": 376581117030295,
+													"parameters": {
+														"key": "\"controllerVibration\"",
+														"value": "controllerVibration"
+													}
+												}
+											],
+											"sid": 646127036787556
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 245900375476917
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "percent options",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 371443813004491,
+									"parameters": {
+										"object": "settingText"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 762973801718091,
+									"parameters": {
+										"object": "settingText"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "settingText",
+									"sid": 976347971468729,
+									"parameters": {
+										"mode": "enable",
+										"effect": "\"mouseOn\""
+									}
+								}
+							],
+							"sid": 597407157624574,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "settingText",
+											"sid": 420954618751093,
+											"parameters": {
+												"instance-variable": "active"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 535230511830978,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-mouse-wheel",
+													"objectClass": "Mouse",
+													"sid": 307037846337047,
+													"parameters": {
+														"direction": "up"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 124687404354456,
+													"disabled": true,
+													"parameters": {
+														"seconds": "0.25",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "add-to-instvar",
+													"objectClass": "settingText",
+													"sid": 227513093730806,
+													"parameters": {
+														"instance-variable": "value",
+														"value": "2"
+													}
+												},
+												{
+													"id": "set-text",
+													"objectClass": "settingText",
+													"sid": 552301610531942,
+													"disabled": true,
+													"parameters": {
+														"text": "Self.value & \"%\""
+													}
+												},
+												{
+													"callFunction": "setOptionValue",
+													"sid": 217593448122175
+												}
+											],
+											"sid": 523751682711932
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-mouse-wheel",
+													"objectClass": "Mouse",
+													"sid": 247735345057397,
+													"parameters": {
+														"direction": "down"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 866379516534680,
+													"disabled": true,
+													"parameters": {
+														"seconds": "0.25",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "settingText",
+													"sid": 426596434121298,
+													"parameters": {
+														"instance-variable": "value",
+														"value": "2"
+													}
+												},
+												{
+													"id": "set-text",
+													"objectClass": "settingText",
+													"sid": 858498313570105,
+													"disabled": true,
+													"parameters": {
+														"text": "Self.value & \"%\""
+													}
+												},
+												{
+													"callFunction": "setOptionValue",
+													"sid": 534593603682073
+												}
+											],
+											"sid": 181842405862109
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 324100677555372
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "cursorOverObjectSound",
+													"sid": 508365780132202
+												}
+											],
+											"sid": 590840029699450
+										}
+									]
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 265108991216685
+								}
+							],
+							"actions": [
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "settingText",
+									"sid": 605962350263240,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"mouseOn\""
+									}
+								}
+							],
+							"sid": 790961235091087
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "settingText",
+									"sid": 733903427259689,
+									"parameters": {
+										"instance-variable": "value",
+										"comparison": 2,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "settingText",
+									"sid": 558429166374699,
+									"parameters": {
+										"instance-variable": "value",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "settingText",
+									"sid": 715709278172149,
+									"disabled": true,
+									"parameters": {
+										"text": "Self.value & \"%\""
+									}
+								},
+								{
+									"callFunction": "setOptionValue",
+									"sid": 523891195135771
+								}
+							],
+							"sid": 963468112589082
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "settingText",
+									"sid": 312729655889961,
+									"parameters": {
+										"instance-variable": "value",
+										"comparison": 4,
+										"value": "100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "settingText",
+									"sid": 429783143118102,
+									"parameters": {
+										"instance-variable": "value",
+										"value": "100"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "settingText",
+									"sid": 690753015622166,
+									"disabled": true,
+									"parameters": {
+										"text": "Self.value & \"%\""
+									}
+								},
+								{
+									"callFunction": "setOptionValue",
+									"sid": 589184817793176
+								}
+							],
+							"sid": 779200245216548
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 622269317962134,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "settingText"
+									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 259266599840426,
+									"parameters": {
+										"gamepad": "0",
+										"button": "button-a"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 347444612154435,
+									"disabled": true,
+									"parameters": {
+										"seconds": "0.25",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "clickSound",
+									"sid": 466109926915886
+								}
+							],
+							"sid": 874774127184124,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 582766621544160,
+											"parameters": {
+												"object": "settingText"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "cursor",
+											"sid": 448807376302916,
+											"parameters": {
+												"object": "settingText"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 509951675077436,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "settingText",
+													"sid": 441616085051630,
+													"parameters": {
+														"instance-variable": "active"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 231620139529862,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "settingText",
+															"sid": 640824662231704,
+															"parameters": {
+																"instance-variable": "value",
+																"comparison": 0,
+																"value": "100"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "settingText",
+															"sid": 306301647478704,
+															"parameters": {
+																"instance-variable": "value",
+																"value": "0"
+															}
+														},
+														{
+															"id": "set-text",
+															"objectClass": "settingText",
+															"sid": 521183327569394,
+															"disabled": true,
+															"parameters": {
+																"text": "Self.value & \"%\""
+															}
+														},
+														{
+															"callFunction": "setOptionValue",
+															"sid": 909810222031881
+														}
+													],
+													"sid": 703429260372390
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 145408554397820
+														}
+													],
+													"actions": [
+														{
+															"id": "add-to-instvar",
+															"objectClass": "settingText",
+															"sid": 936025996222479,
+															"parameters": {
+																"instance-variable": "value",
+																"value": "10"
+															}
+														},
+														{
+															"id": "set-text",
+															"objectClass": "settingText",
+															"sid": 925553631085125,
+															"disabled": true,
+															"parameters": {
+																"text": "Self.value & \"%\""
+															}
+														},
+														{
+															"callFunction": "setOptionValue",
+															"sid": 775003352176941
+														}
+													],
+													"sid": 741566755090804
+												}
+											]
+										}
+									],
+									"isOrBlock": true
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 560433426530311
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "settingText",
+									"sid": 444980719093870,
+									"parameters": {
+										"text": "Self.value & \"%\""
+									}
+								}
+							],
+							"sid": 491051856905698
+						}
+					],
+					"sid": 294267302547664
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "checkboxes",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 933082998843137,
+									"parameters": {
+										"object": "checkbox"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 290791536077716,
+									"parameters": {
+										"object": "checkbox"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "checkbox",
+									"sid": 209001206840467,
+									"parameters": {
+										"animation": "\"choosen\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 117442233040408,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "checkbox",
+											"sid": 941960373356297,
+											"parameters": {
+												"instance-variable": "active"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 640939474215738,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 752886398102078
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "cursorOverObjectSound",
+													"sid": 338907816578577
+												}
+											],
+											"sid": 611995021942148
+										}
+									]
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 104750491276536
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "checkbox",
+									"sid": 192517063515921,
+									"parameters": {
+										"animation": "\"base\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 524553346157021
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 829371315494799,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "checkbox"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "checkbox",
+									"sid": 779389983004585,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 107618432903002,
+									"disabled": true,
+									"parameters": {
+										"seconds": "0.25",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "clickSound",
+									"sid": 831817495552667
+								},
+								{
+									"id": "toggle-boolean-instvar",
+									"objectClass": "checkbox",
+									"sid": 679762237146786,
+									"parameters": {
+										"instance-variable": "value"
+									}
+								},
+								{
+									"callFunction": "setOptionValue",
+									"sid": 287982751000914
+								}
+							],
+							"sid": 428608862512780
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 715148546393682,
+									"parameters": {
+										"gamepad": "0",
+										"button": "button-a"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 570518133864803,
+									"parameters": {
+										"object": "checkbox"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "checkbox",
+									"sid": 724739221220332,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 153626778685036,
+									"disabled": true,
+									"parameters": {
+										"seconds": "0.25",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "clickSound",
+									"sid": 803409234478717
+								},
+								{
+									"id": "toggle-boolean-instvar",
+									"objectClass": "checkbox",
+									"sid": 378431417620590,
+									"parameters": {
+										"instance-variable": "value"
+									}
+								},
+								{
+									"callFunction": "setOptionValue",
+									"sid": 887127951010948
+								}
+							],
+							"sid": 600122458398128
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "checkbox",
+									"sid": 644011054863266,
+									"parameters": {
+										"instance-variable": "value"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "checkbox",
+									"sid": 588424398103480,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 726224951309750
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "checkbox",
+									"sid": 548160893990803,
+									"parameters": {
+										"instance-variable": "value"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "checkbox",
+									"sid": 463993571804961,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 100455732129853
+						}
+					],
+					"sid": 739483024437302
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 265088048372785,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"options\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "checkbox",
+							"sid": 977552521300154,
+							"parameters": {
+								"instance-variable": "active",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "settingText",
+							"sid": 626077295843749,
+							"parameters": {
+								"instance-variable": "active",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 802411372506787
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 485751271974016
+						}
+					],
+					"actions": [],
+					"sid": 100940240242045,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 659871447167226,
+									"parameters": {
+										"layer": "\"options\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "checkbox",
+									"sid": 845680386499020,
+									"parameters": {
+										"instance-variable": "active",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "settingText",
+									"sid": 748731555473733,
+									"parameters": {
+										"instance-variable": "active",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 221889941131485
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 691711193770328
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "checkbox",
+									"sid": 228357059126720,
+									"parameters": {
+										"instance-variable": "active",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "settingText",
+									"sid": 746616560096528,
+									"parameters": {
+										"instance-variable": "active",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 447730225118827
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 828202385228073,
+							"parameters": {
+								"key": 27
+							}
+						},
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 817887237164564,
+							"parameters": {
+								"gamepad": "0",
+								"button": "start-menu"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 589876862143427,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 188318184201280,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"options\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 378335701323185,
+									"parameters": {
+										"layout": "mainMenu"
+									}
+								}
+							],
+							"sid": 120171441093037
+						}
+					],
+					"isOrBlock": true
+				}
+			],
+			"sid": 209500032960876
+		},
+		{
+			"eventType": "variable",
+			"name": "screenShake",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 662841318368617
+		},
+		{
+			"eventType": "variable",
+			"name": "fullScreen",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 627850900793025
+		},
+		{
+			"eventType": "variable",
+			"name": "controllerVibration",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 846164695327410
+		}
+	],
+	"sid": 975126981776441
+}

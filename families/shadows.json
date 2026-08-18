@@ -1,0 +1,22 @@
+{
+	"name": "shadows",
+	"plugin-id": "Sprite",
+	"sid": 135517146634240,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "glowhorizontal",
+			"name": "GlowHorizontal"
+		},
+		{
+			"effectId": "glowvertical",
+			"name": "GlowVertical"
+		}
+	],
+	"members": [
+		"shadowBig",
+		"shadowMedium",
+		"shadowSmall"
+	]
+}

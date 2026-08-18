@@ -1,0 +1,11 @@
+{
+	"name": "BGs",
+	"plugin-id": "Tilemap",
+	"sid": 537907153736715,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"back"
+	]
+}

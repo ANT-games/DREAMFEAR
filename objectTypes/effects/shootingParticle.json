@@ -1,0 +1,295 @@
+{
+	"name": "shootingParticle",
+	"plugin-id": "Sprite",
+	"sid": 630066514290423,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "glowvertical",
+			"name": "GlowVertical"
+		},
+		{
+			"effectId": "glowhorizontal",
+			"name": "GlowHorizontal"
+		},
+		{
+			"effectId": "hsladjust",
+			"name": "laser"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 26,
+						"height": 26,
+						"originX": 0.5769230769230769,
+						"originY": 0.46153846153846156,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9292141,
+						"collisionPoly": {
+							"points": [
+								0.5769230769230768,
+								0.423076923076923,
+								0.8076923076923078,
+								0.423076923076923,
+								0.8076923076923078,
+								0.5384615384615388,
+								0.5769230769230768,
+								0.5384615384615388
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 26,
+						"height": 26,
+						"originX": 0.5769230769230769,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3125961,
+						"collisionPoly": {
+							"points": [
+								0.5769230769230768,
+								0.423076923076923,
+								0.8076923076923078,
+								0.423076923076923,
+								0.8076923076923078,
+								0.5384615384615388,
+								0.5769230769230768,
+								0.5384615384615388
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 26,
+						"height": 26,
+						"originX": 0.5769230769230769,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7366536,
+						"collisionPoly": {
+							"points": [
+								0.5769230769230768,
+								0.423076923076923,
+								0.8076923076923078,
+								0.423076923076923,
+								0.8076923076923078,
+								0.5384615384615388,
+								0.5769230769230768,
+								0.5384615384615388
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 193587726306314,
+				"name": "revolver",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 30
+			},
+			{
+				"frames": [
+					{
+						"width": 100,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6672277,
+						"collisionPoly": {
+							"points": [
+								0.5100000000000002,
+								0.48000000000000026,
+								0.6299999999999997,
+								0.48062500000000025,
+								0.6299999999999997,
+								0.5199999999999996,
+								0.5100000000000002,
+								0.5199999999999996
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 100,
+						"height": 100,
+						"originX": 0.54,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6180007,
+						"collisionPoly": {
+							"points": [
+								0.6200000000000003,
+								0.48000000000000026,
+								0.6299999999999997,
+								0.48062500000000025,
+								0.6299999999999997,
+								0.5199999999999996,
+								0.6200000000000003,
+								0.5199999999999996
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 100,
+						"height": 100,
+						"originX": 0.5800000000000001,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2074559,
+						"collisionPoly": {
+							"points": [
+								0.7100000000000004,
+								0.48000000000000026,
+								0.7199999999999998,
+								0.48062500000000025,
+								0.7099999999999997,
+								0.5199999999999996,
+								0.7200000000000004,
+								0.5199999999999996
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 265921785000607,
+				"name": "shotgun",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 30
+			},
+			{
+				"frames": [
+					{
+						"width": 26,
+						"height": 26,
+						"originX": 0.5769230769230769,
+						"originY": 0.46153846153846156,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2245677,
+						"collisionPoly": {
+							"points": [
+								0.5769230769230768,
+								0.423076923076923,
+								0.8076923076923078,
+								0.423076923076923,
+								0.8076923076923078,
+								0.5384615384615388,
+								0.5769230769230768,
+								0.5384615384615388
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 26,
+						"height": 26,
+						"originX": 0.5769230769230769,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3397327,
+						"collisionPoly": {
+							"points": [
+								0.5769230769230768,
+								0.423076923076923,
+								0.8076923076923078,
+								0.423076923076923,
+								0.8076923076923078,
+								0.5384615384615388,
+								0.5769230769230768,
+								0.5384615384615388
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 26,
+						"height": 26,
+						"originX": 0.5769230769230769,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9861442,
+						"collisionPoly": {
+							"points": [
+								0.5769230769230768,
+								0.423076923076923,
+								0.8076923076923078,
+								0.423076923076923,
+								0.8076923076923078,
+								0.5384615384615388,
+								0.5769230769230768,
+								0.5384615384615388
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 792461481698689,
+				"name": "laserPistol",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 30
+			}
+		],
+		"subfolders": []
+	}
+}

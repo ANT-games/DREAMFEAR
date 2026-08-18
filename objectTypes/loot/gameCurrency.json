@@ -1,0 +1,66 @@
+{
+	"name": "gameCurrency",
+	"plugin-id": "Sprite",
+	"sid": 325150969332267,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "moveToPlayer",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 909673447971785
+		},
+		{
+			"name": "radius",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 994824927309642
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 174569328809260
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 622527305546789
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 6,
+						"height": 6,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4282671,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 656553157095684,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

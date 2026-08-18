@@ -1,0 +1,1142 @@
+{
+	"name": "psychosis",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "mentalState",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 550997382436069
+		},
+		{
+			"eventType": "variable",
+			"name": "gettingWorse",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 134186626940705
+		},
+		{
+			"eventType": "variable",
+			"name": "stress",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 897988135574528
+		},
+		{
+			"eventType": "variable",
+			"name": "isPsychosis",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 422644976699913
+		},
+		{
+			"eventType": "variable",
+			"name": "pillUsed",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 963987524099278
+		},
+		{
+			"eventType": "variable",
+			"name": "psychosisDifficulty",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 865616649907190
+		},
+		{
+			"eventType": "variable",
+			"name": "stressRecovery",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 131025100731678
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 417085861080630,
+					"parameters": {
+						"variable": "isPsychosis"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 323408736176268,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 776632203749928
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 936389762591342,
+							"parameters": {
+								"variable": "gettingWorse",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 633980514575224,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 551091739935204,
+							"parameters": {
+								"interval-seconds": "((mentalState / 100) + 1)  / 2"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 261158164018858,
+							"parameters": {
+								"variable": "gettingWorse"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 648374428618533,
+							"parameters": {
+								"variable": "mentalState",
+								"comparison": 5,
+								"value": "psychosisDifficulty"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 115933064964654,
+							"disabled": true,
+							"parameters": {
+								"variable": "mentalState",
+								"comparison": 3,
+								"value": "100"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 904884445856910,
+							"parameters": {
+								"variable": "mentalState",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 611154591508919,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 522035920222005,
+							"parameters": {
+								"interval-seconds": "1 - (mentalState / 100)"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 657350565818400,
+							"parameters": {
+								"variable": "gettingWorse"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 646642584342106,
+							"disabled": true,
+							"parameters": {
+								"variable": "mentalState",
+								"comparison": 5,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 174517229240990,
+							"parameters": {
+								"variable": "mentalState",
+								"comparison": 3,
+								"value": "100"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 889837891351451,
+							"disabled": true,
+							"parameters": {
+								"variable": "stress",
+								"comparison": 5,
+								"value": "50"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 236432597286749,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 195243073634730,
+									"parameters": {
+										"variable": "pillUsed"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 593227751439903,
+									"parameters": {
+										"variable": "mentalState",
+										"value": "4"
+									}
+								}
+							],
+							"sid": 628257202140751,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 547377825680097,
+									"parameters": {
+										"variable": "pillUsed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 399789908190711,
+									"parameters": {
+										"variable": "mentalState",
+										"value": "8"
+									}
+								}
+							],
+							"sid": 162476660074018,
+							"disabled": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 346905384362793,
+					"parameters": {
+						"variable": "mentalState",
+						"comparison": 2,
+						"value": "psychosisDifficulty"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 242776654912886,
+					"parameters": {
+						"variable": "mentalState",
+						"comparison": 4,
+						"value": "0"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 919268353367140
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 652985770112997,
+					"parameters": {
+						"variable": "gettingWorse",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 209326187007194,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 943482512261648,
+					"parameters": {
+						"variable": "mentalState",
+						"comparison": 5,
+						"value": "100"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 763017545970928,
+					"parameters": {
+						"variable": "isPsychosis"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 708399993878991,
+					"parameters": {
+						"variable": "gettingWorse"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 978352356834179,
+					"parameters": {
+						"variable": "isPsychosis",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 191163854282911,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 663873174378172,
+					"parameters": {
+						"key": 86
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 214099250240251,
+					"parameters": {
+						"variable": "antipsychoticPills",
+						"comparison": 4,
+						"value": "0"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 683773740079787,
+					"parameters": {
+						"variable": "isPsychosis"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 227535823486961,
+					"parameters": {
+						"variable": "antipsychoticPills",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 492823630253336,
+					"parameters": {
+						"variable": "gettingWorse",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 388413102093146,
+					"parameters": {
+						"variable": "pillUsed",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 752246215252710,
+			"disabled": true
+		},
+		{
+			"eventType": "group",
+			"disabled": true,
+			"title": "hallucinations",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 972522861539574,
+							"parameters": {
+								"variable": "mentalState",
+								"comparison": 4,
+								"value": "85"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layout-effect-enabled",
+							"objectClass": "System",
+							"sid": 641109961117681,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"psycho3_adjustHSL\""
+							}
+						},
+						{
+							"id": "set-layout-effect-enabled",
+							"objectClass": "System",
+							"sid": 654200899902436,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"psycho2_radialBlur\""
+							}
+						},
+						{
+							"id": "set-layout-effect-enabled",
+							"objectClass": "System",
+							"sid": 154652640227403,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"psycho1_pulse\""
+							}
+						}
+					],
+					"sid": 352933499201951,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 558273740454949,
+							"parameters": {
+								"variable": "mentalState",
+								"comparison": 2,
+								"value": "85"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 651409653240125,
+							"parameters": {
+								"variable": "mentalState",
+								"comparison": 5,
+								"value": "70"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layout-effect-enabled",
+							"objectClass": "System",
+							"sid": 579547621415346,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"psycho3_adjustHSL\""
+							}
+						},
+						{
+							"id": "set-layout-effect-parameter",
+							"objectClass": "System",
+							"sid": 949489059612487,
+							"parameters": {
+								"effect": "\"Noise\"",
+								"parameter-index": "0",
+								"value": "100 - mentalState"
+							}
+						},
+						{
+							"id": "set-layout-effect-enabled",
+							"objectClass": "System",
+							"sid": 754322446570691,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"psycho2_radialBlur\""
+							}
+						},
+						{
+							"id": "set-layout-effect-parameter",
+							"objectClass": "System",
+							"sid": 695586919457773,
+							"parameters": {
+								"effect": "\"psycho2_radialBlur\"",
+								"parameter-index": "1",
+								"value": "(85 - mentalState) * 3.33"
+							}
+						},
+						{
+							"id": "set-layout-effect-enabled",
+							"objectClass": "System",
+							"sid": 249855958389339,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"psycho1_pulse\""
+							}
+						}
+					],
+					"sid": 251280680428667,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 942060292207326,
+							"parameters": {
+								"variable": "mentalState",
+								"comparison": 2,
+								"value": "65"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 364198936709501,
+							"parameters": {
+								"variable": "mentalState",
+								"comparison": 5,
+								"value": "50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layout-effect-enabled",
+							"objectClass": "System",
+							"sid": 832986793693238,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"psycho3_adjustHSL\""
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "wallsLevel1",
+							"sid": 275646565533111,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"Pulse\""
+							}
+						},
+						{
+							"id": "set-layout-effect-enabled",
+							"objectClass": "System",
+							"sid": 552780283397881,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"psycho1_pulse\""
+							}
+						},
+						{
+							"id": "set-layout-effect-parameter",
+							"objectClass": "System",
+							"sid": 224521355670980,
+							"parameters": {
+								"effect": "\"Noise\"",
+								"parameter-index": "0",
+								"value": "35"
+							}
+						},
+						{
+							"id": "set-layout-effect-parameter",
+							"objectClass": "System",
+							"sid": 268958270959952,
+							"parameters": {
+								"effect": "\"psycho1_pulse\"",
+								"parameter-index": "0",
+								"value": "((65 - mentalState)) * 2"
+							}
+						},
+						{
+							"id": "set-layout-effect-parameter",
+							"objectClass": "System",
+							"sid": 678024649984895,
+							"parameters": {
+								"effect": "\"psycho2_radialBlur\"",
+								"parameter-index": "1",
+								"value": "50"
+							}
+						}
+					],
+					"sid": 651338796988690,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 405972211520168,
+							"parameters": {
+								"variable": "mentalState",
+								"comparison": 2,
+								"value": "50"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 237541400180832,
+							"parameters": {
+								"variable": "mentalState",
+								"comparison": 5,
+								"value": "25"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layout-effect-enabled",
+							"objectClass": "System",
+							"sid": 705002220080961,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"psycho6_Pixellate\""
+							}
+						},
+						{
+							"id": "set-layout-effect-enabled",
+							"objectClass": "System",
+							"sid": 288771907005534,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"psycho1_pulse\""
+							}
+						},
+						{
+							"id": "set-layout-effect-parameter",
+							"objectClass": "System",
+							"sid": 518910265817072,
+							"parameters": {
+								"effect": "\"psycho1_pulse\"",
+								"parameter-index": "0",
+								"value": "30"
+							}
+						},
+						{
+							"id": "set-layout-effect-parameter",
+							"objectClass": "System",
+							"sid": 398182724392581,
+							"parameters": {
+								"effect": "\"Noise\"",
+								"parameter-index": "0",
+								"value": "35"
+							}
+						},
+						{
+							"id": "set-layout-effect-parameter",
+							"objectClass": "System",
+							"sid": 554532233084398,
+							"parameters": {
+								"effect": "\"psycho2_radialBlur\"",
+								"parameter-index": "1",
+								"value": "50"
+							}
+						}
+					],
+					"sid": 474260279013558,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 497817196021256,
+									"parameters": {
+										"interval-seconds": "random(2, 4)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layout-effect-enabled",
+									"objectClass": "System",
+									"sid": 790498471056767,
+									"parameters": {
+										"mode": "enable",
+										"effect": "\"psycho3_adjustHSL\""
+									}
+								},
+								{
+									"id": "set-layout-effect-parameter",
+									"objectClass": "System",
+									"sid": 825796563668553,
+									"parameters": {
+										"effect": "\"psycho3_adjustHSL\"",
+										"parameter-index": "0",
+										"value": "random(100)"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 573378586691269,
+									"parameters": {
+										"seconds": "random(0.5,1)",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-layout-effect-enabled",
+									"objectClass": "System",
+									"sid": 298941916256496,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"psycho3_adjustHSL\""
+									}
+								}
+							],
+							"sid": 261109352414107,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 749024769168363,
+							"parameters": {
+								"variable": "mentalState",
+								"comparison": 2,
+								"value": "25"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 144941681850847,
+							"parameters": {
+								"variable": "mentalState",
+								"comparison": 5,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layout-effect-enabled",
+							"objectClass": "System",
+							"sid": 915787845678006,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"psycho1_pulse\""
+							}
+						},
+						{
+							"id": "set-layout-effect-parameter",
+							"objectClass": "System",
+							"sid": 594465775155034,
+							"parameters": {
+								"effect": "\"psycho1_pulse\"",
+								"parameter-index": "0",
+								"value": "30"
+							}
+						},
+						{
+							"id": "set-layout-effect-parameter",
+							"objectClass": "System",
+							"sid": 714304690671402,
+							"parameters": {
+								"effect": "\"Noise\"",
+								"parameter-index": "0",
+								"value": "35"
+							}
+						},
+						{
+							"id": "set-layout-effect-parameter",
+							"objectClass": "System",
+							"sid": 632228774445474,
+							"parameters": {
+								"effect": "\"psycho2_radialBlur\"",
+								"parameter-index": "1",
+								"value": "50"
+							}
+						}
+					],
+					"sid": 754567195530338,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 241431555857989,
+									"parameters": {
+										"interval-seconds": "random(4, 7)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layout-effect-enabled",
+									"objectClass": "System",
+									"sid": 486892571703642,
+									"parameters": {
+										"mode": "enable",
+										"effect": "\"psycho3_adjustHSL\""
+									}
+								},
+								{
+									"id": "set-layout-effect-parameter",
+									"objectClass": "System",
+									"sid": 975283768551133,
+									"parameters": {
+										"effect": "\"psycho3_adjustHSL\"",
+										"parameter-index": "0",
+										"value": "random(100)"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 456629807834129,
+									"parameters": {
+										"seconds": "random(3,6)",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-layout-effect-enabled",
+									"objectClass": "System",
+									"sid": 429051934776558,
+									"disabled": true,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"psycho3_adjustHSL\""
+									}
+								}
+							],
+							"sid": 950130478972414,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 718165691353797,
+									"parameters": {
+										"interval-seconds": "random(5, 10)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layout-effect-enabled",
+									"objectClass": "System",
+									"sid": 731774814083949,
+									"parameters": {
+										"mode": "enable",
+										"effect": "\"psycho6_Pixellate\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 877251205266786,
+									"parameters": {
+										"seconds": "random(0.5,1.5)",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-layout-effect-enabled",
+									"objectClass": "System",
+									"sid": 829011574589259,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"psycho6_Pixellate\""
+									}
+								}
+							],
+							"sid": 233184314892165,
+							"disabled": true
+						}
+					]
+				}
+			],
+			"sid": 243584935373162
+		},
+		{
+			"functionName": "substractStress",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 654809950911410,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "guns",
+							"sid": 369361004241422,
+							"parameters": {
+								"instance-variable": "isUsed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 966137946231513,
+							"parameters": {
+								"variable": "stress",
+								"value": "guns.stress"
+							}
+						}
+					],
+					"sid": 409428080990937,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 456981507910543,
+					"parameters": {
+						"variable": "stress",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 989021402234332,
+					"parameters": {
+						"variable": "stress",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 630106518428577,
+					"parameters": {
+						"variable": "isPsychosis",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 152865490273052,
+					"parameters": {
+						"variable": "psychosisDifficulty",
+						"value": "50"
+					}
+				}
+			],
+			"sid": 424974028978383,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 689042776231985,
+					"parameters": {
+						"variable": "isPsychosis"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 917380393566204,
+					"parameters": {
+						"variable": "stress",
+						"comparison": 5,
+						"value": "50"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 248344137213141,
+					"parameters": {
+						"variable": "isPsychosis",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 125166625954560,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 763127009259970,
+					"parameters": {
+						"interval-seconds": "0.1"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 946184654694755,
+					"parameters": {
+						"variable": "stress",
+						"comparison": 2,
+						"value": "100"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 121531934400962,
+					"parameters": {
+						"variable": "stress",
+						"value": "stressRecovery/10"
+					}
+				}
+			],
+			"sid": 605320621434787,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 461182818171822,
+					"parameters": {
+						"variable": "stress",
+						"comparison": 4,
+						"value": "100"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 841032629819752,
+					"parameters": {
+						"variable": "stress",
+						"value": "100"
+					}
+				}
+			],
+			"sid": 425909523519447,
+			"disabled": true
+		}
+	],
+	"sid": 747672161598107
+}
