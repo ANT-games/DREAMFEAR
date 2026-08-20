@@ -1206,8 +1206,13 @@
 					}
 				}
 			],
-			"actions": [],
-			"sid": 282590173747528,
+			"actions": [
+				{
+					"type": "comment",
+					"text": "UPGRADES CODE!!!"
+				}
+			],
+			"sid": 655205359837698,
 			"children": [
 				{
 					"eventType": "group",
@@ -2010,8 +2015,431 @@
 					],
 					"sid": 655205359837697
 				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "guns spawn",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "gunSpawnDone",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 219671085532657
+				},
+				{
+					"eventType": "variable",
+					"name": "randomGunPick",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 237324880596087
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 459204228215920
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 111829394133197,
+							"parameters": {
+								"first-value": "left(LayoutName, 3)",
+								"comparison": 0,
+								"second-value": "\"lev\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 262874657404773,
+							"parameters": {
+								"variable": "gunSpawnDone",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 957483976164156
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 935625287798147,
+							"disabled": true,
+							"parameters": {
+								"count": "50"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 180233613216705,
+							"parameters": {
+								"variable": "gunSpawnDone"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 619067440570978,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "wallsLevel1",
+									"sid": 733678933293525,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"combat\""
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "wallsLevel1",
+									"sid": 741663174825394,
+									"parameters": {
+										"instance-variable": "gunZoneSpawned"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "pick-random-instance",
+									"objectClass": "System",
+									"sid": 257021436470964,
+									"parameters": {
+										"object": "wallsLevel1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 751463313861851,
+									"parameters": {
+										"object-to-create": "gunGivingZone",
+										"layer": "\"obj1\"",
+										"x": "wallsLevel1.X + wallsLevel1.Width/2",
+										"y": "wallsLevel1.Y + wallsLevel1.Height/2",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 356408543650855
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "gunGivingZone",
+							"sid": 119479331988944,
+							"parameters": {
+								"object": "walls"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "gunGivingZone",
+							"sid": 404376813661117
+						}
+					],
+					"sid": 720228712611329
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 172733603585362
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 953108298730717
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 961464186799665,
+							"parameters": {
+								"variable": "gunSpawnDone",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "wallsLevel1",
+							"sid": 133859440559804,
+							"parameters": {
+								"instance-variable": "gunZoneSpawned",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 897503431776290,
+							"parameters": {
+								"variable": "randomGunPick",
+								"value": "int(random(0.5, 8.5))"
+							}
+						}
+					],
+					"sid": 584270188599320,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 653161572433506,
+									"parameters": {
+										"variable": "randomGunPick",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "gunGivingZone",
+									"sid": 282638936915359,
+									"parameters": {
+										"object": "shotgun",
+										"layer": "\"guns\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 384948920706122
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 531819262198959,
+									"parameters": {
+										"variable": "randomGunPick",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "gunGivingZone",
+									"sid": 795368174051393,
+									"parameters": {
+										"object": "uzi",
+										"layer": "\"guns\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 179568038702778
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 692049601011405,
+									"parameters": {
+										"variable": "randomGunPick",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "gunGivingZone",
+									"sid": 612383064157275,
+									"parameters": {
+										"object": "riffle1",
+										"layer": "\"guns\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 244404905140503
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 916652046381276,
+									"parameters": {
+										"variable": "randomGunPick",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "gunGivingZone",
+									"sid": 599255169832112,
+									"parameters": {
+										"object": "laserPistol",
+										"layer": "\"guns\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 113841558348466
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 111725369256337,
+									"parameters": {
+										"variable": "randomGunPick",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "gunGivingZone",
+									"sid": 629508927592431,
+									"parameters": {
+										"object": "riffle",
+										"layer": "\"guns\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 842760423233287
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 502721326061208,
+									"parameters": {
+										"variable": "randomGunPick",
+										"comparison": 0,
+										"value": "6"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "gunGivingZone",
+									"sid": 583052539220022,
+									"parameters": {
+										"object": "granateThrower",
+										"layer": "\"guns\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 605884403733692
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 561264370212375,
+									"parameters": {
+										"variable": "randomGunPick",
+										"comparison": 0,
+										"value": "7"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "gunGivingZone",
+									"sid": 909471480808007,
+									"parameters": {
+										"object": "sniperRiffle",
+										"layer": "\"guns\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 924110645259523
+						}
+					]
+				}
 			],
-			"sid": 655205359837698
+			"sid": 571784159772727
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "coins for next level balance",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 292270833063069
 		}
 	],
 	"sid": 881122334455667

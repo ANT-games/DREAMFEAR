@@ -91,6 +91,14 @@
 					"parameters": {
 						"sprite": "cursor"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "cursor",
+					"sid": 767699457197372,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 678673016852883
