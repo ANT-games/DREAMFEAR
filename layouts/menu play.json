@@ -1797,7 +1797,7 @@
 				{
 					"type": "priceCharacterText",
 					"properties": {
-						"text": "1500",
+						"text": "1000",
 						"enable-bbcode": true,
 						"font": "Silver",
 						"size": 8,

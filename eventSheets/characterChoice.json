@@ -102,7 +102,6 @@
 							"id": "spawn-another-object",
 							"objectClass": "player1",
 							"sid": 389941877597127,
-							"disabled": true,
 							"parameters": {
 								"object": "character2",
 								"layer": "\"characters\"",
@@ -184,9 +183,9 @@
 						{
 							"id": "set-mirrored",
 							"objectClass": "playableCharacters",
-							"sid": 364699681177943,
+							"sid": 804986140656886,
 							"parameters": {
-								"state": "mirrored"
+								"state": "not-mirrored"
 							}
 						}
 					],
@@ -198,17 +197,16 @@
 						{
 							"id": "is-mirrored",
 							"objectClass": "player1",
-							"sid": 226114435995947,
-							"disabled": true
+							"sid": 226114435995947
 						}
 					],
 					"actions": [
 						{
 							"id": "set-mirrored",
 							"objectClass": "playableCharacters",
-							"sid": 829240420587331,
+							"sid": 400662665899267,
 							"parameters": {
-								"state": "not-mirrored"
+								"state": "mirrored"
 							}
 						}
 					],
@@ -276,10 +274,10 @@
 							"id": "is-animation-playing",
 							"objectClass": "characterForChoice",
 							"sid": 777363726112185,
-							"disabled": true,
 							"parameters": {
 								"animation": "\"closedForDemo\""
-							}
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
@@ -300,10 +298,10 @@
 							"id": "is-animation-playing",
 							"objectClass": "characterForChoice",
 							"sid": 320375195168825,
-							"disabled": true,
 							"parameters": {
 								"animation": "\"closedForDemo\""
-							}
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
@@ -342,7 +340,12 @@
 											"sid": 320183204231594
 										}
 									],
-									"actions": [],
+									"actions": [
+										{
+											"callFunction": "cursorOverObjectSound",
+											"sid": 141051131361625
+										}
+									],
 									"sid": 202606784985096
 								}
 							]
@@ -387,10 +390,10 @@
 							"id": "is-animation-playing",
 							"objectClass": "characterForChoice",
 							"sid": 823287138610950,
-							"disabled": true,
 							"parameters": {
 								"animation": "\"closedForDemo\""
-							}
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -402,6 +405,10 @@
 								"variable": "currentCharacter",
 								"value": "characterForChoice.character"
 							}
+						},
+						{
+							"callFunction": "clickSound",
+							"sid": 433783822246442
 						}
 					],
 					"sid": 848689042122278
@@ -413,10 +420,10 @@
 							"id": "is-animation-playing",
 							"objectClass": "characterForChoice",
 							"sid": 483440589742072,
-							"disabled": true,
 							"parameters": {
 								"animation": "\"closedForDemo\""
-							}
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
@@ -629,12 +636,12 @@
 									"id": "compare-instance-variable",
 									"objectClass": "characterForChoice",
 									"sid": 802656334881449,
-									"disabled": true,
 									"parameters": {
 										"instance-variable": "character",
 										"comparison": 0,
 										"value": "currentCharacter"
-									}
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -863,10 +870,10 @@
 					"id": "is-boolean-instance-variable-set",
 					"objectClass": "characterForChoice",
 					"sid": 974157679947071,
-					"disabled": true,
 					"parameters": {
 						"instance-variable": "locked"
-					}
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
