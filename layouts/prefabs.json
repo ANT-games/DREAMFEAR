@@ -45378,9 +45378,7 @@
 					"uid": 551,
 					"sid": 831864584180169,
 					"tags": "",
-					"instanceVariables": {
-						"works": false
-					},
+					"instanceVariables": {},
 					"behaviors": {},
 					"showing": true,
 					"locked": false,

@@ -1,1 +1,159 @@
-{"name":"tutorials","events":[{"eventType":"block","conditions":[{"id":"compare-instance-variable","objectClass":"wallsLevel1","sid":392234487586839,"parameters":{"instance-variable":"type","comparison":0,"value":"\"start\""}},{"id":"compare-two-values","objectClass":"System","sid":773801584417471,"parameters":{"first-value":"LayoutName","comparison":0,"second-value":"\"level1\""}},{"id":"trigger-once-while-true","objectClass":"System","sid":303467218440163}],"actions":[{"id":"create-object","objectClass":"System","sid":477354053452945,"parameters":{"object-to-create":"tutorial","layer":"\"obj0\"","x":"wallsLevel1.X + wallsLevel1.Width/2","y":"((wallsLevel1.Y + (wallsLevel1.Height / 2)) - 20)","create-hierarchy":false,"template-name":"\"\""}}],"sid":339879241688433},{"eventType":"block","conditions":[{"id":"is-overlapping-another-object","objectClass":"player1","sid":531926195299508,"parameters":{"object":"guns"}},{"id":"is-boolean-instance-variable-set","objectClass":"guns","sid":152538847932738,"disabled":true,"parameters":{"instance-variable":"isUsed"}}],"actions":[],"sid":890216091043863,"children":[{"eventType":"block","conditions":[{"id":"trigger-once-while-true","objectClass":"System","sid":280589653423871}],"actions":[{"id":"spawn-another-object","objectClass":"player1","sid":440879057874675,"disabled":true,"parameters":{"object":"changeGunTutorialBase","layer":"\"obj2\"","image-point":"\"message\"","create-hierarchy":false,"template-name":"\"\""}},{"id":"add-child","objectClass":"player1","sid":499157615606889,"parameters":{"child":"changeGunTutorialBase","transform-x":true,"transform-y":true,"transform-z-elevation":true,"transform-w":false,"transform-h":false,"transform-d":false,"transform-a":false,"transform-o":false,"transform-visibility":false,"destroy-with-parent":false}},{"id":"add-child","objectClass":"player1","sid":876421887550052,"parameters":{"child":"tutorialText","transform-x":true,"transform-y":true,"transform-z-elevation":true,"transform-w":false,"transform-h":false,"transform-d":false,"transform-a":false,"transform-o":false,"transform-visibility":false,"destroy-with-parent":false}}],"sid":277383163380957}]},{"eventType":"block","conditions":[{"id":"else","objectClass":"System","sid":486567340564910}],"actions":[{"id":"start-fade","objectClass":"changeGunTutorialBase","sid":269663592400488,"behaviorType":"Fade"}],"sid":671835822088689}],"sid":770000000000014}
+{
+	"name": "tutorials",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "wallsLevel1",
+					"sid": 392234487586839,
+					"parameters": {
+						"instance-variable": "type",
+						"comparison": 0,
+						"value": "\"start\""
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 773801584417471,
+					"parameters": {
+						"first-value": "LayoutName",
+						"comparison": 0,
+						"second-value": "\"level1\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 303467218440163
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 477354053452945,
+					"parameters": {
+						"object-to-create": "tutorial",
+						"layer": "\"obj0\"",
+						"x": "wallsLevel1.X + wallsLevel1.Width/2",
+						"y": "((wallsLevel1.Y + (wallsLevel1.Height / 2)) - 20)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 339879241688433
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "player1",
+					"sid": 531926195299508,
+					"parameters": {
+						"object": "guns"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "guns",
+					"sid": 152538847932738,
+					"disabled": true,
+					"parameters": {
+						"instance-variable": "isUsed"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 890216091043863,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 280589653423871
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "player1",
+							"sid": 440879057874675,
+							"disabled": true,
+							"parameters": {
+								"object": "changeGunTutorialBase",
+								"layer": "\"obj2\"",
+								"image-point": "\"message\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "player1",
+							"sid": 499157615606889,
+							"parameters": {
+								"child": "changeGunTutorialBase",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-d": false,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": false
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "player1",
+							"sid": 876421887550052,
+							"parameters": {
+								"child": "tutorialText",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-z-elevation": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-d": false,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-visibility": false,
+								"destroy-with-parent": false
+							}
+						}
+					],
+					"sid": 277383163380957
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 486567340564910
+				}
+			],
+			"actions": [
+				{
+					"id": "start-fade",
+					"objectClass": "changeGunTutorialBase",
+					"sid": 269663592400488,
+					"behaviorType": "Fade"
+				}
+			],
+			"sid": 671835822088689
+		}
+	],
+	"sid": 770000000000014
+}

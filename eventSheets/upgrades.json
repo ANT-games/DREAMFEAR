@@ -2080,22 +2080,18 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "repeat",
-							"objectClass": "System",
-							"sid": 935625287798147,
-							"disabled": true,
-							"parameters": {
-								"count": "50"
-							}
-						},
-						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 180233613216705,
+							"sid": 492036972185935,
 							"parameters": {
 								"variable": "gunSpawnDone"
 							},
 							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 645729830153912
 						}
 					],
 					"actions": [],
@@ -2105,9 +2101,19 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "wallsLevel1",
+									"sid": 826302292585211,
+									"disabled": true,
+									"parameters": {
+										"instance-variable": "gunZoneSpawned"
+									},
+									"isInverted": true
+								},
+								{
 									"id": "compare-instance-variable",
 									"objectClass": "wallsLevel1",
-									"sid": 733678933293525,
+									"sid": 903717173936430,
 									"parameters": {
 										"instance-variable": "type",
 										"comparison": 0,
@@ -2115,18 +2121,9 @@
 									}
 								},
 								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "wallsLevel1",
-									"sid": 741663174825394,
-									"parameters": {
-										"instance-variable": "gunZoneSpawned"
-									},
-									"isInverted": true
-								},
-								{
 									"id": "pick-random-instance",
 									"objectClass": "System",
-									"sid": 257021436470964,
+									"sid": 965395852079375,
 									"parameters": {
 										"object": "wallsLevel1"
 									}
@@ -2167,10 +2164,61 @@
 						{
 							"id": "destroy",
 							"objectClass": "gunGivingZone",
-							"sid": 404376813661117
+							"sid": 647368642061043
 						}
 					],
-					"sid": 720228712611329
+					"sid": 720228712611329,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "wallsLevel1",
+									"sid": 328910376129576,
+									"disabled": true,
+									"parameters": {
+										"instance-variable": "gunZoneSpawned"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "wallsLevel1",
+									"sid": 365707179311291,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "\"combat\""
+									}
+								},
+								{
+									"id": "pick-random-instance",
+									"objectClass": "System",
+									"sid": 158303397722727,
+									"parameters": {
+										"object": "wallsLevel1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 301460271535521,
+									"parameters": {
+										"object-to-create": "gunGivingZone",
+										"layer": "\"obj1\"",
+										"x": "wallsLevel1.X + wallsLevel1.Width/2",
+										"y": "wallsLevel1.Y + wallsLevel1.Height/2",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 367523041907720
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -2181,9 +2229,19 @@
 							"sid": 172733603585362
 						},
 						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "gunGivingZone",
+							"sid": 157654987168848,
+							"parameters": {
+								"object": "guns"
+							},
+							"isInverted": true
+						},
+						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 953108298730717
+							"sid": 466043568991756,
+							"disabled": true
 						}
 					],
 					"actions": [
@@ -2208,10 +2266,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 897503431776290,
+							"sid": 175345304326090,
 							"parameters": {
 								"variable": "randomGunPick",
-								"value": "int(random(0.5, 8.5))"
+								"value": "int(random(1, 8))"
 							}
 						}
 					],
@@ -2235,14 +2293,21 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "gunGivingZone",
-									"sid": 282638936915359,
+									"sid": 450606292520587,
 									"parameters": {
 										"object": "shotgun",
-										"layer": "\"guns\"",
+										"layer": "\"obj0\"",
 										"image-point": "0",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
+								},
+								{
+									"type": "script",
+									"language": "javascript",
+									"script": [
+										"console.log(\"GUN SPAWNED\")"
+									]
 								}
 							],
 							"sid": 384948920706122
@@ -2265,14 +2330,21 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "gunGivingZone",
-									"sid": 795368174051393,
+									"sid": 921559691656575,
 									"parameters": {
 										"object": "uzi",
-										"layer": "\"guns\"",
+										"layer": "\"obj0\"",
 										"image-point": "0",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
+								},
+								{
+									"type": "script",
+									"language": "javascript",
+									"script": [
+										"console.log(\"GUN SPAWNED\")"
+									]
 								}
 							],
 							"sid": 179568038702778
@@ -2295,14 +2367,21 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "gunGivingZone",
-									"sid": 612383064157275,
+									"sid": 703873296757348,
 									"parameters": {
 										"object": "riffle1",
-										"layer": "\"guns\"",
+										"layer": "\"obj0\"",
 										"image-point": "0",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
+								},
+								{
+									"type": "script",
+									"language": "javascript",
+									"script": [
+										"console.log(\"GUN SPAWNED\")"
+									]
 								}
 							],
 							"sid": 244404905140503
@@ -2325,14 +2404,21 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "gunGivingZone",
-									"sid": 599255169832112,
+									"sid": 540652385070233,
 									"parameters": {
 										"object": "laserPistol",
-										"layer": "\"guns\"",
+										"layer": "\"obj0\"",
 										"image-point": "0",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
+								},
+								{
+									"type": "script",
+									"language": "javascript",
+									"script": [
+										"console.log(\"GUN SPAWNED\")"
+									]
 								}
 							],
 							"sid": 113841558348466
@@ -2355,14 +2441,21 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "gunGivingZone",
-									"sid": 629508927592431,
+									"sid": 110453644746333,
 									"parameters": {
 										"object": "riffle",
-										"layer": "\"guns\"",
+										"layer": "\"obj0\"",
 										"image-point": "0",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
+								},
+								{
+									"type": "script",
+									"language": "javascript",
+									"script": [
+										"console.log(\"GUN SPAWNED\")"
+									]
 								}
 							],
 							"sid": 842760423233287
@@ -2385,14 +2478,21 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "gunGivingZone",
-									"sid": 583052539220022,
+									"sid": 437823430286832,
 									"parameters": {
 										"object": "granateThrower",
-										"layer": "\"guns\"",
+										"layer": "\"obj0\"",
 										"image-point": "0",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
+								},
+								{
+									"type": "script",
+									"language": "javascript",
+									"script": [
+										"console.log(\"GUN SPAWNED\")"
+									]
 								}
 							],
 							"sid": 605884403733692
@@ -2415,14 +2515,21 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "gunGivingZone",
-									"sid": 909471480808007,
+									"sid": 901113459763614,
 									"parameters": {
 										"object": "sniperRiffle",
-										"layer": "\"guns\"",
+										"layer": "\"obj0\"",
 										"image-point": "0",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
+								},
+								{
+									"type": "script",
+									"language": "javascript",
+									"script": [
+										"console.log(\"GUN SPAWNED\")"
+									]
 								}
 							],
 							"sid": 924110645259523
@@ -2438,7 +2545,127 @@
 			"title": "coins for next level balance",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [],
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 581001910819239,
+							"parameters": {
+								"variable": "level",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 427170252556190,
+							"parameters": {
+								"variable": "goalForNextLevel",
+								"value": "60"
+							}
+						}
+					],
+					"sid": 740644185002328,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 205246292613300,
+							"parameters": {
+								"variable": "level",
+								"comparison": 3,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 620589722451324,
+							"parameters": {
+								"variable": "goalForNextLevel",
+								"value": "80"
+							}
+						}
+					],
+					"sid": 711046288188712
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 151481834640495,
+							"parameters": {
+								"variable": "level",
+								"comparison": 5,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 529495323607216,
+							"parameters": {
+								"variable": "level",
+								"comparison": 3,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 749964223489801,
+							"parameters": {
+								"variable": "goalForNextLevel",
+								"value": "120"
+							}
+						}
+					],
+					"sid": 187540439344020
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 488602533792607,
+							"parameters": {
+								"variable": "level",
+								"comparison": 5,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 365291354578184,
+							"parameters": {
+								"variable": "goalForNextLevel",
+								"value": "150"
+							}
+						}
+					],
+					"sid": 306816514438155
+				}
+			],
 			"sid": 292270833063069
 		}
 	],
