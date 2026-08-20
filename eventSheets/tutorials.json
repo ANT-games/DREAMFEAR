@@ -62,10 +62,10 @@
 					"id": "is-boolean-instance-variable-set",
 					"objectClass": "guns",
 					"sid": 152538847932738,
-					"disabled": true,
 					"parameters": {
 						"instance-variable": "isUsed"
-					}
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [],
@@ -85,7 +85,6 @@
 							"id": "spawn-another-object",
 							"objectClass": "player1",
 							"sid": 440879057874675,
-							"disabled": true,
 							"parameters": {
 								"object": "changeGunTutorialBase",
 								"layer": "\"obj2\"",
@@ -131,7 +130,58 @@
 							}
 						}
 					],
-					"sid": 277383163380957
+					"sid": 277383163380957,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 510020167430685,
+									"parameters": {
+										"variable": "gamepadMode"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "tutorialText",
+									"sid": 932450430477852,
+									"parameters": {
+										"text": "\"E\""
+									}
+								}
+							],
+							"sid": 865585610533773
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 173740150237430,
+									"parameters": {
+										"variable": "gamepadMode"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "tutorialText",
+									"sid": 318672419611833,
+									"parameters": {
+										"text": "\"X\""
+									}
+								}
+							],
+							"sid": 609550600548185
+						}
+					]
 				}
 			]
 		},

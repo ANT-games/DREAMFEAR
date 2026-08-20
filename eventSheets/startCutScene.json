@@ -564,40 +564,58 @@
 					"sid": 870947375880100
 				},
 				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 304136934782966,
+					"id": "on-any-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 441294602011376,
 					"parameters": {
-						"first-value": "LayoutName",
-						"comparison": 0,
-						"second-value": "\"startCutScene\""
-					}
-				},
-				{
-					"id": "is-visible",
-					"objectClass": "justText",
-					"sid": 355192607247488
-				}
-			],
-			"actions": [
-				{
-					"id": "stop",
-					"objectClass": "Audio",
-					"sid": 282301699325589,
-					"parameters": {
-						"tag": "\"intro\""
-					}
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 160876773913566,
-					"parameters": {
-						"layout": "mainMenu"
+						"gamepad": "0"
 					}
 				}
 			],
-			"sid": 931830524382762
+			"actions": [],
+			"sid": 931830524382762,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 973828733917395,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"startCutScene\""
+							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "justText",
+							"sid": 450962768623636
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 830733688132630,
+							"parameters": {
+								"tag": "\"intro\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 542556607175720,
+							"parameters": {
+								"layout": "mainMenu"
+							}
+						}
+					],
+					"sid": 693540361601014
+				}
+			],
+			"isOrBlock": true
 		}
 	],
 	"sid": 770000000000013

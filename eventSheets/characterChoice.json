@@ -317,6 +317,14 @@
 									"parameters": {
 										"object": "characterForChoice"
 									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "characterForChoice",
+									"sid": 454938878657887,
+									"parameters": {
+										"object": "cursor"
+									}
 								}
 							],
 							"actions": [
@@ -348,7 +356,8 @@
 									],
 									"sid": 202606784985096
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -387,31 +396,76 @@
 							}
 						},
 						{
-							"id": "is-animation-playing",
-							"objectClass": "characterForChoice",
-							"sid": 823287138610950,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 718289748919538,
 							"parameters": {
-								"animation": "\"closedForDemo\""
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 907728232368731,
-							"parameters": {
-								"variable": "currentCharacter",
-								"value": "characterForChoice.character"
+								"gamepad": "0",
+								"button": "button-a"
 							}
-						},
-						{
-							"callFunction": "clickSound",
-							"sid": 433783822246442
 						}
 					],
-					"sid": 848689042122278
+					"actions": [],
+					"sid": 848689042122278,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 365581748359447,
+									"parameters": {
+										"object": "characterForChoice"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "characterForChoice",
+									"sid": 148409946739029,
+									"parameters": {
+										"object": "cursor"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 675612205835030,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "characterForChoice",
+											"sid": 362969109727931,
+											"parameters": {
+												"animation": "\"closedForDemo\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 140001426003654,
+											"parameters": {
+												"variable": "currentCharacter",
+												"value": "characterForChoice.character"
+											}
+										},
+										{
+											"callFunction": "clickSound",
+											"sid": 882704778646305
+										}
+									],
+									"sid": 770289962215996
+								}
+							],
+							"isOrBlock": true
+						}
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",

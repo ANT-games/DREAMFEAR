@@ -25,19 +25,19 @@
 							"id": "is-boolean-instance-variable-set",
 							"objectClass": "metaUpgradeSlot",
 							"sid": 241958997974226,
-							"disabled": true,
 							"parameters": {
 								"instance-variable": "availvable"
-							}
+							},
+							"isInverted": true
 						},
 						{
 							"id": "is-animation-playing",
 							"objectClass": "metaUpgradeSlot",
 							"sid": 411083608339569,
-							"disabled": true,
 							"parameters": {
 								"animation": "\"closedForDemo\""
-							}
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -68,10 +68,10 @@
 							"id": "is-animation-playing",
 							"objectClass": "metaUpgradeSlot",
 							"sid": 800338255502874,
-							"disabled": true,
 							"parameters": {
 								"animation": "\"closedForDemo\""
-							}
+							},
+							"isInverted": true
 						},
 						{
 							"id": "is-boolean-instance-variable-set",
@@ -110,10 +110,10 @@
 							"id": "is-animation-playing",
 							"objectClass": "metaUpgradeSlot",
 							"sid": 831200799649418,
-							"disabled": true,
 							"parameters": {
 								"animation": "\"closedForDemo\""
-							}
+							},
+							"isInverted": true
 						},
 						{
 							"id": "is-boolean-instance-variable-set",
@@ -136,6 +136,14 @@
 									"sid": 309385223143542,
 									"parameters": {
 										"object": "metaUpgradeSlot"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "metaUpgradeSlot",
+									"sid": 340185647354056,
+									"parameters": {
+										"object": "cursor"
 									}
 								}
 							],
@@ -160,10 +168,16 @@
 											"sid": 120829272627169
 										}
 									],
-									"actions": [],
+									"actions": [
+										{
+											"callFunction": "cursorOverObjectSound",
+											"sid": 232308570813430
+										}
+									],
 									"sid": 324962858962615
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -202,35 +216,84 @@
 							}
 						},
 						{
-							"id": "is-animation-playing",
-							"objectClass": "metaUpgradeSlot",
-							"sid": 782815337759594,
-							"disabled": true,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 248581799909833,
 							"parameters": {
-								"animation": "\"closedForDemo\""
-							}
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "metaUpgradeSlot",
-							"sid": 296911840960316,
-							"parameters": {
-								"instance-variable": "availvable"
+								"gamepad": "0",
+								"button": "button-a"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 754722589783121,
+					"children": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 315111325710079,
-							"parameters": {
-								"variable": "currentMetaUpgradePicked",
-								"value": "metaUpgradeSlot.upgrade"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "metaUpgradeSlot",
+									"sid": 808748161709853,
+									"parameters": {
+										"object": "cursor"
+									}
+								},
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 388498383620660,
+									"parameters": {
+										"object": "metaUpgradeSlot"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 908414364650340,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "metaUpgradeSlot",
+											"sid": 425387806487574,
+											"parameters": {
+												"animation": "\"closedForDemo\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "metaUpgradeSlot",
+											"sid": 201637496126851,
+											"parameters": {
+												"instance-variable": "availvable"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 610780603750879,
+											"parameters": {
+												"variable": "currentMetaUpgradePicked",
+												"value": "metaUpgradeSlot.upgrade"
+											}
+										},
+										{
+											"callFunction": "clickSound",
+											"sid": 276515846648732
+										}
+									],
+									"sid": 432608058838347
+								}
+							],
+							"isOrBlock": true
 						}
 					],
-					"sid": 754722589783121
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -239,10 +302,10 @@
 							"id": "is-animation-playing",
 							"objectClass": "metaUpgradeSlot",
 							"sid": 559232367361626,
-							"disabled": true,
 							"parameters": {
 								"animation": "\"closedForDemo\""
-							}
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
@@ -382,12 +445,12 @@
 									"id": "compare-instance-variable",
 									"objectClass": "metaUpgradeSlot",
 									"sid": 883621853292014,
-									"disabled": true,
 									"parameters": {
 										"instance-variable": "upgrade",
 										"comparison": 0,
 										"value": "currentMetaUpgradePicked"
-									}
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -415,10 +478,10 @@
 					"id": "is-boolean-instance-variable-set",
 					"objectClass": "metaUpgradeSlot",
 					"sid": 618119691202861,
-					"disabled": true,
 					"parameters": {
 						"instance-variable": "locked"
-					}
+					},
+					"isInverted": true
 				},
 				{
 					"id": "is-overlapping-another-object",
@@ -890,10 +953,10 @@
 					"id": "is-boolean-instance-variable-set",
 					"objectClass": "metaUpgradeSlot",
 					"sid": 512889939133218,
-					"disabled": true,
 					"parameters": {
 						"instance-variable": "locked"
-					}
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [

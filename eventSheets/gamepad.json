@@ -67,8 +67,126 @@
 					}
 				}
 			],
-			"actions": [],
-			"sid": 422335922741801
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "cursor",
+					"sid": 610207629585376,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "cursor",
+					"sid": 969045928525723,
+					"parameters": {
+						"scale": "0.25"
+					}
+				}
+			],
+			"sid": 422335922741801,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 567032795082058,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "right-analog-x-axis",
+								"comparison": 1,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 351761596413495,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "right-analog-y-axis",
+								"comparison": 1,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 825397584176369,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 436355465307333,
+									"parameters": {
+										"first-value": "left(LayoutName, 3)",
+										"comparison": 0,
+										"second-value": "\"lev\""
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 265501007492003,
+									"parameters": {
+										"variable": "isPause"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 455339702520065,
+									"parameters": {
+										"layer": "\"upgrades\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "cursor",
+									"sid": 141183778461004,
+									"parameters": {
+										"x": "player1.X + cos(angle(0, 0, Gamepad.Axis(0, 2), Gamepad.Axis(0, 3))) * guns.aimDistance",
+										"y": "player1.Y + sin(angle(0, 0, Gamepad.Axis(0, 2), Gamepad.Axis(0, 3))) * guns.aimDistance"
+									}
+								}
+							],
+							"sid": 607803704179003
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 470156506558309
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "cursor",
+									"sid": 196094844215808,
+									"parameters": {
+										"x": "Self.X + (Gamepad.Axis(0, 2) / 40)",
+										"y": "Self.Y + (Gamepad.Axis(0, 3) / 40)"
+									}
+								}
+							],
+							"sid": 679079995650198
+						}
+					],
+					"isOrBlock": true
+				}
+			]
 		},
 		{
 			"eventType": "block",

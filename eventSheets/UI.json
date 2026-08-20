@@ -15,7 +15,7 @@
 			"eventType": "variable",
 			"name": "moneyGeneral",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "5000",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
