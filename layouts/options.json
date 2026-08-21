@@ -1257,7 +1257,7 @@
 					"sid": 308905597711289,
 					"tags": "",
 					"instanceVariables": {
-						"value": 100,
+						"value": 80,
 						"type": "music",
 						"active": true
 					},
@@ -1323,7 +1323,7 @@
 					"sid": 319359131783157,
 					"tags": "",
 					"instanceVariables": {
-						"value": 100,
+						"value": 80,
 						"type": "sound",
 						"active": true
 					},

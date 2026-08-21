@@ -77,6 +77,7 @@
 							"id": "is-boolean-instance-variable-set",
 							"objectClass": "metaUpgradeSlot",
 							"sid": 679292621054903,
+							"disabled": true,
 							"parameters": {
 								"instance-variable": "locked"
 							}
@@ -950,110 +951,33 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "metaUpgradeSlot",
-					"sid": 512889939133218,
-					"parameters": {
-						"instance-variable": "locked"
-					},
-					"isInverted": true
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 512889939133218
 				}
 			],
 			"actions": [
 				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 367064950245037,
-					"parameters": {
-						"variable": "metaX",
-						"value": "metaUpgradeSlot.Xupgrade"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 831498345207705,
-					"parameters": {
-						"variable": "metaY",
-						"value": "metaUpgradeSlot.Yupgrade"
-					}
+					"type": "script",
+					"language": "javascript",
+					"script": [
+						"const insts = runtime.objects.metaUpgradeSlot.getAllInstances();",
+						"const unlocked = [];",
+						"for (const inst of insts) {",
+						"  if (!inst.instVars.locked) unlocked.push(inst);",
+						"}",
+						"for (const u of unlocked) {",
+						"  const x = u.instVars.Xupgrade;",
+						"  const y = u.instVars.Yupgrade;",
+						"  for (const inst of insts) {",
+						"    if (inst.instVars.Xupgrade === x + 1 && inst.instVars.Yupgrade === y) inst.instVars.availvable = true;",
+						"    if (inst.instVars.Yupgrade === y + 1 && inst.instVars.Xupgrade === x) inst.instVars.availvable = true;",
+						"  }",
+						"}"
+					]
 				}
 			],
 			"sid": 423331546074652
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "metaUpgradeSlot",
-					"sid": 619288287556969,
-					"parameters": {
-						"instance-variable": "Xupgrade",
-						"comparison": 0,
-						"value": "(metaX + 1)"
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "metaUpgradeSlot",
-					"sid": 458903664087188,
-					"parameters": {
-						"instance-variable": "Yupgrade",
-						"comparison": 0,
-						"value": "metaY"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-instvar",
-					"objectClass": "metaUpgradeSlot",
-					"sid": 579028136157296,
-					"parameters": {
-						"instance-variable": "availvable",
-						"value": "true"
-					}
-				}
-			],
-			"sid": 861066092987545
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "metaUpgradeSlot",
-					"sid": 807375283269675,
-					"parameters": {
-						"instance-variable": "Yupgrade",
-						"comparison": 0,
-						"value": "(metaY + 1)"
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "metaUpgradeSlot",
-					"sid": 447912863128894,
-					"parameters": {
-						"instance-variable": "Xupgrade",
-						"comparison": 0,
-						"value": "metaX"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-instvar",
-					"objectClass": "metaUpgradeSlot",
-					"sid": 642079444339457,
-					"parameters": {
-						"instance-variable": "availvable",
-						"value": "true"
-					}
-				}
-			],
-			"sid": 622338938051894
 		}
 	],
 	"sid": 770000000000012

@@ -23896,7 +23896,7 @@
 					"sid": 282055145754444,
 					"tags": "",
 					"instanceVariables": {
-						"damage": 0,
+						"damage": 40,
 						"size": 4
 					},
 					"behaviors": {
