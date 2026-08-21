@@ -27,7 +27,16 @@
 			"sid": 357789678339153
 		}
 	],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "glowhorizontal",
+			"name": "GlowHorizontal"
+		},
+		{
+			"effectId": "glowvertical",
+			"name": "GlowVertical"
+		}
+	],
 	"animations": {
 		"items": [
 			{

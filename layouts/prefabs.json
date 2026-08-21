@@ -323,11 +323,25 @@
 							}
 						}
 					},
+					"effects": {
+						"GlowHorizontal": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1
+							}
+						},
+						"GlowVertical": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1
+							}
+						}
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 880,
-						"y": -77,
+						"x": 907,
+						"y": -105,
 						"width": 13,
 						"height": 14,
 						"originX": 0.5,
@@ -336,7 +350,7 @@
 							1,
 							1,
 							1,
-							0.5
+							1
 						],
 						"z": 0,
 						"angle": 0
@@ -12490,6 +12504,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"timesShot": 0
 					},
@@ -12628,6 +12643,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": false,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -13078,6 +13094,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": false,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"movementAngleAttack": 0
 					},
@@ -13216,6 +13233,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": false,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -13418,6 +13436,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -13556,6 +13575,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -13918,6 +13938,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": false,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"bulletsShot": 0
 					},
@@ -23370,6 +23391,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": false,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"timesShot": 0
 					},
@@ -23473,8 +23495,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 835,
-						"y": -40,
+						"x": 806,
+						"y": -32,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
@@ -23514,6 +23536,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": false,
+						"canDealDamage": false,
 						"shadowType": 1,
 						"hasNeedle": false
 					},
@@ -23652,6 +23675,7 @@
 						"killed": false,
 						"destroyAfterDeath": true,
 						"shadowChangeDeath": false,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -37095,6 +37119,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -37479,6 +37504,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -37707,6 +37733,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
+						"canDealDamage": false,
 						"shadowType": 1,
 						"hasNeedle": false
 					},
@@ -37935,6 +37962,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -44092,6 +44120,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
+						"canDealDamage": false,
 						"shadowType": 1,
 						"hasNeedle": false
 					},
@@ -44397,6 +44426,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"hasNeedle": false,
 						"dirAttack": 0
@@ -44536,6 +44566,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -44751,6 +44782,7 @@
 						"killed": false,
 						"destroyAfterDeath": true,
 						"shadowChangeDeath": false,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -44966,6 +44998,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"hasNeedle": false
 					},

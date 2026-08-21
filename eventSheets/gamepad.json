@@ -15,9 +15,9 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-gamepad-connected",
+					"id": "has-gamepads",
 					"objectClass": "Gamepad",
-					"sid": 612726325187265
+					"sid": 477422207269065
 				}
 			],
 			"actions": [
@@ -37,9 +37,10 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-gamepad-disconnected",
+					"id": "has-gamepads",
 					"objectClass": "Gamepad",
-					"sid": 801790259471716
+					"sid": 303957567847309,
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -235,6 +236,7 @@
 			],
 			"actions": [],
 			"sid": 442631372952158,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -268,7 +270,8 @@
 							}
 						}
 					],
-					"sid": 948800723268132
+					"sid": 948800723268132,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -302,7 +305,8 @@
 							}
 						}
 					],
-					"sid": 757185283378500
+					"sid": 757185283378500,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -335,7 +339,8 @@
 							}
 						}
 					],
-					"sid": 299382511881442
+					"sid": 299382511881442,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -368,7 +373,8 @@
 							}
 						}
 					],
-					"sid": 541168425515815
+					"sid": 541168425515815,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -401,7 +407,8 @@
 							}
 						}
 					],
-					"sid": 819363538549035
+					"sid": 819363538549035,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -428,7 +435,8 @@
 							}
 						}
 					],
-					"sid": 694897453114955
+					"sid": 694897453114955,
+					"disabled": true
 				}
 			]
 		}

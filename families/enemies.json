@@ -86,6 +86,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 815973594474035
+		},
+		{
+			"name": "canDealDamage",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 854910805251579
 		}
 	],
 	"behaviorTypes": [

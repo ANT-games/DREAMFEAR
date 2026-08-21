@@ -3813,6 +3813,14 @@
 							"sid": 409836933202795,
 							"behaviorType": "Flash",
 							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "enemies",
+							"sid": 958857711141132,
+							"parameters": {
+								"instance-variable": "canDealDamage"
+							}
 						}
 					],
 					"actions": [],
@@ -4700,12 +4708,12 @@
 						{
 							"id": "flash",
 							"objectClass": "playableCharacters",
-							"sid": 535214046880022,
+							"sid": 864658607547494,
 							"behaviorType": "Flash",
 							"parameters": {
 								"on-time": "0.1",
 								"off-time": "0.1",
-								"duration": "0.5"
+								"duration": "1.5"
 							}
 						}
 					],
@@ -5260,6 +5268,47 @@
 			],
 			"actions": [],
 			"sid": 303664633026995
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-effect-enabled",
+					"objectClass": "enemies",
+					"sid": 900369492184433,
+					"parameters": {
+						"effect": "\"NoiseMask\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 841031643681105,
+					"disabled": true
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 486854239226442,
+					"parameters": {
+						"seconds": "0.4",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "enemies",
+					"sid": 539447592736457,
+					"parameters": {
+						"instance-variable": "canDealDamage",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 291205376538167
 		}
 	],
 	"sid": 369787313833684

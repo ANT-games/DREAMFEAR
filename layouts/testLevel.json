@@ -187,6 +187,7 @@
 						"killed": false,
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
+						"canDealDamage": false,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
