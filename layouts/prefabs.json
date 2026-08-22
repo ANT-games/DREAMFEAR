@@ -13121,7 +13121,7 @@
 						},
 						"Pathfinding": {
 							"properties": {
-								"cell-size": 8,
+								"cell-size": 16,
 								"cell-border": 8,
 								"obstacles": "custom",
 								"max-speed": 70,

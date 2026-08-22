@@ -203,6 +203,55 @@
 				}
 			],
 			"sid": 671835822088689
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 403447473917372,
+					"parameters": {
+						"variable": "gamepadMode"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "tutorial",
+					"sid": 118658063779580,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 401319314250250
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 452138137714661,
+					"parameters": {
+						"variable": "gamepadMode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "tutorial",
+					"sid": 343709853100898,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 822615810069202
 		}
 	],
 	"sid": 770000000000014

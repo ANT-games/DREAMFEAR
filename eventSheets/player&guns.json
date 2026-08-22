@@ -4556,6 +4556,15 @@
 							"parameters": {
 								"instance-variable": "canDamage"
 							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "player1",
+							"sid": 108840570068706,
+							"parameters": {
+								"animation": "\"death\""
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
