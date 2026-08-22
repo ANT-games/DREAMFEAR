@@ -2515,6 +2515,14 @@
 									"parameters": {
 										"key": "\"controllerVibration\""
 									}
+								},
+								{
+									"id": "check-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 774987725204937,
+									"parameters": {
+										"key": "\"controllerSensibility\""
+									}
 								}
 							],
 							"sid": 188182876276580
@@ -2638,6 +2646,30 @@
 								}
 							],
 							"sid": 768060065592021
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 150318133705708,
+									"parameters": {
+										"key": "\"controllerSensibility\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "get-item",
+									"objectClass": "LocalStorage",
+									"sid": 803486413288836,
+									"parameters": {
+										"key": "\"controllerSensibility\""
+									}
+								}
+							],
+							"sid": 156003376775131
 						},
 						{
 							"eventType": "block",
@@ -2798,6 +2830,60 @@
 										}
 									],
 									"sid": 514226167799816
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-get",
+									"objectClass": "LocalStorage",
+									"sid": 529952633865472,
+									"parameters": {
+										"key": "\"controllerSensibility\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 301034000772058,
+									"parameters": {
+										"variable": "deadZone",
+										"value": "LocalStorage.ItemValue"
+									}
+								}
+							],
+							"sid": 178477975465360,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "settingText",
+											"sid": 290969079061807,
+											"parameters": {
+												"instance-variable": "type",
+												"comparison": 0,
+												"value": "\"controllerSensibility\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "settingText",
+											"sid": 115519715395624,
+											"parameters": {
+												"instance-variable": "value",
+												"value": "deadZone"
+											}
+										}
+									],
+									"sid": 770852649916639
 								}
 							]
 						},
@@ -3185,6 +3271,42 @@
 										}
 									],
 									"sid": 239133777870840
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "settingText",
+											"sid": 191765307755246,
+											"parameters": {
+												"instance-variable": "type",
+												"comparison": 0,
+												"value": "\"controllerSensibility\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 389153276379107,
+											"parameters": {
+												"variable": "deadZone",
+												"value": "settingText.value"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "LocalStorage",
+											"sid": 889722428141240,
+											"parameters": {
+												"key": "\"controllerSensibility\"",
+												"value": "deadZone"
+											}
+										}
+									],
+									"sid": 859897017627433
 								},
 								{
 									"eventType": "block",

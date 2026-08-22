@@ -23,6 +23,7 @@
         "music": "MUSIC",
         "sound": "SOUND",
         "screenShake": "SCREEN SHAKE",
+        "controllerSensibility": "CONTROLLER SENSIBILITY",
         "keys": "KEYS (not available yet)",
         "slowEnemiesName": "Act quickly, think calmly",
         "slowEnemiesDesc": "Enemies become slower when their HP is low",

@@ -12,6 +12,36 @@
 			"sid": 139564332672636
 		},
 		{
+			"eventType": "variable",
+			"name": "controllerCursorX",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 979436485679032
+		},
+		{
+			"eventType": "variable",
+			"name": "controllerCursorY",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 826604502231156
+		},
+		{
+			"eventType": "variable",
+			"name": "deadZone",
+			"type": "number",
+			"initialValue": "30",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 149428922476850
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -84,6 +114,22 @@
 					"parameters": {
 						"scale": "0.25"
 					}
+				},
+				{
+					"id": "set-cursor-style2",
+					"objectClass": "Mouse",
+					"sid": 407987318146742,
+					"parameters": {
+						"cursor-style": "none"
+					}
+				},
+				{
+					"id": "move-to-layer",
+					"objectClass": "cursor",
+					"sid": 185595991535027,
+					"parameters": {
+						"layer": "\"cursor\""
+					}
 				}
 			],
 			"sid": 422335922741801,
@@ -92,12 +138,113 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-end-of-layout",
+							"objectClass": "System",
+							"sid": 955596567900953
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 512560582561494,
+							"parameters": {
+								"variable": "controllerCursorX",
+								"value": "cursor.X"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 480076223852661,
+							"parameters": {
+								"variable": "controllerCursorY",
+								"value": "cursor.Y"
+							}
+						}
+					],
+					"sid": 934518763935264
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 372668332235619
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 234501318951178,
+							"parameters": {
+								"x": "controllerCursorX",
+								"y": "controllerCursorY"
+							}
+						}
+					],
+					"sid": 459700743792817
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "compare-axis",
 							"objectClass": "Gamepad",
-							"sid": 567032795082058,
+							"sid": 716450168964504,
+							"disabled": true,
 							"parameters": {
 								"gamepad": "0",
 								"axis": "right-analog-x-axis",
+								"comparison": 4,
+								"value": "deadZone"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 301426631761283,
+							"disabled": true,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "right-analog-x-axis",
+								"comparison": 2,
+								"value": "-deadZone"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 717167741577913,
+							"disabled": true,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "right-analog-y-axis",
+								"comparison": 4,
+								"value": "deadZone"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 665513845306349,
+							"disabled": true,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "right-analog-y-axis",
+								"comparison": 2,
+								"value": "-deadZone"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 671314020360373,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "right-analog-y-axis",
 								"comparison": 1,
 								"value": "0"
 							}
@@ -105,7 +252,7 @@
 						{
 							"id": "compare-axis",
 							"objectClass": "Gamepad",
-							"sid": 351761596413495,
+							"sid": 634337884625340,
 							"parameters": {
 								"gamepad": "0",
 								"axis": "right-analog-y-axis",
@@ -147,16 +294,25 @@
 										"layer": "\"upgrades\""
 									},
 									"isInverted": true
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player1",
+									"sid": 390658475000308,
+									"parameters": {
+										"animation": "\"death\""
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
 								{
 									"id": "set-position",
 									"objectClass": "cursor",
-									"sid": 141183778461004,
+									"sid": 582712969251000,
 									"parameters": {
-										"x": "player1.X + cos(angle(0, 0, Gamepad.Axis(0, 2), Gamepad.Axis(0, 3))) * guns.aimDistance",
-										"y": "player1.Y + sin(angle(0, 0, Gamepad.Axis(0, 2), Gamepad.Axis(0, 3))) * guns.aimDistance"
+										"x": "player1.X + (cos(angle(0, 0, Gamepad.Axis(0, 2), Gamepad.Axis(0, 3)))) * guns.aimDistance",
+										"y": "player1.Y + (sin(angle(0, 0, Gamepad.Axis(0, 2), Gamepad.Axis(0, 3)))) * guns.aimDistance"
 									}
 								}
 							],
@@ -169,20 +325,51 @@
 									"id": "else",
 									"objectClass": "System",
 									"sid": 470156506558309
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player1",
+									"sid": 512566759496558,
+									"disabled": true,
+									"parameters": {
+										"animation": "\"death\""
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
 								{
 									"id": "set-position",
 									"objectClass": "cursor",
-									"sid": 196094844215808,
+									"sid": 850789645598699,
 									"parameters": {
-										"x": "Self.X + (Gamepad.Axis(0, 2) / 40)",
-										"y": "Self.Y + (Gamepad.Axis(0, 3) / 40)"
+										"x": "Self.X + (Gamepad.Axis(0, 2) / 30) ",
+										"y": "Self.Y + (Gamepad.Axis(0, 3) / 30) "
 									}
 								}
 							],
 							"sid": 679079995650198
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 256406878145707
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player1",
+									"sid": 473159212430691,
+									"parameters": {
+										"animation": "\"death\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 905359091782472,
+							"disabled": true
 						}
 					],
 					"isOrBlock": true
@@ -232,12 +419,191 @@
 					"parameters": {
 						"variable": "gamepadMode"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 903756510434252,
+					"parameters": {
+						"variable": "controllerVibration"
+					}
 				}
 			],
 			"actions": [],
 			"sid": 442631372952158,
-			"disabled": true,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "bomb",
+							"sid": 366007879715569,
+							"parameters": {
+								"object": "player1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 266602592329501
+						}
+					],
+					"actions": [
+						{
+							"id": "gamepad-vibrate-trigger-rumble",
+							"objectClass": "Gamepad",
+							"sid": 486350014113339,
+							"parameters": {
+								"gamepad": "0",
+								"duration": "200",
+								"weak-magnitude": "40",
+								"strong-magnitude": "40",
+								"left-trigger": "100",
+								"right-trigger": "100"
+							}
+						},
+						{
+							"id": "gamepad-vibrate",
+							"objectClass": "Gamepad",
+							"sid": 958180326730996,
+							"parameters": {
+								"gamepad": "0",
+								"duration": "200",
+								"weak-magnitude": "60",
+								"strong-magnitude": "60"
+							}
+						}
+					],
+					"sid": 593122171085229
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "medkit",
+							"sid": 977850718270663
+						}
+					],
+					"actions": [
+						{
+							"id": "gamepad-vibrate-trigger-rumble",
+							"objectClass": "Gamepad",
+							"sid": 644027763690542,
+							"parameters": {
+								"gamepad": "0",
+								"duration": "400",
+								"weak-magnitude": "60",
+								"strong-magnitude": "60",
+								"left-trigger": "100",
+								"right-trigger": "100"
+							}
+						},
+						{
+							"id": "gamepad-vibrate",
+							"objectClass": "Gamepad",
+							"sid": 156375603954146,
+							"parameters": {
+								"gamepad": "0",
+								"duration": "400",
+								"weak-magnitude": "80",
+								"strong-magnitude": "80"
+							}
+						}
+					],
+					"sid": 176598664001404
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "fxBomb",
+							"sid": 848422431897242,
+							"parameters": {
+								"animation": "\"granate\""
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 735734126777311
+						}
+					],
+					"actions": [
+						{
+							"id": "gamepad-vibrate-trigger-rumble",
+							"objectClass": "Gamepad",
+							"sid": 944764315220320,
+							"parameters": {
+								"gamepad": "0",
+								"duration": "200",
+								"weak-magnitude": "80",
+								"strong-magnitude": "80",
+								"left-trigger": "100",
+								"right-trigger": "100"
+							}
+						},
+						{
+							"id": "gamepad-vibrate",
+							"objectClass": "Gamepad",
+							"sid": 105898823850773,
+							"parameters": {
+								"gamepad": "0",
+								"duration": "400",
+								"weak-magnitude": "100",
+								"strong-magnitude": "100"
+							}
+						}
+					],
+					"sid": 158873107337230
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "fxBomb",
+							"sid": 319363939826246,
+							"parameters": {
+								"animation": "\"bomb\""
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 468329488858345
+						}
+					],
+					"actions": [
+						{
+							"id": "gamepad-vibrate-trigger-rumble",
+							"objectClass": "Gamepad",
+							"sid": 537120230968894,
+							"parameters": {
+								"gamepad": "0",
+								"duration": "200",
+								"weak-magnitude": "100",
+								"strong-magnitude": "100",
+								"left-trigger": "100",
+								"right-trigger": "100"
+							}
+						},
+						{
+							"id": "gamepad-vibrate",
+							"objectClass": "Gamepad",
+							"sid": 984689187200478,
+							"parameters": {
+								"gamepad": "0",
+								"duration": "400",
+								"weak-magnitude": "80",
+								"strong-magnitude": "80"
+							}
+						}
+					],
+					"sid": 280709690530648
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -261,7 +627,6 @@
 							"id": "gamepad-vibrate",
 							"objectClass": "Gamepad",
 							"sid": 736357434485506,
-							"disabled": true,
 							"parameters": {
 								"gamepad": "0",
 								"duration": "200",
@@ -270,8 +635,7 @@
 							}
 						}
 					],
-					"sid": 948800723268132,
-					"disabled": true
+					"sid": 948800723268132
 				},
 				{
 					"eventType": "block",
@@ -296,7 +660,6 @@
 							"id": "gamepad-vibrate",
 							"objectClass": "Gamepad",
 							"sid": 799611838941666,
-							"disabled": true,
 							"parameters": {
 								"gamepad": "0",
 								"duration": "200",
@@ -305,8 +668,7 @@
 							}
 						}
 					],
-					"sid": 757185283378500,
-					"disabled": true
+					"sid": 757185283378500
 				},
 				{
 					"eventType": "block",
@@ -329,18 +691,16 @@
 						{
 							"id": "gamepad-vibrate",
 							"objectClass": "Gamepad",
-							"sid": 184694076428454,
-							"disabled": true,
+							"sid": 416445831394873,
 							"parameters": {
 								"gamepad": "0",
 								"duration": "200",
-								"weak-magnitude": "20",
-								"strong-magnitude": "50"
+								"weak-magnitude": "50",
+								"strong-magnitude": "80"
 							}
 						}
 					],
-					"sid": 299382511881442,
-					"disabled": true
+					"sid": 299382511881442
 				},
 				{
 					"eventType": "block",
@@ -361,20 +721,31 @@
 					],
 					"actions": [
 						{
-							"id": "gamepad-vibrate",
+							"id": "gamepad-vibrate-trigger-rumble",
 							"objectClass": "Gamepad",
-							"sid": 441309905978059,
-							"disabled": true,
+							"sid": 953244242596516,
 							"parameters": {
 								"gamepad": "0",
 								"duration": "200",
-								"weak-magnitude": "20",
-								"strong-magnitude": "50"
+								"weak-magnitude": "50",
+								"strong-magnitude": "100",
+								"left-trigger": "100",
+								"right-trigger": "100"
+							}
+						},
+						{
+							"id": "gamepad-vibrate",
+							"objectClass": "Gamepad",
+							"sid": 979212953677909,
+							"parameters": {
+								"gamepad": "0",
+								"duration": "200",
+								"weak-magnitude": "80",
+								"strong-magnitude": "80"
 							}
 						}
 					],
-					"sid": 541168425515815,
-					"disabled": true
+					"sid": 541168425515815
 				},
 				{
 					"eventType": "block",
@@ -397,18 +768,16 @@
 						{
 							"id": "gamepad-vibrate",
 							"objectClass": "Gamepad",
-							"sid": 893981818122645,
-							"disabled": true,
+							"sid": 868384855882688,
 							"parameters": {
 								"gamepad": "0",
-								"duration": "200",
-								"weak-magnitude": "20",
-								"strong-magnitude": "50"
+								"duration": "500",
+								"weak-magnitude": "50",
+								"strong-magnitude": "60"
 							}
 						}
 					],
-					"sid": 819363538549035,
-					"disabled": true
+					"sid": 819363538549035
 				},
 				{
 					"eventType": "block",
@@ -419,24 +788,330 @@
 							"sid": 147133226937855
 						}
 					],
-					"actions": [
-						{
-							"id": "gamepad-vibrate-trigger-rumble",
-							"objectClass": "Gamepad",
-							"sid": 389147112188567,
-							"disabled": true,
-							"parameters": {
-								"gamepad": "0",
-								"duration": "200",
-								"weak-magnitude": "bullets.damage",
-								"strong-magnitude": "bullets.damage",
-								"left-trigger": "100",
-								"right-trigger": "100"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 694897453114955,
-					"disabled": true
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "revolver",
+									"sid": 421637262228113,
+									"parameters": {
+										"instance-variable": "isUsed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "gamepad-vibrate-trigger-rumble",
+									"objectClass": "Gamepad",
+									"sid": 561036069290694,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "100",
+										"weak-magnitude": "50",
+										"strong-magnitude": "50",
+										"left-trigger": "50",
+										"right-trigger": "100"
+									}
+								},
+								{
+									"id": "gamepad-vibrate",
+									"objectClass": "Gamepad",
+									"sid": 224755518922940,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "200",
+										"weak-magnitude": "40",
+										"strong-magnitude": "60"
+									}
+								}
+							],
+							"sid": 838158397649323
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "uzi",
+									"sid": 502072628401650,
+									"parameters": {
+										"instance-variable": "isUsed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "gamepad-vibrate-trigger-rumble",
+									"objectClass": "Gamepad",
+									"sid": 684201945790653,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "50",
+										"weak-magnitude": "30",
+										"strong-magnitude": "40",
+										"left-trigger": "40",
+										"right-trigger": "70"
+									}
+								},
+								{
+									"id": "gamepad-vibrate",
+									"objectClass": "Gamepad",
+									"sid": 447710200540950,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "100",
+										"weak-magnitude": "25",
+										"strong-magnitude": "45"
+									}
+								}
+							],
+							"sid": 512183060520266
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "sniperRiffle",
+									"sid": 405235966701856,
+									"parameters": {
+										"instance-variable": "isUsed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "gamepad-vibrate-trigger-rumble",
+									"objectClass": "Gamepad",
+									"sid": 742044349579108,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "200",
+										"weak-magnitude": "80",
+										"strong-magnitude": "100",
+										"left-trigger": "70",
+										"right-trigger": "100"
+									}
+								},
+								{
+									"id": "gamepad-vibrate",
+									"objectClass": "Gamepad",
+									"sid": 409735072633828,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "200",
+										"weak-magnitude": "65",
+										"strong-magnitude": "90"
+									}
+								}
+							],
+							"sid": 438942551688114
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "riffle1",
+									"sid": 917051359803254,
+									"parameters": {
+										"instance-variable": "isUsed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "gamepad-vibrate-trigger-rumble",
+									"objectClass": "Gamepad",
+									"sid": 349926940176413,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "100",
+										"weak-magnitude": "50",
+										"strong-magnitude": "70",
+										"left-trigger": "50",
+										"right-trigger": "100"
+									}
+								},
+								{
+									"id": "gamepad-vibrate",
+									"objectClass": "Gamepad",
+									"sid": 361586119101481,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "200",
+										"weak-magnitude": "60",
+										"strong-magnitude": "80"
+									}
+								}
+							],
+							"sid": 558018817571039
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "riffle",
+									"sid": 687318466826958,
+									"parameters": {
+										"instance-variable": "isUsed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "gamepad-vibrate-trigger-rumble",
+									"objectClass": "Gamepad",
+									"sid": 298229459772638,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "150",
+										"weak-magnitude": "80",
+										"strong-magnitude": "80",
+										"left-trigger": "70",
+										"right-trigger": "100"
+									}
+								},
+								{
+									"id": "gamepad-vibrate",
+									"objectClass": "Gamepad",
+									"sid": 878434929843440,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "150",
+										"weak-magnitude": "65",
+										"strong-magnitude": "90"
+									}
+								}
+							],
+							"sid": 207178070552688
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "shotgun",
+									"sid": 136310936354917,
+									"parameters": {
+										"instance-variable": "isUsed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "gamepad-vibrate-trigger-rumble",
+									"objectClass": "Gamepad",
+									"sid": 805747237562252,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "150",
+										"weak-magnitude": "90",
+										"strong-magnitude": "80",
+										"left-trigger": "70",
+										"right-trigger": "100"
+									}
+								},
+								{
+									"id": "gamepad-vibrate",
+									"objectClass": "Gamepad",
+									"sid": 747551767908944,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "150",
+										"weak-magnitude": "65",
+										"strong-magnitude": "90"
+									}
+								}
+							],
+							"sid": 303536737081236
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "laserPistol",
+									"sid": 314106395369970,
+									"parameters": {
+										"instance-variable": "isUsed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "gamepad-vibrate-trigger-rumble",
+									"objectClass": "Gamepad",
+									"sid": 140813062635722,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "200",
+										"weak-magnitude": "50",
+										"strong-magnitude": "40",
+										"left-trigger": "80",
+										"right-trigger": "100"
+									}
+								},
+								{
+									"id": "gamepad-vibrate",
+									"objectClass": "Gamepad",
+									"sid": 665673164576123,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "200",
+										"weak-magnitude": "50",
+										"strong-magnitude": "70"
+									}
+								}
+							],
+							"sid": 270098608082565
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "granateThrower",
+									"sid": 115914877802597,
+									"parameters": {
+										"instance-variable": "isUsed"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "gamepad-vibrate-trigger-rumble",
+									"objectClass": "Gamepad",
+									"sid": 175539678675929,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "100",
+										"weak-magnitude": "50",
+										"strong-magnitude": "40",
+										"left-trigger": "70",
+										"right-trigger": "100"
+									}
+								},
+								{
+									"id": "gamepad-vibrate",
+									"objectClass": "Gamepad",
+									"sid": 182673214989645,
+									"parameters": {
+										"gamepad": "0",
+										"duration": "200",
+										"weak-magnitude": "50",
+										"strong-magnitude": "70"
+									}
+								}
+							],
+							"sid": 184095930579183
+						}
+					]
 				}
 			]
 		}

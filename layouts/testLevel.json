@@ -2714,7 +2714,7 @@
 										"text": "continue",
 										"enable-bbcode": true,
 										"font": "Silver",
-										"size": 16,
+										"size": 18,
 										"line-height": 0,
 										"bold": false,
 										"italic": false,
@@ -2753,7 +2753,7 @@
 									"locked": false,
 									"world": {
 										"x": 80,
-										"y": 80,
+										"y": 64,
 										"width": 113,
 										"height": 16,
 										"originX": 0.5,
@@ -2774,7 +2774,7 @@
 										"text": "options",
 										"enable-bbcode": true,
 										"font": "Silver",
-										"size": 16,
+										"size": 18,
 										"line-height": 0,
 										"bold": false,
 										"italic": false,
@@ -2834,7 +2834,7 @@
 										"text": "giveUp",
 										"enable-bbcode": true,
 										"font": "Silver",
-										"size": 16,
+										"size": 18,
 										"line-height": 0,
 										"bold": false,
 										"italic": false,
@@ -2873,7 +2873,7 @@
 									"locked": false,
 									"world": {
 										"x": 80,
-										"y": 144,
+										"y": 160,
 										"width": 113,
 										"height": 16,
 										"originX": 0.5,
@@ -2975,7 +2975,7 @@
 									"locked": false,
 									"world": {
 										"x": 216,
-										"y": 56,
+										"y": 52,
 										"width": 154,
 										"height": 23,
 										"originX": 0,
@@ -3012,7 +3012,7 @@
 									"locked": false,
 									"world": {
 										"x": 88,
-										"y": 66,
+										"y": 62,
 										"width": 14,
 										"height": 14,
 										"originX": 0.5,
@@ -3138,7 +3138,7 @@
 									"locked": false,
 									"world": {
 										"x": 216,
-										"y": 78,
+										"y": 74,
 										"width": 154,
 										"height": 23,
 										"originX": 0,
@@ -3175,7 +3175,7 @@
 									"locked": false,
 									"world": {
 										"x": 88,
-										"y": 90,
+										"y": 86,
 										"width": 14,
 										"height": 14,
 										"originX": 0.5,
@@ -3241,7 +3241,7 @@
 									"locked": false,
 									"world": {
 										"x": 216,
-										"y": 100,
+										"y": 96,
 										"width": 154,
 										"height": 23,
 										"originX": 0,
@@ -3307,7 +3307,7 @@
 									"locked": false,
 									"world": {
 										"x": 216,
-										"y": 122,
+										"y": 118,
 										"width": 154,
 										"height": 23,
 										"originX": 0,
@@ -3373,7 +3373,7 @@
 									"locked": false,
 									"world": {
 										"x": 88,
-										"y": 112,
+										"y": 108,
 										"width": 43,
 										"height": 13,
 										"originX": 0.5,
@@ -3439,7 +3439,7 @@
 									"locked": false,
 									"world": {
 										"x": 88,
-										"y": 136,
+										"y": 132,
 										"width": 43,
 										"height": 13,
 										"originX": 0.5,
@@ -3505,7 +3505,7 @@
 									"locked": false,
 									"world": {
 										"x": 216,
-										"y": 146,
+										"y": 142,
 										"width": 154,
 										"height": 23,
 										"originX": 0,
@@ -3571,7 +3571,7 @@
 									"locked": false,
 									"world": {
 										"x": 88,
-										"y": 160,
+										"y": 156,
 										"width": 43,
 										"height": 13,
 										"originX": 0.5,
@@ -3631,7 +3631,7 @@
 									"locked": false,
 									"world": {
 										"x": 216,
-										"y": 176,
+										"y": 172,
 										"width": 128,
 										"height": 16,
 										"originX": 0,
