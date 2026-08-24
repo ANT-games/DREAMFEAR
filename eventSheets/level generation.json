@@ -3808,6 +3808,50 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 622309088159413
+						},
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "combatEnemyArena",
+							"sid": 334842724119842,
+							"parameters": {
+								"which": "nearest",
+								"x": "player1.X",
+								"y": "player1.Y",
+								"z": "0",
+								"pick-all-tied": false
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 334488025376988,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"level1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "combatEnemyArena",
+							"sid": 481286775369065,
+							"parameters": {
+								"instance-variable": "simplified",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 886996748557475
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-created",
 							"objectClass": "wallsLevel1",
 							"sid": 663138345326964
@@ -4004,28 +4048,78 @@
 							"disabled": true
 						}
 					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "combatEnemyArena",
-							"sid": 873345772751530,
-							"parameters": {
-								"instance-variable": "enemiesNumberStart",
-								"value": "int(random(6, 12))"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "combatEnemyArena",
-							"sid": 311377010136623,
-							"parameters": {
-								"instance-variable": "wavesRemained",
-								"value": "round(random(1,3))"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 846406119040115,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "combatEnemyArena",
+									"sid": 146075661802292,
+									"parameters": {
+										"instance-variable": "simplified"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "combatEnemyArena",
+									"sid": 428902779491539,
+									"parameters": {
+										"instance-variable": "enemiesNumberStart",
+										"value": "int(random(3, 6))"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "combatEnemyArena",
+									"sid": 202969114833747,
+									"parameters": {
+										"instance-variable": "wavesRemained",
+										"value": "round(random(3,4))"
+									}
+								}
+							],
+							"sid": 871742703872118
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "combatEnemyArena",
+									"sid": 595183399999232,
+									"parameters": {
+										"instance-variable": "simplified"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "combatEnemyArena",
+									"sid": 706889337351536,
+									"parameters": {
+										"instance-variable": "enemiesNumberStart",
+										"value": "int(random(6, 10))"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "combatEnemyArena",
+									"sid": 127044133712193,
+									"parameters": {
+										"instance-variable": "wavesRemained",
+										"value": "round(random(1,3))"
+									}
+								}
+							],
+							"sid": 312645060164356
+						},
 						{
 							"eventType": "block",
 							"conditions": [],
@@ -4033,7 +4127,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 490332386371648,
+									"sid": 961547455452773,
 									"parameters": {
 										"object-to-create": "enemySpawner",
 										"layer": "\"invisible\"",
@@ -4046,7 +4140,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 245981979782649,
+									"sid": 272813844525102,
 									"parameters": {
 										"object-to-create": "enemySpawner",
 										"layer": "\"invisible\"",
@@ -4059,7 +4153,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 790184168283678,
+									"sid": 691403167090422,
 									"parameters": {
 										"object-to-create": "enemySpawner",
 										"layer": "\"invisible\"",
@@ -4072,7 +4166,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 151284102929411,
+									"sid": 413658057024462,
 									"parameters": {
 										"object-to-create": "enemySpawner",
 										"layer": "\"invisible\"",
@@ -4085,7 +4179,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 324122991356172,
+									"sid": 634541510320325,
 									"parameters": {
 										"object-to-create": "enemySpawner",
 										"layer": "\"invisible\"",
@@ -4098,7 +4192,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 893206940470511,
+									"sid": 142530366858240,
 									"parameters": {
 										"object-to-create": "enemySpawner",
 										"layer": "\"invisible\"",
@@ -4111,7 +4205,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 393725720987082,
+									"sid": 697294032365745,
 									"parameters": {
 										"object-to-create": "enemySpawner",
 										"layer": "\"invisible\"",
@@ -4124,7 +4218,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 433935485211442,
+									"sid": 287763241183215,
 									"parameters": {
 										"object-to-create": "enemySpawner",
 										"layer": "\"invisible\"",
@@ -4137,7 +4231,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 165084689021377,
+									"sid": 778449947100255,
 									"parameters": {
 										"object-to-create": "enemySpawner",
 										"layer": "\"invisible\"",
@@ -4150,7 +4244,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 176054215979405,
+									"sid": 897820721029009,
 									"parameters": {
 										"object-to-create": "enemySpawner",
 										"layer": "\"invisible\"",
@@ -4163,7 +4257,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 839852419241273,
+									"sid": 647738807296673,
 									"parameters": {
 										"object-to-create": "enemySpawner",
 										"layer": "\"invisible\"",
@@ -4176,7 +4270,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 716160179868102,
+									"sid": 329367565023900,
 									"parameters": {
 										"object-to-create": "enemySpawner",
 										"layer": "\"invisible\"",
@@ -4189,7 +4283,7 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 796227114934667,
+									"sid": 815713168068247,
 									"parameters": {
 										"object-to-create": "enemySpawner",
 										"layer": "\"invisible\"",
@@ -4202,7 +4296,7 @@
 								{
 									"id": "add-child",
 									"objectClass": "combatEnemyArena",
-									"sid": 626886719651584,
+									"sid": 744246756156520,
 									"parameters": {
 										"child": "enemySpawner",
 										"transform-x": true,
@@ -4218,7 +4312,7 @@
 									}
 								}
 							],
-							"sid": 256304192491875
+							"sid": 803652509883006
 						}
 					]
 				},
@@ -8141,6 +8235,51 @@
 			],
 			"sid": 488313083376278,
 			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 859382169683763
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "wallsLevel1",
+					"sid": 179104419147516,
+					"parameters": {
+						"instance-variable": "type",
+						"comparison": 0,
+						"value": "\"boss\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 861745060548179,
+					"parameters": {
+						"object-to-create": "bossNotiffication",
+						"layer": "\"obj0\"",
+						"x": "wallsLevel1.X + (wallsLevel1.Width/2)",
+						"y": "wallsLevel1.Y + wallsLevel1.Height + 60",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "wallsLevel1",
+					"sid": 333021446353869,
+					"parameters": {
+						"instance-variable": "notificationCreatedBoss",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 656864689591093
 		}
 	],
 	"sid": 728560354845983

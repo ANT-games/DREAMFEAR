@@ -127,6 +127,49 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
+							"sid": 342127002126423,
+							"parameters": {
+								"key": 49
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 356235159274591,
+							"parameters": {
+								"key": 85
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "push",
+							"objectClass": "upgradesUnlockedArray",
+							"sid": 124497085944342,
+							"parameters": {
+								"where": "back",
+								"value": "\"splitOnHit\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 578486617022895,
+							"parameters": {
+								"group-name": "\"splitOnHit\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 754398354960128
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
 							"sid": 501659122892241,
 							"parameters": {
 								"key": 49

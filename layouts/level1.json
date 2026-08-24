@@ -102,7 +102,8 @@
 						"doors": 0,
 						"overlappedByPlayer": false,
 						"level": "level1",
-						"gunZoneSpawned": false
+						"gunZoneSpawned": false,
+						"notificationCreatedBoss": false
 					},
 					"behaviors": {
 						"Solid": {
@@ -1060,13 +1061,13 @@
 					"sid": 391851632619872,
 					"tags": "",
 					"instanceVariables": {
-						"damage": 35,
+						"damage": 40,
 						"size": 1
 					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
-								"speed": 350,
+								"speed": 360,
 								"acceleration": -200,
 								"gravity": 0,
 								"bounce-off-solids": false,

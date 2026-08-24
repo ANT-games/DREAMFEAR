@@ -449,7 +449,8 @@
 			"lightFromGun",
 			"tutorial",
 			"changeGunTutorialBase",
-			"ant_logo"
+			"ant_logo",
+			"bossNotiffication"
 		],
 		"subfolders": [
 			{

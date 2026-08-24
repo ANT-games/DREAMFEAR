@@ -8720,15 +8720,6 @@
 							}
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "combatEnemyArena",
-							"sid": 276915865777994,
-							"parameters": {
-								"instance-variable": "enemiesNumberStart",
-								"value": "int(random(6, 12))"
-							}
-						},
-						{
 							"id": "subtract-from-instvar",
 							"objectClass": "combatEnemyArena",
 							"sid": 149584647975740,
@@ -8738,7 +8729,60 @@
 							}
 						}
 					],
-					"sid": 815489296587867
+					"sid": 815489296587867,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "combatEnemyArena",
+									"sid": 443296837491199,
+									"parameters": {
+										"instance-variable": "simplified"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "combatEnemyArena",
+									"sid": 626299253732402,
+									"parameters": {
+										"instance-variable": "enemiesNumberStart",
+										"value": "int(random(5, 7))"
+									}
+								}
+							],
+							"sid": 164021362526202
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "combatEnemyArena",
+									"sid": 285439327572418,
+									"parameters": {
+										"instance-variable": "simplified"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "combatEnemyArena",
+									"sid": 141201408526839,
+									"parameters": {
+										"instance-variable": "enemiesNumberStart",
+										"value": "int(random(8, 12))"
+									}
+								}
+							],
+							"sid": 952434704581358
+						}
+					]
 				},
 				{
 					"eventType": "block",

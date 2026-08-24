@@ -1247,28 +1247,52 @@
 											"parameters": {
 												"object": "player1"
 											}
-										},
-										{
-											"id": "every-x-seconds",
-											"objectClass": "System",
-											"sid": 828219923218491,
-											"parameters": {
-												"interval-seconds": "0.5"
-											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 841240749182513,
+									"children": [
 										{
-											"id": "subtract-from-instvar",
-											"objectClass": "enemies",
-											"sid": 839995083066535,
-											"parameters": {
-												"instance-variable": "hp",
-												"value": "20"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 587450316845322,
+													"parameters": {
+														"interval-seconds": "0.5"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 217751551887077
+												}
+											],
+											"actions": [
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "enemies",
+													"sid": 453160181022888,
+													"parameters": {
+														"instance-variable": "hp",
+														"value": "20"
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "enemies",
+													"sid": 663104117258132,
+													"parameters": {
+														"animation": "\"hurt\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 281498064315056,
+											"isOrBlock": true
 										}
-									],
-									"sid": 841240749182513
+									]
 								}
 							],
 							"sid": 953516396352244
@@ -1981,6 +2005,30 @@
 														"create-hierarchy": false,
 														"template-name": "\"\""
 													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "shards",
+													"sid": 960419053888239,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "random(360)"
+													}
+												},
+												{
+													"id": "set-angle",
+													"objectClass": "shards",
+													"sid": 996914884701419,
+													"parameters": {
+														"angle": "random(360)"
+													}
+												},
+												{
+													"type": "script",
+													"language": "javascript",
+													"script": [
+														"console.log(\"SHARDS\")"
+													]
 												}
 											],
 											"sid": 897539696572869
@@ -1993,7 +2041,7 @@
 										{
 											"id": "on-created",
 											"objectClass": "shards",
-											"sid": 505340189387205
+											"sid": 568340495569268
 										}
 									],
 									"actions": [
@@ -2005,9 +2053,77 @@
 												"seconds": "0.1",
 												"use-timescale": true
 											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "shards",
+											"sid": 387015656831598,
+											"parameters": {
+												"instance-variable": "canBeDestroyed",
+												"value": "true"
+											}
 										}
 									],
 									"sid": 655205359837695
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "shards",
+											"sid": 645436965641728,
+											"parameters": {
+												"object": "walls"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "shards",
+											"sid": 880690559158067,
+											"parameters": {
+												"object": "sprike"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "shards",
+											"sid": 252928728457488,
+											"parameters": {
+												"object": "enemies"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 578012030426466,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "shards",
+													"sid": 390061599078368,
+													"parameters": {
+														"instance-variable": "canBeDestroyed"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "shardDestroyParticle",
+													"sid": 507863844575861
+												},
+												{
+													"id": "destroy",
+													"objectClass": "shards",
+													"sid": 941753523424724
+												}
+											],
+											"sid": 563296467955372
+										}
+									],
+									"isOrBlock": true
 								}
 							],
 							"sid": 655205359837696

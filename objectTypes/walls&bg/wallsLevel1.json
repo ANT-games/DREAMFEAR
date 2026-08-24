@@ -60,6 +60,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 326569336199170
+		},
+		{
+			"name": "notificationCreatedBoss",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 508998346303185
 		}
 	],
 	"behaviorTypes": [
