@@ -1224,15 +1224,6 @@
 						{
 							"eventType": "group",
 							"disabled": false,
-							"title": "slowEnemies",
-							"description": "",
-							"isActiveOnStart": true,
-							"children": [],
-							"sid": 571768021255714
-						},
-						{
-							"eventType": "group",
-							"disabled": false,
 							"title": "damageTouchEnemies",
 							"description": "",
 							"isActiveOnStart": true,
@@ -1975,11 +1966,11 @@
 										{
 											"id": "on-destroyed",
 											"objectClass": "bullets",
-											"sid": 640851371433394
+											"sid": 553902661850548
 										}
 									],
 									"actions": [],
-									"sid": 655205359837694,
+									"sid": 525488085054383,
 									"children": [
 										{
 											"eventType": "block",
@@ -1987,7 +1978,7 @@
 												{
 													"id": "repeat",
 													"objectClass": "System",
-													"sid": 975802607073404,
+													"sid": 679232588318627,
 													"parameters": {
 														"count": "bullets.damage/5"
 													}
@@ -1997,7 +1988,7 @@
 												{
 													"id": "spawn-another-object",
 													"objectClass": "bullets",
-													"sid": 675364713049428,
+													"sid": 477146710752235,
 													"parameters": {
 														"object": "shards",
 														"layer": "\"bullets\"",
@@ -2009,7 +2000,7 @@
 												{
 													"id": "set-angle-of-motion",
 													"objectClass": "shards",
-													"sid": 960419053888239,
+													"sid": 649138114701959,
 													"behaviorType": "Bullet",
 													"parameters": {
 														"angle": "random(360)"
@@ -2018,7 +2009,7 @@
 												{
 													"id": "set-angle",
 													"objectClass": "shards",
-													"sid": 996914884701419,
+													"sid": 695154178983203,
 													"parameters": {
 														"angle": "random(360)"
 													}
@@ -2031,7 +2022,7 @@
 													]
 												}
 											],
-											"sid": 897539696572869
+											"sid": 187535838691800
 										}
 									]
 								},
@@ -2041,14 +2032,14 @@
 										{
 											"id": "on-created",
 											"objectClass": "shards",
-											"sid": 568340495569268
+											"sid": 563934394006532
 										}
 									],
 									"actions": [
 										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 432379431566231,
+											"sid": 356648778016106,
 											"parameters": {
 												"seconds": "0.1",
 												"use-timescale": true
@@ -2057,14 +2048,14 @@
 										{
 											"id": "set-boolean-instvar",
 											"objectClass": "shards",
-											"sid": 387015656831598,
+											"sid": 432839763153056,
 											"parameters": {
 												"instance-variable": "canBeDestroyed",
 												"value": "true"
 											}
 										}
 									],
-									"sid": 655205359837695
+									"sid": 924320944421834
 								},
 								{
 									"eventType": "block",
@@ -2072,7 +2063,7 @@
 										{
 											"id": "is-overlapping-another-object",
 											"objectClass": "shards",
-											"sid": 645436965641728,
+											"sid": 797230516005785,
 											"parameters": {
 												"object": "walls"
 											}
@@ -2080,7 +2071,7 @@
 										{
 											"id": "is-overlapping-another-object",
 											"objectClass": "shards",
-											"sid": 880690559158067,
+											"sid": 537894875661972,
 											"parameters": {
 												"object": "sprike"
 											}
@@ -2088,14 +2079,14 @@
 										{
 											"id": "is-overlapping-another-object",
 											"objectClass": "shards",
-											"sid": 252928728457488,
+											"sid": 644757087595536,
 											"parameters": {
 												"object": "enemies"
 											}
 										}
 									],
 									"actions": [],
-									"sid": 578012030426466,
+									"sid": 497362609749504,
 									"children": [
 										{
 											"eventType": "block",
@@ -2103,7 +2094,7 @@
 												{
 													"id": "is-boolean-instance-variable-set",
 													"objectClass": "shards",
-													"sid": 390061599078368,
+													"sid": 269963969293829,
 													"parameters": {
 														"instance-variable": "canBeDestroyed"
 													}
@@ -2112,21 +2103,572 @@
 											"actions": [
 												{
 													"callFunction": "shardDestroyParticle",
-													"sid": 507863844575861
+													"sid": 133969605427055
 												},
 												{
 													"id": "destroy",
 													"objectClass": "shards",
-													"sid": 941753523424724
+													"sid": 154844525155912
 												}
 											],
-											"sid": 563296467955372
+											"sid": 883469005282515
 										}
 									],
 									"isOrBlock": true
 								}
 							],
-							"sid": 655205359837696
+							"sid": 460061817779477
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "lastChanceDamage",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "lastChanceMeleeOn",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 748291036184001
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "bullets",
+											"sid": 748291036184002
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 748291036184003,
+											"parameters": {
+												"variable": "hp",
+												"comparison": 3,
+												"value": "20"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bullets",
+											"sid": 748291036184004,
+											"parameters": {
+												"instance-variable": "damage",
+												"value": "Self.damage * 2"
+											}
+										}
+									],
+									"sid": 748291036184005
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "shards",
+											"sid": 748291036184006
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 748291036184007,
+											"parameters": {
+												"variable": "hp",
+												"comparison": 3,
+												"value": "20"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "shards",
+											"sid": 748291036184008,
+											"parameters": {
+												"instance-variable": "damage",
+												"value": "Self.damage * 2"
+											}
+										}
+									],
+									"sid": 748291036184009
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 748291036184010,
+											"parameters": {
+												"variable": "hp",
+												"comparison": 3,
+												"value": "20"
+											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 748291036184011,
+											"parameters": {
+												"variable": "lastChanceMeleeOn"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 748291036184012,
+											"parameters": {
+												"variable": "playerMelleAttackDamage",
+												"value": "playerMelleAttackDamage * 2"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 748291036184013,
+											"parameters": {
+												"variable": "lastChanceMeleeOn",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 748291036184014
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 748291036184015,
+											"parameters": {
+												"variable": "hp",
+												"comparison": 4,
+												"value": "20"
+											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 748291036184016,
+											"parameters": {
+												"variable": "lastChanceMeleeOn"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 748291036184017,
+											"parameters": {
+												"variable": "playerMelleAttackDamage",
+												"value": "playerMelleAttackDamage / 2"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 748291036184018,
+											"parameters": {
+												"variable": "lastChanceMeleeOn",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 748291036184019
+								}
+							],
+							"sid": 391336482131961
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "currencyRadius",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "gameCurrency",
+											"sid": 748291036184020
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "gameCurrency",
+											"sid": 748291036184021,
+											"parameters": {
+												"instance-variable": "radius",
+												"value": "max(Self.radius, 50) * 5"
+											}
+										}
+									],
+									"sid": 748291036184022
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 748291036184023
+										},
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 748291036184024,
+											"parameters": {
+												"object": "gameCurrency"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "gameCurrency",
+											"sid": 748291036184025,
+											"parameters": {
+												"instance-variable": "radius",
+												"value": "max(Self.radius, 50) * 5"
+											}
+										}
+									],
+									"sid": 748291036184026
+								}
+							],
+							"sid": 392315107923160
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "shotSpeedHurt",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "hurtLastHp",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 748291036184027
+								},
+								{
+									"eventType": "variable",
+									"name": "hurtBoostActive",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 748291036184028
+								},
+								{
+									"eventType": "variable",
+									"name": "hurtBoostToken",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 748291036184029
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 748291036184030
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 748291036184031,
+											"parameters": {
+												"variable": "hurtLastHp",
+												"value": "hp"
+											}
+										}
+									],
+									"sid": 748291036184032,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 748291036184033
+										}
+									],
+									"actions": [],
+									"sid": 748291036184034,
+									"disabled": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 748291036184035,
+													"parameters": {
+														"variable": "hp",
+														"comparison": 2,
+														"value": "hurtLastHp"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 748291036184036,
+													"parameters": {
+														"variable": "hurtBoostToken",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 748291036184037,
+											"disabled": true,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 748291036184038,
+															"parameters": {
+																"variable": "hurtBoostActive"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "guns",
+															"sid": 748291036184039,
+															"parameters": {
+																"instance-variable": "fireRate",
+																"value": "guns.fireRate * 0.5"
+															}
+														},
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 748291036184040,
+															"parameters": {
+																"variable": "hurtBoostActive",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 748291036184041,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 748291036184042,
+															"parameters": {
+																"seconds": "3",
+																"use-timescale": true
+															}
+														},
+														{
+															"id": "subtract-from-eventvar",
+															"objectClass": "System",
+															"sid": 748291036184043,
+															"parameters": {
+																"variable": "hurtBoostToken",
+																"value": "1"
+															}
+														}
+													],
+													"sid": 748291036184044,
+													"disabled": true,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-eventvar",
+																	"objectClass": "System",
+																	"sid": 748291036184045,
+																	"parameters": {
+																		"variable": "hurtBoostToken",
+																		"comparison": 3,
+																		"value": "0"
+																	}
+																},
+																{
+																	"id": "compare-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 748291036184046,
+																	"parameters": {
+																		"variable": "hurtBoostActive"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "guns",
+																	"sid": 748291036184047,
+																	"parameters": {
+																		"instance-variable": "fireRate",
+																		"value": "guns.fireRate * 2"
+																	}
+																},
+																{
+																	"id": "set-boolean-eventvar",
+																	"objectClass": "System",
+																	"sid": 748291036184048,
+																	"parameters": {
+																		"variable": "hurtBoostActive",
+																		"value": "false"
+																	}
+																}
+															],
+															"sid": 748291036184049,
+															"disabled": true
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 748291036184050,
+													"parameters": {
+														"variable": "hurtLastHp",
+														"value": "hp"
+													}
+												}
+											],
+											"sid": 748291036184051,
+											"disabled": true
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "guns",
+											"sid": 748291036184052
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 748291036184053,
+											"parameters": {
+												"variable": "hurtBoostActive"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "guns",
+											"sid": 748291036184054,
+											"parameters": {
+												"instance-variable": "fireRate",
+												"value": "Self.fireRate * 0.5"
+											}
+										}
+									],
+									"sid": 748291036184055,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-animation-finished",
+											"objectClass": "player1",
+											"sid": 822619752280545,
+											"parameters": {
+												"animation": "\"hurt\""
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "guns",
+											"sid": 756842144187827,
+											"parameters": {
+												"instance-variable": "isUsed"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "guns",
+											"sid": 478659695865395,
+											"parameters": {
+												"instance-variable": "fireRate",
+												"value": "Self.fireRate / 2"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 434863985305787,
+											"parameters": {
+												"seconds": "3",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "guns",
+											"sid": 734508185185397,
+											"parameters": {
+												"instance-variable": "fireRate",
+												"value": "Self.fireRate * 2"
+											}
+										}
+									],
+									"sid": 662663017141742
+								}
+							],
+							"sid": 495052115927114
 						}
 					],
 					"sid": 655205359837697
@@ -2696,11 +3238,38 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 205246292613300,
+							"sid": 219869173103139,
 							"parameters": {
 								"variable": "level",
-								"comparison": 3,
+								"comparison": 0,
 								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 322390848366096,
+							"parameters": {
+								"variable": "goalForNextLevel",
+								"value": "60"
+							}
+						}
+					],
+					"sid": 334153228213724
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 775871492923453,
+							"parameters": {
+								"variable": "level",
+								"comparison": 0,
+								"value": "2"
 							}
 						}
 					],

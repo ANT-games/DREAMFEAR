@@ -1465,13 +1465,13 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 407317030603952,
+									"sid": 869842408956265,
 									"parameters": {
 										"audio-file": {
-											"path": "fuck it"
+											"path": "menu"
 										},
 										"loop": "not-looping",
-										"volume": "-120 + music_volume",
+										"volume": "-115 + music_volume",
 										"stereo-pan": "0",
 										"tag-optional": "\"menu\""
 									}
