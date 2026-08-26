@@ -1296,12 +1296,31 @@
 							"isActiveOnStart": true,
 							"children": [
 								{
+									"eventType": "variable",
+									"name": "isHpUp",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 340901854329765
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
 											"id": "trigger-once-while-true",
 											"objectClass": "System",
 											"sid": 540350416614806
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 830449007692096,
+											"parameters": {
+												"variable": "isHpUp"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [
@@ -1321,6 +1340,15 @@
 											"parameters": {
 												"variable": "hp",
 												"value": "30"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 363728905637797,
+											"parameters": {
+												"variable": "isHpUp",
+												"value": "true"
 											}
 										}
 									],
@@ -1394,11 +1422,11 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 287666889993064,
+													"sid": 998700310706646,
 													"parameters": {
 														"first-value": "random(100)",
 														"comparison": 2,
-														"second-value": "10"
+														"second-value": "20"
 													}
 												}
 											],
@@ -1440,9 +1468,9 @@
 										{
 											"id": "set-scale",
 											"objectClass": "fxBomb",
-											"sid": 249402606058077,
+											"sid": 194171772289625,
 											"parameters": {
-												"scale": "1.25"
+												"scale": "1.5"
 											}
 										}
 									],

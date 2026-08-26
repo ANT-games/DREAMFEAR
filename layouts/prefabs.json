@@ -24249,8 +24249,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"shadowType": 2,
-						"hp": 3500,
-						"hpMax": 400,
+						"hp": 3000,
+						"hpMax": 3000,
 						"active": false,
 						"phase": 0,
 						"movementDestinationX": 0,
@@ -45837,7 +45837,7 @@
 					"tags": "",
 					"instanceVariables": {
 						"canBeDestroyed": false,
-						"damage": 7
+						"damage": 10
 					},
 					"behaviors": {
 						"Bullet": {

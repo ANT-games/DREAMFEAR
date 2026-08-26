@@ -4076,10 +4076,10 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "combatEnemyArena",
-									"sid": 202969114833747,
+									"sid": 416146568563964,
 									"parameters": {
 										"instance-variable": "wavesRemained",
-										"value": "round(random(3,4))"
+										"value": "round(random(2,3))"
 									}
 								}
 							],

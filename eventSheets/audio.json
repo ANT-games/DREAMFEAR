@@ -1239,13 +1239,13 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 871184343232606,
+							"sid": 629893445706536,
 							"parameters": {
 								"audio-file": {
 									"path": "ricochet"
 								},
 								"loop": "not-looping",
-								"volume": "-10 + (sfx_volume - 100) ",
+								"volume": "-2 + (sfx_volume - 100) ",
 								"stereo-pan": "0",
 								"tag-optional": "\"\""
 							}
@@ -1364,6 +1364,42 @@
 						}
 					],
 					"sid": 682107868197982
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "melleAttack",
+							"sid": 678056085425598,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 343161651067621
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 485217764430897,
+							"parameters": {
+								"audio-file": {
+									"path": "whoosh sound"
+								},
+								"loop": "not-looping",
+								"volume": "-20 + ((sfx_volume - 100)/2)",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 244302351211085
 				}
 			],
 			"sid": 386551851170673

@@ -3444,19 +3444,44 @@
 									}
 								},
 								{
-									"id": "shake",
-									"objectClass": "camera",
-									"sid": 536819775171426,
-									"behaviorType": "ScrollTo",
+									"callFunction": "bulletHitBackSound",
+									"sid": 437731683607263
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 924520962920512,
 									"parameters": {
-										"magnitude": "6 * (screenShake/100)",
-										"duration": "0.15",
-										"mode": "reducing-magnitude"
+										"time-scale": "0"
 									}
 								},
 								{
-									"callFunction": "bulletHitBackSound",
-									"sid": 437731683607263
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 951081300029019,
+									"parameters": {
+										"seconds": "0.15",
+										"use-timescale": false
+									}
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 799291445789887,
+									"parameters": {
+										"time-scale": "1"
+									}
+								},
+								{
+									"id": "shake",
+									"objectClass": "camera",
+									"sid": 465796225486994,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"magnitude": "12 * (screenShake/100)",
+										"duration": "0.1",
+										"mode": "reducing-magnitude"
+									}
 								}
 							],
 							"sid": 603382424090837
