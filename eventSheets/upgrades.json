@@ -351,6 +351,16 @@
 						{
 							"id": "push",
 							"objectClass": "upgradesAvailableArray",
+							"sid": 948812337847639,
+							"parameters": {
+								"where": "back",
+								"value": "\"enemiesExplode\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
 							"sid": 521237976213326,
 							"parameters": {
 								"where": "back",
@@ -581,6 +591,7 @@
 							"id": "shuffle",
 							"objectClass": "upgradesAvailableArray",
 							"sid": 943381774546251,
+							"disabled": true,
 							"parameters": {
 								"axis": "x"
 							}
@@ -2697,6 +2708,67 @@
 								}
 							],
 							"sid": 495052115927114
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "enemiesExplode",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "enemies",
+											"sid": 815321552003242,
+											"parameters": {
+												"animation": "\"death\""
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "enemies",
+											"sid": 162663407051654,
+											"parameters": {
+												"comparison": 0,
+												"number": "0"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 572528438970463
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "enemies",
+											"sid": 438513016975952,
+											"parameters": {
+												"object": "fxBomb",
+												"layer": "\"obj1\"",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "fxBomb",
+											"sid": 658326539701464,
+											"parameters": {
+												"animation": "\"enemy\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 455756954591322
+								}
+							],
+							"sid": 433462883242981
 						}
 					],
 					"sid": 655205359837697

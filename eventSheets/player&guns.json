@@ -4499,35 +4499,6 @@
 									}
 								},
 								{
-									"id": "set-animation",
-									"objectClass": "player1",
-									"sid": 306667502498421,
-									"parameters": {
-										"animation": "\"hurt\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "subtract-from-eventvar",
-									"objectClass": "System",
-									"sid": 482000907275000,
-									"parameters": {
-										"variable": "hp",
-										"value": "40"
-									}
-								},
-								{
-									"id": "shake",
-									"objectClass": "camera",
-									"sid": 413368042864842,
-									"behaviorType": "ScrollTo",
-									"parameters": {
-										"magnitude": "10 * (screenShake/100)",
-										"duration": "0.1",
-										"mode": "reducing-magnitude"
-									}
-								},
-								{
 									"id": "set-boolean-instvar",
 									"objectClass": "player1",
 									"sid": 546507809858657,
@@ -4559,6 +4530,146 @@
 								}
 							],
 							"sid": 221311076005005,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "fxBomb",
+											"sid": 551429658135379,
+											"parameters": {
+												"animation": "\"bomb\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player1",
+											"sid": 828577328547909,
+											"parameters": {
+												"animation": "\"hurt\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 843058178094291,
+											"parameters": {
+												"variable": "hp",
+												"value": "40"
+											}
+										},
+										{
+											"id": "shake",
+											"objectClass": "camera",
+											"sid": 376278469037973,
+											"behaviorType": "ScrollTo",
+											"parameters": {
+												"magnitude": "10 * (screenShake/100)",
+												"duration": "0.1",
+												"mode": "reducing-magnitude"
+											}
+										}
+									],
+									"sid": 246770004862095,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "fxBomb",
+											"sid": 111012422143528,
+											"parameters": {
+												"animation": "\"granate\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player1",
+											"sid": 529517006499316,
+											"parameters": {
+												"animation": "\"hurt\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 732657408803673,
+											"parameters": {
+												"variable": "hp",
+												"value": "30"
+											}
+										},
+										{
+											"id": "shake",
+											"objectClass": "camera",
+											"sid": 220601606307124,
+											"behaviorType": "ScrollTo",
+											"parameters": {
+												"magnitude": "10 * (screenShake/100)",
+												"duration": "0.1",
+												"mode": "reducing-magnitude"
+											}
+										}
+									],
+									"sid": 457094335652184,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "fxBomb",
+											"sid": 664024104064042,
+											"parameters": {
+												"animation": "\"enemy\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player1",
+											"sid": 354047284015877,
+											"parameters": {
+												"animation": "\"hurt\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 171470222959632,
+											"parameters": {
+												"variable": "hp",
+												"value": "20"
+											}
+										},
+										{
+											"id": "shake",
+											"objectClass": "camera",
+											"sid": 839075614491750,
+											"behaviorType": "ScrollTo",
+											"parameters": {
+												"magnitude": "10 * (screenShake/100)",
+												"duration": "0.1",
+												"mode": "reducing-magnitude"
+											}
+										}
+									],
+									"sid": 140807284085897,
+									"isOrBlock": true
+								}
+							],
 							"isOrBlock": true
 						}
 					]

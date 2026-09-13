@@ -883,15 +883,6 @@
 							],
 							"actions": [
 								{
-									"id": "subtract-from-instvar",
-									"objectClass": "enemies",
-									"sid": 535946714032770,
-									"parameters": {
-										"instance-variable": "hp",
-										"value": "Self.hp"
-									}
-								},
-								{
 									"id": "destroy",
 									"objectClass": "bullets",
 									"sid": 666660045128693,
@@ -938,7 +929,78 @@
 									}
 								}
 							],
-							"sid": 993445514409342
+							"sid": 993445514409342,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "fxBomb",
+											"sid": 369566006023626,
+											"parameters": {
+												"animation": "\"granate\""
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "fxBomb",
+											"sid": 298896116986189,
+											"parameters": {
+												"animation": "\"bomb\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "enemies",
+											"sid": 645294441695108,
+											"parameters": {
+												"instance-variable": "hp",
+												"value": "Self.hp"
+											}
+										}
+									],
+									"sid": 659486866961893,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "fxBomb",
+											"sid": 234006928369292,
+											"parameters": {
+												"animation": "\"enemy\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "enemies",
+											"sid": 725669344512442,
+											"parameters": {
+												"instance-variable": "hp",
+												"value": "30"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "enemies",
+											"sid": 137183329476034,
+											"parameters": {
+												"animation": "\"hurt\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 730743260307560,
+									"isOrBlock": true
+								}
+							]
 						},
 						{
 							"eventType": "block",
