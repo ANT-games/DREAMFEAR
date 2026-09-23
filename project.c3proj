@@ -450,7 +450,8 @@
 			"tutorial",
 			"changeGunTutorialBase",
 			"ant_logo",
-			"bossNotiffication"
+			"bossNotiffication",
+			"lastChanceUpgradeUI"
 		],
 		"subfolders": [
 			{
@@ -927,6 +928,14 @@
 					"name": "whoosh sound.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 755851592490421,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "magic_spell_shield_03.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 471003658302595,
 					"file-info": {
 						"purpose": "none"
 					}

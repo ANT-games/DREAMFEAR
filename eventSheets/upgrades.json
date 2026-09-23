@@ -351,6 +351,36 @@
 						{
 							"id": "push",
 							"objectClass": "upgradesAvailableArray",
+							"sid": 258428756795467,
+							"parameters": {
+								"where": "back",
+								"value": "\"goaway\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 235664125162648,
+							"parameters": {
+								"where": "back",
+								"value": "\"safetyFreeze\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 234809969240907,
+							"parameters": {
+								"where": "back",
+								"value": "\"lastChance\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
 							"sid": 781870956464433,
 							"parameters": {
 								"where": "back",
@@ -2949,16 +2979,209 @@
 						{
 							"eventType": "group",
 							"disabled": false,
-							"title": "lastChanceName",
+							"title": "lastChance",
+							"description": "",
+							"isActiveOnStart": false,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-group-active",
+											"objectClass": "System",
+											"sid": 395040581609247,
+											"parameters": {
+												"group-name": "\"lastChance\""
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 716263626942819
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 183448563518093,
+											"parameters": {
+												"object-to-create": "lastChanceUpgradeUI",
+												"layer": "\"ui_basic_active\"",
+												"x": "86",
+												"y": "18",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 877593548187892
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 169223565574380,
+											"parameters": {
+												"variable": "hp",
+												"comparison": 3,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 435455229021626,
+											"parameters": {
+												"variable": "lastChanceUsed"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 443857364833055,
+											"parameters": {
+												"variable": "lastChanceUsed",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 608466250326975,
+											"parameters": {
+												"variable": "hp",
+												"value": "maxHp"
+											}
+										},
+										{
+											"callFunction": "lastChanceSound",
+											"sid": 629537253026857
+										},
+										{
+											"id": "shake",
+											"objectClass": "camera",
+											"sid": 857590068234386,
+											"behaviorType": "ScrollTo",
+											"parameters": {
+												"magnitude": "6 * (screenShake/100)",
+												"duration": "0.2",
+												"mode": "reducing-magnitude"
+											}
+										}
+									],
+									"sid": 515175854677500
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 256240992393729,
+											"parameters": {
+												"variable": "lastChanceUsed"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "lastChanceUpgradeUI",
+											"sid": 698357061123689
+										}
+									],
+									"sid": 928316486264151
+								}
+							],
+							"sid": 109831508991942
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "safetyFreeze",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "player1",
+											"sid": 293639658795128,
+											"parameters": {
+												"animation": "\"hurt\""
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 750008752767516
+										}
+									],
+									"actions": [
+										{
+											"id": "set-object-time-scale",
+											"objectClass": "System",
+											"sid": 331419599484974,
+											"parameters": {
+												"object": "enemies",
+												"time-scale": "0"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 967329661893947,
+											"parameters": {
+												"seconds": "0.75",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-object-time-scale",
+											"objectClass": "System",
+											"sid": 165850620909873,
+											"parameters": {
+												"object": "enemies",
+												"time-scale": "1"
+											}
+										}
+									],
+									"sid": 404512553994551
+								}
+							],
+							"sid": 944686552521191
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "goaway",
 							"description": "",
 							"isActiveOnStart": true,
 							"children": [],
-							"sid": 623014298350645
+							"sid": 416384416708136
 						}
 					],
 					"sid": 655205359837697
 				}
 			]
+		},
+		{
+			"eventType": "variable",
+			"name": "lastChanceUsed",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 361769601467711
 		},
 		{
 			"eventType": "group",

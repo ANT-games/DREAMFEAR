@@ -1400,6 +1400,34 @@
 						}
 					],
 					"sid": 244302351211085
+				},
+				{
+					"functionName": "lastChanceSound",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 342503447303012,
+							"parameters": {
+								"audio-file": {
+									"path": "magic_spell_shield_03"
+								},
+								"loop": "not-looping",
+								"volume": "-15 + ((sfx_volume - 100)/2)",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 734454751834160
 				}
 			],
 			"sid": 386551851170673
