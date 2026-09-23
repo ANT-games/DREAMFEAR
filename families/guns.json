@@ -79,6 +79,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 342889879943434
+		},
+		{
+			"name": "fireRateConst",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 299166770168212
 		}
 	],
 	"behaviorTypes": [

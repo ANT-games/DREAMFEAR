@@ -351,6 +351,26 @@
 						{
 							"id": "push",
 							"objectClass": "upgradesAvailableArray",
+							"sid": 781870956464433,
+							"parameters": {
+								"where": "back",
+								"value": "\"woundedMad\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 948766031269290,
+							"parameters": {
+								"where": "back",
+								"value": "\"bulletRotateEnemies\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
 							"sid": 948812337847639,
 							"parameters": {
 								"where": "back",
@@ -2769,6 +2789,171 @@
 								}
 							],
 							"sid": 433462883242981
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "bulletRotateEnemies",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 145282145521953,
+											"parameters": {
+												"object": "bullets"
+											}
+										},
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 954544484649330
+										},
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "enemies",
+											"sid": 999967350306821,
+											"parameters": {
+												"which": "nearest",
+												"x": "bullets.X",
+												"y": "bullets.Y",
+												"z": "0",
+												"pick-all-tied": false
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 143210750006956,
+											"parameters": {
+												"first-value": "distance(bullets.X, bullets.Y, enemies.X, enemies.Y)",
+												"comparison": 2,
+												"second-value": "60"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "enemies",
+											"sid": 216343525934966,
+											"parameters": {
+												"instance-variable": "sawPlayer"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "enemies",
+											"sid": 101700147014892,
+											"parameters": {
+												"animation": "\"death\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "has-parent",
+											"objectClass": "bullets",
+											"sid": 900186110844612,
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "add-child",
+											"objectClass": "enemies",
+											"sid": 713121216612204,
+											"parameters": {
+												"child": "bullets",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-z-elevation": true,
+												"transform-w": true,
+												"transform-h": true,
+												"transform-d": true,
+												"transform-a": true,
+												"transform-o": false,
+												"transform-visibility": false,
+												"destroy-with-parent": false
+											}
+										}
+									],
+									"sid": 404735780970488
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-parent",
+											"objectClass": "bullets",
+											"sid": 416050702807647,
+											"parameters": {
+												"parent": "enemies",
+												"which": "own"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "rotate-toward-position",
+											"objectClass": "bullets",
+											"sid": 800614866030701,
+											"parameters": {
+												"degrees": "bullets.Bullet.Speed / 20",
+												"x": "enemies.X",
+												"y": "enemies.Y"
+											}
+										}
+									],
+									"sid": 654987839863224
+								}
+							],
+							"sid": 752944678128525
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "woundedMad",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "guns",
+											"sid": 712812243879640,
+											"parameters": {
+												"instance-variable": "isUsed"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "guns",
+											"sid": 494017282744446,
+											"parameters": {
+												"instance-variable": "fireRate",
+												"value": "Self.fireRateConst - ( 0.027 * (maxHp/hp))"
+											}
+										}
+									],
+									"sid": 150328415062128
+								}
+							],
+							"sid": 343914485192908
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "lastChanceName",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [],
+							"sid": 623014298350645
 						}
 					],
 					"sid": 655205359837697

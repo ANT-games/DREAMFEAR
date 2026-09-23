@@ -275,7 +275,8 @@
 						"stress": 10,
 						"gunName": "revolver",
 						"index": 0,
-						"aimDistance": 75
+						"aimDistance": 75,
+						"fireRateConst": 0
 					},
 					"behaviors": {
 						"Pin": {
@@ -326,7 +327,8 @@
 						"stress": 20,
 						"gunName": "shotgun",
 						"index": 0,
-						"aimDistance": 75
+						"aimDistance": 75,
+						"fireRateConst": 0
 					},
 					"behaviors": {
 						"Pin": {
@@ -377,7 +379,8 @@
 						"stress": 4,
 						"gunName": "uzi",
 						"index": 0,
-						"aimDistance": 115
+						"aimDistance": 115,
+						"fireRateConst": 0
 					},
 					"behaviors": {
 						"Pin": {
@@ -428,7 +431,8 @@
 						"stress": 10,
 						"gunName": "assaultRiffle",
 						"index": 0,
-						"aimDistance": 120
+						"aimDistance": 120,
+						"fireRateConst": 0
 					},
 					"behaviors": {
 						"Pin": {
@@ -479,7 +483,8 @@
 						"stress": 20,
 						"gunName": "sniperRiffle",
 						"index": 0,
-						"aimDistance": 225
+						"aimDistance": 225,
+						"fireRateConst": 0
 					},
 					"behaviors": {
 						"Pin": {
@@ -636,7 +641,8 @@
 						"stress": 10,
 						"gunName": "laserPistol",
 						"index": 0,
-						"aimDistance": 120
+						"aimDistance": 120,
+						"fireRateConst": 0
 					},
 					"behaviors": {
 						"Pin": {
@@ -687,7 +693,8 @@
 						"stress": 20,
 						"gunName": "riffle",
 						"index": 0,
-						"aimDistance": 150
+						"aimDistance": 150,
+						"fireRateConst": 0
 					},
 					"behaviors": {
 						"Pin": {
@@ -738,7 +745,8 @@
 						"stress": 10,
 						"gunName": "granateLauncher",
 						"index": 6,
-						"aimDistance": 150
+						"aimDistance": 150,
+						"fireRateConst": 0
 					},
 					"behaviors": {
 						"Pin": {

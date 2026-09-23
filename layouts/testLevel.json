@@ -134,7 +134,8 @@
 						"stress": 10,
 						"gunName": "revolver",
 						"index": 0,
-						"aimDistance": 75
+						"aimDistance": 75,
+						"fireRateConst": 0
 					},
 					"behaviors": {
 						"Pin": {

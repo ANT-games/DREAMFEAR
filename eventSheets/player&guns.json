@@ -816,6 +816,28 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "guns",
+							"sid": 776726303462818
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "guns",
+							"sid": 482235541452663,
+							"parameters": {
+								"instance-variable": "fireRateConst",
+								"value": "Self.fireRate"
+							}
+						}
+					],
+					"sid": 632270277852954
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "gun light",
