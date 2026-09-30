@@ -16,6 +16,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 921646131989679
+		},
+		{
+			"name": "kbPower",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 115886959850208
 		}
 	],
 	"behaviorTypes": [
@@ -48,6 +55,7 @@
 		"laserPistolBullet",
 		"riffleHardBullet",
 		"granateBullet",
-		"riffleSniperBullet"
+		"riffleSniperBullet",
+		"autoShotGunBullet"
 	]
 }

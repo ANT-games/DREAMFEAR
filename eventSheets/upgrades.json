@@ -351,6 +351,16 @@
 						{
 							"id": "push",
 							"objectClass": "upgradesAvailableArray",
+							"sid": 874733827901872,
+							"parameters": {
+								"where": "back",
+								"value": "\"daskExplosion\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
 							"sid": 258428756795467,
 							"parameters": {
 								"where": "back",
@@ -641,7 +651,6 @@
 							"id": "shuffle",
 							"objectClass": "upgradesAvailableArray",
 							"sid": 943381774546251,
-							"disabled": true,
 							"parameters": {
 								"axis": "x"
 							}
@@ -3165,8 +3174,192 @@
 							"title": "goaway",
 							"description": "",
 							"isActiveOnStart": true,
-							"children": [],
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "enemies",
+											"sid": 551722748193689,
+											"parameters": {
+												"object": "bullets"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "enemies",
+											"sid": 522602861033876,
+											"parameters": {
+												"animation": "\"death\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 349861152925733
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "enemies",
+											"sid": 793471699664912,
+											"parameters": {
+												"instance-variable": "kbAngle",
+												"value": "bullets.Angle"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "enemies",
+											"sid": 410931425659276,
+											"parameters": {
+												"instance-variable": "kbPower",
+												"value": "bullets.kbPower"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 330574489028548,
+											"parameters": {
+												"seconds": "0.3",
+												"use-timescale": true
+											}
+										}
+									],
+									"sid": 416384416708206
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemies",
+											"sid": 109708195463445,
+											"parameters": {
+												"instance-variable": "kbPower",
+												"comparison": 4,
+												"value": "0.1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "move-at-angle",
+											"objectClass": "enemies",
+											"sid": 655021341129821,
+											"parameters": {
+												"angle": "Self.kbAngle",
+												"distance": "Self.kbPower * dt"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "enemies",
+											"sid": 242311595970443,
+											"parameters": {
+												"instance-variable": "kbPower",
+												"value": "lerp(Self.kbPower, 0, 5*dt)"
+											}
+										}
+									],
+									"sid": 702377996425212
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "enemies",
+											"sid": 858917109154360,
+											"parameters": {
+												"object": "walls",
+												"offset-x": "cos(Self.kbAngle) * (Self.kbPower * dt)",
+												"offset-y": "sin(Self.kbAngle) * (Self.kbPower * dt)"
+											}
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "enemies",
+											"sid": 827057366074471,
+											"parameters": {
+												"object": "sprike",
+												"offset-x": "cos(Self.kbAngle) * (Self.kbPower * dt)",
+												"offset-y": "sin(Self.kbAngle) * (Self.kbPower * dt)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "enemies",
+											"sid": 470797096444132,
+											"parameters": {
+												"instance-variable": "kbPower",
+												"value": "lerp(Self.kbPower, 0, 50*dt)"
+											}
+										}
+									],
+									"sid": 326755947358100,
+									"isOrBlock": true
+								}
+							],
 							"sid": 416384416708136
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "daskExplosion",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "player1",
+											"sid": 891146020298068,
+											"parameters": {
+												"animation": "\"roll\""
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 251869255958955
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "player1",
+											"sid": 301264275217188,
+											"parameters": {
+												"object": "fxBomb",
+												"layer": "\"obj1\"",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "fxBomb",
+											"sid": 401529289152419,
+											"parameters": {
+												"animation": "\"roll\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 423697877711977
+								}
+							],
+							"sid": 537438780999093
 						}
 					],
 					"sid": 655205359837697
@@ -3432,10 +3625,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 175345304326090,
+							"sid": 274002500218726,
 							"parameters": {
 								"variable": "randomGunPick",
-								"value": "int(random(1, 8))"
+								"value": "int(random(1, 9))"
 							}
 						}
 					],
@@ -3699,6 +3892,43 @@
 								}
 							],
 							"sid": 924110645259523
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 579069770207352,
+									"parameters": {
+										"variable": "randomGunPick",
+										"comparison": 0,
+										"value": "8"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "gunGivingZone",
+									"sid": 333081370244576,
+									"parameters": {
+										"object": "autoShotgun",
+										"layer": "\"obj0\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"type": "script",
+									"language": "javascript",
+									"script": [
+										"console.log(\"GUN SPAWNED\")"
+									]
+								}
+							],
+							"sid": 438673233318659
 						}
 					]
 				}

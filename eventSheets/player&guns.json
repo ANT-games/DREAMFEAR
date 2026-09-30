@@ -2626,30 +2626,6 @@
 													}
 												},
 												{
-													"id": "spawn-another-object",
-													"objectClass": "shotgun",
-													"sid": 476964840907644,
-													"parameters": {
-														"object": "shotGunBullet",
-														"layer": "\"bullets\"",
-														"image-point": "1",
-														"create-hierarchy": false,
-														"template-name": "\"\""
-													}
-												},
-												{
-													"id": "spawn-another-object",
-													"objectClass": "shotgun",
-													"sid": 700221916671590,
-													"parameters": {
-														"object": "shotGunBullet",
-														"layer": "\"bullets\"",
-														"image-point": "1",
-														"create-hierarchy": false,
-														"template-name": "\"\""
-													}
-												},
-												{
 													"id": "shake",
 													"objectClass": "camera",
 													"sid": 900917706310926,
@@ -2675,6 +2651,208 @@
 												}
 											],
 											"sid": 455836013742505
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "autoShotgun",
+													"sid": 242066983345967,
+													"parameters": {
+														"instance-variable": "isUsed"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 606392987283328,
+													"parameters": {
+														"interval-seconds": "autoShotgun.fireRate"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "autoShotgun",
+													"sid": 180626502710211,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "autoShotgun",
+													"sid": 133955162770184,
+													"parameters": {
+														"object": "autoShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "autoShotgun",
+													"sid": 344995852535188,
+													"parameters": {
+														"object": "autoShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "autoShotgun",
+													"sid": 323554672763121,
+													"parameters": {
+														"object": "autoShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "autoShotgun",
+													"sid": 836633896442697,
+													"parameters": {
+														"object": "autoShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "autoShotgun",
+													"sid": 636145312548977,
+													"parameters": {
+														"object": "autoShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "autoShotgun",
+													"sid": 331355456686041,
+													"parameters": {
+														"object": "autoShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "autoShotgun",
+													"sid": 678830618493708,
+													"parameters": {
+														"object": "autoShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "autoShotgun",
+													"sid": 560672786361207,
+													"parameters": {
+														"object": "autoShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "autoShotgun",
+													"sid": 393484968886645,
+													"parameters": {
+														"object": "autoShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "autoShotgun",
+													"sid": 271339579535172,
+													"parameters": {
+														"object": "autoShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "autoShotgun",
+													"sid": 172175363671837,
+													"parameters": {
+														"object": "autoShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "autoShotgun",
+													"sid": 769975049595476,
+													"parameters": {
+														"object": "autoShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "shake",
+													"objectClass": "camera",
+													"sid": 869525137550434,
+													"behaviorType": "ScrollTo",
+													"parameters": {
+														"magnitude": "7 * (screenShake/100)",
+														"duration": "0.3",
+														"mode": "reducing-magnitude"
+													}
+												},
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "autoShotgun",
+													"sid": 196620671495246,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"value": "1"
+													}
+												},
+												{
+													"callFunction": "substractStress",
+													"sid": 307935497173445
+												}
+											],
+											"sid": 329378851117149
 										}
 									]
 								}
@@ -5405,6 +5583,28 @@
 						}
 					],
 					"sid": 209171098271869
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "autoShotGunBullet",
+							"sid": 766492975431976
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "autoShotGunBullet",
+							"sid": 488658659032637,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "Self.Bullet.Speed * random(0.85, 1.15)"
+							}
+						}
+					],
+					"sid": 361964551535516
 				}
 			],
 			"sid": 377291507601915

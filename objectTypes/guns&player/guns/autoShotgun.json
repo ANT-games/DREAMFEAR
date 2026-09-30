@@ -1,0 +1,89 @@
+{
+	"name": "autoShotgun",
+	"plugin-id": "Sprite",
+	"sid": 228967849519372,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 8,
+						"originX": 0.4,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3411036,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 0.95,
+								"y": 0.25
+							},
+							{
+								"name": "shotEffect",
+								"x": 0.95,
+								"y": 0.25
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 186007061618266,
+				"name": "no hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 8,
+						"originX": 0.4,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5274881,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 0.95,
+								"y": 0.25
+							},
+							{
+								"name": "shotEffect",
+								"x": 0.95,
+								"y": 0.25
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 176936394013171,
+				"name": "hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

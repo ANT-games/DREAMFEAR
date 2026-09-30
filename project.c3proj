@@ -655,7 +655,8 @@
 							"laserPistol",
 							"riffle",
 							"granateThrower",
-							"sniperRiffle"
+							"sniperRiffle",
+							"autoShotgun"
 						],
 						"subfolders": [],
 						"name": "guns"
@@ -670,7 +671,8 @@
 							"riffleHardBullet",
 							"granateBullet",
 							"riffleSniperBullet",
-							"shrapnel"
+							"shrapnel",
+							"autoShotGunBullet"
 						],
 						"subfolders": [],
 						"name": "bullets"
@@ -1058,6 +1060,14 @@
 							"name": "sniper riffle.webm",
 							"type": "audio/webm; codecs=opus",
 							"sid": 916429038969282,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "auto shotgun.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 202996001164555,
 							"file-info": {
 								"purpose": "none"
 							}

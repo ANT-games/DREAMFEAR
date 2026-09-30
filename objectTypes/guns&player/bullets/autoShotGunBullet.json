@@ -1,0 +1,82 @@
+{
+	"name": "autoShotGunBullet",
+	"plugin-id": "Sprite",
+	"sid": 980679347770717,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 6,
+						"height": 5,
+						"originX": 0.3333333333333333,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Bullets\\BulletA\\BulletA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 561907,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 6,
+						"height": 5,
+						"originX": 0.3333333333333333,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Bullets\\BulletA\\BulletA2.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5329631,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 6,
+						"height": 5,
+						"originX": 0.3333333333333333,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Bullets\\BulletA\\BulletA3.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7640991,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 6,
+						"height": 5,
+						"originX": 0.3333333333333333,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Bullets\\BulletA\\BulletA4.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1835762,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 718374976599074,
+				"name": "Default",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

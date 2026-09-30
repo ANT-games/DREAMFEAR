@@ -3,6 +3,10 @@
 	"events": [
 		{
 			"eventType": "include",
+			"includeSheet": "upgrades"
+		},
+		{
+			"eventType": "include",
 			"includeSheet": "player&guns"
 		},
 		{
@@ -36,10 +40,6 @@
 		{
 			"eventType": "include",
 			"includeSheet": "audio"
-		},
-		{
-			"eventType": "include",
-			"includeSheet": "upgrades"
 		},
 		{
 			"eventType": "include",
@@ -127,6 +127,43 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
+							"sid": 792898784041996,
+							"parameters": {
+								"key": 49
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 450993206288176,
+							"parameters": {
+								"key": 71
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 444717942847575,
+							"parameters": {
+								"object-to-create": "autoShotgun",
+								"layer": "\"guns\"",
+								"x": "player1.X + 40",
+								"y": "player1.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 142698554855937
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
 							"sid": 342127002126423,
 							"parameters": {
 								"key": 49
@@ -163,6 +200,49 @@
 						}
 					],
 					"sid": 754398354960128
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 286160771611729,
+							"parameters": {
+								"key": 50
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 934733823071436,
+							"parameters": {
+								"key": 85
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "push",
+							"objectClass": "upgradesUnlockedArray",
+							"sid": 649098942515350,
+							"parameters": {
+								"where": "back",
+								"value": "\"goaway\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 369684683212596,
+							"parameters": {
+								"group-name": "\"goaway\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 982778151042994
 				},
 				{
 					"eventType": "block",

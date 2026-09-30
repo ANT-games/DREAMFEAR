@@ -12661,6 +12661,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"timesShot": 0
 					},
@@ -12719,6 +12721,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -12800,6 +12813,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": false,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -12858,6 +12873,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -13251,6 +13277,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": false,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"movementAngleAttack": 0
 					},
@@ -13309,6 +13337,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -13390,6 +13429,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": false,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -13448,6 +13489,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -13593,6 +13645,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -13651,6 +13705,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -13732,6 +13797,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -13790,6 +13857,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -13911,7 +13989,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"damage": 7,
-						"size": 0
+						"size": 0,
+						"kbPower": 300
 					},
 					"behaviors": {
 						"Bullet": {
@@ -14097,6 +14176,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": false,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"bulletsShot": 0
 					},
@@ -14155,6 +14236,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						},
 						"Solid": {
@@ -14627,7 +14719,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"damage": 11,
-						"size": 0
+						"size": 0,
+						"kbPower": 100
 					},
 					"behaviors": {
 						"Bullet": {
@@ -14838,7 +14931,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"damage": 25,
-						"size": 1
+						"size": 1,
+						"kbPower": 220
 					},
 					"behaviors": {
 						"Bullet": {
@@ -23658,6 +23752,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": false,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"timesShot": 0
 					},
@@ -23716,6 +23812,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -23803,6 +23910,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": false,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 1,
 						"hasNeedle": false
 					},
@@ -23861,6 +23970,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -23942,6 +24062,8 @@
 						"destroyAfterDeath": true,
 						"shadowChangeDeath": false,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -24000,6 +24122,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -24069,7 +24202,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"damage": 100,
-						"size": 1
+						"size": 1,
+						"kbPower": 250
 					},
 					"behaviors": {
 						"Bullet": {
@@ -24188,7 +24322,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"damage": 40,
-						"size": 4
+						"size": 4,
+						"kbPower": 200
 					},
 					"behaviors": {
 						"Bullet": {
@@ -30813,7 +30948,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"damage": 120,
-						"size": 1
+						"size": 1,
+						"kbPower": 300
 					},
 					"behaviors": {
 						"Bullet": {
@@ -37538,6 +37674,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -37596,6 +37734,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -37923,6 +38072,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -37981,6 +38132,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -38152,6 +38314,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 1,
 						"hasNeedle": false
 					},
@@ -38210,6 +38374,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -38381,6 +38556,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -38439,6 +38616,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -44614,6 +44802,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 1,
 						"hasNeedle": false
 					},
@@ -44672,6 +44862,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -44920,6 +45121,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"hasNeedle": false,
 						"dirAttack": 0
@@ -44979,6 +45182,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -45060,6 +45274,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -45118,6 +45334,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -45276,6 +45503,8 @@
 						"destroyAfterDeath": true,
 						"shadowChangeDeath": false,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -45334,6 +45563,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -45492,6 +45732,8 @@
 						"destroyAfterDeath": false,
 						"shadowChangeDeath": true,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -45550,6 +45792,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -46298,6 +46551,8 @@
 						"destroyAfterDeath": true,
 						"shadowChangeDeath": false,
 						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
 						"shadowType": 0,
 						"hasNeedle": false
 					},
@@ -46356,6 +46611,17 @@
 								"destroy": false,
 								"enabled": true,
 								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
 							}
 						}
 					},
@@ -46434,6 +46700,126 @@
 						"height": 15,
 						"originX": 0.47058823529411764,
 						"originY": 0.4,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "autoShotgun",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "no hands",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 567,
+					"sid": 541411804980944,
+					"tags": "",
+					"instanceVariables": {
+						"isUsed": false,
+						"bulletsMax": 8,
+						"spread": 12,
+						"fireRate": 0.6,
+						"bulletsInTheGun": 8,
+						"energyNeededBullet": 2,
+						"typeFX": "shotgun",
+						"stress": 20,
+						"gunName": "autoShotgun",
+						"index": 2,
+						"aimDistance": 75,
+						"fireRateConst": 0
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 766,
+						"y": -126,
+						"width": 18,
+						"height": 8,
+						"originX": 0.4,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "autoShotGunBullet",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 568,
+					"sid": 296395290910105,
+					"tags": "",
+					"instanceVariables": {
+						"damage": 6,
+						"size": 0,
+						"kbPower": 300
+					},
+					"behaviors": {
+						"Bullet": {
+							"properties": {
+								"speed": 430,
+								"acceleration": -240,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"DestroyOutsideLayout": {
+							"properties": {
+								"region": "layout"
+							}
+						}
+					},
+					"effects": {
+						"GlowHorizontal": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1
+							}
+						},
+						"GlowVertical": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1
+							}
+						}
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 844,
+						"y": -229,
+						"width": 6,
+						"height": 5,
+						"originX": 0.3333333333333333,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

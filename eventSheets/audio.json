@@ -211,6 +211,92 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "guns",
+											"sid": 851356161668045,
+											"parameters": {
+												"instance-variable": "gunName",
+												"comparison": 0,
+												"value": "\"autoShotgun\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 632948956473692,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/auto shotgun"
+												},
+												"loop": "not-looping",
+												"volume": "-25+ (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 664171074090408,
+											"disabled": true,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/shotgun/SingleShoot"
+												},
+												"loop": "not-looping",
+												"volume": "-25+ (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 935219242426238,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/shotgun/AddictSound"
+												},
+												"loop": "not-looping",
+												"volume": "-25+ (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 959451000655709,
+											"disabled": true,
+											"parameters": {
+												"seconds": "0.3",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 496938668085050,
+											"disabled": true,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/reloads/EndShoot"
+												},
+												"loop": "not-looping",
+												"volume": "-25+ (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										}
+									],
+									"sid": 392367268518621
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "guns",
 											"sid": 949582253231343,
 											"parameters": {
 												"instance-variable": "gunName",

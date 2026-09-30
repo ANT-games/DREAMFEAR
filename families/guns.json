@@ -104,6 +104,7 @@
 		"laserPistol",
 		"riffle",
 		"granateThrower",
-		"sniperRiffle"
+		"sniperRiffle",
+		"autoShotgun"
 	]
 }

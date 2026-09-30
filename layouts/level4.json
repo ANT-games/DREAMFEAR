@@ -1004,7 +1004,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"damage": 40,
-						"size": 1
+						"size": 1,
+						"kbPower": 180
 					},
 					"behaviors": {
 						"Bullet": {

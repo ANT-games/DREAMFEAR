@@ -999,6 +999,41 @@
 									],
 									"sid": 730743260307560,
 									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "fxBomb",
+											"sid": 769763523652757,
+											"parameters": {
+												"animation": "\"roll\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "enemies",
+											"sid": 393900464299845,
+											"parameters": {
+												"instance-variable": "hp",
+												"value": "20"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "enemies",
+											"sid": 622772158486384,
+											"parameters": {
+												"animation": "\"hurt\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 996364186988819,
+									"isOrBlock": true
 								}
 							]
 						},

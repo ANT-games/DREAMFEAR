@@ -93,6 +93,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 854910805251579
+		},
+		{
+			"name": "kbPower",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 965350635603207
+		},
+		{
+			"name": "kbAngle",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 248167452629933
 		}
 	],
 	"behaviorTypes": [
@@ -120,6 +134,11 @@
 			"behaviorId": "Fade",
 			"name": "Fade",
 			"sid": 346593703306833
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "knockback",
+			"sid": 549174013001800
 		}
 	],
 	"effectTypes": [
