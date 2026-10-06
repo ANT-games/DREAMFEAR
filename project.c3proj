@@ -504,7 +504,9 @@
 					"star",
 					"maskCry1",
 					"eyeMedium",
-					"sun"
+					"sun",
+					"theLeave",
+					"stickEnemy"
 				],
 				"subfolders": [
 					{
@@ -528,7 +530,10 @@
 							"starBullet",
 							"tearBulletEnemy",
 							"mediumEyeBullet",
-							"maskBossBullet"
+							"maskBossBullet",
+							"air2",
+							"airCloud2",
+							"leaveBullet"
 						],
 						"subfolders": [],
 						"name": "enemyObj"

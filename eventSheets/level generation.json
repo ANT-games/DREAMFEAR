@@ -5812,7 +5812,6 @@
 					],
 					"actions": [],
 					"sid": 868029759274895,
-					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -5857,6 +5856,7 @@
 									"id": "set-instvar-value",
 									"objectClass": "enemySpawner",
 									"sid": 915405085925008,
+									"disabled": true,
 									"parameters": {
 										"instance-variable": "enemy",
 										"value": "int(random(-0.5, 7.5))"
@@ -5884,7 +5884,54 @@
 								}
 							],
 							"sid": 658133650821133,
-							"disabled": true
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "enemySpawner",
+											"sid": 551031018956801,
+											"parameters": {
+												"object": "theLeave",
+												"layer": "\"characters\"",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "add-to-instvar",
+											"objectClass": "combatEnemyArena",
+											"sid": 427412923087234,
+											"parameters": {
+												"instance-variable": "enemySpawned",
+												"value": "1"
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "combatEnemyArena",
+											"sid": 654723941593903,
+											"parameters": {
+												"child": "theLeave",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-z-elevation": true,
+												"transform-w": true,
+												"transform-h": true,
+												"transform-d": true,
+												"transform-a": true,
+												"transform-o": false,
+												"transform-visibility": false,
+												"destroy-with-parent": false
+											}
+										}
+									],
+									"sid": 112080200196580
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -5906,8 +5953,7 @@
 									}
 								}
 							],
-							"sid": 558965346972259,
-							"disabled": true
+							"sid": 558965346972259
 						}
 					]
 				},

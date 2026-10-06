@@ -3625,10 +3625,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 394583358412499,
+							"sid": 713681755874348,
 							"parameters": {
 								"variable": "randomGunPick",
-								"value": "int(random(1, 11))"
+								"value": "int(random(1, 12))"
 							}
 						}
 					],
@@ -3973,7 +3973,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 808181383311930,
+									"sid": 306233830104792,
 									"parameters": {
 										"variable": "randomGunPick",
 										"comparison": 0,
@@ -3985,9 +3985,46 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "gunGivingZone",
-									"sid": 334104795075136,
+									"sid": 502653834520380,
 									"parameters": {
 										"object": "laserGun",
+										"layer": "\"obj0\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"type": "script",
+									"language": "javascript",
+									"script": [
+										"console.log(\"GUN SPAWNED\")"
+									]
+								}
+							],
+							"sid": 371753768128629
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 637686221133661,
+									"parameters": {
+										"variable": "randomGunPick",
+										"comparison": 0,
+										"value": "11"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "gunGivingZone",
+									"sid": 689723582792849,
+									"parameters": {
+										"object": "pneumaticGun",
 										"layer": "\"obj0\"",
 										"image-point": "0",
 										"create-hierarchy": false,

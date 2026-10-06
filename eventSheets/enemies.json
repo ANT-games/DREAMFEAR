@@ -8693,6 +8693,766 @@
 						}
 					],
 					"sid": 558315225251437
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "leave enemy",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "leaveBullet",
+									"sid": 949956101000001,
+									"parameters": {
+										"object": "walls"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "leaveBullet",
+									"sid": 949956101000002,
+									"parameters": {
+										"object": "sprike"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "leaveBullet",
+									"sid": 949956101000003,
+									"parameters": {
+										"object": "shield"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 949956101000004,
+									"parameters": {
+										"seconds": "0.01",
+										"use-timescale": false
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "leaveBullet",
+									"sid": 949956101000005
+								}
+							],
+							"sid": 949956101000006,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "leaveBullet",
+									"sid": 949956101000007,
+									"parameters": {
+										"instance-variable": "lifetime",
+										"comparison": 4,
+										"value": "6"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "leaveBullet",
+									"sid": 949956101000008
+								}
+							],
+							"sid": 949956101000009
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "combatEnemyArena",
+									"sid": 949956101000010,
+									"parameters": {
+										"instance-variable": "isFight"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "combatEnemyArena",
+									"sid": 949956101000011,
+									"parameters": {
+										"child": "theLeave",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 949956101000012,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "theLeave",
+									"sid": 949956101000013,
+									"parameters": {
+										"instance-variable": "sawPlayer",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "theLeave",
+									"sid": 949956101000014,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								}
+							],
+							"sid": 949956101000015
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 949956101000016
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "theLeave",
+									"sid": 949956101000017,
+									"parameters": {
+										"instance-variable": "sawPlayer",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 949956101000018
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "theLeave",
+									"sid": 949956101000019,
+									"parameters": {
+										"instance-variable": "sawPlayer"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "theLeave",
+									"sid": 949956101000020,
+									"parameters": {
+										"animation": "\"death\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "theLeave",
+									"sid": 949956101000021,
+									"parameters": {
+										"animation": "\"hurt\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 949956101000022,
+									"parameters": {
+										"object": "theLeave"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "theLeave",
+									"sid": 949956101000023,
+									"parameters": {
+										"width": "abs(Self.Width) * sign(player1.X - Self.X)"
+									}
+								}
+							],
+							"sid": 949956101000024,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 949956101000025,
+											"parameters": {
+												"first-value": "distance(theLeave.X, theLeave.Y, player1.X, player1.Y)",
+												"comparison": 2,
+												"second-value": "(105 + (theLeave.UID % 4) * 10)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-vector-x",
+											"objectClass": "theLeave",
+											"sid": 949956101000026,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"vector-x": "cos(angle(Self.X, Self.Y, player1.X, player1.Y) + 180 + (Self.UID % 9) * 16 + random(-22, 22)) * Self.8Direction.MaxSpeed"
+											}
+										},
+										{
+											"id": "set-vector-y",
+											"objectClass": "theLeave",
+											"sid": 949956101000027,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"vector-y": "sin(angle(Self.X, Self.Y, player1.X, player1.Y) + 180 + (Self.UID % 9) * 16 + random(-22, 22)) * Self.8Direction.MaxSpeed"
+											}
+										}
+									],
+									"sid": 949956101000028
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 949956101000029
+										}
+									],
+									"actions": [
+										{
+											"id": "set-vector-x",
+											"objectClass": "theLeave",
+											"sid": 949956101000031,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"vector-x": "cos(angle(Self.X, Self.Y, player1.X + cos(Self.UID * 137.5 + random(-10, 10)) * (140 + (Self.UID % 5) * 18), player1.Y + sin(Self.UID * 137.5 + random(-10, 10)) * (140 + (Self.UID % 5) * 18))) * Self.8Direction.MaxSpeed * (0.55 + (Self.UID % 5) * 0.1)"
+											}
+										},
+										{
+											"id": "set-vector-y",
+											"objectClass": "theLeave",
+											"sid": 949956101000032,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"vector-y": "sin(angle(Self.X, Self.Y, player1.X + cos(Self.UID * 137.5 + random(-10, 10)) * (140 + (Self.UID % 5) * 18), player1.Y + sin(Self.UID * 137.5 + random(-10, 10)) * (140 + (Self.UID % 5) * 18))) * Self.8Direction.MaxSpeed * (0.55 + (Self.UID % 5) * 0.1)"
+											}
+										}
+									],
+									"sid": 949956101000033
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "theLeave",
+									"sid": 949956101000089,
+									"parameters": {
+										"instance-variable": "sawPlayer"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "theLeave",
+									"sid": 949956101000090,
+									"parameters": {
+										"animation": "\"death\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "theLeave",
+									"sid": 949956101000091,
+									"parameters": {
+										"object": "theLeave"
+									}
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 949956101000092,
+									"parameters": {
+										"object": "theLeave"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "theLeave",
+									"sid": 949956101000093,
+									"parameters": {
+										"angle": "random(360)",
+										"distance": "4"
+									}
+								}
+							],
+							"sid": 949956101000094
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "theLeave",
+									"sid": 949956101000038,
+									"parameters": {
+										"instance-variable": "sawPlayer"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "theLeave",
+									"sid": 949956101000039,
+									"parameters": {
+										"animation": "\"death\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 949956101000040,
+									"parameters": {
+										"interval-seconds": "4.2"
+									}
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 949956101000041,
+									"parameters": {
+										"object": "theLeave"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 949956101000042,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "theLeave",
+											"sid": 949956101000043,
+											"parameters": {
+												"instance-variable": "speed",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "theLeave",
+											"sid": 949956101000044,
+											"parameters": {
+												"instance-variable": "speed",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 949956101000045,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for",
+													"objectClass": "System",
+													"sid": 949956101000046,
+													"parameters": {
+														"name": "\"leaveRing\"",
+														"start-index": "1",
+														"end-index": "8"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "theLeave",
+													"sid": 949956101000047,
+													"parameters": {
+														"object": "leaveBullet",
+														"layer": "\"bullets\"",
+														"image-point": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "leaveBullet",
+													"sid": 949956101000048,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "loopindex(\"leaveRing\") * 45"
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "leaveBullet",
+													"sid": 949956101000049,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"speed": "(55 + (loopindex(\"leaveRing\") % 3) * 25)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "leaveBullet",
+													"sid": 949956101000051,
+													"parameters": {
+														"instance-variable": "pattern",
+														"value": "0"
+													}
+												}
+											],
+											"sid": 949956101000052
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 949956101000053
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "theLeave",
+											"sid": 949956101000054,
+											"parameters": {
+												"instance-variable": "speed",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "theLeave",
+											"sid": 949956101000055,
+											"parameters": {
+												"instance-variable": "speed",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 949956101000056,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for",
+													"objectClass": "System",
+													"sid": 949956101000057,
+													"parameters": {
+														"name": "\"leaveSpiral\"",
+														"start-index": "1",
+														"end-index": "6"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "theLeave",
+													"sid": 949956101000058,
+													"parameters": {
+														"object": "leaveBullet",
+														"layer": "\"bullets\"",
+														"image-point": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "leaveBullet",
+													"sid": 949956101000059,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(theLeave.X, theLeave.Y, player1.X, player1.Y) + (loopindex(\"leaveSpiral\") - 3.5) * 14"
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "leaveBullet",
+													"sid": 949956101000060,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"speed": "(70 + (loopindex(\"leaveSpiral\") % 3) * 20)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "leaveBullet",
+													"sid": 949956101000062,
+													"parameters": {
+														"instance-variable": "pattern",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 949956101000063
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 949956101000064
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "theLeave",
+											"sid": 949956101000065,
+											"parameters": {
+												"instance-variable": "speed",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 949956101000066,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for",
+													"objectClass": "System",
+													"sid": 949956101000067,
+													"parameters": {
+														"name": "\"leaveBurst\"",
+														"start-index": "1",
+														"end-index": "5"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "theLeave",
+													"sid": 949956101000068,
+													"parameters": {
+														"object": "leaveBullet",
+														"layer": "\"bullets\"",
+														"image-point": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "leaveBullet",
+													"sid": 949956101000069,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "loopindex(\"leaveBurst\") * 72 + random(-10, 10)"
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "leaveBullet",
+													"sid": 949956101000070,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"speed": "(40 + (loopindex(\"leaveBurst\") % 3) * 15)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "leaveBullet",
+													"sid": 949956101000072,
+													"parameters": {
+														"instance-variable": "pattern",
+														"value": "2"
+													}
+												}
+											],
+											"sid": 949956101000073
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "leaveBullet",
+									"sid": 949956101000074,
+									"parameters": {
+										"instance-variable": "pattern",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 949956101000075,
+									"parameters": {
+										"interval-seconds": "0.1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "leaveBullet",
+									"sid": 949956101000076,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "Self.Bullet.AngleOfMotion + 5"
+									}
+								}
+							],
+							"sid": 949956101000077
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "leaveBullet",
+									"sid": 949956101000078,
+									"parameters": {
+										"instance-variable": "pattern",
+										"comparison": 0,
+										"value": "2"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "leaveBullet",
+									"sid": 949956101000079,
+									"parameters": {
+										"instance-variable": "lifetime",
+										"comparison": 4,
+										"value": "0.55"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 949956101000080
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "leaveBullet",
+									"sid": 949956101000081,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "angle(Self.X, Self.Y, player1.X, player1.Y)"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "leaveBullet",
+									"sid": 949956101000082,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "115"
+									}
+								}
+							],
+							"sid": 949956101000083
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "theLeave",
+									"sid": 949956101000084,
+									"parameters": {
+										"animation": "\"death\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "theLeave",
+									"sid": 949956101000085,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-vector-x",
+									"objectClass": "theLeave",
+									"sid": 949956101000086,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"vector-x": "0"
+									}
+								},
+								{
+									"id": "set-vector-y",
+									"objectClass": "theLeave",
+									"sid": 949956101000087,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"vector-y": "0"
+									}
+								}
+							],
+							"sid": 949956101000088
+						}
+					],
+					"sid": 949955609281885
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "enemy stick",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [],
+					"sid": 733923908366630
 				}
 			],
 			"sid": 544152109747820

@@ -72,6 +72,7 @@
 		"starBullet",
 		"tearBulletEnemy",
 		"mediumEyeBullet",
-		"maskBossBullet"
+		"maskBossBullet",
+		"leaveBullet"
 	]
 }

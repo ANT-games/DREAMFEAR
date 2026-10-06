@@ -47197,6 +47197,247 @@
 						"z": 0,
 						"angle": 0
 					}
+				},
+				{
+					"type": "leaveBullet",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 575,
+					"sid": 148122516659246,
+					"tags": "",
+					"instanceVariables": {
+						"damage": 10,
+						"lifetime": 0,
+						"pattern": 0,
+						"primeAngle": 0,
+						"specialFrames": false,
+						"canBeHitBack": true
+					},
+					"behaviors": {
+						"Bullet2": {
+							"properties": {
+								"speed": 250,
+								"acceleration": -5,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 60,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"Orbit": {
+							"properties": {
+								"speed": 90,
+								"acceleration": 0,
+								"primary-axis": 100,
+								"secondary-axis": 100,
+								"offset-angle": 0,
+								"match-rotation": true,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"effects": {
+						"GlowHorizontal": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.5
+							}
+						},
+						"GlowVertical": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.5
+							}
+						}
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 558,
+						"y": -130,
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "theLeave",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "idle",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 579,
+					"sid": 573435340767971,
+					"tags": "",
+					"instanceVariables": {
+						"hp": 70,
+						"damageTouch": 10,
+						"sawPlayer": false,
+						"maxSpeed": 100,
+						"canBeCured": false,
+						"startHP": 100,
+						"speed": 0,
+						"coinsDrop": 4,
+						"damagable": true,
+						"killed": false,
+						"destroyAfterDeath": false,
+						"shadowChangeDeath": true,
+						"canDealDamage": false,
+						"kbPower": 0,
+						"kbAngle": 0,
+						"shadowType": 0,
+						"hasNeedle": false
+					},
+					"behaviors": {
+						"8Direction": {
+							"properties": {
+								"max-speed": 70,
+								"acceleration": 400,
+								"deceleration": 400,
+								"directions": "dir-8",
+								"set-angle": "no",
+								"allow-sliding": false,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "solids",
+								"range": 360,
+								"cone-of-view": 360,
+								"use-collision-cells": false
+							}
+						},
+						"Pathfinding": {
+							"properties": {
+								"cell-size": 8,
+								"cell-border": 8,
+								"obstacles": "custom",
+								"max-speed": 70,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"rotate-speed": 135,
+								"rotate-object": false,
+								"diagonals": false,
+								"direct-movement": "anywhere-along-path",
+								"enabled": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 115,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": false,
+								"step": true,
+								"enabled": false
+							}
+						},
+						"Fade": {
+							"properties": {
+								"fade-in-time": 1.5,
+								"wait-time": 0,
+								"fade-out-time": 0,
+								"destroy": false,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"knockback": {
+							"properties": {
+								"speed": 0,
+								"acceleration": -100,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"effects": {
+						"damage": {
+							"isEnabled": false,
+							"parameters": {
+								"threshold": 1
+							}
+						},
+						"SoftLight": {
+							"isEnabled": false,
+							"parameters": {}
+						},
+						"dead": {
+							"isEnabled": false,
+							"parameters": {
+								"hue": 0,
+								"saturation": 0.4,
+								"luminosity": 0.8
+							}
+						},
+						"Brightness": {
+							"isEnabled": false,
+							"parameters": {
+								"brightness": 0.65
+							}
+						},
+						"NoiseMask": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1,
+								"color": 0
+							}
+						}
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 490,
+						"y": -131,
+						"width": 96,
+						"height": 96,
+						"originX": 0.5,
+						"originY": 0.625,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
 				}
 			],
 			"sid": 541775901189717,
