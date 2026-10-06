@@ -3625,10 +3625,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 274002500218726,
+							"sid": 394583358412499,
 							"parameters": {
 								"variable": "randomGunPick",
-								"value": "int(random(1, 9))"
+								"value": "int(random(1, 11))"
 							}
 						}
 					],
@@ -3929,6 +3929,80 @@
 								}
 							],
 							"sid": 438673233318659
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 876108979912701,
+									"parameters": {
+										"variable": "randomGunPick",
+										"comparison": 0,
+										"value": "9"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "gunGivingZone",
+									"sid": 971425937627242,
+									"parameters": {
+										"object": "powerShotgun",
+										"layer": "\"obj0\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"type": "script",
+									"language": "javascript",
+									"script": [
+										"console.log(\"GUN SPAWNED\")"
+									]
+								}
+							],
+							"sid": 106290622590904
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 808181383311930,
+									"parameters": {
+										"variable": "randomGunPick",
+										"comparison": 0,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "gunGivingZone",
+									"sid": 334104795075136,
+									"parameters": {
+										"object": "laserGun",
+										"layer": "\"obj0\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"type": "script",
+									"language": "javascript",
+									"script": [
+										"console.log(\"GUN SPAWNED\")"
+									]
+								}
+							],
+							"sid": 999685045529488
 						}
 					]
 				}

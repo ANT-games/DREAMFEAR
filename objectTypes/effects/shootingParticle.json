@@ -18,6 +18,10 @@
 		{
 			"effectId": "hsladjust",
 			"name": "laser"
+		},
+		{
+			"effectId": "hsladjust",
+			"name": "laserRed"
 		}
 	],
 	"animations": {

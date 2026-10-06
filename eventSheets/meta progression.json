@@ -549,6 +549,56 @@
 				{
 					"eventType": "group",
 					"disabled": false,
+					"title": "loot magnet radius meta",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "contains-value",
+									"objectClass": "metaUpgradesUnlocked",
+									"sid": 572501545449866,
+									"parameters": {
+										"value": "\"lootMagnet_1\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 301268738355851
+						}
+					],
+					"sid": 983530533625331
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "medication upgrade meta",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "contains-value",
+									"objectClass": "metaUpgradesUnlocked",
+									"sid": 201982446703718,
+									"parameters": {
+										"value": "\"medicationUpgrade_1\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 388983201224018
+						}
+					],
+					"sid": 974986759825279
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
 					"title": "more money meta",
 					"description": "",
 					"isActiveOnStart": true,
@@ -670,10 +720,10 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "guns",
-											"sid": 901959407754362,
+											"sid": 104070414212437,
 											"parameters": {
 												"instance-variable": "fireRate",
-												"value": "(guns.fireRate * 0.9)"
+												"value": "(guns.fireRate * 0.8)"
 											}
 										}
 									],
@@ -731,6 +781,82 @@
 				{
 					"eventType": "group",
 					"disabled": false,
+					"title": "faster dash meta",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "contains-value",
+									"objectClass": "metaUpgradesUnlocked",
+									"sid": 980590686739489,
+									"parameters": {
+										"value": "\"fasterDash_1\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player1",
+									"sid": 217493850162847,
+									"parameters": {
+										"animation": "\"roll\""
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 608371492850163
+								}
+							],
+							"actions": [
+								{
+									"id": "set-max-speed",
+									"objectClass": "player1",
+									"sid": 199443419148405,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"max-speed": "(Self.8Direction.MaxSpeed * 1.3)"
+									}
+								},
+								{
+									"id": "set-vector-x",
+									"objectClass": "player1",
+									"sid": 990184736205819,
+									"disabled": true,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"vector-x": "(Self.8Direction.MaxSpeed * cos(Self.8Direction.MovingAngle))"
+									}
+								},
+								{
+									"id": "set-vector-y",
+									"objectClass": "player1",
+									"sid": 441029384756102,
+									"disabled": true,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"vector-y": "(Self.8Direction.MaxSpeed * sin(Self.8Direction.MovingAngle))"
+									}
+								},
+								{
+									"id": "set-animation-speed",
+									"objectClass": "player1",
+									"sid": 928815197519614,
+									"parameters": {
+										"speed": "(16 * 1.3)"
+									}
+								}
+							],
+							"sid": 398945473128693
+						}
+					],
+					"sid": 263230964717886
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
 					"title": "damage meta",
 					"description": "",
 					"isActiveOnStart": true,
@@ -741,29 +867,68 @@
 								{
 									"id": "on-created",
 									"objectClass": "bullets",
-									"sid": 206848061332827
+									"sid": 179829104965841
+								}
+							],
+							"actions": [],
+							"sid": 215635976810596,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "contains-value",
+											"objectClass": "metaUpgradesUnlocked",
+											"sid": 656374271502193,
+											"parameters": {
+												"value": "\"damage_2\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bullets",
+											"sid": 313021770202627,
+											"parameters": {
+												"instance-variable": "damage",
+												"value": "(bullets.damage * 1.2)"
+											}
+										}
+									],
+									"sid": 139326800035484
 								},
 								{
-									"id": "contains-value",
-									"objectClass": "metaUpgradesUnlocked",
-									"sid": 360755491106144,
-									"parameters": {
-										"value": "\"damage_1\""
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 132721752079795
+										},
+										{
+											"id": "contains-value",
+											"objectClass": "metaUpgradesUnlocked",
+											"sid": 455733312664758,
+											"parameters": {
+												"value": "\"damage_1\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bullets",
+											"sid": 612784769251354,
+											"parameters": {
+												"instance-variable": "damage",
+												"value": "(bullets.damage * 1.1)"
+											}
+										}
+									],
+									"sid": 321824940316964
 								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "bullets",
-									"sid": 711468666197876,
-									"parameters": {
-										"instance-variable": "damage",
-										"value": "(bullets.damage * 1.1)"
-									}
-								}
-							],
-							"sid": 566755667374243
+							]
 						}
 					],
 					"sid": 985687650640099

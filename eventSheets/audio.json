@@ -329,6 +329,38 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "guns",
+											"sid": 574516792491252,
+											"parameters": {
+												"instance-variable": "gunName",
+												"comparison": 0,
+												"value": "\"laserGun\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 717932655071469,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/laser gun"
+												},
+												"loop": "not-looping",
+												"volume": "-6+ (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										}
+									],
+									"sid": 250949986638079
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "guns",
 											"sid": 192492785513793,
 											"parameters": {
 												"instance-variable": "gunName",
@@ -450,6 +482,38 @@
 										}
 									],
 									"sid": 540872378760806
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "guns",
+											"sid": 119664331905290,
+											"parameters": {
+												"instance-variable": "gunName",
+												"comparison": 0,
+												"value": "\"pneumaticGun\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 429119567178999,
+											"parameters": {
+												"audio-file": {
+													"path": "shooting/pneumatic gun"
+												},
+												"loop": "not-looping",
+												"volume": "-10+ (sfx_volume - 100) + random(-2, 2)",
+												"stereo-pan": "0",
+												"tag-optional": "\"shot\""
+											}
+										}
+									],
+									"sid": 130350901412359
 								}
 							]
 						}

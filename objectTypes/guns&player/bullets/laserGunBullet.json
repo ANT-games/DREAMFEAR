@@ -1,7 +1,7 @@
 {
-	"name": "laserPistolBullet",
+	"name": "laserGunBullet",
 	"plugin-id": "Sprite",
-	"sid": 697327924876041,
+	"sid": 750057774089426,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
@@ -20,7 +20,7 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 2875169,
+						"imageSpriteId": 9881902,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
@@ -34,7 +34,7 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 2839097,
+						"imageSpriteId": 6326666,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
@@ -48,7 +48,7 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 5542825,
+						"imageSpriteId": 7428049,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
@@ -62,7 +62,7 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 1557197,
+						"imageSpriteId": 4613539,
 						"collisionPoly": {
 							"points": [
 								0.03333333333333333,
@@ -80,7 +80,7 @@
 						"tag": ""
 					}
 				],
-				"sid": 701070247735861,
+				"sid": 912437537922535,
 				"name": "Default",
 				"isLooping": true,
 				"isPingPong": false,

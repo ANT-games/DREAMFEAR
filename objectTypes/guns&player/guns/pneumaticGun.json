@@ -1,0 +1,119 @@
+{
+	"name": "pneumaticGun",
+	"plugin-id": "Sprite",
+	"sid": 764257267223393,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 19,
+						"height": 9,
+						"originX": 0.21052631578947367,
+						"originY": 0.4444444444444444,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 274244,
+						"collisionPoly": {
+							"points": [
+								0.23157894736842108,
+								1,
+								0.23157894736842108,
+								1,
+								0.5647656593792173,
+								1,
+								1,
+								1,
+								1,
+								1,
+								1,
+								1,
+								0.5647656593792173,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 0.9473684210526315,
+								"y": 0.2222222222222222
+							},
+							{
+								"name": "shotEffect",
+								"x": 0.9473684210526315,
+								"y": 0.2222222222222222
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 823824032269405,
+				"name": "hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 19,
+						"height": 9,
+						"originX": 0.21052631578947367,
+						"originY": 0.4444444444444444,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6993974,
+						"collisionPoly": {
+							"points": [
+								0.05263157894736842,
+								0.1111111111111111,
+								1,
+								0.1111111111111111,
+								1,
+								0.8888888888888888,
+								0.05263157894736842,
+								0.8888888888888888
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 0.9473684210526315,
+								"y": 0.2222222222222222
+							},
+							{
+								"name": "shotEffect",
+								"x": 0.9473684210526315,
+								"y": 0.2222222222222222
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 742883863276164,
+				"name": "no hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

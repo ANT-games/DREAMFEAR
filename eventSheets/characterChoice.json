@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "currentCharacter",
 			"type": "string",
-			"initialValue": "magdalina",
+			"initialValue": "elisabeth",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,

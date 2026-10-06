@@ -164,6 +164,117 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
+							"sid": 528728606113389,
+							"parameters": {
+								"key": 50
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 145203018648442,
+							"parameters": {
+								"key": 71
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 495228576612185,
+							"parameters": {
+								"object-to-create": "powerShotgun",
+								"layer": "\"guns\"",
+								"x": "player1.X + 40",
+								"y": "player1.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 644298529567312
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 490792706034700,
+							"parameters": {
+								"key": 51
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 245084641426593,
+							"parameters": {
+								"key": 71
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 922760333581688,
+							"parameters": {
+								"object-to-create": "laserGun",
+								"layer": "\"guns\"",
+								"x": "player1.X + 40",
+								"y": "player1.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 720695105315103
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 678131585857374,
+							"parameters": {
+								"key": 52
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 914662856026538,
+							"parameters": {
+								"key": 71
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 154132860320031,
+							"parameters": {
+								"object-to-create": "pneumaticGun",
+								"layer": "\"guns\"",
+								"x": "player1.X + 40",
+								"y": "player1.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 206814031720682
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
 							"sid": 342127002126423,
 							"parameters": {
 								"key": 49
@@ -668,6 +779,39 @@
 						}
 					],
 					"sid": 634004187476567
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 720248210681925,
+							"parameters": {
+								"key": 49
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 521539793837378,
+							"parameters": {
+								"key": 77
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 753480485495785,
+							"parameters": {
+								"variable": "moneyGeneral",
+								"value": "8000"
+							}
+						}
+					],
+					"sid": 204268337254558
 				}
 			],
 			"sid": 928640929592504

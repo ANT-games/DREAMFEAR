@@ -1136,6 +1136,42 @@
 										}
 									],
 									"sid": 396412437032150
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bullets",
+											"sid": 516601569409197,
+											"parameters": {
+												"instance-variable": "size",
+												"comparison": 0,
+												"value": "4"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "bulletHitParticle",
+											"sid": 462242152087044,
+											"parameters": {
+												"animation": "\"wallBig\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-effect-enabled",
+											"objectClass": "bulletHitParticle",
+											"sid": 603493380650725,
+											"parameters": {
+												"mode": "enable",
+												"effect": "\"laserRed\""
+											}
+										}
+									],
+									"sid": 486455138306795
 								}
 							],
 							"isOrBlock": true
@@ -1545,6 +1581,56 @@
 								}
 							],
 							"sid": 387789894377704
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "guns",
+									"sid": 234937824429634,
+									"parameters": {
+										"instance-variable": "typeFX",
+										"comparison": 0,
+										"value": "\"laserRed\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "shootingParticle",
+									"sid": 999733114800874,
+									"parameters": {
+										"mode": "enable",
+										"effect": "\"laserRed\""
+									}
+								}
+							],
+							"sid": 166558164323406
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "guns",
+									"sid": 653646820185841,
+									"parameters": {
+										"instance-variable": "typeFX",
+										"comparison": 0,
+										"value": "\"pneumaticGun\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "shootingParticle",
+									"sid": 855627991279786
+								}
+							],
+							"sid": 594426176010820
 						}
 					]
 				},

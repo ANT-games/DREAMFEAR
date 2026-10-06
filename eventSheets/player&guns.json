@@ -2129,6 +2129,146 @@
 											"conditions": [
 												{
 													"id": "is-boolean-instance-variable-set",
+													"objectClass": "laserGun",
+													"sid": 806127762923978,
+													"parameters": {
+														"instance-variable": "isUsed"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 833835880585356,
+													"parameters": {
+														"interval-seconds": "laserGun.fireRate"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "laserGun",
+													"sid": 556070499647897,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "laserGun",
+													"sid": 648765296705176,
+													"parameters": {
+														"object": "laserGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "shake",
+													"objectClass": "camera",
+													"sid": 789387525146168,
+													"behaviorType": "ScrollTo",
+													"parameters": {
+														"magnitude": "5 * (screenShake/100)",
+														"duration": "0.25",
+														"mode": "reducing-magnitude"
+													}
+												},
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "laserGun",
+													"sid": 831838306582795,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"value": "1"
+													}
+												},
+												{
+													"callFunction": "substractStress",
+													"sid": 840234905633256
+												}
+											],
+											"sid": 810423753796873
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "pneumaticGun",
+													"sid": 360709501477771,
+													"parameters": {
+														"instance-variable": "isUsed"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 645571779754357,
+													"parameters": {
+														"interval-seconds": "pneumaticGun.fireRate"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "pneumaticGun",
+													"sid": 929190547082811,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "pneumaticGun",
+													"sid": 122378519269608,
+													"parameters": {
+														"object": "pneumaticBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "shake",
+													"objectClass": "camera",
+													"sid": 755638630669522,
+													"behaviorType": "ScrollTo",
+													"parameters": {
+														"magnitude": "5 * (screenShake/100)",
+														"duration": "0.25",
+														"mode": "reducing-magnitude"
+													}
+												},
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "pneumaticGun",
+													"sid": 279605378579271,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"value": "1"
+													}
+												},
+												{
+													"callFunction": "substractStress",
+													"sid": 211556306995384
+												}
+											],
+											"sid": 808611590031041
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
 													"objectClass": "uzi",
 													"sid": 125190420681059,
 													"parameters": {
@@ -2651,6 +2791,328 @@
 												}
 											],
 											"sid": 455836013742505
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "powerShotgun",
+													"sid": 348892952116794,
+													"parameters": {
+														"instance-variable": "isUsed"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 312987303972500,
+													"parameters": {
+														"interval-seconds": "powerShotgun.fireRate"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "powerShotgun",
+													"sid": 158928368526880,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 637258236720668,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 392114355193519,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 116676930089139,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 365776417479119,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 826599440185553,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 601894429837654,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 837215522994030,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 744714331990903,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 222552311980631,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 235711072827254,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 491662154952373,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 486584489730929,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 723920843476563,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 660718966621824,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 267321538818443,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 271943419726509,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 208802439401914,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 651708160347504,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 576828253514747,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 221337683472079,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 311910712841571,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "powerShotgun",
+													"sid": 917653093437731,
+													"parameters": {
+														"object": "powerShotGunBullet",
+														"layer": "\"bullets\"",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "shake",
+													"objectClass": "camera",
+													"sid": 579568702285001,
+													"behaviorType": "ScrollTo",
+													"parameters": {
+														"magnitude": "10 * (screenShake/100)",
+														"duration": "0.3",
+														"mode": "reducing-magnitude"
+													}
+												},
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "powerShotgun",
+													"sid": 708289963649678,
+													"parameters": {
+														"instance-variable": "bulletsInTheGun",
+														"value": "1"
+													}
+												},
+												{
+													"callFunction": "substractStress",
+													"sid": 280709531960464
+												}
+											],
+											"sid": 613809513286823
 										},
 										{
 											"eventType": "block",
@@ -5605,6 +6067,28 @@
 						}
 					],
 					"sid": 361964551535516
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "powerShotGunBullet",
+							"sid": 243896918825978
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "powerShotGunBullet",
+							"sid": 641030381642091,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "Self.Bullet.Speed * random(0.75, 1.25)"
+							}
+						}
+					],
+					"sid": 860202393024679
 				}
 			],
 			"sid": 377291507601915

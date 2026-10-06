@@ -105,6 +105,9 @@
 		"riffle",
 		"granateThrower",
 		"sniperRiffle",
-		"autoShotgun"
+		"autoShotgun",
+		"powerShotgun",
+		"laserGun",
+		"pneumaticGun"
 	]
 }

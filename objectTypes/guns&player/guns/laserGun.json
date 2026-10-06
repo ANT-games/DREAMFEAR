@@ -1,0 +1,107 @@
+{
+	"name": "laserGun",
+	"plugin-id": "Sprite",
+	"sid": 653757793282658,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 15,
+						"height": 7,
+						"originX": 0.4,
+						"originY": 0.5714285714285714,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9693346,
+						"collisionPoly": {
+							"points": [
+								0.10625,
+								1,
+								0.10625,
+								1,
+								0.3040796102564103,
+								0.6160714285714286,
+								0.8137454512820512,
+								1,
+								1,
+								1,
+								0.6863294051282052,
+								1,
+								0.3040796102564103,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 1,
+								"y": 0.2857142857142857
+							},
+							{
+								"name": "shotEffect",
+								"x": 1,
+								"y": 0.2857142857142857
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 564186689599476,
+				"name": "hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 15,
+						"height": 7,
+						"originX": 0.4,
+						"originY": 0.5714285714285714,
+						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 182908,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "muzzle",
+								"x": 1,
+								"y": 0.2857142857142857
+							},
+							{
+								"name": "shotEffect",
+								"x": 1,
+								"y": 0.2857142857142857
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 620805225640945,
+				"name": "no hands",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

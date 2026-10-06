@@ -656,7 +656,10 @@
 							"riffle",
 							"granateThrower",
 							"sniperRiffle",
-							"autoShotgun"
+							"autoShotgun",
+							"powerShotgun",
+							"laserGun",
+							"pneumaticGun"
 						],
 						"subfolders": [],
 						"name": "guns"
@@ -672,7 +675,10 @@
 							"granateBullet",
 							"riffleSniperBullet",
 							"shrapnel",
-							"autoShotGunBullet"
+							"autoShotGunBullet",
+							"powerShotGunBullet",
+							"laserGunBullet",
+							"pneumaticBullet"
 						],
 						"subfolders": [],
 						"name": "bullets"
@@ -1068,6 +1074,22 @@
 							"name": "auto shotgun.webm",
 							"type": "audio/webm; codecs=opus",
 							"sid": 202996001164555,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "laser gun.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 661399575471375,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "pneumatic gun.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 465947409774066,
 							"file-info": {
 								"purpose": "none"
 							}
