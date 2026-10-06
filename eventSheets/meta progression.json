@@ -557,6 +557,11 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "on-created",
+									"objectClass": "gameCurrency",
+									"sid": 284719305618472
+								},
+								{
 									"id": "contains-value",
 									"objectClass": "metaUpgradesUnlocked",
 									"sid": 572501545449866,
@@ -565,7 +570,17 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "gameCurrency",
+									"sid": 404831786170367,
+									"parameters": {
+										"instance-variable": "radius",
+										"value": "(Self.radius * 1.3)"
+									}
+								}
+							],
 							"sid": 301268738355851
 						}
 					],
@@ -582,6 +597,11 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "on-created",
+									"objectClass": "medkit",
+									"sid": 847291056384720
+								},
+								{
 									"id": "contains-value",
 									"objectClass": "metaUpgradesUnlocked",
 									"sid": 201982446703718,
@@ -590,7 +610,17 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "medkit",
+									"sid": 392847105638492,
+									"parameters": {
+										"instance-variable": "bonusHP",
+										"value": "10"
+									}
+								}
+							],
 							"sid": 388983201224018
 						}
 					],

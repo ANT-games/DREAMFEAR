@@ -2635,7 +2635,7 @@
 					"sid": 965538914796058,
 					"tags": "",
 					"instanceVariables": {
-						"locked": false,
+						"locked": true,
 						"price": 800,
 						"upgrade": "lootMagnet_1",
 						"stage": 0,
