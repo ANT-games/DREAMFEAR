@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "pathLenght",
 			"type": "number",
-			"initialValue": "4",
+			"initialValue": "3",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -5855,6 +5855,15 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "enemySpawner",
+									"sid": 810105302828780,
+									"parameters": {
+										"instance-variable": "enemy",
+										"value": "int(random(-0.5, 3.5))"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "enemySpawner",
 									"sid": 915405085925008,
 									"disabled": true,
 									"parameters": {
@@ -5887,7 +5896,18 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [],
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemySpawner",
+											"sid": 534237414697661,
+											"parameters": {
+												"instance-variable": "enemy",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
 									"actions": [
 										{
 											"id": "spawn-another-object",
@@ -5930,6 +5950,177 @@
 										}
 									],
 									"sid": 112080200196580
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemySpawner",
+											"sid": 478434964489690,
+											"parameters": {
+												"instance-variable": "enemy",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "enemySpawner",
+											"sid": 398706525612697,
+											"parameters": {
+												"object": "stickEnemy",
+												"layer": "\"characters\"",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "add-to-instvar",
+											"objectClass": "combatEnemyArena",
+											"sid": 695357934308235,
+											"parameters": {
+												"instance-variable": "enemySpawned",
+												"value": "1"
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "combatEnemyArena",
+											"sid": 730394030659854,
+											"parameters": {
+												"child": "stickEnemy",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-z-elevation": true,
+												"transform-w": true,
+												"transform-h": true,
+												"transform-d": true,
+												"transform-a": true,
+												"transform-o": false,
+												"transform-visibility": false,
+												"destroy-with-parent": false
+											}
+										}
+									],
+									"sid": 772606146299782
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemySpawner",
+											"sid": 831875082157999,
+											"parameters": {
+												"instance-variable": "enemy",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "enemySpawner",
+											"sid": 760016664336169,
+											"parameters": {
+												"object": "tree",
+												"layer": "\"characters\"",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "add-to-instvar",
+											"objectClass": "combatEnemyArena",
+											"sid": 461570500394814,
+											"parameters": {
+												"instance-variable": "enemySpawned",
+												"value": "1"
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "combatEnemyArena",
+											"sid": 401653426439043,
+											"parameters": {
+												"child": "tree",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-z-elevation": true,
+												"transform-w": true,
+												"transform-h": true,
+												"transform-d": true,
+												"transform-a": true,
+												"transform-o": false,
+												"transform-visibility": false,
+												"destroy-with-parent": false
+											}
+										}
+									],
+									"sid": 322617160081055
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemySpawner",
+											"sid": 140059071469511,
+											"parameters": {
+												"instance-variable": "enemy",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "enemySpawner",
+											"sid": 758705874062534,
+											"parameters": {
+												"object": "weirdPlant",
+												"layer": "\"characters\"",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "add-to-instvar",
+											"objectClass": "combatEnemyArena",
+											"sid": 208632480163659,
+											"parameters": {
+												"instance-variable": "enemySpawned",
+												"value": "1"
+											}
+										},
+										{
+											"id": "add-child",
+											"objectClass": "combatEnemyArena",
+											"sid": 681822021147563,
+											"parameters": {
+												"child": "weirdPlant",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-z-elevation": true,
+												"transform-w": true,
+												"transform-h": true,
+												"transform-d": true,
+												"transform-a": true,
+												"transform-o": false,
+												"transform-visibility": false,
+												"destroy-with-parent": false
+											}
+										}
+									],
+									"sid": 621013237260308
 								}
 							]
 						},

@@ -53,6 +53,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -83,6 +90,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -113,6 +127,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -143,6 +164,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -173,6 +201,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -203,6 +238,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -233,6 +275,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -263,6 +312,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					}
@@ -304,6 +360,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -334,6 +397,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -364,6 +434,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -394,6 +471,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -424,6 +508,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -454,6 +545,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -484,6 +582,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -514,6 +619,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -544,6 +656,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					}
@@ -554,7 +673,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 10
+				"speed": 20
 			},
 			{
 				"frames": [
@@ -585,6 +704,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -615,6 +741,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -645,6 +778,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -675,6 +815,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -705,6 +852,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -735,6 +889,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -765,6 +926,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -795,6 +963,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -825,6 +1000,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -855,6 +1037,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					}
@@ -896,6 +1085,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -926,6 +1122,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -956,6 +1159,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.625
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					}

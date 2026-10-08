@@ -46,6 +46,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -76,6 +83,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -106,6 +120,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -136,6 +157,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -166,6 +194,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -196,6 +231,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -226,6 +268,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					}
@@ -267,6 +316,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -297,6 +353,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					}
@@ -338,6 +401,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -370,6 +440,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -402,6 +479,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -430,6 +514,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -458,6 +549,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -486,6 +584,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -512,6 +617,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -536,6 +648,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "shadow",
+								"x": 0.5,
+								"y": 0.6458333333333334
+							}
+						],
 						"duration": 1,
 						"tag": ""
 					}

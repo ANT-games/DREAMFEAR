@@ -1981,6 +1981,52 @@
 								}
 							],
 							"sid": 622524807904600
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 271510107641460,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"level4\""
+									}
+								},
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 899330165435250,
+									"parameters": {
+										"tag": "\"ambient\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 697085758605875
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 489406056454830,
+									"parameters": {
+										"audio-file": {
+											"path": "4zone track"
+										},
+										"loop": "not-looping",
+										"volume": "-115 + music_volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"ambient\""
+									}
+								}
+							],
+							"sid": 826806474790495
 						}
 					]
 				},
@@ -2107,6 +2153,52 @@
 								}
 							],
 							"sid": 273558074066800
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 845615247194919,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"level4\""
+									}
+								},
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 414872371146943,
+									"parameters": {
+										"tag": "\"boss\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 196649621047677
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 532013571100664,
+									"parameters": {
+										"audio-file": {
+											"path": "boss garden"
+										},
+										"loop": "not-looping",
+										"volume": "-120 + music_volume",
+										"stereo-pan": "0",
+										"tag-optional": "\"boss\""
+									}
+								}
+							],
+							"sid": 852591164042556
 						}
 					]
 				},

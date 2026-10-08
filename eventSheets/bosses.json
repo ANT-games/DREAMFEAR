@@ -6320,11 +6320,37 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 220029983385209,
+									"sid": 411641899974676,
 									"parameters": {
 										"first-value": "LayoutName",
 										"comparison": 0,
 										"second-value": "\"level3\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 411934617622706,
+									"parameters": {
+										"layout": "level4"
+									}
+								}
+							],
+							"sid": 986488381423994
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 227590338019427,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"level4\""
 									}
 								}
 							],

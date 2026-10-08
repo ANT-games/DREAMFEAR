@@ -117,6 +117,49 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 642412290293763,
+							"parameters": {
+								"variable": "currentCharacter",
+								"comparison": 0,
+								"value": "\"ria\""
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 425558819950594
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "player1",
+							"sid": 344568377502798,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "player1",
+							"sid": 177391272620894,
+							"parameters": {
+								"object": "character3",
+								"layer": "\"characters\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 320454156547847
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "is-animation-playing",
 							"objectClass": "playableCharacters",
 							"sid": 716313028739565,

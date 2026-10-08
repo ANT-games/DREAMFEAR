@@ -73,6 +73,8 @@
 		"tearBulletEnemy",
 		"mediumEyeBullet",
 		"maskBossBullet",
-		"leaveBullet"
+		"leaveBullet",
+		"treeBullet",
+		"weirdPlantBullet"
 	]
 }

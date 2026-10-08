@@ -1965,6 +1965,15 @@
 									"isInverted": true
 								},
 								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 754960568439078,
+									"parameters": {
+										"variable": "riaAbilityActive"
+									},
+									"isInverted": true
+								},
+								{
 									"id": "compare-two-values",
 									"objectClass": "System",
 									"sid": 313921006328089,
@@ -4155,6 +4164,339 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "riaAbilityActive",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 591310880346030
+		},
+		{
+			"eventType": "variable",
+			"name": "riaHpLock",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 113314699881887
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "undamagable (ria)",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 663818101000003,
+							"parameters": {
+								"variable": "currentCharacter",
+								"comparison": 0,
+								"value": "\"ria\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 663818101000004,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 663818101000005,
+									"parameters": {
+										"mouse-button": "right",
+										"click-type": "clicked"
+									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 663818101000006,
+									"parameters": {
+										"gamepad": "0",
+										"button": "right-shoulder-button"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 663818101000007,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 663818101000008,
+											"parameters": {
+												"first-value": "timescale",
+												"comparison": 1,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "player1",
+											"sid": 663818101000009,
+											"parameters": {
+												"animation": "\"roll\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "player1",
+											"sid": 663818101000010,
+											"parameters": {
+												"animation": "\"death\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 663818101000011,
+											"parameters": {
+												"variable": "riaAbilityActive"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 663818101000012,
+											"parameters": {
+												"variable": "riaAbilityActive",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 663818101000013,
+											"parameters": {
+												"variable": "riaHpLock",
+												"value": "hp"
+											}
+										},
+										{
+											"id": "flash",
+											"objectClass": "player1",
+											"sid": 663818101000014,
+											"behaviorType": "Flash",
+											"parameters": {
+												"on-time": "0.1",
+												"off-time": "0.1",
+												"duration": "2"
+											}
+										},
+										{
+											"id": "flash",
+											"objectClass": "playableCharacters",
+											"sid": 663818101000015,
+											"behaviorType": "Flash",
+											"parameters": {
+												"on-time": "0.1",
+												"off-time": "0.1",
+												"duration": "2"
+											}
+										}
+									],
+									"sid": 663818101000016,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "guns",
+													"sid": 663818101000017,
+													"parameters": {
+														"instance-variable": "isUsed"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "guns",
+													"sid": 663818101000018,
+													"parameters": {
+														"instance-variable": "isUsed",
+														"value": "false"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 663818101000019,
+													"parameters": {
+														"seconds": "2",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "guns",
+													"sid": 663818101000020,
+													"parameters": {
+														"instance-variable": "isUsed",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 663818101000021,
+													"parameters": {
+														"variable": "riaAbilityActive",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 663818101000022
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 663818101000023
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 663818101000024,
+													"parameters": {
+														"seconds": "2",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 663818101000025,
+													"parameters": {
+														"variable": "riaAbilityActive",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 663818101000026
+										}
+									]
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 663818101000027,
+									"parameters": {
+										"variable": "riaAbilityActive"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 663818101000028,
+									"parameters": {
+										"variable": "hp",
+										"comparison": 2,
+										"value": "riaHpLock"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 663818101000029,
+									"parameters": {
+										"variable": "hp",
+										"value": "riaHpLock"
+									}
+								}
+							],
+							"sid": 663818101000030
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 949647329735298,
+							"parameters": {
+								"variable": "riaAbilityActive"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layout-effect-enabled",
+							"objectClass": "System",
+							"sid": 396294420846249,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"riaUndamagable\""
+							}
+						}
+					],
+					"sid": 398449083140909
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 267518749826000,
+							"parameters": {
+								"variable": "riaAbilityActive"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layout-effect-enabled",
+							"objectClass": "System",
+							"sid": 971963986803539,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"riaUndamagable\""
+							}
+						}
+					],
+					"sid": 401557025120332
+				}
+			],
+			"sid": 663817750110125
+		},
+		{
+			"eventType": "variable",
 			"name": "hp",
 			"type": "number",
 			"initialValue": "50",
@@ -4508,6 +4850,15 @@
 							"parameters": {
 								"instance-variable": "canDealDamage"
 							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 492889519362033,
+							"parameters": {
+								"variable": "riaAbilityActive"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
@@ -4630,6 +4981,15 @@
 							"sid": 458812431089329,
 							"behaviorType": "Flash",
 							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 849531813651233,
+							"parameters": {
+								"variable": "riaAbilityActive"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
@@ -4750,6 +5110,15 @@
 							"objectClass": "player1",
 							"sid": 273781537422358,
 							"behaviorType": "Flash",
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 336115958452431,
+							"parameters": {
+								"variable": "riaAbilityActive"
+							},
 							"isInverted": true
 						}
 					],
@@ -4989,6 +5358,15 @@
 							"sid": 548388927908380,
 							"behaviorType": "Flash",
 							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 143256057837340,
+							"parameters": {
+								"variable": "riaAbilityActive"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
@@ -5135,6 +5513,15 @@
 							"sid": 307287260396886,
 							"disabled": true,
 							"behaviorType": "Flash",
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 412228054716059,
+							"parameters": {
+								"variable": "riaAbilityActive"
+							},
 							"isInverted": true
 						}
 					],
@@ -5361,6 +5748,15 @@
 							"sid": 108840570068706,
 							"parameters": {
 								"animation": "\"death\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 885060920980212,
+							"parameters": {
+								"variable": "riaAbilityActive"
 							},
 							"isInverted": true
 						}

@@ -14,31 +14,13 @@
 					{
 						"width": 15,
 						"height": 7,
-						"originX": 0.4,
-						"originY": 0.5714285714285714,
+						"originX": 0.3333333333333333,
+						"originY": 0.2857142857142857,
 						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
 						"imageSpriteId": 9693346,
-						"collisionPoly": {
-							"points": [
-								0.10625,
-								1,
-								0.10625,
-								1,
-								0.3040796102564103,
-								0.6160714285714286,
-								0.8137454512820512,
-								1,
-								1,
-								1,
-								0.6863294051282052,
-								1,
-								0.3040796102564103,
-								1
-							]
-						},
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
@@ -69,8 +51,8 @@
 					{
 						"width": 15,
 						"height": 7,
-						"originX": 0.4,
-						"originY": 0.5714285714285714,
+						"originX": 0.3333333333333333,
+						"originY": 0.2857142857142857,
 						"originalSource": "C:\\Users\\Administrator\\Desktop\\Roboid Graphics\\Guns\\RoboCatGun\\RGunA1.png",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,

@@ -8815,6 +8815,7 @@
 									"id": "set-collisions-enabled",
 									"objectClass": "theLeave",
 									"sid": 949956101000014,
+									"disabled": true,
 									"parameters": {
 										"collisions": "enabled"
 									}
@@ -8903,8 +8904,8 @@
 											"sid": 949956101000025,
 											"parameters": {
 												"first-value": "distance(theLeave.X, theLeave.Y, player1.X, player1.Y)",
-												"comparison": 2,
-												"second-value": "(105 + (theLeave.UID % 4) * 10)"
+												"comparison": 4,
+												"second-value": "170"
 											}
 										}
 									],
@@ -8915,7 +8916,7 @@
 											"sid": 949956101000026,
 											"behaviorType": "8Direction",
 											"parameters": {
-												"vector-x": "cos(angle(Self.X, Self.Y, player1.X, player1.Y) + 180 + (Self.UID % 9) * 16 + random(-22, 22)) * Self.8Direction.MaxSpeed"
+												"vector-x": "cos(angle(Self.X, Self.Y, player1.X, player1.Y)) * Self.8Direction.MaxSpeed"
 											}
 										},
 										{
@@ -8924,7 +8925,7 @@
 											"sid": 949956101000027,
 											"behaviorType": "8Direction",
 											"parameters": {
-												"vector-y": "sin(angle(Self.X, Self.Y, player1.X, player1.Y) + 180 + (Self.UID % 9) * 16 + random(-22, 22)) * Self.8Direction.MaxSpeed"
+												"vector-y": "sin(angle(Self.X, Self.Y, player1.X, player1.Y)) * Self.8Direction.MaxSpeed"
 											}
 										}
 									],
@@ -8946,7 +8947,7 @@
 											"sid": 949956101000031,
 											"behaviorType": "8Direction",
 											"parameters": {
-												"vector-x": "cos(angle(Self.X, Self.Y, player1.X + cos(Self.UID * 137.5 + random(-10, 10)) * (140 + (Self.UID % 5) * 18), player1.Y + sin(Self.UID * 137.5 + random(-10, 10)) * (140 + (Self.UID % 5) * 18))) * Self.8Direction.MaxSpeed * (0.55 + (Self.UID % 5) * 0.1)"
+												"vector-x": "cos(angle(Self.X, Self.Y, player1.X, player1.Y) + 135 + 45 * sign(120 - distance(Self.X, Self.Y, player1.X, player1.Y))) * Self.8Direction.MaxSpeed * (0.775 + 0.225 * sign(120 - distance(Self.X, Self.Y, player1.X, player1.Y)))"
 											}
 										},
 										{
@@ -8955,63 +8956,13 @@
 											"sid": 949956101000032,
 											"behaviorType": "8Direction",
 											"parameters": {
-												"vector-y": "sin(angle(Self.X, Self.Y, player1.X + cos(Self.UID * 137.5 + random(-10, 10)) * (140 + (Self.UID % 5) * 18), player1.Y + sin(Self.UID * 137.5 + random(-10, 10)) * (140 + (Self.UID % 5) * 18))) * Self.8Direction.MaxSpeed * (0.55 + (Self.UID % 5) * 0.1)"
+												"vector-y": "sin(angle(Self.X, Self.Y, player1.X, player1.Y) + 135 + 45 * sign(120 - distance(Self.X, Self.Y, player1.X, player1.Y))) * Self.8Direction.MaxSpeed * (0.775 + 0.225 * sign(120 - distance(Self.X, Self.Y, player1.X, player1.Y)))"
 											}
 										}
 									],
 									"sid": 949956101000033
 								}
 							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "theLeave",
-									"sid": 949956101000089,
-									"parameters": {
-										"instance-variable": "sawPlayer"
-									}
-								},
-								{
-									"id": "is-animation-playing",
-									"objectClass": "theLeave",
-									"sid": 949956101000090,
-									"parameters": {
-										"animation": "\"death\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "theLeave",
-									"sid": 949956101000091,
-									"parameters": {
-										"object": "theLeave"
-									}
-								},
-								{
-									"id": "for-each",
-									"objectClass": "System",
-									"sid": 949956101000092,
-									"parameters": {
-										"object": "theLeave"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "move-at-angle",
-									"objectClass": "theLeave",
-									"sid": 949956101000093,
-									"parameters": {
-										"angle": "random(360)",
-										"distance": "4"
-									}
-								}
-							],
-							"sid": 949956101000094
 						},
 						{
 							"eventType": "block",
@@ -9451,8 +9402,1716 @@
 					"title": "enemy stick",
 					"description": "",
 					"isActiveOnStart": true,
-					"children": [],
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "combatEnemyArena",
+									"sid": 733924000000001,
+									"parameters": {
+										"instance-variable": "isFight"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "combatEnemyArena",
+									"sid": 733924000000002,
+									"parameters": {
+										"child": "stickEnemy",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 733924000000003,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000004,
+									"parameters": {
+										"instance-variable": "sawPlayer",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 733924000000005
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 733924000000006
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000007,
+									"parameters": {
+										"instance-variable": "sawPlayer",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 733924000000008
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000009,
+									"parameters": {
+										"instance-variable": "sawPlayer"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000010,
+									"parameters": {
+										"animation": "\"death\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000039,
+									"parameters": {
+										"animation": "\"attack\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 733924000000011,
+									"parameters": {
+										"object": "stickEnemy"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000012,
+									"parameters": {
+										"width": "abs(Self.Width) * sign(player1.X - Self.X)"
+									}
+								}
+							],
+							"sid": 733924000000013
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000014,
+									"parameters": {
+										"instance-variable": "sawPlayer"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000015,
+									"parameters": {
+										"animation": "\"idle\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000016,
+									"parameters": {
+										"animation": "\"hurt\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000017,
+									"parameters": {
+										"animation": "\"death\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 733924000000018,
+									"parameters": {
+										"interval-seconds": "random(1.4, 2.2)"
+									}
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 733924000000019,
+									"parameters": {
+										"object": "stickEnemy"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000020,
+									"parameters": {
+										"instance-variable": "dirAttack",
+										"value": "angle(Self.X, Self.Y, player1.X, player1.Y)"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000021,
+									"parameters": {
+										"animation": "\"attack\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000022,
+									"parameters": {
+										"instance-variable": "canDealDamage",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 733924000000023
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000024,
+									"parameters": {
+										"animation": "\"attack\""
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000037,
+									"parameters": {
+										"comparison": 5,
+										"number": "2"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000038,
+									"parameters": {
+										"comparison": 3,
+										"number": "8"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 733924000000040,
+									"parameters": {
+										"first-value": "timescale",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000025,
+									"parameters": {
+										"angle": "Self.dirAttack",
+										"distance": "3 * timescale"
+									}
+								}
+							],
+							"sid": 733924000000026,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 733924000000041
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 733924000000042
+										}
+									],
+									"actions": [],
+									"sid": 733924000000044
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000027,
+									"parameters": {
+										"animation": "\"attack\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000028,
+									"parameters": {
+										"animation": "\"idle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000029,
+									"parameters": {
+										"instance-variable": "canDealDamage",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-vector-x",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000030,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"vector-x": "0"
+									}
+								},
+								{
+									"id": "set-vector-y",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000031,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"vector-y": "0"
+									}
+								}
+							],
+							"sid": 733924000000032
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000033,
+									"parameters": {
+										"animation": "\"death\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000034,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "stickEnemy",
+									"sid": 733924000000035,
+									"parameters": {
+										"instance-variable": "canDealDamage",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 733924000000036
+						}
+					],
 					"sid": 733923908366630
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "enemy tree",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "treeBullet",
+									"sid": 214696101000001,
+									"parameters": {
+										"object": "walls"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "treeBullet",
+									"sid": 214696101000002,
+									"parameters": {
+										"object": "sprike"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "treeBullet",
+									"sid": 214696101000003,
+									"parameters": {
+										"object": "shield"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 214696101000004,
+									"parameters": {
+										"seconds": "0.01",
+										"use-timescale": false
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "treeBullet",
+									"sid": 214696101000005
+								}
+							],
+							"sid": 214696101000006,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "combatEnemyArena",
+									"sid": 214696101000007,
+									"parameters": {
+										"instance-variable": "isFight"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "combatEnemyArena",
+									"sid": 214696101000008,
+									"parameters": {
+										"child": "tree",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 214696101000009,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "tree",
+									"sid": 214696101000010,
+									"parameters": {
+										"instance-variable": "sawPlayer",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "tree",
+									"sid": 214696101000011,
+									"disabled": true,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "tree",
+									"sid": 214696101000012,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-vector-x",
+									"objectClass": "tree",
+									"sid": 214696101000013,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"vector-x": "0"
+									}
+								},
+								{
+									"id": "set-vector-y",
+									"objectClass": "tree",
+									"sid": 214696101000014,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"vector-y": "0"
+									}
+								}
+							],
+							"sid": 214696101000015
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 214696101000016
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "tree",
+									"sid": 214696101000017,
+									"parameters": {
+										"instance-variable": "sawPlayer",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 214696101000018
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "tree",
+									"sid": 214696101000019,
+									"parameters": {
+										"instance-variable": "sawPlayer"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "tree",
+									"sid": 214696101000020,
+									"parameters": {
+										"animation": "\"death\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 214696101000021,
+									"parameters": {
+										"object": "tree"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "tree",
+									"sid": 214696101000022,
+									"parameters": {
+										"width": "abs(Self.Width) * sign(player1.X - Self.X)"
+									}
+								}
+							],
+							"sid": 214696101000023
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "tree",
+									"sid": 214696101000024,
+									"parameters": {
+										"instance-variable": "sawPlayer"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "tree",
+									"sid": 214696101000025,
+									"parameters": {
+										"animation": "\"death\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "tree",
+									"sid": 214696101000026,
+									"parameters": {
+										"animation": "\"hurt\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 214696101000027,
+									"parameters": {
+										"interval-seconds": "2.4"
+									}
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 214696101000028,
+									"parameters": {
+										"object": "tree"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 214696101000029,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "tree",
+											"sid": 214696101000030,
+											"parameters": {
+												"instance-variable": "speed",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 214696101000039,
+											"parameters": {
+												"seconds": "0.8",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "tree",
+											"sid": 214696101000031,
+											"parameters": {
+												"instance-variable": "speed",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 214696101000032,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "tree",
+													"sid": 214696101000071,
+													"parameters": {
+														"animation": "\"death\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "for",
+													"objectClass": "System",
+													"sid": 214696101000049,
+													"parameters": {
+														"name": "\"treeWave\"",
+														"start-index": "1",
+														"end-index": "7"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "tree",
+													"sid": 214696101000034,
+													"parameters": {
+														"object": "treeBullet",
+														"layer": "\"bullets\"",
+														"image-point": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "treeBullet",
+													"sid": 214696101000035,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(tree.X, tree.Y, player1.X, player1.Y) + (loopindex(\"treeWave\") - 4) * 15"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "treeBullet",
+													"sid": 214696101000036,
+													"parameters": {
+														"instance-variable": "pattern",
+														"value": "0"
+													}
+												}
+											],
+											"sid": 214696101000037
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 214696101000038
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 214696101000070,
+											"parameters": {
+												"seconds": "0.8",
+												"use-timescale": true
+											}
+										}
+									],
+									"sid": 214696101000040,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "tree",
+													"sid": 214696101000072,
+													"parameters": {
+														"animation": "\"death\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "tree",
+													"sid": 214696101000042,
+													"parameters": {
+														"object": "treeBullet",
+														"layer": "\"bullets\"",
+														"image-point": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "treeBullet",
+													"sid": 214696101000043,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(tree.X, tree.Y, player1.X, player1.Y)"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 248488965779409,
+													"parameters": {
+														"seconds": "0.12",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "tree",
+													"sid": 214696101000050,
+													"parameters": {
+														"object": "treeBullet",
+														"layer": "\"bullets\"",
+														"image-point": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "treeBullet",
+													"sid": 214696101000051,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(tree.X, tree.Y, player1.X, player1.Y)"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 214696101000052,
+													"parameters": {
+														"seconds": "0.12",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "tree",
+													"sid": 214696101000053,
+													"parameters": {
+														"object": "treeBullet",
+														"layer": "\"bullets\"",
+														"image-point": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "treeBullet",
+													"sid": 214696101000054,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(tree.X, tree.Y, player1.X, player1.Y)"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 214696101000055,
+													"parameters": {
+														"seconds": "0.12",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "tree",
+													"sid": 214696101000056,
+													"parameters": {
+														"object": "treeBullet",
+														"layer": "\"bullets\"",
+														"image-point": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "treeBullet",
+													"sid": 214696101000057,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(tree.X, tree.Y, player1.X, player1.Y)"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 214696101000058,
+													"parameters": {
+														"seconds": "0.12",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "tree",
+													"sid": 214696101000059,
+													"parameters": {
+														"object": "treeBullet",
+														"layer": "\"bullets\"",
+														"image-point": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "treeBullet",
+													"sid": 214696101000060,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(tree.X, tree.Y, player1.X, player1.Y)"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 214696101000061,
+													"parameters": {
+														"seconds": "0.12",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "tree",
+													"sid": 214696101000062,
+													"parameters": {
+														"object": "treeBullet",
+														"layer": "\"bullets\"",
+														"image-point": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "treeBullet",
+													"sid": 214696101000063,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(tree.X, tree.Y, player1.X, player1.Y)"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 214696101000064,
+													"parameters": {
+														"seconds": "0.12",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "tree",
+													"sid": 214696101000065,
+													"parameters": {
+														"object": "treeBullet",
+														"layer": "\"bullets\"",
+														"image-point": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "treeBullet",
+													"sid": 214696101000066,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(tree.X, tree.Y, player1.X, player1.Y)"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 214696101000067,
+													"parameters": {
+														"seconds": "0.12",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "tree",
+													"sid": 214696101000068,
+													"parameters": {
+														"object": "treeBullet",
+														"layer": "\"bullets\"",
+														"image-point": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "treeBullet",
+													"sid": 214696101000069,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(tree.X, tree.Y, player1.X, player1.Y)"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "tree",
+													"sid": 368129039339477,
+													"parameters": {
+														"instance-variable": "speed",
+														"value": "0"
+													}
+												}
+											],
+											"sid": 214696101000045
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "tree",
+									"sid": 214696101000046,
+									"parameters": {
+										"animation": "\"death\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "tree",
+									"sid": 214696101000047,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 214696101000048,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-created",
+											"objectClass": "treeBullet",
+											"sid": 214696101000073
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 214696101000074,
+											"parameters": {
+												"first-value": "distance(treeBullet.X, treeBullet.Y, tree.X, tree.Y)",
+												"comparison": 2,
+												"second-value": "24"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "treeBullet",
+											"sid": 214696101000075
+										}
+									],
+									"sid": 214696101000076
+								}
+							]
+						}
+					],
+					"sid": 214695407465972
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "weird plant enemy",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "weirdPlantBullet",
+									"sid": 811712101000001,
+									"parameters": {
+										"object": "walls"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "weirdPlantBullet",
+									"sid": 811712101000002,
+									"parameters": {
+										"object": "sprike"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "weirdPlantBullet",
+									"sid": 811712101000003,
+									"parameters": {
+										"object": "shield"
+									}
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "weirdPlantBullet",
+									"sid": 750387171939361,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"comparison": 3,
+										"speed": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 811712101000004,
+									"parameters": {
+										"seconds": "0.01",
+										"use-timescale": false
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "weirdPlantBullet",
+									"sid": 811712101000005
+								}
+							],
+							"sid": 811712101000006,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "weirdPlantBullet",
+									"sid": 811712101000007,
+									"parameters": {
+										"instance-variable": "lifetime",
+										"comparison": 4,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "weirdPlantBullet",
+									"sid": 811712101000008
+								}
+							],
+							"sid": 811712101000009
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "weirdPlantBullet",
+									"sid": 811712101000010,
+									"parameters": {
+										"instance-variable": "pattern",
+										"comparison": 4,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "weirdPlantBullet",
+									"sid": 811712101000011,
+									"parameters": {
+										"instance-variable": "lifetime",
+										"comparison": 4,
+										"value": "0.45"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 811712101000012
+								}
+							],
+							"actions": [
+								{
+									"id": "set-speed",
+									"objectClass": "weirdPlantBullet",
+									"sid": 811712101000013,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "130"
+									}
+								}
+							],
+							"sid": 811712101000014
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "weirdPlantBullet",
+									"sid": 811712101000015,
+									"parameters": {
+										"instance-variable": "pattern",
+										"comparison": 4,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "weirdPlantBullet",
+									"sid": 811712101000016,
+									"parameters": {
+										"instance-variable": "lifetime",
+										"comparison": 4,
+										"value": "0.45"
+									}
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 811712101000017,
+									"parameters": {
+										"interval-seconds": "0.05"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "weirdPlantBullet",
+									"sid": 946295187436734,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "lerp(Self.Bullet.AngleOfMotion, 180 * Self.pattern, 0.1)"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "weirdPlantBullet",
+									"sid": 811712101000019,
+									"parameters": {
+										"angle": "Self.Bullet.AngleOfMotion"
+									}
+								}
+							],
+							"sid": 811712101000020
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "combatEnemyArena",
+									"sid": 811712101000021,
+									"parameters": {
+										"instance-variable": "isFight"
+									}
+								},
+								{
+									"id": "pick-children",
+									"objectClass": "combatEnemyArena",
+									"sid": 811712101000022,
+									"parameters": {
+										"child": "weirdPlant",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 811712101000023,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000024,
+									"parameters": {
+										"instance-variable": "sawPlayer",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000025,
+									"disabled": true,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000026,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 811712101000027
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 811712101000028
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000029,
+									"parameters": {
+										"instance-variable": "sawPlayer",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 811712101000030
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000031,
+									"parameters": {
+										"instance-variable": "sawPlayer"
+									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000032
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000033,
+									"parameters": {
+										"animation": "\"death\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 811712101000034,
+									"parameters": {
+										"object": "weirdPlant"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000035,
+									"parameters": {
+										"width": "abs(Self.Width) * sign(player1.X - Self.X)"
+									}
+								}
+							],
+							"sid": 811712101000036
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000037,
+									"parameters": {
+										"instance-variable": "sawPlayer"
+									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000038
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000039,
+									"parameters": {
+										"animation": "\"idle\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000040,
+									"parameters": {
+										"animation": "\"hurt\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 811712101000041,
+									"parameters": {
+										"interval-seconds": "2.6"
+									}
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 811712101000042,
+									"parameters": {
+										"object": "weirdPlant"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000043,
+									"parameters": {
+										"animation": "\"attack\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 811712101000044
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000045,
+									"parameters": {
+										"animation": "\"attack\""
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000046,
+									"parameters": {
+										"comparison": 5,
+										"number": "1"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 811712101000047
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 811712101000048,
+									"parameters": {
+										"object": "weirdPlant"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 811712101000049,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 811712101000050,
+											"parameters": {
+												"name": "\"plantUp\"",
+												"start-index": "1",
+												"end-index": "6"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "weirdPlant",
+											"sid": 811712101000051,
+											"parameters": {
+												"object": "weirdPlantBullet",
+												"layer": "\"bullets\"",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "weirdPlantBullet",
+											"sid": 811712101000052,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "270 + ((loopindex(\"plantUp\") > 3) * 2 - 1) * 14"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "weirdPlantBullet",
+											"sid": 811712101000053,
+											"parameters": {
+												"angle": "270 + ((loopindex(\"plantUp\") > 3) * 2 - 1) * 14"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "weirdPlantBullet",
+											"sid": 811712101000054,
+											"parameters": {
+												"instance-variable": "pattern",
+												"value": "1 + (loopindex(\"plantUp\") > 3)"
+											}
+										}
+									],
+									"sid": 811712101000055
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000056,
+									"parameters": {
+										"animation": "\"attack\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000057,
+									"parameters": {
+										"animation": "\"death\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "pick-parent",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000077,
+									"parameters": {
+										"parent": "combatEnemyArena",
+										"which": "own"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000058,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000059,
+									"disabled": true,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 811712101000060,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000061,
+									"parameters": {
+										"x": "max(combatEnemyArena.X + 56, min(combatEnemyArena.BBoxRight - 56, player1.X + cos(random(0, 360)) * 120))",
+										"y": "max(combatEnemyArena.Y + 56, min(combatEnemyArena.BBoxBottom - 56, player1.Y + sin(random(0, 360)) * 100))"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000062,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000063,
+									"parameters": {
+										"animation": "\"appear\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 811712101000064
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000065,
+									"parameters": {
+										"animation": "\"appear\""
+									}
+								},
+								{
+									"id": "pick-parent",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000078,
+									"parameters": {
+										"parent": "combatEnemyArena",
+										"which": "own"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000066,
+									"parameters": {
+										"object": "walls"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000067,
+									"parameters": {
+										"x": "max(combatEnemyArena.X + 56, min(combatEnemyArena.BBoxRight - 56, Self.X + 12 * sign(combatEnemyArena.BBoxMidX - Self.X)))",
+										"y": "max(combatEnemyArena.Y + 56, min(combatEnemyArena.BBoxBottom - 56, Self.Y + 12 * sign(combatEnemyArena.BBoxMidY - Self.Y)))"
+									}
+								}
+							],
+							"sid": 811712101000068
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000069,
+									"parameters": {
+										"animation": "\"appear\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000070,
+									"parameters": {
+										"animation": "\"idle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000071,
+									"disabled": true,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								}
+							],
+							"sid": 811712101000072
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000073,
+									"parameters": {
+										"animation": "\"death\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000074,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "weirdPlant",
+									"sid": 811712101000075,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 811712101000076
+						}
+					],
+					"sid": 811711627759875
 				}
 			],
 			"sid": 544152109747820

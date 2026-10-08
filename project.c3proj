@@ -506,7 +506,9 @@
 					"eyeMedium",
 					"sun",
 					"theLeave",
-					"stickEnemy"
+					"stickEnemy",
+					"tree",
+					"weirdPlant"
 				],
 				"subfolders": [
 					{
@@ -533,7 +535,9 @@
 							"maskBossBullet",
 							"air2",
 							"airCloud2",
-							"leaveBullet"
+							"leaveBullet",
+							"treeBullet",
+							"weirdPlantBullet"
 						],
 						"subfolders": [],
 						"name": "enemyObj"
@@ -697,7 +701,8 @@
 					},
 					{
 						"items": [
-							"character2"
+							"character2",
+							"character3"
 						],
 						"subfolders": [],
 						"name": "player costumes"
@@ -1242,6 +1247,22 @@
 					"name": "menu.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 164047208404169,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "4zone track.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 861619127659082,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "boss garden.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 210275708398928,
 					"file-info": {
 						"purpose": "none"
 					}
