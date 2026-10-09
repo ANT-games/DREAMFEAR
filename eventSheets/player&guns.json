@@ -4339,6 +4339,10 @@
 													}
 												},
 												{
+													"callFunction": "riaAbilitySound",
+													"sid": 884433494477416
+												},
+												{
 													"id": "wait",
 													"objectClass": "System",
 													"sid": 663818101000019,

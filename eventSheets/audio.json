@@ -1578,6 +1578,34 @@
 						}
 					],
 					"sid": 734454751834160
+				},
+				{
+					"functionName": "riaAbilitySound",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 607513628526945,
+							"parameters": {
+								"audio-file": {
+									"path": "magic_spell_ice_01"
+								},
+								"loop": "not-looping",
+								"volume": "-15 + ((sfx_volume - 100)/2)",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 246363739626031
 				}
 			],
 			"sid": 386551851170673

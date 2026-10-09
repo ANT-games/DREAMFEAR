@@ -451,7 +451,8 @@
 			"changeGunTutorialBase",
 			"ant_logo",
 			"bossNotiffication",
-			"lastChanceUpgradeUI"
+			"lastChanceUpgradeUI",
+			"riaAbilityCountdown"
 		],
 		"subfolders": [
 			{
@@ -954,6 +955,14 @@
 					"name": "magic_spell_shield_03.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 471003658302595,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "magic_spell_ice_01.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 166985069049974,
 					"file-info": {
 						"purpose": "none"
 					}

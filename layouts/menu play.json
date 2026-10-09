@@ -775,7 +775,7 @@
 					"type": "artMenu",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "magdalina",
+						"initial-animation": "ria",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -822,10 +822,10 @@
 					"world": {
 						"x": 211,
 						"y": 236,
-						"width": 174,
-						"height": 219,
-						"originX": 0.5,
-						"originY": 1,
+						"width": 134,
+						"height": 216,
+						"originX": 0.5746268656716418,
+						"originY": 0.9953703703703703,
 						"color": [
 							1,
 							1,
@@ -1481,7 +1481,7 @@
 					"locked": false,
 					"world": {
 						"x": 320,
-						"y": 64,
+						"y": 54,
 						"width": 64,
 						"height": 32,
 						"originX": 0.5,
@@ -1499,7 +1499,7 @@
 				{
 					"type": "characterDescriptionText",
 					"properties": {
-						"text": "The first prisoner of the Dream",
+						"text": "The first prisoner of the Dreamasfasfdyafhadfhafdhadfhyadfhadfhdfghfdhafdh \\\nADghadgh",
 						"enable-bbcode": true,
 						"font": "Silver",
 						"size": 8,
@@ -1529,10 +1529,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 288,
-						"y": 80,
-						"width": 64,
-						"height": 51,
+						"x": 283,
+						"y": 70,
+						"width": 74,
+						"height": 62,
 						"originX": 0,
 						"originY": 0,
 						"color": [
