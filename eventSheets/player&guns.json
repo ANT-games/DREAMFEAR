@@ -1135,6 +1135,15 @@
 											"parameters": {
 												"instance-variable": "isUsed"
 											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "player1",
+											"sid": 891310490933251,
+											"parameters": {
+												"object": "portalNewLevel"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [
@@ -4294,23 +4303,23 @@
 										{
 											"id": "flash",
 											"objectClass": "player1",
-											"sid": 663818101000014,
+											"sid": 915984138242284,
 											"behaviorType": "Flash",
 											"parameters": {
 												"on-time": "0.1",
 												"off-time": "0.1",
-												"duration": "2"
+												"duration": "2.2"
 											}
 										},
 										{
 											"id": "flash",
 											"objectClass": "playableCharacters",
-											"sid": 663818101000015,
+											"sid": 398469105776585,
 											"behaviorType": "Flash",
 											"parameters": {
 												"on-time": "0.1",
 												"off-time": "0.1",
-												"duration": "2"
+												"duration": "2.2"
 											}
 										}
 									],
@@ -4333,6 +4342,7 @@
 													"id": "set-boolean-instvar",
 													"objectClass": "guns",
 													"sid": 663818101000018,
+													"disabled": true,
 													"parameters": {
 														"instance-variable": "isUsed",
 														"value": "false"
@@ -4345,9 +4355,9 @@
 												{
 													"id": "wait",
 													"objectClass": "System",
-													"sid": 663818101000019,
+													"sid": 219982419191930,
 													"parameters": {
-														"seconds": "2",
+														"seconds": "2.2",
 														"use-timescale": true
 													}
 												},
@@ -4355,6 +4365,7 @@
 													"id": "set-boolean-instvar",
 													"objectClass": "guns",
 													"sid": 663818101000020,
+													"disabled": true,
 													"parameters": {
 														"instance-variable": "isUsed",
 														"value": "true"
@@ -4385,9 +4396,9 @@
 												{
 													"id": "wait",
 													"objectClass": "System",
-													"sid": 663818101000024,
+													"sid": 114655211453006,
 													"parameters": {
-														"seconds": "2",
+														"seconds": "2.2",
 														"use-timescale": true
 													}
 												},
@@ -4466,9 +4477,43 @@
 								"mode": "enable",
 								"effect": "\"riaUndamagable\""
 							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "riaAbilityCountdown",
+							"sid": 318660437005796,
+							"parameters": {
+								"visibility": "visible"
+							}
 						}
 					],
-					"sid": 398449083140909
+					"sid": 398449083140909,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 861514286671079,
+									"parameters": {
+										"interval-seconds": "0.05"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "riaAbilityCountdown",
+									"sid": 115119844081044,
+									"parameters": {
+										"width": "Self.Width - 3.63"
+									}
+								}
+							],
+							"sid": 397305358892025
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -4492,9 +4537,69 @@
 								"mode": "disable",
 								"effect": "\"riaUndamagable\""
 							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "riaAbilityCountdown",
+							"sid": 758687801984164,
+							"parameters": {
+								"width": "160"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "riaAbilityCountdown",
+							"sid": 308827703264181,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						}
 					],
 					"sid": 401557025120332
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 292766461503155
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 414703269461306,
+							"parameters": {
+								"first-value": "left(LayoutName, 3)",
+								"comparison": 0,
+								"second-value": "\"lev\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 538572900605940,
+							"parameters": {
+								"object-to-create": "riaAbilityCountdown",
+								"layer": "\"UI\"",
+								"x": "ViewportMidX(\"UI\")",
+								"y": "ViewportBottom(\"UI\") - 50",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "riaAbilityCountdown",
+							"sid": 274627409367435,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 354449635209301
 				}
 			],
 			"sid": 663817750110125

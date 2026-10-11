@@ -501,6 +501,64 @@
 						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "bosses",
+							"sid": 706305435377588,
+							"parameters": {
+								"object": "enemyBullets"
+							}
+						},
+						{
+							"id": "is-enabled",
+							"objectClass": "enemyBullets",
+							"sid": 808923810688794,
+							"behaviorType": "Bullet2"
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "bosses",
+							"sid": 406611342716610,
+							"parameters": {
+								"instance-variable": "hp",
+								"value": "enemyBullets.damage *3"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bosses",
+							"sid": 906731609237065,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"hurt\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 614004739407288,
+							"parameters": {
+								"seconds": "0.05",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "bosses",
+							"sid": 391444541535387,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"hurt\""
+							}
+						}
+					],
+					"sid": 136942206801045
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "bosses",
 							"sid": 632381787454656,
 							"parameters": {
 								"object": "fxBomb"
@@ -4115,11 +4173,11 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "plantBossWave",
-									"sid": 943983603991322,
+									"sid": 773602282981420,
 									"parameters": {
 										"instance-variable": "lifetime",
 										"comparison": 4,
-										"value": "0.15 * Self.index"
+										"value": "0.1 * Self.index"
 									}
 								}
 							],
@@ -4861,9 +4919,9 @@
 														{
 															"id": "every-x-seconds",
 															"objectClass": "System",
-															"sid": 189983447573250,
+															"sid": 498657050429228,
 															"parameters": {
-																"interval-seconds": "1"
+																"interval-seconds": "0.6"
 															}
 														}
 													],

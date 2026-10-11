@@ -128,6 +128,13 @@
 								"transform-visibility": false,
 								"destroy-with-parent": false
 							}
+						},
+						{
+							"type": "script",
+							"language": "javascript",
+							"script": [
+								"console.log(\"GUN CHANGE TUTORIAL\")"
+							]
 						}
 					],
 					"sid": 277383163380957,

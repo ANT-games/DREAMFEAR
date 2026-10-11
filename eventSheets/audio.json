@@ -1593,13 +1593,13 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 607513628526945,
+							"sid": 842413077982542,
 							"parameters": {
 								"audio-file": {
 									"path": "magic_spell_ice_01"
 								},
 								"loop": "not-looping",
-								"volume": "-15 + ((sfx_volume - 100)/2)",
+								"volume": "-8 + ((sfx_volume - 100)/2)",
 								"stereo-pan": "0",
 								"tag-optional": "\"\""
 							}

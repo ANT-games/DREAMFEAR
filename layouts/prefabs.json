@@ -37366,8 +37366,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"shadowType": 1,
-						"hp": 2000,
-						"hpMax": 2000,
+						"hp": 3000,
+						"hpMax": 3000,
 						"active": false,
 						"phase": 0,
 						"movementDestinationX": 0,
@@ -48230,7 +48230,7 @@
 							1,
 							1,
 							1,
-							1
+							0.35
 						],
 						"z": 0,
 						"angle": 0
