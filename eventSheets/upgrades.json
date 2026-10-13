@@ -351,6 +351,16 @@
 						{
 							"id": "push",
 							"objectClass": "upgradesAvailableArray",
+							"sid": 489308373936372,
+							"parameters": {
+								"where": "back",
+								"value": "\"shield\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
 							"sid": 874733827901872,
 							"parameters": {
 								"where": "back",
@@ -465,16 +475,6 @@
 							"parameters": {
 								"where": "back",
 								"value": "\"goodLootMoreOften\"",
-								"axis": "x"
-							}
-						},
-						{
-							"id": "push",
-							"objectClass": "upgradesAvailableArray",
-							"sid": 154095619378424,
-							"parameters": {
-								"where": "back",
-								"value": "\"shield\"",
 								"axis": "x"
 							}
 						},
@@ -1766,6 +1766,10 @@
 									],
 									"actions": [
 										{
+											"callFunction": "shirldUpgradeAppearSound",
+											"sid": 381607745206043
+										},
+										{
 											"id": "spawn-another-object",
 											"objectClass": "player1",
 											"sid": 105624028404387,
@@ -1849,6 +1853,11 @@
 											"parameters": {
 												"object": "enemyBullets"
 											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 647211819289904
 										}
 									],
 									"actions": [
@@ -1860,6 +1869,10 @@
 												"animation": "\"destroy\"",
 												"from": "beginning"
 											}
+										},
+										{
+											"callFunction": "shirldUpgradeDestroySound",
+											"sid": 966546975977901
 										}
 									],
 									"sid": 509595740305431

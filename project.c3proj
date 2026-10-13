@@ -966,6 +966,22 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "hammer hits glass 1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 594231365451224,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "ui_equip_glass.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 168392292662848,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [

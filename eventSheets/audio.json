@@ -1606,6 +1606,62 @@
 						}
 					],
 					"sid": 246363739626031
+				},
+				{
+					"functionName": "shirldUpgradeAppearSound",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 164739169979180,
+							"parameters": {
+								"audio-file": {
+									"path": "ui_equip_glass"
+								},
+								"loop": "not-looping",
+								"volume": "-10 + ((sfx_volume - 100)/2)",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 147152358997531
+				},
+				{
+					"functionName": "shirldUpgradeDestroySound",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 499207003431455,
+							"parameters": {
+								"audio-file": {
+									"path": "hammer hits glass 1"
+								},
+								"loop": "not-looping",
+								"volume": "-10 + ((sfx_volume - 100)/2)",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 820150551252467
 				}
 			],
 			"sid": 386551851170673

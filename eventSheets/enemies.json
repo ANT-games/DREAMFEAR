@@ -1077,6 +1077,36 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "is-animation-playing",
+									"objectClass": "enemies",
+									"sid": 114474224446943,
+									"parameters": {
+										"animation": "\"death\""
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 389794886611988,
+									"disabled": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "enemies",
+									"sid": 947003297380939,
+									"parameters": {
+										"collisions": "disabled"
+									}
+								}
+							],
+							"sid": 415453802249428
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "on-animation-finished",
 									"objectClass": "enemies",
 									"sid": 727804359021848,
@@ -1120,14 +1150,6 @@
 									"behaviorType": "Pathfinding",
 									"parameters": {
 										"set": "disabled"
-									}
-								},
-								{
-									"id": "set-collisions-enabled",
-									"objectClass": "enemies",
-									"sid": 947003297380939,
-									"parameters": {
-										"collisions": "disabled"
 									}
 								},
 								{
@@ -11766,6 +11788,16 @@
 					"objectClass": "enemies",
 					"sid": 738691984519893,
 					"behaviorType": "Fade"
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "enemies",
+					"sid": 176612685557532,
+					"disabled": true,
+					"parameters": {
+						"animation": "\"death\""
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
