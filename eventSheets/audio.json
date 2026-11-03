@@ -1289,6 +1289,66 @@
 								}
 							],
 							"sid": 325354733640961
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "fxBomb",
+									"sid": 161763790733641,
+									"parameters": {
+										"animation": "\"enemy\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 719603778386499,
+									"parameters": {
+										"audio-file": {
+											"path": "shooting/granate explosion"
+										},
+										"loop": "not-looping",
+										"volume": "-9 + ((sfx_volume - 100)/2)",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 199843249062881
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "fxBomb",
+									"sid": 881992383776814,
+									"parameters": {
+										"animation": "\"roll\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 759770812161066,
+									"parameters": {
+										"audio-file": {
+											"path": "shooting/granate explosion"
+										},
+										"loop": "not-looping",
+										"volume": "-13 + ((sfx_volume - 100)/2)",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 864142517580968
 						}
 					]
 				},

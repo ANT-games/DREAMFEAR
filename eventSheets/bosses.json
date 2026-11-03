@@ -4919,9 +4919,9 @@
 														{
 															"id": "every-x-seconds",
 															"objectClass": "System",
-															"sid": 498657050429228,
+															"sid": 978795866259550,
 															"parameters": {
-																"interval-seconds": "0.6"
+																"interval-seconds": "0.5"
 															}
 														}
 													],
@@ -4929,10 +4929,10 @@
 														{
 															"id": "set-eventvar-value",
 															"objectClass": "System",
-															"sid": 765127511642507,
+															"sid": 552115579784954,
 															"parameters": {
 																"variable": "targetAngle",
-																"value": "angle(bossPlant.X, bossPlant.Y, player1.X, player1.Y) + random(-10, 10)"
+																"value": "angle(bossPlant.X, bossPlant.Y, player1.X, player1.Y) + random(-20, 20)"
 															}
 														},
 														{

@@ -1487,6 +1487,14 @@
 							"parameters": {
 								"object": "bosses"
 							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "bullets",
+							"sid": 489515311805727,
+							"parameters": {
+								"object": "sprike"
+							}
 						}
 					],
 					"actions": [],

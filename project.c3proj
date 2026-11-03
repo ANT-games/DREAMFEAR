@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 49502,
+	"savedWithRelease": 50603,
 	"name": "dreamfear",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -736,7 +736,8 @@
 					"bossSurgeon",
 					"bossSheep",
 					"bossPlant",
-					"maskBoss"
+					"maskBoss",
+					"bibleAngel"
 				],
 				"subfolders": [
 					{
@@ -1410,8 +1411,8 @@
 		"authorEmail": "",
 		"authorWebsite": "http://",
 		"appId": "com.mycompany.myapp",
+		"saveLLMContextFile": true,
 		"pixelRounding": true,
-		"zAxisScale": "regular",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
@@ -1452,6 +1453,7 @@
 		"loaderStyle": "progress-logo",
 		"preloadSounds": true,
 		"uidAllocationMode": "increment",
+		"zAxisScale": "regular",
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
 		"exportFileStructure": "folders",

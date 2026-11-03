@@ -351,20 +351,30 @@
 						{
 							"id": "push",
 							"objectClass": "upgradesAvailableArray",
-							"sid": 489308373936372,
+							"sid": 906605623228700,
 							"parameters": {
 								"where": "back",
-								"value": "\"shield\"",
+								"value": "\"maxHpUp\"",
 								"axis": "x"
 							}
 						},
 						{
 							"id": "push",
 							"objectClass": "upgradesAvailableArray",
-							"sid": 874733827901872,
+							"sid": 329436407065398,
 							"parameters": {
 								"where": "back",
 								"value": "\"daskExplosion\"",
+								"axis": "x"
+							}
+						},
+						{
+							"id": "push",
+							"objectClass": "upgradesAvailableArray",
+							"sid": 489308373936372,
+							"parameters": {
+								"where": "back",
+								"value": "\"shield\"",
 								"axis": "x"
 							}
 						},
@@ -506,16 +516,6 @@
 							"parameters": {
 								"where": "back",
 								"value": "\"damageTouchEnemies\"",
-								"axis": "x"
-							}
-						},
-						{
-							"id": "push",
-							"objectClass": "upgradesAvailableArray",
-							"sid": 957706988682563,
-							"parameters": {
-								"where": "back",
-								"value": "\"maxHpUp\"",
 								"axis": "x"
 							}
 						},
@@ -1263,6 +1263,16 @@
 			"sid": 902451235810205
 		},
 		{
+			"eventType": "variable",
+			"name": "isHpUp",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 876113458241468
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1366,31 +1376,21 @@
 							"isActiveOnStart": true,
 							"children": [
 								{
-									"eventType": "variable",
-									"name": "isHpUp",
-									"type": "boolean",
-									"initialValue": "false",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 340901854329765
-								},
-								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 540350416614806
-										},
-										{
 											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 830449007692096,
+											"sid": 219472201518233,
 											"parameters": {
 												"variable": "isHpUp"
 											},
 											"isInverted": true
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 540350416614806
 										}
 									],
 									"actions": [
