@@ -949,6 +949,23 @@
 										{
 											"id": "set-enabled",
 											"objectClass": "bibleAngel",
+											"sid": 171903192600127,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "bibleAngel",
+											"sid": 171903192600128,
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "bibleAngel",
 											"sid": 171903192600031,
 											"behaviorType": "MoveTo",
 											"parameters": {
@@ -977,6 +994,21 @@
 										}
 									],
 									"sid": 171903192600034
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "bibleAngel",
+											"sid": 171903192600129,
+											"parameters": {
+												"angle": "0"
+											}
+										}
+									],
+									"sid": 171903192600130
 								},
 								{
 									"eventType": "block",
@@ -1185,7 +1217,7 @@
 															"objectClass": "System",
 															"sid": 171903192600059,
 															"parameters": {
-																"interval-seconds": "2.2"
+																"interval-seconds": "2.8"
 															}
 														}
 													],
@@ -1223,7 +1255,7 @@
 																	"parameters": {
 																		"name": "\"angelRingA\"",
 																		"start-index": "0",
-																		"end-index": "23"
+																		"end-index": "9"
 																	}
 																}
 															],
@@ -1246,7 +1278,7 @@
 																	"sid": 171903192600065,
 																	"behaviorType": "Bullet",
 																	"parameters": {
-																		"angle": "loopindex(\"angelRingA\") * 15 + bibleAngel.bulletDirection"
+																		"angle": "loopindex(\"angelRingA\") * 36 + bibleAngel.bulletDirection"
 																	}
 																},
 																{
@@ -1264,7 +1296,7 @@
 																	"sid": 171903192600067,
 																	"behaviorType": "Bullet",
 																	"parameters": {
-																		"speed": "70"
+																		"speed": "85"
 																	}
 																}
 															],
@@ -1296,7 +1328,7 @@
 																			"parameters": {
 																				"name": "\"angelRingB\"",
 																				"start-index": "0",
-																				"end-index": "23"
+																				"end-index": "9"
 																			}
 																		}
 																	],
@@ -1319,7 +1351,7 @@
 																			"sid": 171903192600073,
 																			"behaviorType": "Bullet",
 																			"parameters": {
-																				"angle": "loopindex(\"angelRingB\") * 15 + bibleAngel.bulletDirection + 7.5"
+																				"angle": "loopindex(\"angelRingB\") * 36 + bibleAngel.bulletDirection + 18"
 																			}
 																		},
 																		{
@@ -1337,7 +1369,7 @@
 																			"sid": 171903192600075,
 																			"behaviorType": "Bullet",
 																			"parameters": {
-																				"speed": "70"
+																				"speed": "85"
 																			}
 																		}
 																	],
@@ -1661,7 +1693,7 @@
 															"objectClass": "System",
 															"sid": 171903192600111,
 															"parameters": {
-																"interval-seconds": "1.9"
+																"interval-seconds": "1.2"
 															}
 														}
 													],
@@ -1678,7 +1710,7 @@
 																	"parameters": {
 																		"name": "\"angelCross\"",
 																		"start-index": "0",
-																		"end-index": "31"
+																		"end-index": "47"
 																	}
 																}
 															],
@@ -1701,7 +1733,7 @@
 																	"sid": 171903192600115,
 																	"behaviorType": "Bullet",
 																	"parameters": {
-																		"angle": "floor(loopindex(\"angelCross\") / 8) * 90 + (loopindex(\"angelCross\") % 8) * 4 - 14"
+																		"angle": "floor(loopindex(\"angelCross\") / 12) * 90 + (loopindex(\"angelCross\") % 12) * 3 - 16.5"
 																	}
 																},
 																{
@@ -1719,7 +1751,7 @@
 																	"sid": 171903192600117,
 																	"behaviorType": "Bullet",
 																	"parameters": {
-																		"speed": "65"
+																		"speed": "105"
 																	}
 																}
 															],
@@ -1735,7 +1767,7 @@
 															"objectClass": "System",
 															"sid": 171903192600119,
 															"parameters": {
-																"interval-seconds": "3.2"
+																"interval-seconds": "1.7"
 															}
 														}
 													],
@@ -1752,7 +1784,7 @@
 																	"parameters": {
 																		"name": "\"angelRingC\"",
 																		"start-index": "0",
-																		"end-index": "35"
+																		"end-index": "47"
 																	}
 																}
 															],
@@ -1775,7 +1807,7 @@
 																	"sid": 171903192600123,
 																	"behaviorType": "Bullet",
 																	"parameters": {
-																		"angle": "loopindex(\"angelRingC\") * 10"
+																		"angle": "loopindex(\"angelRingC\") * 7.5 + bibleAngel.bulletDirection"
 																	}
 																},
 																{
@@ -1793,7 +1825,7 @@
 																	"sid": 171903192600125,
 																	"behaviorType": "Bullet",
 																	"parameters": {
-																		"speed": "55"
+																		"speed": "100"
 																	}
 																}
 															],
