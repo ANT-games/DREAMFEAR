@@ -538,7 +538,8 @@
 							"airCloud2",
 							"leaveBullet",
 							"treeBullet",
-							"weirdPlantBullet"
+							"weirdPlantBullet",
+							"maskBossBullet2"
 						],
 						"subfolders": [],
 						"name": "enemyObj"

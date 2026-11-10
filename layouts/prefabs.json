@@ -21218,8 +21218,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 163,
-						"y": -513,
+						"x": 337.9414978027344,
+						"y": -686.0755004882812,
 						"width": 256,
 						"height": 256,
 						"originX": 0.51171875,
@@ -48454,6 +48454,200 @@
 							1,
 							1,
 							0.35
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "maskBossBullet2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 605,
+					"sid": 472259957848750,
+					"tags": "",
+					"instanceVariables": {
+						"damage": 10,
+						"lifetime": 0,
+						"pattern": 0,
+						"primeAngle": 0,
+						"specialFrames": false,
+						"canBeHitBack": true
+					},
+					"behaviors": {
+						"Bullet2": {
+							"properties": {
+								"speed": 250,
+								"acceleration": -5,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": false,
+								"step": false,
+								"enabled": false
+							}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 60,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"Orbit": {
+							"properties": {
+								"speed": 90,
+								"acceleration": 0,
+								"primary-axis": 100,
+								"secondary-axis": 100,
+								"offset-angle": 0,
+								"match-rotation": true,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"effects": {
+						"GlowHorizontal": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.5
+							}
+						},
+						"GlowVertical": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.5
+							}
+						}
+					},
+					"materialSurfaceType": "smooth",
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": -29.52171003818512,
+						"y": -529.5513000488281,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "bibleAngel",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 606,
+					"sid": 210649077104396,
+					"tags": "",
+					"instanceVariables": {
+						"shadowType": 0,
+						"hp": 4000,
+						"hpMax": 4000,
+						"active": false,
+						"phase": 0,
+						"movementDestinationX": 0,
+						"movementDestinationY": 0,
+						"shootingCurrently": false,
+						"bulletDirection": 0,
+						"damageTouch": 10,
+						"curFrame": 0
+					},
+					"behaviors": {
+						"8Direction": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 500,
+								"directions": "dir-8",
+								"set-angle": "smooth",
+								"allow-sliding": false,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"MoveTo": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": false
+							}
+						}
+					},
+					"effects": {
+						"hurt": {
+							"isEnabled": true,
+							"parameters": {
+								"source-color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"replace-color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"tolerance": 0.01
+							}
+						}
+					},
+					"materialSurfaceType": "smooth",
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 66.43370628356934,
+						"y": -537.959716796875,
+						"width": 128,
+						"height": 128,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
 						],
 						"z": 0,
 						"angle": 0
