@@ -1215,9 +1215,9 @@
 														{
 															"id": "every-x-seconds",
 															"objectClass": "System",
-															"sid": 171903192600059,
+															"sid": 553523940219454,
 															"parameters": {
-																"interval-seconds": "2.8"
+																"interval-seconds": "1.5"
 															}
 														}
 													],
@@ -1228,7 +1228,7 @@
 															"sid": 171903192600060,
 															"parameters": {
 																"instance-variable": "bulletDirection",
-																"value": "Self.bulletDirection + 8"
+																"value": "Self.bulletDirection + 15"
 															}
 														},
 														{
@@ -1255,7 +1255,7 @@
 																	"parameters": {
 																		"name": "\"angelRingA\"",
 																		"start-index": "0",
-																		"end-index": "9"
+																		"end-index": "11"
 																	}
 																}
 															],
@@ -1278,7 +1278,7 @@
 																	"sid": 171903192600065,
 																	"behaviorType": "Bullet",
 																	"parameters": {
-																		"angle": "loopindex(\"angelRingA\") * 36 + bibleAngel.bulletDirection"
+																		"angle": "loopindex(\"angelRingA\") * 30 + bibleAngel.bulletDirection"
 																	}
 																},
 																{
@@ -1287,7 +1287,7 @@
 																	"sid": 171903192600066,
 																	"parameters": {
 																		"instance-variable": "pattern",
-																		"value": "1"
+																		"value": "0"
 																	}
 																},
 																{
@@ -1296,7 +1296,7 @@
 																	"sid": 171903192600067,
 																	"behaviorType": "Bullet",
 																	"parameters": {
-																		"speed": "85"
+																		"speed": "95"
 																	}
 																}
 															],
@@ -1328,7 +1328,7 @@
 																			"parameters": {
 																				"name": "\"angelRingB\"",
 																				"start-index": "0",
-																				"end-index": "9"
+																				"end-index": "11"
 																			}
 																		}
 																	],
@@ -1351,7 +1351,7 @@
 																			"sid": 171903192600073,
 																			"behaviorType": "Bullet",
 																			"parameters": {
-																				"angle": "loopindex(\"angelRingB\") * 36 + bibleAngel.bulletDirection + 18"
+																				"angle": "loopindex(\"angelRingB\") * 30 + bibleAngel.bulletDirection + 15"
 																			}
 																		},
 																		{
@@ -1360,7 +1360,7 @@
 																			"sid": 171903192600074,
 																			"parameters": {
 																				"instance-variable": "pattern",
-																				"value": "2"
+																				"value": "0"
 																			}
 																		},
 																		{
@@ -1369,7 +1369,7 @@
 																			"sid": 171903192600075,
 																			"behaviorType": "Bullet",
 																			"parameters": {
-																				"speed": "85"
+																				"speed": "95"
 																			}
 																		}
 																	],
@@ -1464,7 +1464,7 @@
 															"objectClass": "System",
 															"sid": 171903192600086,
 															"parameters": {
-																"interval-seconds": "0.55"
+																"interval-seconds": "0.9"
 															}
 														}
 													],
@@ -1477,11 +1477,11 @@
 																{
 																	"id": "for",
 																	"objectClass": "System",
-																	"sid": 171903192600088,
+																	"sid": 689210580647482,
 																	"parameters": {
 																		"name": "\"angelFan\"",
 																		"start-index": "0",
-																		"end-index": "4"
+																		"end-index": "5"
 																	}
 																}
 															],
@@ -1504,7 +1504,7 @@
 																	"sid": 171903192600090,
 																	"behaviorType": "Bullet",
 																	"parameters": {
-																		"angle": "angle(bibleAngel.X, bibleAngel.Y, player1.X, player1.Y) + (loopindex(\"angelFan\") - 2) * 12"
+																		"angle": "angle(bibleAngel.X, bibleAngel.Y, player1.X, player1.Y) + (loopindex(\"angelFan\") - 1) * 16"
 																	}
 																},
 																{
@@ -1538,7 +1538,7 @@
 															"objectClass": "System",
 															"sid": 171903192600094,
 															"parameters": {
-																"interval-seconds": "2.4"
+																"interval-seconds": "3.2"
 															}
 														}
 													],
