@@ -48460,7 +48460,7 @@
 					}
 				},
 				{
-					"type": "maskBossBullet2",
+					"type": "angelBossBullet",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -48581,7 +48581,7 @@
 								"acceleration": 600,
 								"deceleration": 500,
 								"directions": "dir-8",
-								"set-angle": "smooth",
+								"set-angle": "no",
 								"allow-sliding": false,
 								"default-controls": false,
 								"enabled": true

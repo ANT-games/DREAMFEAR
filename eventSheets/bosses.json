@@ -244,9 +244,9 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 160865082211439,
+							"sid": 548659092616352,
 							"parameters": {
-								"object-to-create": "maskBoss",
+								"object-to-create": "bibleAngel",
 								"layer": "\"characters\"",
 								"x": "bossZone.X",
 								"y": "bossZone.Y",
@@ -255,7 +255,68 @@
 							}
 						}
 					],
-					"sid": 510563212824357
+					"sid": 510563212824357,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 370425527525923,
+									"parameters": {
+										"first-value": "random(100)",
+										"comparison": 4,
+										"second-value": "50"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 854444211809887,
+									"parameters": {
+										"object-to-create": "maskBoss",
+										"layer": "\"characters\"",
+										"x": "bossZone.X",
+										"y": "bossZone.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 405880613005518,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 174761711407257
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 904209521046800,
+									"parameters": {
+										"object-to-create": "bibleAngel",
+										"layer": "\"characters\"",
+										"x": "bossZone.X",
+										"y": "bossZone.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 515642085549397,
+							"disabled": true
+						}
+					]
 				}
 			]
 		},
@@ -614,6 +675,1141 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "angel boss",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "angel boss patterns",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "angelBossBullet",
+											"sid": 171903192600001,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "direct bullet"
+										}
+									],
+									"sid": 171903192600002
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "angelBossBullet",
+											"sid": 171903192600003,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 171903192600004,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "angelBossBullet",
+													"sid": 171903192600005,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 2,
+														"value": "2.2"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 171903192600006,
+													"parameters": {
+														"interval-seconds": "0.05"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "angelBossBullet",
+													"sid": 171903192600007,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion + 4"
+													}
+												}
+											],
+											"sid": 171903192600008
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "angelBossBullet",
+											"sid": 171903192600009,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 171903192600010,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "angelBossBullet",
+													"sid": 171903192600011,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 2,
+														"value": "2.2"
+													}
+												},
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 171903192600012,
+													"parameters": {
+														"interval-seconds": "0.05"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "angelBossBullet",
+													"sid": 171903192600013,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "Self.Bullet.AngleOfMotion - 4"
+													}
+												}
+											],
+											"sid": 171903192600014
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "angelBossBullet",
+											"sid": 171903192600015,
+											"parameters": {
+												"instance-variable": "pattern",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 171903192600016,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "angelBossBullet",
+													"sid": 171903192600017,
+													"parameters": {
+														"instance-variable": "lifetime",
+														"comparison": 4,
+														"value": "0.85"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 171903192600018
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle-of-motion",
+													"objectClass": "angelBossBullet",
+													"sid": 171903192600019,
+													"behaviorType": "Bullet",
+													"parameters": {
+														"angle": "angle(Self.X, Self.Y, player1.X, player1.Y)"
+													}
+												}
+											],
+											"sid": 171903192600020
+										}
+									]
+								}
+							],
+							"sid": 171903192600021
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "angelBossBullet",
+									"sid": 171903192600022,
+									"parameters": {
+										"object": "walls"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "angelBossBullet",
+									"sid": 171903192600023,
+									"parameters": {
+										"object": "sprike"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "angelBossBullet",
+									"sid": 171903192600024
+								}
+							],
+							"sid": 171903192600025,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "bibleAngel",
+									"sid": 171903192600026,
+									"parameters": {
+										"instance-variable": "active"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 171903192600027,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 171903192600028
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 171903192600029,
+											"parameters": {
+												"seconds": "1",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "bibleAngel",
+											"sid": 171903192600030,
+											"parameters": {
+												"x": "bossZone.X",
+												"y": "bossZone.Y"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "bibleAngel",
+											"sid": 171903192600031,
+											"behaviorType": "MoveTo",
+											"parameters": {
+												"enabled": true
+											}
+										},
+										{
+											"id": "move-to-position",
+											"objectClass": "bibleAngel",
+											"sid": 171903192600032,
+											"behaviorType": "MoveTo",
+											"parameters": {
+												"x": "bossZone.X",
+												"y": "bossZone.Y",
+												"mode": "direct"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bibleAngel",
+											"sid": 171903192600033,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 171903192600034
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bibleAngel",
+											"sid": 171903192600035,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 171903192600036
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 171903192600037,
+											"parameters": {
+												"seconds": "14",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bibleAngel",
+											"sid": 171903192600038,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 171903192600039
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bibleAngel",
+											"sid": 171903192600040,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "2"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 171903192600041
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 171903192600042,
+											"parameters": {
+												"seconds": "12",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bibleAngel",
+											"sid": 171903192600043,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "3"
+											}
+										}
+									],
+									"sid": 171903192600044
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bibleAngel",
+											"sid": 171903192600045,
+											"parameters": {
+												"instance-variable": "phase",
+												"comparison": 0,
+												"value": "3"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 171903192600046
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 171903192600047,
+											"parameters": {
+												"seconds": "14",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "bibleAngel",
+											"sid": 171903192600048,
+											"parameters": {
+												"instance-variable": "phase",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 171903192600049
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "bibleAngel",
+											"sid": 171903192600050,
+											"parameters": {
+												"instance-variable": "hp",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 171903192600051,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "bibleAngel",
+													"sid": 171903192600052,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 171903192600053,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 171903192600054
+														}
+													],
+													"actions": [
+														{
+															"id": "set-enabled",
+															"objectClass": "bibleAngel",
+															"sid": 171903192600055,
+															"behaviorType": "MoveTo",
+															"parameters": {
+																"enabled": true
+															}
+														},
+														{
+															"id": "move-to-position",
+															"objectClass": "bibleAngel",
+															"sid": 171903192600056,
+															"behaviorType": "MoveTo",
+															"parameters": {
+																"x": "bossZone.X",
+																"y": "bossZone.Y",
+																"mode": "direct"
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "bibleAngel",
+															"sid": 171903192600057,
+															"parameters": {
+																"animation": "\"idle\"",
+																"from": "beginning"
+															}
+														}
+													],
+													"sid": 171903192600058
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 171903192600059,
+															"parameters": {
+																"interval-seconds": "2.2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "bibleAngel",
+															"sid": 171903192600060,
+															"parameters": {
+																"instance-variable": "bulletDirection",
+																"value": "Self.bulletDirection + 8"
+															}
+														},
+														{
+															"id": "move-to-position",
+															"objectClass": "bibleAngel",
+															"sid": 171903192600061,
+															"behaviorType": "MoveTo",
+															"parameters": {
+																"x": "bossZone.X",
+																"y": "bossZone.Y",
+																"mode": "direct"
+															}
+														}
+													],
+													"sid": 171903192600062,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for",
+																	"objectClass": "System",
+																	"sid": 171903192600063,
+																	"parameters": {
+																		"name": "\"angelRingA\"",
+																		"start-index": "0",
+																		"end-index": "23"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "bibleAngel",
+																	"sid": 171903192600064,
+																	"parameters": {
+																		"object": "angelBossBullet",
+																		"layer": "\"bullets\"",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-angle-of-motion",
+																	"objectClass": "angelBossBullet",
+																	"sid": 171903192600065,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"angle": "loopindex(\"angelRingA\") * 15 + bibleAngel.bulletDirection"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "angelBossBullet",
+																	"sid": 171903192600066,
+																	"parameters": {
+																		"instance-variable": "pattern",
+																		"value": "1"
+																	}
+																},
+																{
+																	"id": "set-speed",
+																	"objectClass": "angelBossBullet",
+																	"sid": 171903192600067,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"speed": "70"
+																	}
+																}
+															],
+															"sid": 171903192600068
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 171903192600069,
+																	"parameters": {
+																		"seconds": "0.55",
+																		"use-timescale": true
+																	}
+																}
+															],
+															"sid": 171903192600070,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "for",
+																			"objectClass": "System",
+																			"sid": 171903192600071,
+																			"parameters": {
+																				"name": "\"angelRingB\"",
+																				"start-index": "0",
+																				"end-index": "23"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "spawn-another-object",
+																			"objectClass": "bibleAngel",
+																			"sid": 171903192600072,
+																			"parameters": {
+																				"object": "angelBossBullet",
+																				"layer": "\"bullets\"",
+																				"image-point": "0",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "set-angle-of-motion",
+																			"objectClass": "angelBossBullet",
+																			"sid": 171903192600073,
+																			"behaviorType": "Bullet",
+																			"parameters": {
+																				"angle": "loopindex(\"angelRingB\") * 15 + bibleAngel.bulletDirection + 7.5"
+																			}
+																		},
+																		{
+																			"id": "set-instvar-value",
+																			"objectClass": "angelBossBullet",
+																			"sid": 171903192600074,
+																			"parameters": {
+																				"instance-variable": "pattern",
+																				"value": "2"
+																			}
+																		},
+																		{
+																			"id": "set-speed",
+																			"objectClass": "angelBossBullet",
+																			"sid": 171903192600075,
+																			"behaviorType": "Bullet",
+																			"parameters": {
+																				"speed": "70"
+																			}
+																		}
+																	],
+																	"sid": 171903192600076
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "bibleAngel",
+													"sid": 171903192600077,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 171903192600078,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 171903192600079
+														}
+													],
+													"actions": [
+														{
+															"id": "set-enabled",
+															"objectClass": "bibleAngel",
+															"sid": 171903192600080,
+															"behaviorType": "MoveTo",
+															"parameters": {
+																"enabled": true
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "bibleAngel",
+															"sid": 171903192600081,
+															"parameters": {
+																"animation": "\"idle\"",
+																"from": "beginning"
+															}
+														}
+													],
+													"sid": 171903192600082
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 171903192600083,
+															"parameters": {
+																"interval-seconds": "1.6"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "move-to-position",
+															"objectClass": "bibleAngel",
+															"sid": 171903192600084,
+															"behaviorType": "MoveTo",
+															"parameters": {
+																"x": "bossZone.X + cos(random(0, 360)) * 90",
+																"y": "bossZone.Y + sin(random(0, 360)) * 70",
+																"mode": "direct"
+															}
+														}
+													],
+													"sid": 171903192600085
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 171903192600086,
+															"parameters": {
+																"interval-seconds": "0.55"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 171903192600087,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for",
+																	"objectClass": "System",
+																	"sid": 171903192600088,
+																	"parameters": {
+																		"name": "\"angelFan\"",
+																		"start-index": "0",
+																		"end-index": "4"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "bibleAngel",
+																	"sid": 171903192600089,
+																	"parameters": {
+																		"object": "angelBossBullet",
+																		"layer": "\"bullets\"",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-angle-of-motion",
+																	"objectClass": "angelBossBullet",
+																	"sid": 171903192600090,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"angle": "angle(bibleAngel.X, bibleAngel.Y, player1.X, player1.Y) + (loopindex(\"angelFan\") - 2) * 12"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "angelBossBullet",
+																	"sid": 171903192600091,
+																	"parameters": {
+																		"instance-variable": "pattern",
+																		"value": "0"
+																	}
+																},
+																{
+																	"id": "set-speed",
+																	"objectClass": "angelBossBullet",
+																	"sid": 171903192600092,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"speed": "95"
+																	}
+																}
+															],
+															"sid": 171903192600093
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 171903192600094,
+															"parameters": {
+																"interval-seconds": "2.4"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "bibleAngel",
+															"sid": 171903192600095,
+															"parameters": {
+																"object": "angelBossBullet",
+																"layer": "\"bullets\"",
+																"image-point": "0",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-angle-of-motion",
+															"objectClass": "angelBossBullet",
+															"sid": 171903192600096,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"angle": "angle(bibleAngel.X, bibleAngel.Y, player1.X, player1.Y) + 70"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "angelBossBullet",
+															"sid": 171903192600097,
+															"parameters": {
+																"instance-variable": "pattern",
+																"value": "3"
+															}
+														},
+														{
+															"id": "set-speed",
+															"objectClass": "angelBossBullet",
+															"sid": 171903192600098,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"speed": "80"
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "bibleAngel",
+															"sid": 171903192600099,
+															"parameters": {
+																"object": "angelBossBullet",
+																"layer": "\"bullets\"",
+																"image-point": "0",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-angle-of-motion",
+															"objectClass": "angelBossBullet",
+															"sid": 171903192600100,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"angle": "angle(bibleAngel.X, bibleAngel.Y, player1.X, player1.Y) - 70"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "angelBossBullet",
+															"sid": 171903192600101,
+															"parameters": {
+																"instance-variable": "pattern",
+																"value": "3"
+															}
+														},
+														{
+															"id": "set-speed",
+															"objectClass": "angelBossBullet",
+															"sid": 171903192600102,
+															"behaviorType": "Bullet",
+															"parameters": {
+																"speed": "80"
+															}
+														}
+													],
+													"sid": 171903192600103
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "bibleAngel",
+													"sid": 171903192600104,
+													"parameters": {
+														"instance-variable": "phase",
+														"comparison": 0,
+														"value": "3"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 171903192600105,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 171903192600106
+														}
+													],
+													"actions": [
+														{
+															"id": "set-enabled",
+															"objectClass": "bibleAngel",
+															"sid": 171903192600107,
+															"behaviorType": "MoveTo",
+															"parameters": {
+																"enabled": true
+															}
+														},
+														{
+															"id": "move-to-position",
+															"objectClass": "bibleAngel",
+															"sid": 171903192600108,
+															"behaviorType": "MoveTo",
+															"parameters": {
+																"x": "bossZone.X",
+																"y": "bossZone.Y",
+																"mode": "direct"
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "bibleAngel",
+															"sid": 171903192600109,
+															"parameters": {
+																"animation": "\"idle\"",
+																"from": "beginning"
+															}
+														}
+													],
+													"sid": 171903192600110
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 171903192600111,
+															"parameters": {
+																"interval-seconds": "1.9"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 171903192600112,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for",
+																	"objectClass": "System",
+																	"sid": 171903192600113,
+																	"parameters": {
+																		"name": "\"angelCross\"",
+																		"start-index": "0",
+																		"end-index": "31"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "bibleAngel",
+																	"sid": 171903192600114,
+																	"parameters": {
+																		"object": "angelBossBullet",
+																		"layer": "\"bullets\"",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-angle-of-motion",
+																	"objectClass": "angelBossBullet",
+																	"sid": 171903192600115,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"angle": "floor(loopindex(\"angelCross\") / 8) * 90 + (loopindex(\"angelCross\") % 8) * 4 - 14"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "angelBossBullet",
+																	"sid": 171903192600116,
+																	"parameters": {
+																		"instance-variable": "pattern",
+																		"value": "3"
+																	}
+																},
+																{
+																	"id": "set-speed",
+																	"objectClass": "angelBossBullet",
+																	"sid": 171903192600117,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"speed": "65"
+																	}
+																}
+															],
+															"sid": 171903192600118
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "every-x-seconds",
+															"objectClass": "System",
+															"sid": 171903192600119,
+															"parameters": {
+																"interval-seconds": "3.2"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 171903192600120,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for",
+																	"objectClass": "System",
+																	"sid": 171903192600121,
+																	"parameters": {
+																		"name": "\"angelRingC\"",
+																		"start-index": "0",
+																		"end-index": "35"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "bibleAngel",
+																	"sid": 171903192600122,
+																	"parameters": {
+																		"object": "angelBossBullet",
+																		"layer": "\"bullets\"",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-angle-of-motion",
+																	"objectClass": "angelBossBullet",
+																	"sid": 171903192600123,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"angle": "loopindex(\"angelRingC\") * 10"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "angelBossBullet",
+																	"sid": 171903192600124,
+																	"parameters": {
+																		"instance-variable": "pattern",
+																		"value": "1"
+																	}
+																},
+																{
+																	"id": "set-speed",
+																	"objectClass": "angelBossBullet",
+																	"sid": 171903192600125,
+																	"behaviorType": "Bullet",
+																	"parameters": {
+																		"speed": "55"
+																	}
+																}
+															],
+															"sid": 171903192600126
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 171903192590537
+				},
 				{
 					"eventType": "group",
 					"disabled": false,

@@ -724,6 +724,59 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
+							"sid": 360231245165241,
+							"parameters": {
+								"key": 53
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 779049584815823,
+							"parameters": {
+								"key": 76
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 657027011078814,
+							"parameters": {
+								"layout": "level5"
+							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 687852687001062,
+							"parameters": {
+								"reset-static": false
+							}
+						},
+						{
+							"id": "clear",
+							"objectClass": "mapArray",
+							"sid": 343282863533910,
+							"parameters": {
+								"value": "0"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "mapTileUI",
+							"sid": 629108220372699
+						}
+					],
+					"sid": 101388946780822
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
 							"sid": 157454246533095,
 							"parameters": {
 								"key": 52

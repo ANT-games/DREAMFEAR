@@ -539,7 +539,7 @@
 							"leaveBullet",
 							"treeBullet",
 							"weirdPlantBullet",
-							"maskBossBullet2"
+							"angelBossBullet"
 						],
 						"subfolders": [],
 						"name": "enemyObj"
